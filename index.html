@@ -159,6 +159,9 @@
   .c18 .chapter-num{background:#f6b93b;color:var(--ink)}
   .c19 .chapter-num{background:#16a085} .c20 .chapter-num{background:#2980b9}
   .c21 .chapter-num{background:#e67e22} .c22 .chapter-num{background:#8e44ad}
+  .c23 .chapter-num{background:#f39c12} .c24 .chapter-num{background:#9b59b6}
+  .c25 .chapter-num{background:#1abc9c} .c26 .chapter-num{background:#c0392b}
+  .c27 .chapter-num{background:#34495e}
   .chapter-head h2{font-family:'Baloo 2';font-weight:800;font-size:clamp(1.5rem,5vw,2.4rem);color:var(--grape-deep)}
 
   .card{
@@ -1063,6 +1066,101 @@
   </div>
 </section>
 
+<!-- ============ פרק: עיגול והערכה ============ -->
+<section class="chapter c23" id="ch23">
+  <div class="chapter-head"><div class="chapter-num">6</div><h2>עיגול והערכה 🎯</h2></div>
+
+  <div class="interactive-fun">
+    <h3>🎯 מכונת העיגול — הזיזו וראו!</h3>
+    <div class="slider-wrap"><label>המספר: <b id="roundLbl">47</b></label>
+      <input type="range" id="roundSlide" min="0" max="200" value="47"></div>
+    <div class="iact-out" id="roundOut"></div>
+  </div>
+
+  <div class="card">
+    <p class="lead">לפעמים לא צריך תשובה מדויקת — מספיק <span class="word">בערך</span>! <b>עיגול</b> הופך מספר למספר "עגול" וקל (כמו 10, 20, 100) שקל לעבוד איתו. 🎯</p>
+    <div class="tip"><span class="big">🛒</span><div>בחיים האמיתיים מעגלים כל הזמן: "העגלה עלתה בערך 50 ₪", "הגענו אחרי בערך שעה". זה חוסך זמן!</div></div>
+  </div>
+
+  <div class="card">
+    <h3>📏 כלל העיגול הזהב</h3>
+    <p>מסתכלים על הספרה <b>מימין</b> למקום שמעגלים אליו:</p>
+    <div class="cheatgrid" style="margin-top:14px">
+      <div class="cheat b3"><h4>⬆️ 5 ומעלה</h4><ul><li>מעגלים <b>למעלה</b> (מגדילים)</li><li><span class="mono">47 → 50</span></li></ul></div>
+      <div class="cheat b1"><h4>⬇️ 4 ומטה</h4><ul><li>נשארים (מעגלים למטה)</li><li><span class="mono">43 → 40</span></li></ul></div>
+    </div>
+    <div class="tip"><span class="big">✋</span><div>‏5 בדיוק? תמיד עולים למעלה! <span class="mono">25 → 30</span>, <span class="mono">65 → 70</span>.</div></div>
+  </div>
+
+  <div class="card">
+    <h3>🔟 עיגול לעשרת ולמאה</h3>
+    <div class="example-box">
+      <span class="tag">לעשרת הקרובה 🦖</span>
+      <p style="font-weight:700;text-align:center">מסתכלים על ספרת ה<b>יחידות</b>:</p>
+      <div class="eq" dir="ltr">47 → <b style="color:var(--lime)">50</b> &nbsp;·&nbsp; 43 → <b style="color:var(--lime)">40</b> &nbsp;·&nbsp; 25 → <b style="color:var(--lime)">30</b></div>
+    </div>
+    <div class="example-box">
+      <span class="tag">למאה הקרובה 🐙</span>
+      <p style="font-weight:700;text-align:center">מסתכלים על ספרת ה<b>עשרות</b>:</p>
+      <div class="eq" dir="ltr">273 → <b style="color:var(--lime)">300</b> &nbsp;·&nbsp; 128 → <b style="color:var(--lime)">100</b></div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>🧮 הערכה — חשבון מהיר בראש</h3>
+    <p>מעגלים <b>קודם</b>, ואז מחשבים — מקבלים תשובה מהירה שקרובה לאמת! מעולה לבדוק אם תשובה הגיונית.</p>
+    <div class="example-box">
+      <span class="tag">כמה זה בערך 39 + 52? 👽</span>
+      <div class="eq" dir="ltr">39 ≈ 40, &nbsp; 52 ≈ 50 &nbsp;→&nbsp; 40 + 50 = <b style="color:var(--lime)">90</b></div>
+      <p style="font-weight:700;text-align:center">(התשובה המדויקת 91 — קרוב מאוד! 🎯)</p>
+    </div>
+  </div>
+
+  <div class="quiz">
+    <div class="qhead">🎯 משימת בזק</div>
+    <div class="q" data-answer="1">
+      <div class="qtext">עגלו את <b dir="ltr">47</b> לעשרת הקרובה</div>
+      <div class="opts"><button class="opt">40</button><button class="opt">50</button><button class="opt">47</button></div>
+      <div class="feedback"></div>
+    </div>
+    <div class="q" data-answer="0">
+      <div class="qtext">עגלו את <b dir="ltr">43</b> לעשרת הקרובה</div>
+      <div class="opts"><button class="opt">40</button><button class="opt">50</button><button class="opt">45</button></div>
+      <div class="feedback"></div>
+    </div>
+    <div class="q" data-answer="1">
+      <div class="qtext">עגלו את <b dir="ltr">25</b> לעשרת הקרובה</div>
+      <div class="opts"><button class="opt">20</button><button class="opt">30</button><button class="opt">25</button></div>
+      <div class="feedback"></div>
+    </div>
+    <div class="q" data-answer="1">
+      <div class="qtext">עגלו את <b dir="ltr">273</b> למאה הקרובה</div>
+      <div class="opts"><button class="opt">200</button><button class="opt">300</button><button class="opt">270</button></div>
+      <div class="feedback"></div>
+    </div>
+    <div class="q" data-answer="0">
+      <div class="qtext">עגלו את <b dir="ltr">128</b> למאה הקרובה</div>
+      <div class="opts"><button class="opt">100</button><button class="opt">200</button><button class="opt">130</button></div>
+      <div class="feedback"></div>
+    </div>
+    <div class="q" data-answer="0">
+      <div class="qtext">הערכה: כמה זה בערך <b dir="ltr">39 + 52</b>?</div>
+      <div class="opts"><button class="opt">90</button><button class="opt">80</button><button class="opt">100</button></div>
+      <div class="feedback"></div>
+    </div>
+    <div class="q" data-answer="0">
+      <div class="qtext">כדי לעגל, על איזו ספרה מסתכלים?</div>
+      <div class="opts"><button class="opt">זו שמימין</button><button class="opt">זו שמשמאל</button><button class="opt">הראשונה</button></div>
+      <div class="feedback"></div>
+    </div>
+    <div class="q" data-answer="1">
+      <div class="qtext">עגלו את <b dir="ltr">65</b> לעשרת הקרובה</div>
+      <div class="opts"><button class="opt">60</button><button class="opt">70</button><button class="opt">65</button></div>
+      <div class="feedback"></div>
+    </div>
+  </div>
+</section>
+
 <!-- ============ פרק: יחס ופרופורציה ============ -->
 <section class="chapter c17" id="ch17">
   <div class="chapter-head"><div class="chapter-num">6</div><h2>יחס ופרופורציה ⚗️</h2></div>
@@ -1469,6 +1567,95 @@
     <div class="q" data-answer="1">
       <div class="qtext">מה המשמעות של <b dir="ltr">2⁴</b>?</div>
       <div class="opts"><button class="opt" dir="ltr">2×4</button><button class="opt" dir="ltr">2×2×2×2</button><button class="opt" dir="ltr">4×4</button></div>
+      <div class="feedback"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ פרק: סדרות ותבניות ============ -->
+<section class="chapter c24" id="ch24">
+  <div class="chapter-head"><div class="chapter-num">11</div><h2>סדרות ותבניות 🔮</h2></div>
+
+  <div class="interactive-fun">
+    <h3>🔮 מנחש התבניות — מה בא אחר כך?</h3>
+    <p style="font-weight:700;font-size:1.5rem;text-align:center" id="seqText"></p>
+    <div class="opt-row">
+      <button class="try-btn" onclick="revealSeq()">✨ גלו את הכלל והמספר הבא</button>
+      <button class="try-btn" style="background:var(--sky)" onclick="newSeq()">🔄 סדרה חדשה</button>
+    </div>
+    <div class="answer-reveal" id="seqFb"></div>
+  </div>
+
+  <div class="card">
+    <p class="lead"><span class="word">סדרה</span> היא רשימת מספרים שמצייתת ל<b>כלל</b> קבוע. אם מגלים את הכלל — אפשר לנחש מה בא אחר כך, עד אינסוף! 🔮 זו ההתחלה של החשיבה האלגברית.</p>
+  </div>
+
+  <div class="card">
+    <h3>➕ כלל החיבור (סדרה חשבונית)</h3>
+    <p>מוסיפים (או מחסרים) את <b>אותו מספר</b> בכל צעד. חפשו את ה"קפיצה" בין המספרים!</p>
+    <div class="example-box">
+      <span class="tag">מצאו את הכלל 🦕</span>
+      <div class="eq" dir="ltr">3, 6, 9, 12, <b style="color:var(--lime)">15</b> …</div>
+      <p style="font-weight:700;text-align:center">כל פעם מוסיפים <b>3</b> → הבא הוא 15!</p>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>✖️ כלל הכפל (סדרה הנדסית)</h3>
+    <p>לפעמים <b>כופלים</b> באותו מספר בכל צעד — הסדרה גדלה מהר!</p>
+    <div class="eq" dir="ltr">1, 2, 4, 8, <b style="color:var(--lime)">16</b> … &nbsp;(כל פעם ×2)</div>
+    <div class="tip"><span class="big">🔍</span><div><b>איך מגלים את הכלל?</b> בדקו את ההפרש בין מספרים סמוכים. קבוע? זה חיבור. גדל בכפל? זה כפל!</div></div>
+  </div>
+
+  <div class="card">
+    <h3>🟦 תבניות מיוחדות</h3>
+    <p>יש סדרות מפורסמות ששווה לזהות:</p>
+    <ul class="steps" style="counter-reset:none">
+      <li style="padding:12px"><b>ריבועים:</b> <span class="mono">1, 4, 9, 16, 25</span> (זה 1², 2², 3²…) — זוכרים חזקות? ⚡</li>
+      <li style="padding:12px"><b>זוגיים:</b> <span class="mono">2, 4, 6, 8</span> · <b>אי-זוגיים:</b> <span class="mono">1, 3, 5, 7</span></li>
+    </ul>
+  </div>
+
+  <div class="quiz">
+    <div class="qhead">🎯 משימת בזק</div>
+    <div class="q" data-answer="1">
+      <div class="qtext">מה בא אחרי <b dir="ltr">2, 4, 6, 8</b>?</div>
+      <div class="opts"><button class="opt">9</button><button class="opt">10</button><button class="opt">12</button></div>
+      <div class="feedback"></div>
+    </div>
+    <div class="q" data-answer="0">
+      <div class="qtext">מה הכלל של <b dir="ltr">5, 10, 15, 20</b>?</div>
+      <div class="opts"><button class="opt">‏+5</button><button class="opt">‏×5</button><button class="opt">‏−5</button></div>
+      <div class="feedback"></div>
+    </div>
+    <div class="q" data-answer="1">
+      <div class="qtext">מה בא אחרי <b dir="ltr">1, 2, 4, 8</b>?</div>
+      <div class="opts"><button class="opt">10</button><button class="opt">16</button><button class="opt">12</button></div>
+      <div class="feedback"></div>
+    </div>
+    <div class="q" data-answer="0">
+      <div class="qtext">מה בא אחרי <b dir="ltr">20, 17, 14, 11</b>?</div>
+      <div class="opts"><button class="opt">8</button><button class="opt">9</button><button class="opt">10</button></div>
+      <div class="feedback"></div>
+    </div>
+    <div class="q" data-answer="1">
+      <div class="qtext">מה הכלל של <b dir="ltr">3, 6, 12, 24</b>?</div>
+      <div class="opts"><button class="opt">‏+3</button><button class="opt">‏×2</button><button class="opt">‏+6</button></div>
+      <div class="feedback"></div>
+    </div>
+    <div class="q" data-answer="0">
+      <div class="qtext">מה בא אחרי <b dir="ltr">10, 20, 30</b>?</div>
+      <div class="opts"><button class="opt">40</button><button class="opt">50</button><button class="opt">35</button></div>
+      <div class="feedback"></div>
+    </div>
+    <div class="q" data-answer="0">
+      <div class="qtext">מה הכלל של <b dir="ltr">100, 90, 80</b>?</div>
+      <div class="opts"><button class="opt">‏−10</button><button class="opt">‏+10</button><button class="opt">‏×10</button></div>
+      <div class="feedback"></div>
+    </div>
+    <div class="q" data-answer="0">
+      <div class="qtext">‏<b dir="ltr">1, 4, 9, 16</b> — אלה מספרי…</div>
+      <div class="opts"><button class="opt">ריבוע</button><button class="opt">זוגיים</button><button class="opt">ראשוניים</button></div>
       <div class="feedback"></div>
     </div>
   </div>
@@ -2528,6 +2715,90 @@
   </div>
 </section>
 
+<!-- ============ פרק: זוויות וצורות ============ -->
+<section class="chapter c25" id="ch25">
+  <div class="chapter-head"><div class="chapter-num">20</div><h2>זוויות וצורות 🔺</h2></div>
+
+  <div class="interactive-fun">
+    <h3>📐 מד הזוויות — פתחו וסגרו!</h3>
+    <div class="slider-wrap"><label>הזווית: <b id="angLbl">45</b>°</label>
+      <input type="range" id="angSlide" min="0" max="180" value="45"></div>
+    <div class="svg-viz"><svg id="angSvg" viewBox="0 0 200 170" width="260" height="221"></svg></div>
+    <div class="iact-out" id="angOut"></div>
+  </div>
+
+  <div class="card">
+    <p class="lead"><span class="word">זווית</span> היא ה"פתח" בין שני קווים שנפגשים בנקודה. מודדים אותה ב<b>מעלות</b> (°) — כמה הקווים "פתוחים". 📐</p>
+    <div class="tip"><span class="big">🕐</span><div>חשבו על מחוגי שעון: כשהם צמודים — הזווית קטנה. כשהם פתוחים לגמרי לקו ישר — 180°!</div></div>
+  </div>
+
+  <div class="card">
+    <h3>📐 4 סוגי הזוויות</h3>
+    <div class="cheatgrid" style="margin-top:14px">
+      <div class="cheat b3"><h4>חדה 🔻</h4><ul><li><b>פחות מ-90°</b></li><li>קטנה וחדה</li></ul></div>
+      <div class="cheat b2"><h4>ישרה 📐</h4><ul><li><b>בדיוק 90°</b></li><li>הפינה של ספר/חלון</li></ul></div>
+      <div class="cheat b4"><h4>קהה 🔺</h4><ul><li><b>יותר מ-90°</b> (עד 180)</li><li>רחבה ופתוחה</li></ul></div>
+      <div class="cheat b1"><h4>שטוחה ➖</h4><ul><li><b>בדיוק 180°</b></li><li>קו ישר לגמרי</li></ul></div>
+    </div>
+    <div class="tip"><span class="big">🔄</span><div>סיבוב שלם = <b>360°</b> · חצי סיבוב = <b>180°</b> · רבע סיבוב = <b>90°</b> (בדיוק זווית ישרה!)</div></div>
+  </div>
+
+  <div class="card">
+    <h3>🔺 הסוד של המשולש</h3>
+    <p>בכל משולש, שלוש הזוויות <b>תמיד</b> מסתכמות ל-<span class="word2">180°</span>! זה עובד לכל משולש בעולם.</p>
+    <div class="example-box">
+      <span class="tag">דוגמה 🦕</span>
+      <p style="font-weight:700;text-align:center">משולש עם זוויות 90° ו-45°. מה הזווית השלישית?</p>
+      <div class="eq" dir="ltr">180 − 90 − 45 = <b style="color:var(--lime)">45°</b></div>
+    </div>
+    <div class="tip"><span class="big">🧠</span><div>אם יודעים 2 זוויות — תמיד אפשר למצוא את השלישית: <span class="mono">180 − שתיים = השלישית</span>!</div></div>
+  </div>
+
+  <div class="quiz">
+    <div class="qhead">🎯 משימת בזק</div>
+    <div class="q" data-answer="0">
+      <div class="qtext">זווית של <b>פחות</b> מ-90° נקראת…</div>
+      <div class="opts"><button class="opt">חדה</button><button class="opt">ישרה</button><button class="opt">קהה</button></div>
+      <div class="feedback"></div>
+    </div>
+    <div class="q" data-answer="1">
+      <div class="qtext">זווית ישרה שווה ל…</div>
+      <div class="opts"><button class="opt">45°</button><button class="opt">90°</button><button class="opt">180°</button></div>
+      <div class="feedback"></div>
+    </div>
+    <div class="q" data-answer="1">
+      <div class="qtext">זווית של <b>יותר</b> מ-90° נקראת…</div>
+      <div class="opts"><button class="opt">חדה</button><button class="opt">קהה</button><button class="opt">ישרה</button></div>
+      <div class="feedback"></div>
+    </div>
+    <div class="q" data-answer="1">
+      <div class="qtext">שלוש הזוויות במשולש מסתכמות ל…</div>
+      <div class="opts"><button class="opt">90°</button><button class="opt">180°</button><button class="opt">360°</button></div>
+      <div class="feedback"></div>
+    </div>
+    <div class="q" data-answer="1">
+      <div class="qtext">זווית של קו ישר (שטוחה) =</div>
+      <div class="opts"><button class="opt">90°</button><button class="opt">180°</button><button class="opt">360°</button></div>
+      <div class="feedback"></div>
+    </div>
+    <div class="q" data-answer="2">
+      <div class="qtext">סיבוב שלם =</div>
+      <div class="opts"><button class="opt">180°</button><button class="opt">270°</button><button class="opt">360°</button></div>
+      <div class="feedback"></div>
+    </div>
+    <div class="q" data-answer="0">
+      <div class="qtext">משולש: שתי זוויות הן 90° ו-45°. השלישית?</div>
+      <div class="opts"><button class="opt">45°</button><button class="opt">90°</button><button class="opt">135°</button></div>
+      <div class="feedback"></div>
+    </div>
+    <div class="q" data-answer="1">
+      <div class="qtext">זווית של <b dir="ltr">120°</b> היא…</div>
+      <div class="opts"><button class="opt">חדה</button><button class="opt">קהה</button><button class="opt">ישרה</button></div>
+      <div class="feedback"></div>
+    </div>
+  </div>
+</section>
+
 <!-- ============ פרק: היקף ושטח ============ -->
 <section class="chapter c21" id="ch21">
   <div class="chapter-head"><div class="chapter-num">18</div><h2>היקף ושטח 📐</h2></div>
@@ -2629,6 +2900,88 @@
   </div>
 </section>
 
+<!-- ============ פרק: נפח וגופים ============ -->
+<section class="chapter c26" id="ch26">
+  <div class="chapter-head"><div class="chapter-num">22</div><h2>נפח וגופים 📦</h2></div>
+
+  <div class="interactive-fun">
+    <h3>📦 בונה התיבות — כמה קוביות נכנסות?</h3>
+    <div class="slider-wrap"><label>אורך: <b id="vlLbl">4</b></label>
+      <input type="range" id="vlSlide" min="1" max="5" value="4"></div>
+    <div class="slider-wrap"><label>רוחב: <b id="vwLbl">3</b></label>
+      <input type="range" id="vwSlide" min="1" max="5" value="3"></div>
+    <div class="slider-wrap"><label>גובה: <b id="vhLbl">2</b></label>
+      <input type="range" id="vhSlide" min="1" max="5" value="2"></div>
+    <div class="iact-out" id="volOut"></div>
+  </div>
+
+  <div class="card">
+    <p class="lead">בעולם האמיתי לצורות יש <b>עומק</b>! <span class="word">נפח</span> אומר כמה מקום יש <b>בתוך</b> גוף תלת-ממדי — כמה מים נכנסים לקופסה, או כמה קוביות ממלאות אותה. 📦</p>
+    <div class="tip"><span class="big">🧊</span><div><b>שטח מול נפח:</b> שטח סופר <b>משבצות</b> שטוחות (2 ממדים). נפח סופר <b>קוביות</b> מלאות (3 ממדים)!</div></div>
+  </div>
+
+  <div class="card">
+    <h3>📏 נפח תיבה = אורך × רוחב × גובה</h3>
+    <p>פשוט כופלים את שלושת המידות זו בזו!</p>
+    <div class="example-box">
+      <span class="tag">תיבה 4 × 3 × 2 🦖</span>
+      <div class="eq" dir="ltr">4 × 3 × 2 = <b style="color:var(--lime)">24</b> קוביות</div>
+    </div>
+    <div class="tip"><span class="big">💧</span><div>נפח נמדד ב<b>יחידות מעוקבות</b> — ס״מ³ ("ס״מ בשלישית"). זוכרים חזקות? ה-³ אומר "שלושה ממדים"!</div></div>
+  </div>
+
+  <div class="card">
+    <h3>🧊 קובייה = צלע × צלע × צלע = צלע³</h3>
+    <p>בקובייה כל הצלעות שוות, אז הנפח הוא <b>צלע בחזקת שלוש</b>!</p>
+    <div class="eq" dir="ltr">קובייה עם צלע 3 → 3 × 3 × 3 = <b style="color:var(--lime)">27</b></div>
+    <div class="tip"><span class="big">⚡</span><div>ריבוע = צלע² (שטח, 2 ממדים) · קובייה = צלע³ (נפח, 3 ממדים). החזקה = מספר הממדים! 📐📦</div></div>
+  </div>
+
+  <div class="quiz">
+    <div class="qhead">🎯 משימת בזק</div>
+    <div class="q" data-answer="1">
+      <div class="qtext"><b>נפח</b> הוא המקום…</div>
+      <div class="opts"><button class="opt">מסביב לגוף</button><button class="opt">בתוך הגוף (כמה מחזיק)</button><button class="opt">מעל הגוף</button></div>
+      <div class="feedback"></div>
+    </div>
+    <div class="q" data-answer="1">
+      <div class="qtext">נפח של תיבה =</div>
+      <div class="opts"><button class="opt">אורך × רוחב</button><button class="opt">אורך × רוחב × גובה</button><button class="opt">אורך + רוחב + גובה</button></div>
+      <div class="feedback"></div>
+    </div>
+    <div class="q" data-answer="1">
+      <div class="qtext">תיבה <b dir="ltr">2 × 3 × 4</b> — מה הנפח?</div>
+      <div class="opts"><button class="opt">9</button><button class="opt">24</button><button class="opt">14</button></div>
+      <div class="feedback"></div>
+    </div>
+    <div class="q" data-answer="1">
+      <div class="qtext">קובייה עם צלע 2 — מה הנפח?</div>
+      <div class="opts"><button class="opt">6</button><button class="opt">8</button><button class="opt">4</button></div>
+      <div class="feedback"></div>
+    </div>
+    <div class="q" data-answer="1">
+      <div class="qtext">קובייה עם צלע 3 — מה הנפח?</div>
+      <div class="opts"><button class="opt">9</button><button class="opt">27</button><button class="opt">6</button></div>
+      <div class="feedback"></div>
+    </div>
+    <div class="q" data-answer="1">
+      <div class="qtext">נפח נמדד ביחידות…</div>
+      <div class="opts"><button class="opt">ס״מ² (ריבועיות)</button><button class="opt">ס״מ³ (מעוקבות)</button><button class="opt">ס״מ רגילים</button></div>
+      <div class="feedback"></div>
+    </div>
+    <div class="q" data-answer="0">
+      <div class="qtext">תיבה <b dir="ltr">5 × 2 × 2</b> — מה הנפח?</div>
+      <div class="opts"><button class="opt">20</button><button class="opt">9</button><button class="opt">14</button></div>
+      <div class="feedback"></div>
+    </div>
+    <div class="q" data-answer="1">
+      <div class="qtext">נפח קובייה משתמש בחזקה…</div>
+      <div class="opts"><button class="opt">צלע²</button><button class="opt">צלע³</button><button class="opt">צלע × 3</button></div>
+      <div class="feedback"></div>
+    </div>
+  </div>
+</section>
+
 <!-- ============ פרק: ממוצע ונתונים ============ -->
 <section class="chapter c22" id="ch22">
   <div class="chapter-head"><div class="chapter-num">19</div><h2>ממוצע ונתונים 📊</h2></div>
@@ -2713,6 +3066,94 @@
     <div class="q" data-answer="0">
       <div class="qtext">‏4 מפלצות קלעו 10, 10, 20, 20. מה הממוצע? 👾</div>
       <div class="opts"><button class="opt">15</button><button class="opt">60</button><button class="opt">20</button></div>
+      <div class="feedback"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ פרק: הסתברות ============ -->
+<section class="chapter c27" id="ch27">
+  <div class="chapter-head"><div class="chapter-num">24</div><h2>הסתברות 🎲</h2></div>
+
+  <div class="interactive-fun">
+    <h3>🎒 שקית הכדורים — מה הסיכוי להוציא אדום?</h3>
+    <div class="slider-wrap"><label>כדורים אדומים 🔴: <b id="redLbl">2</b></label>
+      <input type="range" id="redSlide" min="0" max="6" value="2"></div>
+    <div class="slider-wrap"><label>כדורים כחולים 🔵: <b id="blueLbl">3</b></label>
+      <input type="range" id="blueSlide" min="0" max="6" value="3"></div>
+    <div class="iact-out" id="bagView" style="font-size:1.6rem"></div>
+    <div class="iact-out" id="probOut"></div>
+  </div>
+
+  <div class="card">
+    <p class="lead"><span class="word">הסתברות</span> מודדת את ה<b>סיכוי</b> שמשהו יקרה — ממש בלתי אפשרי ועד בטוח לגמרי. 🎲 זו הדרך של המתמטיקה לחשוב על העתיד!</p>
+  </div>
+
+  <div class="card">
+    <h3>📊 סולם ההסתברות: מ-0 עד 1</h3>
+    <div class="numline" id="probLine"></div>
+    <div class="cheatgrid" style="margin-top:20px">
+      <div class="cheat b1"><h4>🚫 0</h4><ul><li>בלתי אפשרי</li><li>"חתול יטוס"</li></ul></div>
+      <div class="cheat b2"><h4>🤷 חצי</h4><ul><li>‏50-50 (סיכוי שווה)</li><li>הטלת מטבע</li></ul></div>
+      <div class="cheat b3"><h4>✅ 1</h4><ul><li>בטוח לגמרי</li><li>"מחר תזרח השמש"</li></ul></div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>🧮 מחשבים הסתברות — זה שבר!</h3>
+    <p style="text-align:center;font-weight:800;font-size:1.15rem">הסתברות = <span class="frac" style="color:var(--grape)"><span class="top">מה שרוצים</span><span class="bot">כל האפשרויות</span></span></p>
+    <div class="example-box">
+      <span class="tag">קובייה 🎲</span>
+      <p style="font-weight:700;text-align:center">מה הסיכוי להטיל <b>3</b>?</p>
+      <div class="eq" dir="ltr">יש 3 אחד מתוך 6 פאות → <span class="frac" style="color:var(--lime)"><span class="top">1</span><span class="bot">6</span></span></div>
+    </div>
+    <div class="example-box">
+      <span class="tag">מטבע 🪙</span>
+      <p style="font-weight:700;text-align:center">סיכוי ל"עץ": צד 1 מתוך 2 → <span class="frac" style="color:var(--lime)"><span class="top">1</span><span class="bot">2</span></span></p>
+    </div>
+    <div class="tip"><span class="big">🔗</span><div>שמים לב? הסתברות זה בדיוק <b>שבר</b> — כל מה שלמדתם על שברים עוזר גם כאן! 🍕</div></div>
+  </div>
+
+  <div class="quiz">
+    <div class="qhead">🎯 משימת בזק</div>
+    <div class="q" data-answer="2">
+      <div class="qtext">מה ההסתברות של דבר <b>בטוח</b>?</div>
+      <div class="opts"><button class="opt">0</button><button class="opt">1/2</button><button class="opt">1</button></div>
+      <div class="feedback"></div>
+    </div>
+    <div class="q" data-answer="0">
+      <div class="qtext">מה ההסתברות של דבר <b>בלתי אפשרי</b>?</div>
+      <div class="opts"><button class="opt">0</button><button class="opt">1</button><button class="opt">1/2</button></div>
+      <div class="feedback"></div>
+    </div>
+    <div class="q" data-answer="0">
+      <div class="qtext">מטבע — מה הסיכוי ל"עץ"? 🪙</div>
+      <div class="opts"><button class="opt">1/2</button><button class="opt">1/6</button><button class="opt">1</button></div>
+      <div class="feedback"></div>
+    </div>
+    <div class="q" data-answer="1">
+      <div class="qtext">קובייה — מה הסיכוי להטיל 3? 🎲</div>
+      <div class="opts"><button class="opt">1/2</button><button class="opt">1/6</button><button class="opt">3</button></div>
+      <div class="feedback"></div>
+    </div>
+    <div class="q" data-answer="0">
+      <div class="qtext">בשקית 2 אדומים ו-3 כחולים. סיכוי לאדום?</div>
+      <div class="opts"><button class="opt">2/5</button><button class="opt">2/3</button><button class="opt">3/5</button></div>
+      <div class="feedback"></div>
+    </div>
+    <div class="q" data-answer="1">
+      <div class="qtext">סיכוי של "50-50" שווה ל…</div>
+      <div class="opts"><button class="opt">0</button><button class="opt">1/2</button><button class="opt">1</button></div>
+      <div class="feedback"></div>
+    </div>
+    <div class="q" data-answer="0">
+      <div class="qtext">הסתברות נכתבת בעזרת…</div>
+      <div class="opts"><button class="opt">שבר</button><button class="opt">זווית</button><button class="opt">חזקה</button></div>
+      <div class="feedback"></div>
+    </div>
+    <div class="q" data-answer="1">
+      <div class="qtext">קובייה — סיכוי למספר זוגי (2,4,6)? 🎲</div>
+      <div class="opts"><button class="opt">1/6</button><button class="opt">3/6</button><button class="opt">6</button></div>
       <div class="feedback"></div>
     </div>
   </div>
@@ -3199,10 +3640,12 @@ const CHAPTERS=[
   {id:'ch2', emoji:'➕', title:'חיבור וחיסור שברים',          color:'#4cc9f0'},
   {id:'ch3', emoji:'✖️', title:'כפל וחילוק שברים',           color:'#3ddc97'},
   {id:'ch11',emoji:'💯', title:'עשרוניים ואחוזים',           color:'#0984e3'},
+  {id:'ch23',emoji:'🎯', title:'עיגול והערכה',               color:'#f39c12'},
   {id:'ch17',emoji:'⚗️', title:'יחס ופרופורציה',             color:'#e84393'},
   {id:'ch12',emoji:'❄️', title:'מספרים שליליים',             color:'#6c5ce7'},
   {id:'ch13',emoji:'🚦', title:'סדר פעולות',                 color:'#d63031'},
   {id:'ch18',emoji:'⚡', title:'חזקות ושורשים',              color:'#f6b93b'},
+  {id:'ch24',emoji:'🔮', title:'סדרות ותבניות',              color:'#9b59b6'},
   {id:'ch4', emoji:'🔍', title:'היכרות עם נעלמים',           color:'#ff8c42'},
   {id:'ch5', emoji:'⚖️', title:'פתרון עבור X',               color:'#7c3aed'},
   {id:'ch6', emoji:'🧩', title:'לכל האיברים',                color:'#e84393'},
@@ -3211,8 +3654,11 @@ const CHAPTERS=[
   {id:'ch8', emoji:'📖', title:'חידות מילוליות',             color:'#00b894'},
   {id:'ch14',emoji:'🐊', title:'אי-שוויונות',                color:'#00cec9'},
   {id:'ch20',emoji:'📍', title:'מערכת צירים וגרפים',          color:'#2980b9'},
+  {id:'ch25',emoji:'🔺', title:'זוויות וצורות',              color:'#1abc9c'},
   {id:'ch21',emoji:'📐', title:'היקף ושטח',                  color:'#e67e22'},
+  {id:'ch26',emoji:'📦', title:'נפח וגופים',                 color:'#c0392b'},
   {id:'ch22',emoji:'📊', title:'ממוצע ונתונים',              color:'#8e44ad'},
+  {id:'ch27',emoji:'🎲', title:'הסתברות',                    color:'#34495e'},
   {id:'ch9', emoji:'🏆', title:'אתגר המפלצת הסופי',          color:'#e17055'},
 ];
 const UTILITIES=[
@@ -3916,8 +4362,106 @@ function revealIneq(){
   a.addEventListener('input',upd); b.addEventListener('input',upd); c.addEventListener('input',upd); upd();
 })();
 
+/* --- עיגול (פרק 6): מכונת עיגול --- */
+(function(){
+  const sl=document.getElementById('roundSlide'); if(!sl) return;
+  function upd(){
+    const v=+sl.value;
+    document.getElementById('roundLbl').textContent=v;
+    const r10=Math.round(v/10)*10, r100=Math.round(v/100)*100;
+    document.getElementById('roundOut').innerHTML=v+' → לעשרת: <span style="color:var(--lime)">'+r10+'</span> · למאה: <span style="color:var(--sky)">'+r100+'</span>';
+  }
+  sl.addEventListener('input',upd); upd();
+})();
+
+/* --- סדרות (פרק 11): מנחש התבניות --- */
+let curSeq={};
+function newSeq(){
+  const type=Math.floor(Math.random()*3);
+  let terms=[], next, rule;
+  if(type===1){                                  // כפל
+    const s=1+Math.floor(Math.random()*3), r=2+Math.floor(Math.random()*2);
+    let v=s; for(let i=0;i<4;i++){terms.push(v); v*=r;} next=v; rule='× '+r;
+  } else if(type===2){                           // חיסור (נשאר חיובי)
+    const k=1+Math.floor(Math.random()*4), start=k*4+(1+Math.floor(Math.random()*6));
+    for(let i=0;i<4;i++) terms.push(start-i*k); next=start-4*k; rule='− '+k;
+  } else {                                       // חיבור
+    const s=1+Math.floor(Math.random()*6), k=1+Math.floor(Math.random()*5);
+    for(let i=0;i<4;i++) terms.push(s+i*k); next=s+4*k; rule='+ '+k;
+  }
+  curSeq={next,rule};
+  const el=document.getElementById('seqText'); if(!el) return;
+  el.innerHTML='<span dir="ltr">'+terms.join(', ')+', <b style="color:var(--bubble)">?</b></span>';
+  document.getElementById('seqFb').classList.remove('show');
+}
+function revealSeq(){
+  const fb=document.getElementById('seqFb');
+  fb.innerHTML='הכלל: <b dir="ltr">'+curSeq.rule+'</b> בכל צעד → המספר הבא הוא <b style="color:var(--lime)">'+curSeq.next+'</b> 🎉';
+  fb.classList.add('show');
+}
+
+/* --- זוויות (פרק 20): מד זוויות --- */
+function drawAngle(id,deg){
+  const svg=document.getElementById(id); if(!svg) return;
+  const Ox=35,Oy=140,len=140,r=34, rad=deg*Math.PI/180;
+  const x2=Ox+len*Math.cos(rad), y2=Oy-len*Math.sin(rad);
+  const ax=Ox+r, ay=Oy, bx=Ox+r*Math.cos(rad), by=Oy-r*Math.sin(rad);
+  let s='';
+  s+='<path d="M'+Ox+','+Oy+' L'+ax+','+ay+' A'+r+','+r+' 0 0 0 '+bx+','+by+' Z" fill="#ffd23f" opacity=".55"/>';
+  s+='<line x1="'+Ox+'" y1="'+Oy+'" x2="'+(Ox+len)+'" y2="'+Oy+'" stroke="#2d1b4e" stroke-width="4" stroke-linecap="round"/>';
+  s+='<line x1="'+Ox+'" y1="'+Oy+'" x2="'+x2.toFixed(1)+'" y2="'+y2.toFixed(1)+'" stroke="#7c3aed" stroke-width="4" stroke-linecap="round"/>';
+  s+='<circle cx="'+Ox+'" cy="'+Oy+'" r="4.5" fill="#2d1b4e"/>';
+  s+='<text x="'+(Ox+r+10)+'" y="'+(Oy-10)+'" font-size="14" fill="#2d1b4e" font-weight="800">'+deg+'°</text>';
+  svg.innerHTML=s;
+}
+(function(){
+  const sl=document.getElementById('angSlide'); if(!sl) return;
+  function upd(){
+    const d=+sl.value;
+    document.getElementById('angLbl').textContent=d;
+    drawAngle('angSvg',d);
+    const t = d===0?'סגורה לגמרי' : d<90?'זווית חדה 🔻' : d===90?'זווית ישרה 📐' : d<180?'זווית קהה 🔺' : 'זווית שטוחה ➖';
+    document.getElementById('angOut').textContent=t;
+  }
+  sl.addEventListener('input',upd); upd();
+})();
+
+/* --- נפח (פרק 22): בונה תיבות --- */
+(function(){
+  const l=document.getElementById('vlSlide'), w=document.getElementById('vwSlide'), h=document.getElementById('vhSlide');
+  if(!l||!w||!h) return;
+  function upd(){
+    const a=+l.value, b=+w.value, c=+h.value;
+    document.getElementById('vlLbl').textContent=a;
+    document.getElementById('vwLbl').textContent=b;
+    document.getElementById('vhLbl').textContent=c;
+    document.getElementById('volOut').innerHTML=a+' × '+b+' × '+c+' = <span style="color:var(--lime)">'+(a*b*c)+'</span> קוביות';
+  }
+  l.addEventListener('input',upd); w.addEventListener('input',upd); h.addEventListener('input',upd); upd();
+})();
+
+/* --- הסתברות (פרק 24): שקית כדורים --- */
+(function(){
+  const red=document.getElementById('redSlide'), blue=document.getElementById('blueSlide');
+  if(!red||!blue) return;
+  function upd(){
+    const r=+red.value, b=+blue.value, tot=r+b;
+    document.getElementById('redLbl').textContent=r;
+    document.getElementById('blueLbl').textContent=b;
+    document.getElementById('bagView').innerHTML = tot? ('🔴'.repeat(r)+'🔵'.repeat(b)) : '(שקית ריקה)';
+    const out=document.getElementById('probOut');
+    if(tot===0){ out.textContent='הוסיפו כדורים כדי לחשב! 🎒'; return; }
+    const g=gcd(r,tot)||1, fn=r/g, fd=tot/g;
+    const frac = r===0?'0' : (fd===1?String(fn):'<span class="frac" style="color:var(--bubble)"><span class="top">'+fn+'</span><span class="bot">'+fd+'</span></span>');
+    let word = r===0?'בלתי אפשרי 🚫' : r===tot?'בטוח ✅' : r*2===tot?'50-50 🤷' : r*2>tot?'סביר 👍':'פחות סביר 👎';
+    out.innerHTML='סיכוי לאדום = '+frac+' · '+word;
+  }
+  red.addEventListener('input',upd); blue.addEventListener('input',upd); upd();
+})();
+
 /* אתחול המחוללים */
-newPrime(); newFA(); newOrd(); newComb(); newFactor(); newIneq();
+newPrime(); newFA(); newOrd(); newComb(); newFactor(); newIneq(); newSeq();
+drawNumberLine('probLine',2,1);
 </script>
 </body>
 </html>
