@@ -157,6 +157,8 @@
   .c15 .chapter-num{background:#fdcb6e;color:var(--ink)}
   .c16 .chapter-num{background:#00b894} .c17 .chapter-num{background:#e84393}
   .c18 .chapter-num{background:#f6b93b;color:var(--ink)}
+  .c19 .chapter-num{background:#16a085} .c20 .chapter-num{background:#2980b9}
+  .c21 .chapter-num{background:#e67e22} .c22 .chapter-num{background:#8e44ad}
   .chapter-head h2{font-family:'Baloo 2';font-weight:800;font-size:clamp(1.5rem,5vw,2.4rem);color:var(--grape-deep)}
 
   .card{
@@ -264,6 +266,8 @@
   .cheat-ex .exbody{font-family:'Fredoka';font-weight:700;font-size:1.02rem;direction:ltr;display:flex;flex-wrap:wrap;align-items:center;gap:5px;justify-content:center;line-height:1.5}
   .cheat-ex .exbody .frac{font-size:.92em}
   .cheat-ex .ok{color:#1a9e6b}.cheat-ex .no{color:#d63384}
+  .svg-viz{display:flex;justify-content:center;margin:16px 0}
+  .svg-viz svg{max-width:100%;height:auto;background:#fff;border:3px solid var(--ink);border-radius:16px;padding:6px}
 
   .interactive-fun{background:linear-gradient(135deg,#fff,#f6f0ff);border:4px solid var(--grape);border-radius:22px;padding:22px;margin:20px 0;box-shadow:6px 6px 0 var(--shadow)}
   .slider-wrap{display:flex;flex-direction:column;gap:6px;margin:14px 0}
@@ -2023,6 +2027,107 @@
   </div>
 </section>
 
+<!-- ============ פרק: פירוק לגורמים ============ -->
+<section class="chapter c19" id="ch19">
+  <div class="chapter-head"><div class="chapter-num">14</div><h2>פירוק לגורמים 🪓</h2></div>
+
+  <div class="card">
+    <p class="lead">פירוק לגורמים זה בדיוק <span class="word">ההפך מפתיחת סוגריים</span>! במקום לפזר החוצה, אנחנו <b>אוספים בחזרה</b> — מוציאים את המספר המשותף אל מחוץ לסוגריים. 🎁↩️</p>
+    <div class="distrib">
+      <span class="term" style="color:var(--grape)">3x + 12</span> &nbsp;=&nbsp;
+      <span class="term" style="color:var(--bubble)">3</span>(<span class="term" style="color:var(--sky)">x</span> + <span class="term" style="color:var(--lime)">4</span>)
+    </div>
+    <p class="distrib-note">‏3 הוא הגורם המשותף — הוא "מתחבא" בשני האיברים, אז מוציאים אותו החוצה!</p>
+    <div class="tip"><span class="big">🔗</span><div>זוכרים את פרק הסוגריים? שם עשינו <span class="mono">3(x+4) = 3x+12</span>. פירוק לגורמים פשוט הולך <b>אחורה</b>! 🎁</div></div>
+  </div>
+
+  <div class="card">
+    <h3>🔍 איך עושים את זה? 3 שלבים</h3>
+    <ol class="steps">
+      <li>מוצאים את ה<b>גורם המשותף הגדול ביותר</b> של כל האיברים (זוכרים גורמים מפרק 2? 🔢)</li>
+      <li>מוציאים אותו החוצה, לפני הסוגריים</li>
+      <li>מחלקים כל איבר בגורם — מה שנשאר נכנס לתוך הסוגריים</li>
+    </ol>
+    <div class="example-box">
+      <span class="tag">דוגמה: לפרק 6x + 9 🦖</span>
+      <ol class="steps">
+        <li>הגורם המשותף של 6 ו-9 הוא <b>3</b></li>
+        <li>מחלקים: <span class="mono">6x ÷ 3 = 2x</span> · <span class="mono">9 ÷ 3 = 3</span></li>
+        <li>מקבלים: <b style="color:var(--lime)">3(2x + 3)</b> 🎉</li>
+        <li>בדיקה (פותחים חזרה): <span class="mono">3×2x + 3×3 = 6x + 9</span> ✓</li>
+      </ol>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>⚠️ טעות נפוצה — קחו את הגורם הכי גדול!</h3>
+    <div class="vs-panel">
+      <div class="vs-wrong">
+        <div class="vs-label">🤏 חצי-פירוק</div>
+        <div class="eq" style="font-size:1.1rem" dir="ltr">4x + 8 = 2(2x + 4)</div>
+        <div style="font-size:.9rem">נכון, אבל אפשר עוד! עדיין נשאר 2 משותף בפנים</div>
+      </div>
+      <div class="vs-right">
+        <div class="vs-label">✅ פירוק מלא</div>
+        <div class="eq" style="font-size:1.1rem" dir="ltr">4x + 8 = 4(x + 2)</div>
+        <div style="font-size:.9rem">הוצאנו את הגורם ה<b>הכי גדול</b> (4) — מושלם!</div>
+      </div>
+    </div>
+    <div class="tip"><span class="big">🎯</span><div>תמיד שאלו: "מה המספר <b>הכי גדול</b> שמתחלק בכל האיברים?" זה מה שמוציאים החוצה.</div></div>
+  </div>
+
+  <div class="card">
+    <h3>🚀 מוציאים גם אותיות! <span class="level hard">אתגר</span></h3>
+    <p>אם <span class="mono">x</span> נמצא בכל איבר — אפשר להוציא גם אותו החוצה!</p>
+    <div class="eq" style="font-size:1.35rem" dir="ltr">x² + 3x = <b style="color:var(--lime)">x(x + 3)</b></div>
+    <div class="tip"><span class="big">🧠</span><div>‏<span class="mono">x²</span> זה <span class="mono">x·x</span>, ו-<span class="mono">3x</span> זה <span class="mono">3·x</span> — לשניהם יש <span class="mono">x</span>! אז מוציאים <span class="mono">x</span> החוצה. 👽</div></div>
+  </div>
+
+  <div class="quiz">
+    <div class="qhead">🎯 משימת בזק</div>
+    <div class="q" data-answer="1">
+      <div class="qtext">פירוק לגורמים הוא ההפך מ…</div>
+      <div class="opts"><button class="opt">חיבור</button><button class="opt">פתיחת סוגריים</button><button class="opt">צמצום</button></div>
+      <div class="feedback"></div>
+    </div>
+    <div class="q" data-answer="1">
+      <div class="qtext">איזה גורם מוציאים מ-<b dir="ltr">6x + 9</b>?</div>
+      <div class="opts"><button class="opt">2</button><button class="opt">3</button><button class="opt">6</button></div>
+      <div class="feedback"></div>
+    </div>
+    <div class="q" data-answer="0">
+      <div class="qtext">פרקו: <b dir="ltr">4x + 8</b></div>
+      <div class="opts"><button class="opt" dir="ltr">4(x + 2)</button><button class="opt" dir="ltr">2(2x + 4)</button><button class="opt" dir="ltr">4(x + 8)</button></div>
+      <div class="feedback"></div>
+    </div>
+    <div class="q" data-answer="0">
+      <div class="qtext">פרקו: <b dir="ltr">10x + 15</b></div>
+      <div class="opts"><button class="opt" dir="ltr">5(2x + 3)</button><button class="opt" dir="ltr">5(2x + 15)</button><button class="opt" dir="ltr">10(x + 5)</button></div>
+      <div class="feedback"></div>
+    </div>
+    <div class="q" data-answer="0">
+      <div class="qtext">פרקו: <b dir="ltr">2x + 6</b></div>
+      <div class="opts"><button class="opt" dir="ltr">2(x + 3)</button><button class="opt" dir="ltr">2(x + 6)</button><button class="opt" dir="ltr">6(x + 1)</button></div>
+      <div class="feedback"></div>
+    </div>
+    <div class="q" data-answer="0">
+      <div class="qtext">בדיקה: האם <b dir="ltr">3(2x + 3) = 6x + 9</b>?</div>
+      <div class="opts"><button class="opt">כן ✓</button><button class="opt">לא, זה 6x + 3</button><button class="opt">לא, זה 5x + 9</button></div>
+      <div class="feedback"></div>
+    </div>
+    <div class="q" data-answer="0">
+      <div class="qtext">פרקו (מוציאים x): <b dir="ltr">x² + 5x</b></div>
+      <div class="opts"><button class="opt" dir="ltr">x(x + 5)</button><button class="opt" dir="ltr">5(x + x)</button><button class="opt" dir="ltr">x(5)</button></div>
+      <div class="feedback"></div>
+    </div>
+    <div class="q" data-answer="0">
+      <div class="qtext">פרקו עד הסוף: <b dir="ltr">6x + 12</b></div>
+      <div class="opts"><button class="opt" dir="ltr">6(x + 2)</button><button class="opt" dir="ltr">3(2x + 4)</button><button class="opt" dir="ltr">2(3x + 6)</button></div>
+      <div class="feedback"></div>
+    </div>
+  </div>
+</section>
+
 <!-- ============ פרק 8: חידות מילוליות ============ -->
 <section class="chapter c8" id="ch8">
   <div class="chapter-head"><div class="chapter-num">11</div><h2>חידות מילוליות 📖</h2></div>
@@ -2239,6 +2344,243 @@
   </div>
 </section>
 
+<!-- ============ פרק: מערכת צירים וגרפים ============ -->
+<section class="chapter c20" id="ch20">
+  <div class="chapter-head"><div class="chapter-num">17</div><h2>מערכת צירים וגרפים 📍</h2></div>
+
+  <div class="card">
+    <p class="lead">איך אומרים לחבר <b>איפה בדיוק</b> נמצא האוצר? עם <span class="word">מערכת צירים</span>! שני קווי מספרים שנפגשים — אחד <b>שוכב</b> (ציר x) ואחד <b>עומד</b> (ציר y). 🗺️</p>
+    <div class="svg-viz"><svg id="cp1" viewBox="0 0 220 220" width="250" height="250"></svg></div>
+    <div class="tip"><span class="big">🎯</span><div>הנקודה שבה הצירים נפגשים נקראת <b>ראשית</b> — שם x=0 וגם y=0. משם מתחילים לספור!</div></div>
+  </div>
+
+  <div class="card">
+    <h3>📖 לקרוא נקודה: (x, y)</h3>
+    <p>כל נקודה נכתבת בסוגריים עם שני מספרים: <span class="mono">(x, y)</span>.</p>
+    <ul class="steps" style="counter-reset:none">
+      <li style="padding:12px"><b>המספר הראשון (x):</b> כמה ללכת <b>ימינה</b> (או שמאלה אם שלילי) ↔️</li>
+      <li style="padding:12px"><b>המספר השני (y):</b> כמה לעלות <b>למעלה</b> (או למטה אם שלילי) ↕️</li>
+    </ul>
+    <div class="tip"><span class="big">🚶</span><div><b>טריק זיכרון:</b> "קודם במסדרון, אחר כך במדרגות!" תמיד x לפני y — קודם הולכים הצידה, ורק אז עולים. 🐙</div></div>
+  </div>
+
+  <div class="card">
+    <h3>🎯 דוגמה: איפה נמצא (3, 2)?</h3>
+    <div class="example-box">
+      <span class="tag">מציאת הנקודה 👾</span>
+      <ol class="steps">
+        <li>מתחילים בראשית (0,0)</li>
+        <li>‏x = 3 → הולכים <b>3 ימינה</b> ➡️➡️➡️</li>
+        <li>‏y = 2 → עולים <b>2 למעלה</b> ⬆️⬆️</li>
+        <li>הגענו! שם יושבת המפלצת 👾 (מסומן בגרף הוורוד למעלה)</li>
+      </ol>
+    </div>
+    <div class="tip"><span class="big">🎮</span><div>ככה עובד המשחק "ים-יבשה", וככה קוראים מפות וגרפים בכל העולם!</div></div>
+  </div>
+
+  <div class="quiz">
+    <div class="qhead">🎯 משימת בזק</div>
+    <div class="q" data-answer="1">
+      <div class="qtext">בנקודה <b dir="ltr">(x, y)</b> — מי בא ראשון?</div>
+      <div class="opts"><button class="opt">y</button><button class="opt">x</button><button class="opt">לא משנה</button></div>
+      <div class="feedback"></div>
+    </div>
+    <div class="q" data-answer="0">
+      <div class="qtext">איך קוראים לנקודת המפגש <b dir="ltr">(0, 0)</b>?</div>
+      <div class="opts"><button class="opt">ראשית</button><button class="opt">קצה</button><button class="opt">אמצע</button></div>
+      <div class="feedback"></div>
+    </div>
+    <div class="q" data-answer="0">
+      <div class="qtext">כדי לסמן <b dir="ltr">(2, 5)</b> — מה עושים קודם?</div>
+      <div class="opts"><button class="opt">2 ימינה</button><button class="opt">5 ימינה</button><button class="opt">2 למעלה</button></div>
+      <div class="feedback"></div>
+    </div>
+    <div class="q" data-answer="0">
+      <div class="qtext">איזה ציר <b>שוכב</b> (אופקי)?</div>
+      <div class="opts"><button class="opt">ציר x</button><button class="opt">ציר y</button><button class="opt">שניהם</button></div>
+      <div class="feedback"></div>
+    </div>
+    <div class="q" data-answer="0">
+      <div class="qtext">הנקודה <b dir="ltr">(0, 3)</b> נמצאת על…</div>
+      <div class="opts"><button class="opt">ציר y</button><button class="opt">ציר x</button><button class="opt">באוויר</button></div>
+      <div class="feedback"></div>
+    </div>
+    <div class="q" data-answer="0">
+      <div class="qtext">כדי ללכת <b>שמאלה</b> מהראשית, ה-x צריך להיות…</div>
+      <div class="opts"><button class="opt">שלילי</button><button class="opt">חיובי</button><button class="opt">אפס</button></div>
+      <div class="feedback"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ פרק: היקף ושטח ============ -->
+<section class="chapter c21" id="ch21">
+  <div class="chapter-head"><div class="chapter-num">18</div><h2>היקף ושטח 📐</h2></div>
+
+  <div class="card">
+    <p class="lead">לשתי שאלות שונות על צורה יש שתי תשובות: <span class="word">היקף</span> = כמה גדר צריך <b>מסביב</b>, ו-<span class="word2">שטח</span> = כמה דשא צריך <b>בפנים</b>. 🏡</p>
+    <div class="svg-viz"><svg id="ar1" viewBox="0 0 240 200" width="280" height="230"></svg></div>
+    <p style="text-align:center;font-weight:700">מלבן באורך 4 וברוחב 3 — בואו נמדוד אותו! 📏</p>
+  </div>
+
+  <div class="card">
+    <h3>🚧 היקף — הדרך מסביב</h3>
+    <p><b>היקף</b> = מחברים את אורך <b>כל</b> הצלעות. כמו ללכת סביב הגינה ולספור צעדים.</p>
+    <div class="example-box">
+      <span class="tag">מלבן 4 על 3 🦕</span>
+      <div class="eq" dir="ltr">4 + 3 + 4 + 3 = <b style="color:var(--lime)">14</b></div>
+      <p style="font-weight:700;text-align:center">בקיצור: <span class="mono">2 × (4 + 3) = 14</span></p>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>🟩 שטח — כמה יש בפנים</h3>
+    <p><b>שטח של מלבן</b> = אורך × רוחב. פשוט סופרים כמה משבצות נכנסות בפנים!</p>
+    <div class="example-box">
+      <span class="tag">אותו מלבן 4 על 3</span>
+      <div class="eq" dir="ltr">4 × 3 = <b style="color:var(--lime)">12</b> משבצות</div>
+    </div>
+    <div class="tip"><span class="big">⚡</span><div><b>ריבוע?</b> כל הצלעות שוות, אז שטח = צלע × צלע = <b>צלע²</b>! זוכרים חזקות? ריבוע עם צלע 5 → <span class="mono">5² = 25</span>. 📐</div></div>
+  </div>
+
+  <div class="card">
+    <h3>🤔 אל תתבלבלו!</h3>
+    <div class="vs-panel">
+      <div class="vs-wrong" style="background:#e0f6ff">
+        <div class="vs-label">🚧 היקף</div>
+        <div>מחברים ➕ את הצלעות</div>
+        <div style="font-size:.9rem">נמדד ביחידות אורך (ס״מ)</div>
+      </div>
+      <div class="vs-right">
+        <div class="vs-label">🟩 שטח</div>
+        <div>כופלים ✖️ אורך ברוחב</div>
+        <div style="font-size:.9rem">נמדד במשבצות (ס״מ²)</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="quiz">
+    <div class="qhead">🎯 משימת בזק</div>
+    <div class="q" data-answer="0">
+      <div class="qtext"><b>היקף</b> הוא המרחק…</div>
+      <div class="opts"><button class="opt">מסביב לצורה</button><button class="opt">בתוך הצורה</button><button class="opt">מעל הצורה</button></div>
+      <div class="feedback"></div>
+    </div>
+    <div class="q" data-answer="1">
+      <div class="qtext">שטח של מלבן =</div>
+      <div class="opts"><button class="opt">אורך + רוחב</button><button class="opt">אורך × רוחב</button><button class="opt">אורך − רוחב</button></div>
+      <div class="feedback"></div>
+    </div>
+    <div class="q" data-answer="0">
+      <div class="qtext">מלבן 5 על 2 — מה ה<b>שטח</b>?</div>
+      <div class="opts"><button class="opt">10</button><button class="opt">14</button><button class="opt">7</button></div>
+      <div class="feedback"></div>
+    </div>
+    <div class="q" data-answer="1">
+      <div class="qtext">מלבן 5 על 2 — מה ה<b>היקף</b>?</div>
+      <div class="opts"><button class="opt">10</button><button class="opt">14</button><button class="opt">7</button></div>
+      <div class="feedback"></div>
+    </div>
+    <div class="q" data-answer="0">
+      <div class="qtext">ריבוע עם צלע 3 — מה ה<b>שטח</b>?</div>
+      <div class="opts"><button class="opt">9</button><button class="opt">6</button><button class="opt">12</button></div>
+      <div class="feedback"></div>
+    </div>
+    <div class="q" data-answer="2">
+      <div class="qtext">ריבוע עם צלע 3 — מה ה<b>היקף</b>?</div>
+      <div class="opts"><button class="opt">9</button><button class="opt">6</button><button class="opt">12</button></div>
+      <div class="feedback"></div>
+    </div>
+    <div class="q" data-answer="0">
+      <div class="qtext">שטח נמדד ב…</div>
+      <div class="opts"><button class="opt">משבצות (ס״מ²)</button><button class="opt">ס״מ רגילים</button><button class="opt">קילוגרם</button></div>
+      <div class="feedback"></div>
+    </div>
+    <div class="q" data-answer="0">
+      <div class="qtext">כדי לגדר גינה, מה צריך לחשב? 🏡</div>
+      <div class="opts"><button class="opt">היקף</button><button class="opt">שטח</button><button class="opt">נפח</button></div>
+      <div class="feedback"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ פרק: ממוצע ונתונים ============ -->
+<section class="chapter c22" id="ch22">
+  <div class="chapter-head"><div class="chapter-num">19</div><h2>ממוצע ונתונים 📊</h2></div>
+
+  <div class="card">
+    <p class="lead"><span class="word">ממוצע</span> הוא ה"חלק ההוגן" — אם היו מחלקים הכול בשווה, כמה כל אחד היה מקבל? מחברים הכול, ומחלקים בכמות. ⚖️</p>
+    <div class="tip"><span class="big">🍬</span><div>דמיינו: ל-3 מפלצות יש 2, 4 ו-6 סוכריות. אם יחלקו בשווה — כל אחת תקבל <b>4</b>! זה בדיוק הממוצע. 👾👾👾</div></div>
+  </div>
+
+  <div class="card">
+    <h3>🧮 איך מחשבים ממוצע? 2 שלבים</h3>
+    <ol class="steps">
+      <li><b>מחברים</b> את כל המספרים</li>
+      <li><b>מחלקים</b> בכמות המספרים</li>
+    </ol>
+    <div class="example-box">
+      <span class="tag">ציוני מבחן: 70, 80, 90 🦖</span>
+      <ol class="steps">
+        <li>מחברים: <span class="mono">70 + 80 + 90 = 240</span></li>
+        <li>יש 3 ציונים, אז מחלקים ב-3: <span class="mono">240 ÷ 3 = </span><b style="color:var(--lime)">80</b></li>
+        <li>הממוצע הוא <b style="color:var(--lime)">80</b>! 🎉</li>
+      </ol>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>📏 טווח — כמה הנתונים "מפוזרים"</h3>
+    <p><b>טווח</b> = המספר הגדול ביותר פחות הקטן ביותר. מראה כמה רחוקים הנתונים זה מזה.</p>
+    <div class="eq" dir="ltr">נתונים: 3, 8, 5 → 8 − 3 = <b style="color:var(--lime)">5</b></div>
+    <div class="tip"><span class="big">🔎</span><div>הממוצע אומר "איפה המרכז", והטווח אומר "כמה רחב הפיזור". יחד הם מספרים סיפור שלם על הנתונים!</div></div>
+  </div>
+
+  <div class="quiz">
+    <div class="qhead">🎯 משימת בזק</div>
+    <div class="q" data-answer="0">
+      <div class="qtext">מה הממוצע של <b dir="ltr">4</b> ו-<b dir="ltr">6</b>?</div>
+      <div class="opts"><button class="opt">5</button><button class="opt">10</button><button class="opt">2</button></div>
+      <div class="feedback"></div>
+    </div>
+    <div class="q" data-answer="1">
+      <div class="qtext">כדי למצוא ממוצע: מחברים ואז…</div>
+      <div class="opts"><button class="opt">כופלים</button><button class="opt">מחלקים בכמות</button><button class="opt">מחסרים</button></div>
+      <div class="feedback"></div>
+    </div>
+    <div class="q" data-answer="0">
+      <div class="qtext">ממוצע של <b dir="ltr">2, 4, 6</b>?</div>
+      <div class="opts"><button class="opt">4</button><button class="opt">12</button><button class="opt">6</button></div>
+      <div class="feedback"></div>
+    </div>
+    <div class="q" data-answer="0">
+      <div class="qtext">ממוצע של <b dir="ltr">10</b> ו-<b dir="ltr">20</b>?</div>
+      <div class="opts"><button class="opt">15</button><button class="opt">30</button><button class="opt">10</button></div>
+      <div class="feedback"></div>
+    </div>
+    <div class="q" data-answer="0">
+      <div class="qtext">ממוצע של <b dir="ltr">3, 3, 3</b>?</div>
+      <div class="opts"><button class="opt">3</button><button class="opt">9</button><button class="opt">1</button></div>
+      <div class="feedback"></div>
+    </div>
+    <div class="q" data-answer="0">
+      <div class="qtext">מה ה<b>טווח</b> של <b dir="ltr">3, 8, 5</b>?</div>
+      <div class="opts"><button class="opt">5</button><button class="opt">8</button><button class="opt">3</button></div>
+      <div class="feedback"></div>
+    </div>
+    <div class="q" data-answer="0">
+      <div class="qtext">ממוצע של <b dir="ltr">5, 5, 5, 5</b>?</div>
+      <div class="opts"><button class="opt">5</button><button class="opt">20</button><button class="opt">4</button></div>
+      <div class="feedback"></div>
+    </div>
+    <div class="q" data-answer="0">
+      <div class="qtext">‏4 מפלצות קלעו 10, 10, 20, 20. מה הממוצע? 👾</div>
+      <div class="opts"><button class="opt">15</button><button class="opt">60</button><button class="opt">20</button></div>
+      <div class="feedback"></div>
+    </div>
+  </div>
+</section>
+
 <!-- ============ פרק 13: אתגר המפלצת הסופי ============ -->
 <section class="chapter c9" id="ch9">
   <div class="chapter-head"><div class="chapter-num">13</div><h2>אתגר המפלצת הסופי 🏆</h2></div>
@@ -2364,6 +2706,35 @@
     <div class="q" data-answer="1">
       <div class="qtext">הכפולה המשותפת הקטנה של 2 ו-5?</div>
       <div class="opts"><button class="opt">7</button><button class="opt">10</button><button class="opt">20</button></div>
+      <div class="feedback"></div>
+    </div>
+  </div>
+
+  <div class="quiz">
+    <div class="qhead">⚔️ סבב 6 — קרב הגמר (פירוק, גאומטריה, נתונים!) 🌟</div>
+    <div class="q" data-answer="0">
+      <div class="qtext">פרקו לגורמים: <b dir="ltr">6x + 9</b></div>
+      <div class="opts"><button class="opt" dir="ltr">3(2x + 3)</button><button class="opt" dir="ltr">3(2x + 9)</button><button class="opt" dir="ltr">6(x + 3)</button></div>
+      <div class="feedback"></div>
+    </div>
+    <div class="q" data-answer="0">
+      <div class="qtext">מלבן 5 על 3 — מה ה<b>שטח</b>?</div>
+      <div class="opts"><button class="opt">15</button><button class="opt">16</button><button class="opt">8</button></div>
+      <div class="feedback"></div>
+    </div>
+    <div class="q" data-answer="0">
+      <div class="qtext">מלבן 5 על 3 — מה ה<b>היקף</b>?</div>
+      <div class="opts"><button class="opt">16</button><button class="opt">15</button><button class="opt">8</button></div>
+      <div class="feedback"></div>
+    </div>
+    <div class="q" data-answer="0">
+      <div class="qtext">מה הממוצע של <b dir="ltr">4, 8, 6</b>?</div>
+      <div class="opts"><button class="opt">6</button><button class="opt">18</button><button class="opt">4</button></div>
+      <div class="feedback"></div>
+    </div>
+    <div class="q" data-answer="0">
+      <div class="qtext">הנקודה <b dir="ltr">(0, 2)</b> נמצאת על…</div>
+      <div class="opts"><button class="opt">ציר y</button><button class="opt">ציר x</button><button class="opt">הראשית</button></div>
       <div class="feedback"></div>
     </div>
   </div>
@@ -2609,6 +2980,50 @@
       <div class="cheat-ex"><span class="exlbl">שורש = הפוך (כי 3²=9)</span>
         <div class="exbody">√9 = <span class="ok">3</span></div></div>
     </div>
+
+    <div class="cheat b3">
+      <h4>🪓 פירוק לגורמים</h4>
+      <ul>
+        <li>ההפך מפתיחת סוגריים</li>
+        <li>מוציאים את הגורם המשותף <b>הגדול ביותר</b></li>
+        <li>מחלקים כל איבר, והשאר נכנס לסוגריים</li>
+      </ul>
+      <div class="cheat-ex"><span class="exlbl">מוציאים 3 החוצה</span>
+        <div class="exbody">6x + 9 = <span class="ok">3(2x + 3)</span></div></div>
+    </div>
+
+    <div class="cheat b2">
+      <h4>📍 מערכת צירים</h4>
+      <ul>
+        <li>נקודה = <span class="mono">(x, y)</span></li>
+        <li>‏x = ימינה/שמאלה · y = למעלה/למטה</li>
+        <li>"קודם מסדרון, אז מדרגות" (x לפני y)</li>
+        <li>הראשית = (0, 0)</li>
+      </ul>
+      <div class="cheat-ex"><span class="exlbl">לסמן (3, 2)</span>
+        <div class="exbody">3 ימינה, ואז 2 למעלה</div></div>
+    </div>
+
+    <div class="cheat b4">
+      <h4>📐 היקף ושטח</h4>
+      <ul>
+        <li>היקף = מחברים את כל הצלעות (מסביב)</li>
+        <li>שטח מלבן = אורך × רוחב (בפנים)</li>
+        <li>שטח ריבוע = צלע²</li>
+      </ul>
+      <div class="cheat-ex"><span class="exlbl">מלבן 4 על 3</span>
+        <div class="exbody">היקף=<span class="ok">14</span> · שטח=<span class="ok">12</span></div></div>
+    </div>
+
+    <div class="cheat b5">
+      <h4>📊 ממוצע וטווח</h4>
+      <ul>
+        <li>ממוצע = מחברים הכול ÷ בכמות</li>
+        <li>טווח = הגדול פחות הקטן</li>
+      </ul>
+      <div class="cheat-ex"><span class="exlbl">ממוצע של 70, 80, 90</span>
+        <div class="exbody">240 ÷ 3 = <span class="ok">80</span></div></div>
+    </div>
   </div>
 
   <div class="card" style="margin-top:22px;background:linear-gradient(135deg,#ede4ff,#ffe3f0);text-align:center">
@@ -2655,8 +3070,12 @@ const CHAPTERS=[
   {id:'ch5', emoji:'⚖️', title:'פתרון עבור X',               color:'#7c3aed'},
   {id:'ch6', emoji:'🧩', title:'לכל האיברים',                color:'#e84393'},
   {id:'ch7', emoji:'🎁', title:'סוגריים וחלוקה',             color:'#f6b93b'},
+  {id:'ch19',emoji:'🪓', title:'פירוק לגורמים',              color:'#16a085'},
   {id:'ch8', emoji:'📖', title:'חידות מילוליות',             color:'#00b894'},
   {id:'ch14',emoji:'🐊', title:'אי-שוויונות',                color:'#00cec9'},
+  {id:'ch20',emoji:'📍', title:'מערכת צירים וגרפים',          color:'#2980b9'},
+  {id:'ch21',emoji:'📐', title:'היקף ושטח',                  color:'#e67e22'},
+  {id:'ch22',emoji:'📊', title:'ממוצע ונתונים',              color:'#8e44ad'},
   {id:'ch9', emoji:'🏆', title:'אתגר המפלצת הסופי',          color:'#e17055'},
 ];
 const UTILITIES=[
@@ -3040,6 +3459,49 @@ function drawIntLine(id,min,max,mark){
   nl.appendChild(dot);
 }
 drawIntLine('nlNeg',-5,5,-3);
+
+/* ---------- מערכת צירים (פרק 17) ---------- */
+function drawCoordPlane(id,px,py){
+  const svg=document.getElementById(id); if(!svg) return;
+  const O=110,S=18,R=5,END=R*S;
+  let s='';
+  for(let i=-R;i<=R;i++){
+    const p=O+i*S;
+    s+='<line x1="'+(O-END)+'" y1="'+p+'" x2="'+(O+END)+'" y2="'+p+'" stroke="#e6dcf5" stroke-width="1"/>';
+    s+='<line x1="'+p+'" y1="'+(O-END)+'" x2="'+p+'" y2="'+(O+END)+'" stroke="#e6dcf5" stroke-width="1"/>';
+  }
+  s+='<line x1="'+(O-END)+'" y1="'+O+'" x2="'+(O+END)+'" y2="'+O+'" stroke="#2d1b4e" stroke-width="2.5"/>';
+  s+='<line x1="'+O+'" y1="'+(O-END)+'" x2="'+O+'" y2="'+(O+END)+'" stroke="#2d1b4e" stroke-width="2.5"/>';
+  s+='<text x="'+(O+END-2)+'" y="'+(O+14)+'" font-size="12" fill="#2d1b4e" font-weight="800">x</text>';
+  s+='<text x="'+(O+5)+'" y="'+(O-END+10)+'" font-size="12" fill="#2d1b4e" font-weight="800">y</text>';
+  s+='<text x="'+(O-9)+'" y="'+(O+13)+'" font-size="10" fill="#7c3aed" font-weight="700">0</text>';
+  const X=O+px*S, Y=O-py*S;
+  s+='<line x1="'+X+'" y1="'+O+'" x2="'+X+'" y2="'+Y+'" stroke="#ff5da2" stroke-width="1.5" stroke-dasharray="3 3"/>';
+  s+='<line x1="'+O+'" y1="'+Y+'" x2="'+X+'" y2="'+Y+'" stroke="#ff5da2" stroke-width="1.5" stroke-dasharray="3 3"/>';
+  s+='<circle cx="'+X+'" cy="'+Y+'" r="8" fill="#ff5da2" stroke="#2d1b4e" stroke-width="2.5"/>';
+  s+='<text x="'+(X+7)+'" y="'+(Y-7)+'" font-size="12" fill="#2d1b4e" font-weight="800">('+px+', '+py+')</text>';
+  svg.innerHTML=s;
+}
+drawCoordPlane('cp1',3,2);
+
+/* ---------- רשת שטח (פרק 18) ---------- */
+function drawAreaGrid(id,w,h){
+  const svg=document.getElementById(id); if(!svg) return;
+  const S=34,ox=44,oy=16;
+  let s='';
+  for(let r=0;r<h;r++){
+    for(let c=0;c<w;c++){
+      s+='<rect x="'+(ox+c*S)+'" y="'+(oy+r*S)+'" width="'+S+'" height="'+S+'" fill="#e2fff2" stroke="#2d1b4e" stroke-width="2"/>';
+    }
+  }
+  const midX=ox+w*S/2, botY=oy+h*S;
+  s+='<text x="'+midX+'" y="'+(botY+24)+'" font-size="15" text-anchor="middle" fill="#2d1b4e" font-weight="800">אורך = '+w+'</text>';
+  const midY=oy+h*S/2;
+  s+='<text x="'+(ox-16)+'" y="'+midY+'" font-size="15" text-anchor="middle" fill="#2d1b4e" font-weight="800" transform="rotate(-90 '+(ox-16)+' '+midY+')">רוחב = '+h+'</text>';
+  s+='<text x="'+midX+'" y="'+midY+'" font-size="16" text-anchor="middle" fill="#7c3aed" font-weight="800" opacity=".55">'+(w*h)+' משבצות</text>';
+  svg.innerHTML=s;
+}
+drawAreaGrid('ar1',4,3);
 
 /* ---------- לוח התוצאות (פרק 14) ---------- */
 const LB_API='/api/leaderboard';
