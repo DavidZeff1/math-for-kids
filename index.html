@@ -33,7 +33,7 @@
     overflow-x:hidden;
   }
 
-  .doodle{position:fixed;font-size:2.4rem;opacity:.16;pointer-events:none;z-index:0;animation:drift 9s ease-in-out infinite}
+  .doodle{position:fixed;font-size:2.4rem;opacity:.09;pointer-events:none;z-index:0;animation:drift 9s ease-in-out infinite}
   @keyframes drift{0%,100%{transform:translateY(0) rotate(-6deg)}50%{transform:translateY(-22px) rotate(8deg)}}
 
   header{position:relative;z-index:2;text-align:center;padding:48px 20px 30px}
@@ -52,42 +52,89 @@
   .subtitle{font-family:'Varela Round';font-size:clamp(1.05rem,3vw,1.45rem);color:var(--grape-deep);margin-top:20px;font-weight:500}
   .monster-row{font-size:clamp(2.2rem,7vw,3.4rem);margin-top:10px;letter-spacing:.15em}
 
-  nav{
-    position:sticky;top:0;z-index:20;
-    display:flex;flex-wrap:wrap;gap:10px;justify-content:center;
-    padding:16px;margin:10px auto 0;max-width:1050px;
-    background:rgba(255,253,250,.82);backdrop-filter:blur(8px);
-    border-radius:0 0 24px 24px;
+  /* ===== סרגל עליון דק (לא חוסם!) ===== */
+  .topbar{
+    position:sticky;top:0;z-index:40;
+    display:flex;align-items:center;gap:10px;
+    padding:9px 14px;margin:0 auto;max-width:1000px;
+    background:rgba(255,253,250,.94);backdrop-filter:blur(10px);
+    border-bottom:3px solid var(--ink);
   }
-  .tab{
-    font-family:'Varela Round';font-weight:600;font-size:1.02rem;cursor:pointer;
-    padding:11px 20px;border-radius:999px;border:3px solid var(--ink);
-    background:var(--paper);color:var(--ink);transition:transform .12s,box-shadow .12s;
-    box-shadow:3px 3px 0 var(--ink);user-select:none;
+  .menu-btn{
+    font-family:'Baloo 2';font-weight:800;font-size:1rem;cursor:pointer;
+    padding:9px 16px;border-radius:14px;border:3px solid var(--ink);
+    background:var(--sunny);color:var(--ink);box-shadow:3px 3px 0 var(--ink);
+    display:flex;align-items:center;gap:7px;white-space:nowrap;transition:transform .1s,box-shadow .1s;
   }
-  .tab:hover{transform:translateY(-3px);box-shadow:5px 6px 0 var(--ink)}
-  .tnum{
-    display:inline-grid;place-items:center;width:22px;height:22px;border-radius:50%;
-    background:var(--ink);color:#fff;font-family:'Baloo 2';font-weight:800;font-size:.82rem;
-    margin-inline-end:7px;vertical-align:middle;line-height:1;
+  .menu-btn:active{transform:translate(2px,2px);box-shadow:1px 1px 0 var(--ink)}
+  .topbar-current{
+    flex:1;min-width:0;font-family:'Varela Round';font-weight:700;color:var(--grape-deep);
+    font-size:1.02rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;text-align:center;
   }
-  .tab.active .tnum{background:rgba(255,255,255,.85);color:var(--ink)}
-  .tab.active{color:#fff;box-shadow:3px 3px 0 var(--ink)}
-  .tab[data-c="1"].active{background:var(--bubble)}
-  .tab[data-c="2"].active{background:var(--sky)}
-  .tab[data-c="3"].active{background:var(--lime)}
-  .tab[data-c="4"].active{background:var(--tangerine)}
-  .tab[data-c="5"].active{background:var(--grape)}
-  .tab[data-c="6"].active{background:#e84393}
-  .tab[data-c="7"].active{background:#f6b93b;color:var(--ink)}
-  .tab[data-c="8"].active{background:#00b894}
-  .tab[data-c="9"].active{background:#e17055}
-  .tab[data-c="10"].active{background:#0984e3}
-  .tab[data-c="11"].active{background:#6c5ce7}
-  .tab[data-c="12"].active{background:#d63031}
-  .tab[data-c="13"].active{background:#00cec9}
-  .tab[data-c="14"].active{background:#e84393}
-  .tab[data-c="15"].active{background:var(--sunny);color:var(--ink)}
+  .topbar-current b{color:var(--grape)}
+  .topbar-score{
+    font-family:'Baloo 2';font-weight:800;color:var(--grape-deep);font-size:1.05rem;
+    background:#fff;border:3px solid var(--ink);border-radius:999px;padding:5px 14px;
+    box-shadow:2px 2px 0 var(--ink);white-space:nowrap;
+  }
+
+  /* ===== מגירת פרקים (נפתחת לפי דרישה) ===== */
+  .drawer-backdrop{
+    position:fixed;inset:0;z-index:50;background:rgba(45,27,78,.55);
+    backdrop-filter:blur(3px);opacity:0;pointer-events:none;transition:opacity .25s;
+  }
+  .drawer-backdrop.open{opacity:1;pointer-events:auto}
+  .drawer{
+    position:fixed;z-index:51;top:0;right:0;bottom:0;width:min(430px,88vw);
+    background:var(--paper);border-inline-start:4px solid var(--ink);
+    box-shadow:-8px 0 30px rgba(45,27,78,.25);
+    transform:translateX(105%);transition:transform .3s cubic-bezier(.2,.8,.2,1);
+    display:flex;flex-direction:column;
+  }
+  .drawer.open{transform:none}
+  .drawer-head{
+    display:flex;align-items:center;justify-content:space-between;gap:10px;
+    padding:16px 18px;border-bottom:3px solid var(--ink);flex-shrink:0;
+    background:linear-gradient(135deg,#ede4ff,#ffe3f0);
+  }
+  .drawer-head h3{font-family:'Baloo 2';font-weight:800;color:var(--grape);font-size:1.3rem}
+  .drawer-close{
+    cursor:pointer;border:3px solid var(--ink);background:#fff;border-radius:12px;
+    width:42px;height:42px;font-size:1.2rem;box-shadow:2px 2px 0 var(--ink);flex-shrink:0;
+  }
+  .drawer-close:active{transform:translate(2px,2px);box-shadow:0 0 0 var(--ink)}
+  .drawer-body{overflow-y:auto;padding:14px;display:flex;flex-direction:column;gap:8px}
+  .drawer-section-label{
+    font-family:'Varela Round';font-weight:700;color:var(--grape-deep);opacity:.7;
+    font-size:.9rem;margin:10px 6px 2px;
+  }
+  .ch-item{
+    display:flex;align-items:center;gap:12px;cursor:pointer;text-align:start;width:100%;
+    padding:11px 13px;border-radius:16px;border:3px solid var(--ink);
+    background:#fff;box-shadow:3px 3px 0 rgba(45,27,78,.15);transition:transform .1s,background .15s;
+    font-family:'Varela Round';font-weight:600;font-size:1.05rem;color:var(--ink);
+  }
+  .ch-item:hover{transform:translateX(-4px)}
+  .ch-item.active{background:var(--sunny);box-shadow:3px 3px 0 var(--ink)}
+  .ch-item .ch-badge{
+    flex-shrink:0;width:34px;height:34px;border-radius:10px;display:grid;place-items:center;
+    font-family:'Baloo 2';font-weight:800;color:#fff;border:3px solid var(--ink);font-size:1rem;
+  }
+  .ch-item .ch-emoji{font-size:1.35rem;flex-shrink:0}
+  .ch-item .ch-title{flex:1;min-width:0}
+
+  /* ===== ניווט קדימה/אחורה בסוף כל פרק ===== */
+  .chapter-nav{display:flex;gap:12px;justify-content:space-between;margin:34px 0 4px}
+  .chapter-nav button{
+    flex:1;min-width:0;cursor:pointer;font-family:'Varela Round';font-weight:700;
+    padding:13px 14px;border-radius:18px;border:3px solid var(--ink);background:var(--paper);
+    color:var(--ink);box-shadow:4px 4px 0 var(--ink);transition:transform .1s;
+    display:flex;flex-direction:column;gap:3px;text-align:center;
+  }
+  .chapter-nav button:hover:not(:disabled){transform:translateY(-3px)}
+  .chapter-nav button:disabled{opacity:.45;cursor:default;box-shadow:2px 2px 0 var(--ink)}
+  .chapter-nav .cn-dir{font-size:.82rem;font-weight:600;opacity:.7}
+  .chapter-nav .cn-name{font-family:'Baloo 2';font-weight:800;color:var(--grape-deep);font-size:.98rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 
   main{position:relative;z-index:2;max-width:940px;margin:0 auto;padding:30px 18px 90px}
   .chapter{display:none;animation:pop .4s ease}
@@ -108,6 +155,8 @@
   .c11 .chapter-num{background:#0984e3} .c12 .chapter-num{background:#6c5ce7}
   .c13 .chapter-num{background:#d63031} .c14 .chapter-num{background:#00cec9}
   .c15 .chapter-num{background:#fdcb6e;color:var(--ink)}
+  .c16 .chapter-num{background:#00b894} .c17 .chapter-num{background:#e84393}
+  .c18 .chapter-num{background:#f6b93b;color:var(--ink)}
   .chapter-head h2{font-family:'Baloo 2';font-weight:800;font-size:clamp(1.5rem,5vw,2.4rem);color:var(--grape-deep)}
 
   .card{
@@ -297,7 +346,10 @@
     .card{padding:18px}
     .chapter-num{min-width:52px;height:52px;font-size:1.5rem}
     nav{gap:7px;padding:12px}
-    .tab{padding:9px 14px;font-size:.9rem}
+    .menu-btn{padding:8px 12px;font-size:.92rem}
+    .topbar-current{font-size:.9rem}
+    .topbar-score{font-size:.95rem;padding:4px 11px}
+    .chapter-nav{flex-direction:column}
     .numline .lbl{font-size:.78rem}
   }
 </style>
@@ -311,23 +363,20 @@
   <div class="monster-row">👾 🐲 🦖 👽 🐙 🦕</div>
 </header>
 
-<nav id="nav">
-  <div class="tab active" data-c="1" data-target="ch1"><span class="tnum">1</span>🍕 שברים 101</div>
-  <div class="tab" data-c="2" data-target="ch2"><span class="tnum">2</span>➕ חיבור וחיסור</div>
-  <div class="tab" data-c="3" data-target="ch3"><span class="tnum">3</span>✖️ כפל וחילוק</div>
-  <div class="tab" data-c="10" data-target="ch11"><span class="tnum">4</span>💯 עשרוניים ואחוזים</div>
-  <div class="tab" data-c="11" data-target="ch12"><span class="tnum">5</span>❄️ מספרים שליליים</div>
-  <div class="tab" data-c="12" data-target="ch13"><span class="tnum">6</span>🚦 סדר פעולות</div>
-  <div class="tab" data-c="4" data-target="ch4"><span class="tnum">7</span>🔍 היכרות עם נעלמים</div>
-  <div class="tab" data-c="5" data-target="ch5"><span class="tnum">8</span>⚖️ פתרון עבור X</div>
-  <div class="tab" data-c="6" data-target="ch6"><span class="tnum">9</span>🧩 לכל האיברים!</div>
-  <div class="tab" data-c="7" data-target="ch7"><span class="tnum">10</span>🎁 סוגריים וחלוקה</div>
-  <div class="tab" data-c="8" data-target="ch8"><span class="tnum">11</span>📖 חידות מילוליות</div>
-  <div class="tab" data-c="13" data-target="ch14"><span class="tnum">12</span>🐊 אי-שוויונות</div>
-  <div class="tab" data-c="9" data-target="ch9"><span class="tnum">13</span>🏆 אתגר המפלצת</div>
-  <div class="tab" data-c="15" data-target="ch15"><span class="tnum">14</span>🏅 לוח התוצאות</div>
-  <div class="tab" data-c="14" data-target="ch10"><span class="tnum">15</span>📋 דף עזר</div>
-</nav>
+<div class="topbar">
+  <button class="menu-btn" id="menuBtn" aria-label="פתיחת תפריט הפרקים">📚 <span>פרקים</span></button>
+  <div class="topbar-current" id="topbarCurrent"></div>
+  <div class="topbar-score">⭐ <span id="score">0</span></div>
+</div>
+
+<div class="drawer-backdrop" id="drawerBackdrop"></div>
+<aside class="drawer" id="drawer" aria-hidden="true" aria-label="תפריט פרקים">
+  <div class="drawer-head">
+    <h3>📚 בחרו פרק</h3>
+    <button class="drawer-close" id="drawerClose" aria-label="סגירת התפריט">✕</button>
+  </div>
+  <div class="drawer-body" id="drawerBody"></div>
+</aside>
 
 <main>
 
@@ -505,6 +554,108 @@
   </div>
 </section>
 
+<!-- ============ פרק: גורמים, כפולות וראשוניים ============ -->
+<section class="chapter c16" id="ch16">
+  <div class="chapter-head"><div class="chapter-num">2</div><h2>גורמים, כפולות וראשוניים 🔢</h2></div>
+
+  <div class="card">
+    <p class="lead">לפני שצוללים לשברים גדולים — צריך להכיר את <span class="word">אבני הבניין</span> של המספרים: גורמים וכפולות! הם הסוד מאחורי מכנה משותף וצמצום. 🧱</p>
+    <div class="tip"><span class="big">🧠</span><div><b>למה זה חשוב?</b> "מכנה משותף" זו בעצם <b>כפולה משותפת</b>, ו"צמצום" זו חלוקה ב<b>גורם משותף</b>. מי ששולט כאן — שולט בשברים! 👾</div></div>
+  </div>
+
+  <div class="card">
+    <h3>🧩 גורמים (מחלקים) — מי מתחלק יפה?</h3>
+    <p><b>גורם</b> של מספר הוא כל מספר שמתחלק בו בדיוק, בלי שארית. הגורמים של 12:</p>
+    <div class="eq" style="flex-wrap:wrap;font-size:1.3rem">
+      <b style="color:var(--bubble)">1</b> · <b>2</b> · <b style="color:var(--sky)">3</b> · <b>4</b> · <b style="color:var(--lime)">6</b> · <b style="color:var(--tangerine)">12</b>
+    </div>
+    <p style="text-align:center;font-weight:700">כי כל אחד מהם מחלק את 12 בדיוק! (<span class="mono">12÷3=4</span> ✓)</p>
+    <div class="tip"><span class="big">👯</span><div><b>טריק הזוגות:</b> גורמים באים בזוגות שמכפילים למספר: <span class="mono">1×12, 2×6, 3×4</span>. חפשו זוגות ולא תפספסו אף אחד!</div></div>
+  </div>
+
+  <div class="card">
+    <h3>🔁 כפולות — לוח הכפל בלי סוף</h3>
+    <p><b>כפולה</b> היא מה שמקבלים כשכופלים מספר ב-1, 2, 3, 4… הכפולות של 4:</p>
+    <div class="eq" style="flex-wrap:wrap">4 · 8 · 12 · 16 · 20 · 24 …</div>
+    <div class="tip"><span class="big">🎯</span><div><b>גורם או כפולה?</b> גורמים <b>קטנים או שווים</b> למספר. כפולות <b>גדלות בלי סוף</b>. גוזי זוכר: "גורמים בפנים, כפולות בחוץ!" 👾</div></div>
+  </div>
+
+  <div class="card">
+    <h3>💎 מספרים ראשוניים — לבנים שאי אפשר לשבור</h3>
+    <p>מספר <span class="word">ראשוני</span> הוא מספר גדול מ-1 שיש לו <b>בדיוק שני גורמים</b>: 1 ועצמו. אי אפשר לחלק אותו יפה לשום דבר אחר!</p>
+    <div class="eq" style="flex-wrap:wrap;font-size:1.2rem">2 · 3 · 5 · 7 · 11 · 13 · 17 · 19 …</div>
+    <p style="text-align:center;font-weight:700">‏6 <b>לא</b> ראשוני (6 = 2×3), אבל 7 כן — רק 1×7! 💎</p>
+    <div class="tip"><span class="big">🦖</span><div><b>עובדה מגניבה:</b> 2 הוא המספר הראשוני היחיד שהוא זוגי! כל שאר הזוגיים מתחלקים ב-2, אז יש להם גורם נוסף.</div></div>
+  </div>
+
+  <div class="card">
+    <h3>⚡ טריקי התחלקות מהירים</h3>
+    <div class="cheatgrid" style="margin-top:14px">
+      <div class="cheat b2"><h4>מתחלק ב-2</h4><ul><li>אם מסתיים ב-0,2,4,6,8 (זוגי)</li></ul></div>
+      <div class="cheat b3"><h4>מתחלק ב-5</h4><ul><li>אם מסתיים ב-0 או 5</li></ul></div>
+      <div class="cheat b4"><h4>מתחלק ב-10</h4><ul><li>אם מסתיים ב-0</li></ul></div>
+      <div class="cheat b1"><h4>מתחלק ב-3</h4><ul><li>אם סכום הספרות מתחלק ב-3</li><li><span class="mono">51 → 5+1=6 ✓</span></li></ul></div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>🤝 המחבר לשברים: מכנה משותף</h3>
+    <div class="example-box">
+      <span class="tag">דוגמה 🐲</span>
+      <p style="font-weight:700">כדי לחבר <span class="mono">1/4 + 1/6</span> צריך מכנה משותף — כפולה משותפת של 4 ו-6:</p>
+      <ol class="steps">
+        <li>כפולות של 4: 4, 8, <b style="color:var(--lime)">12</b>, 16…</li>
+        <li>כפולות של 6: 6, <b style="color:var(--lime)">12</b>, 18…</li>
+        <li>הכי קטנה שמשותפת = <b style="color:var(--lime)">12</b>! זה המכנה המשותף. 🎉</li>
+      </ol>
+    </div>
+  </div>
+
+  <div class="quiz">
+    <div class="qhead">🎯 משימת בזק</div>
+    <div class="q" data-answer="2">
+      <div class="qtext">איזה מספר הוא <b>גורם</b> של 12?</div>
+      <div class="opts"><button class="opt">5</button><button class="opt">8</button><button class="opt">6</button></div>
+      <div class="feedback"></div>
+    </div>
+    <div class="q" data-answer="1">
+      <div class="qtext">איזה מספר הוא <b>כפולה</b> של 5?</div>
+      <div class="opts"><button class="opt">12</button><button class="opt">20</button><button class="opt">8</button></div>
+      <div class="feedback"></div>
+    </div>
+    <div class="q" data-answer="0">
+      <div class="qtext">האם 7 הוא מספר ראשוני?</div>
+      <div class="opts"><button class="opt">כן</button><button class="opt">לא, מתחלק ב-2</button><button class="opt">לא, מתחלק ב-3</button></div>
+      <div class="feedback"></div>
+    </div>
+    <div class="q" data-answer="1">
+      <div class="qtext">איזה מספר הוא <b>ראשוני</b>?</div>
+      <div class="opts"><button class="opt">9</button><button class="opt">11</button><button class="opt">15</button></div>
+      <div class="feedback"></div>
+    </div>
+    <div class="q" data-answer="0">
+      <div class="qtext">מהם כל הגורמים של 6?</div>
+      <div class="opts"><button class="opt">1, 2, 3, 6</button><button class="opt">רק 1 ו-6</button><button class="opt">רק 2 ו-3</button></div>
+      <div class="feedback"></div>
+    </div>
+    <div class="q" data-answer="0">
+      <div class="qtext">האם 51 מתחלק ב-3? (‏5+1=6)</div>
+      <div class="opts"><button class="opt">כן</button><button class="opt">לא</button><button class="opt">רק ב-5</button></div>
+      <div class="feedback"></div>
+    </div>
+    <div class="q" data-answer="1">
+      <div class="qtext">הכפולה המשותפת <b>הקטנה</b> של 3 ו-4?</div>
+      <div class="opts"><button class="opt">7</button><button class="opt">12</button><button class="opt">1</button></div>
+      <div class="feedback"></div>
+    </div>
+    <div class="q" data-answer="2">
+      <div class="qtext">איזה מספר <b>אינו</b> ראשוני?</div>
+      <div class="opts"><button class="opt">2</button><button class="opt">5</button><button class="opt">9</button></div>
+      <div class="feedback"></div>
+    </div>
+  </div>
+</section>
+
 <!-- ============ פרק 2 ============ -->
 <section class="chapter c2" id="ch2">
   <div class="chapter-head"><div class="chapter-num">2</div><h2>חיבור וחיסור ➕➖</h2></div>
@@ -608,6 +759,21 @@
     <div class="q" data-answer="1">
       <div class="qtext"><span style="font-weight:800">1<span class="frac" style="font-size:.7em"><span class="top">1</span><span class="bot">3</span></span></span>+<span style="font-weight:800">2<span class="frac" style="font-size:.7em"><span class="top">1</span><span class="bot">3</span></span></span>= ?</div>
       <div class="opts"><button class="opt">3 ו-2/6</button><button class="opt">3 ו-2/3</button><button class="opt">2 ו-2/3</button></div>
+      <div class="feedback"></div>
+    </div>
+    <div class="q" data-answer="1">
+      <div class="qtext"><span class="frac"><span class="top">2</span><span class="bot">9</span></span>+<span class="frac"><span class="top">5</span><span class="bot">9</span></span>= ?</div>
+      <div class="opts"><button class="opt">7/18</button><button class="opt">7/9</button><button class="opt">3/9</button></div>
+      <div class="feedback"></div>
+    </div>
+    <div class="q" data-answer="0">
+      <div class="qtext"><span class="frac"><span class="top">5</span><span class="bot">8</span></span>−<span class="frac"><span class="top">2</span><span class="bot">8</span></span>= ?</div>
+      <div class="opts"><button class="opt">3/8</button><button class="opt">3/16</button><button class="opt">7/8</button></div>
+      <div class="feedback"></div>
+    </div>
+    <div class="q" data-answer="1">
+      <div class="qtext"><span class="frac"><span class="top">1</span><span class="bot">3</span></span>+<span class="frac"><span class="top">1</span><span class="bot">6</span></span>= ? &nbsp;(מכנה משותף 6)</div>
+      <div class="opts"><button class="opt">2/9</button><button class="opt">1/2</button><button class="opt">2/6</button></div>
       <div class="feedback"></div>
     </div>
   </div>
@@ -850,6 +1016,96 @@
   </div>
 </section>
 
+<!-- ============ פרק: יחס ופרופורציה ============ -->
+<section class="chapter c17" id="ch17">
+  <div class="chapter-head"><div class="chapter-num">6</div><h2>יחס ופרופורציה ⚗️</h2></div>
+
+  <div class="card">
+    <p class="lead"><span class="word">יחס</span> הוא דרך להשוות כמויות — כמה יש מדבר אחד מול דבר אחר. אם במסיבה יש 2 מפלצות סגולות מול 3 כתומות, היחס הוא <b dir="ltr">2:3</b>! 👾🟠</p>
+    <div class="tip"><span class="big">🔗</span><div>יחס קשור קשר הדוק לשברים! <span class="mono">2:3</span> אפשר לכתוב גם כ-<span class="mono">2/3</span>. כל מה שלמדתם על שברים עוזר גם כאן!</div></div>
+  </div>
+
+  <div class="card">
+    <h3>🍋 יחסים שקולים — כמו שברים שקולים</h3>
+    <p>מכפילים או מחלקים את <b>שני</b> הצדדים באותו מספר, והיחס נשאר אותו יחס:</p>
+    <div class="eq" dir="ltr"><b style="color:var(--bubble)">2:3</b> = <b style="color:var(--sky)">4:6</b> = <b style="color:var(--lime)">6:9</b></div>
+    <div class="example-box">
+      <span class="tag">מתכון לימונדה 🍋</span>
+      <p style="font-weight:700">היחס הוא 1 כוס סוכר ל-4 כוסות מים (<span class="mono">1:4</span>). רוצים כמות כפולה?</p>
+      <ol class="steps">
+        <li>כופלים את שניהם ב-2</li>
+        <li>‏2 כוסות סוכר ל-8 כוסות מים (<span class="mono">2:8</span>) — אותו טעם בדיוק! 🍋</li>
+      </ol>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>✂️ לצמצם יחס</h3>
+    <p>בדיוק כמו בשברים — מחלקים את שני הצדדים בגורם משותף כדי לקבל את היחס הכי פשוט.</p>
+    <div class="eq" dir="ltr"><b>10:15</b> → מחלקים ב-5 → <b style="color:var(--lime)">2:3</b></div>
+    <div class="tip"><span class="big">🔢</span><div>זוכרים גורמים משותפים מפרק 2? כאן הם עובדים בשבילכם שוב! 🐲</div></div>
+  </div>
+
+  <div class="card">
+    <h3>⚖️ פרופורציה — למצוא את החלק החסר <span class="level hard">אתגר</span></h3>
+    <p><b>פרופורציה</b> אומרת ששני יחסים שווים. מוצאים מספר חסר בשאלה פשוטה: "פי כמה גדל?"</p>
+    <div class="example-box">
+      <span class="tag">דוגמה 🦕</span>
+      <p style="font-weight:700;text-align:center"><span class="mono">2 : 3 = 8 : ?</span></p>
+      <ol class="steps">
+        <li>איך 2 הפך ל-8? כפלנו ב-<b>4</b>!</li>
+        <li>אז כופלים גם את 3 ב-4</li>
+        <li><span class="mono">3 × 4 = 12</span> → התשובה: <b style="color:var(--lime)">2:3 = 8:12</b> 🎉</li>
+      </ol>
+    </div>
+    <div class="tip"><span class="big">🗺️</span><div>ככה עובדות מפות! "1 ס״מ במפה = 100 מטר במציאות". פרופורציות נמצאות בבישול, במפות ובהגדלת תמונות!</div></div>
+  </div>
+
+  <div class="quiz">
+    <div class="qhead">🎯 משימת בזק</div>
+    <div class="q" data-answer="1">
+      <div class="qtext">היחס בין 3 תפוחים ל-5 בננות הוא… 🍎🍌</div>
+      <div class="opts"><button class="opt" dir="ltr">5:3</button><button class="opt" dir="ltr">3:5</button><button class="opt">8</button></div>
+      <div class="feedback"></div>
+    </div>
+    <div class="q" data-answer="0">
+      <div class="qtext">איזה יחס <b>שקול</b> ל-<b dir="ltr">1:2</b>?</div>
+      <div class="opts"><button class="opt" dir="ltr">2:4</button><button class="opt" dir="ltr">2:1</button><button class="opt" dir="ltr">1:3</button></div>
+      <div class="feedback"></div>
+    </div>
+    <div class="q" data-answer="1">
+      <div class="qtext">צמצמו את היחס <b dir="ltr">4:8</b></div>
+      <div class="opts"><button class="opt" dir="ltr">4:8</button><button class="opt" dir="ltr">1:2</button><button class="opt" dir="ltr">2:1</button></div>
+      <div class="feedback"></div>
+    </div>
+    <div class="q" data-answer="0">
+      <div class="qtext">השלימו: <b dir="ltr">2:3 = 6:?</b></div>
+      <div class="opts"><button class="opt">9</button><button class="opt">6</button><button class="opt">12</button></div>
+      <div class="feedback"></div>
+    </div>
+    <div class="q" data-answer="0">
+      <div class="qtext">צמצמו את היחס <b dir="ltr">6:9</b></div>
+      <div class="opts"><button class="opt" dir="ltr">2:3</button><button class="opt" dir="ltr">3:2</button><button class="opt" dir="ltr">6:9</button></div>
+      <div class="feedback"></div>
+    </div>
+    <div class="q" data-answer="1">
+      <div class="qtext">השלימו: <b dir="ltr">1:3 = 4:?</b></div>
+      <div class="opts"><button class="opt">7</button><button class="opt">12</button><button class="opt">3</button></div>
+      <div class="feedback"></div>
+    </div>
+    <div class="q" data-answer="2">
+      <div class="qtext">לימונדה 1:4 (סוכר:מים). מכפילים פי 3 — כמה מים ל-3 כוסות סוכר?</div>
+      <div class="opts"><button class="opt">4</button><button class="opt">8</button><button class="opt">12</button></div>
+      <div class="feedback"></div>
+    </div>
+    <div class="q" data-answer="0">
+      <div class="qtext">בכיתה 2 כלבים ל-4 חתולים. מה היחס המצומצם? 🐶🐱</div>
+      <div class="opts"><button class="opt" dir="ltr">1:2</button><button class="opt" dir="ltr">2:4</button><button class="opt" dir="ltr">2:1</button></div>
+      <div class="feedback"></div>
+    </div>
+  </div>
+</section>
+
 <!-- ============ פרק 5: מספרים שליליים ============ -->
 <section class="chapter c12" id="ch12">
   <div class="chapter-head"><div class="chapter-num">5</div><h2>מספרים שליליים ❄️</h2></div>
@@ -933,6 +1189,21 @@
     <div class="q" data-answer="0">
       <div class="qtext">כמה זה <b dir="ltr">−8 + 8</b>?</div>
       <div class="opts"><button class="opt">0</button><button class="opt">16</button><button class="opt">−16</button></div>
+      <div class="feedback"></div>
+    </div>
+    <div class="q" data-answer="0">
+      <div class="qtext">כמה זה <b dir="ltr">−2 − 5</b>?</div>
+      <div class="opts"><button class="opt">−7</button><button class="opt">−3</button><button class="opt">7</button></div>
+      <div class="feedback"></div>
+    </div>
+    <div class="q" data-answer="1">
+      <div class="qtext">כמה זה <b dir="ltr">(−4) × 3</b>?</div>
+      <div class="opts"><button class="opt">12</button><button class="opt">−12</button><button class="opt">−7</button></div>
+      <div class="feedback"></div>
+    </div>
+    <div class="q" data-answer="1">
+      <div class="qtext">כמה זה <b dir="ltr">−10 + 4</b>?</div>
+      <div class="opts"><button class="opt">6</button><button class="opt">−6</button><button class="opt">−14</button></div>
       <div class="feedback"></div>
     </div>
   </div>
@@ -1038,9 +1309,89 @@
   </div>
 </section>
 
+<!-- ============ פרק: חזקות ושורשים ============ -->
+<section class="chapter c18" id="ch18">
+  <div class="chapter-head"><div class="chapter-num">9</div><h2>חזקות ושורשים ⚡</h2></div>
+
+  <div class="card">
+    <p class="lead"><span class="word">חזקה</span> היא קיצור לכפל חוזר! במקום לכתוב <span class="mono">2×2×2</span>, כותבים <span class="mono">2³</span>. המספר הקטן למעלה סופר כמה פעמים לכפול. ⚡</p>
+    <div class="eq" style="font-size:1.5rem" dir="ltr">2³ = 2×2×2 = <b style="color:var(--lime)">8</b></div>
+    <p style="text-align:center;font-weight:700"><b style="color:var(--bubble)">2</b> = הבסיס (מה כופלים) · <b style="color:var(--sky)">3</b> = המעריך (כמה פעמים)</p>
+    <div class="tip"><span class="big">⚠️</span><div><b>לא להתבלבל!</b> <span class="mono">2³</span> זה <b>לא</b> 2×3=6. זה 2×2×2=8. המעריך אומר כמה <b>פעמים</b>, לא במה לכפול!</div></div>
+  </div>
+
+  <div class="card">
+    <h3>🟦 ריבועים — החזקה הכי נפוצה</h3>
+    <p>"בריבוע" = בחזקת 2. קוראים לזה ריבוע כי זה בדיוק השטח של ריבוע עם צלע כזאת!</p>
+    <div class="eq" style="flex-wrap:wrap">1²=1 · 2²=4 · 3²=9 · 4²=16 · 5²=25</div>
+    <div class="tip"><span class="big">🟦</span><div>ריבוע עם צלע 3 מכיל <span class="mono">3×3 = 9</span> משבצות. לכן <span class="mono">3² = 9</span>! 📐</div></div>
+  </div>
+
+  <div class="card">
+    <h3>🔙 שורש ריבועי — הפעולה ההפוכה</h3>
+    <p><span class="word2">שורש ריבועי</span> (הסימן <span class="mono">√</span>) שואל את השאלה ההפוכה: "איזה מספר בריבוע נותן את זה?"</p>
+    <div class="eq" style="font-size:1.5rem" dir="ltr">√9 = <b style="color:var(--lime)">3</b> &nbsp;(כי 3² = 9)</div>
+    <div class="tip"><span class="big">🔑</span><div>חזקה ושורש הם כמו נעילה ומפתח: <span class="mono">3² = 9</span> נועל, ו-<span class="mono">√9 = 3</span> פותח בחזרה! 🐙</div></div>
+  </div>
+
+  <div class="card">
+    <h3>✨ עובדות חזקה שכדאי לדעת</h3>
+    <ul class="steps" style="counter-reset:none">
+      <li style="padding:12px">כל מספר בחזקת <b>1</b> = עצמו: <span class="mono">7¹ = 7</span></li>
+      <li style="padding:12px">כל מספר (חוץ מ-0) בחזקת <b>0</b> = <b>1</b>: <span class="mono">5⁰ = 1</span> 🤯</li>
+      <li style="padding:12px"><span class="mono">10² = 100</span>, <span class="mono">10³ = 1000</span> — מספר האפסים = המעריך!</li>
+    </ul>
+    <div class="tip"><span class="big">🚦</span><div>זוכרים את "סחכח" מפרק 8? חזקות באות <b>אחרי</b> סוגריים אבל <b>לפני</b> כפל — הן חשובות בסדר הפעולות!</div></div>
+  </div>
+
+  <div class="quiz">
+    <div class="qhead">🎯 משימת בזק</div>
+    <div class="q" data-answer="1">
+      <div class="qtext">כמה זה <b dir="ltr">2³</b>?</div>
+      <div class="opts"><button class="opt">6</button><button class="opt">8</button><button class="opt">9</button></div>
+      <div class="feedback"></div>
+    </div>
+    <div class="q" data-answer="1">
+      <div class="qtext">כמה זה <b dir="ltr">3²</b>?</div>
+      <div class="opts"><button class="opt">6</button><button class="opt">9</button><button class="opt">5</button></div>
+      <div class="feedback"></div>
+    </div>
+    <div class="q" data-answer="1">
+      <div class="qtext">כמה זה <b dir="ltr">5²</b>?</div>
+      <div class="opts"><button class="opt">10</button><button class="opt">25</button><button class="opt">7</button></div>
+      <div class="feedback"></div>
+    </div>
+    <div class="q" data-answer="0">
+      <div class="qtext">כמה זה <b dir="ltr">√16</b>?</div>
+      <div class="opts"><button class="opt">4</button><button class="opt">8</button><button class="opt">256</button></div>
+      <div class="feedback"></div>
+    </div>
+    <div class="q" data-answer="2">
+      <div class="qtext">כמה זה <b dir="ltr">10³</b>?</div>
+      <div class="opts"><button class="opt">30</button><button class="opt">100</button><button class="opt">1000</button></div>
+      <div class="feedback"></div>
+    </div>
+    <div class="q" data-answer="1">
+      <div class="qtext">כמה זה <b dir="ltr">4²</b>?</div>
+      <div class="opts"><button class="opt">8</button><button class="opt">16</button><button class="opt">6</button></div>
+      <div class="feedback"></div>
+    </div>
+    <div class="q" data-answer="0">
+      <div class="qtext">כמה זה <b dir="ltr">√25</b>?</div>
+      <div class="opts"><button class="opt">5</button><button class="opt">12</button><button class="opt">625</button></div>
+      <div class="feedback"></div>
+    </div>
+    <div class="q" data-answer="1">
+      <div class="qtext">מה המשמעות של <b dir="ltr">2⁴</b>?</div>
+      <div class="opts"><button class="opt" dir="ltr">2×4</button><button class="opt" dir="ltr">2×2×2×2</button><button class="opt" dir="ltr">4×4</button></div>
+      <div class="feedback"></div>
+    </div>
+  </div>
+</section>
+
 <!-- ============ פרק 7 ============ -->
 <section class="chapter c4" id="ch4">
-  <div class="chapter-head"><div class="chapter-num">7</div><h2>היכרות עם נעלמים 🔍</h2></div>
+  <div class="chapter-head"><div class="chapter-num">10</div><h2>היכרות עם נעלמים 🔍</h2></div>
 
   <div class="card">
     <p class="lead">נעלם הוא <span class="word4">קופסה מסתורית</span> 📦 שמסתירה בתוכה מספר סודי. בדרך כלל קוראים לו <b style="color:var(--tangerine)">x</b>.</p>
@@ -1122,6 +1473,21 @@
     <div class="q" data-answer="2">
       <div class="qtext">מה המשמעות של <b dir="ltr">x²</b>?</div>
       <div class="opts"><button class="opt">x + 2</button><button class="opt">2x</button><button class="opt">x כפול x</button></div>
+      <div class="feedback"></div>
+    </div>
+    <div class="q" data-answer="0">
+      <div class="qtext">אחדו: <b dir="ltr">7x − 3x</b></div>
+      <div class="opts"><button class="opt">4x</button><button class="opt">10x</button><button class="opt">4</button></div>
+      <div class="feedback"></div>
+    </div>
+    <div class="q" data-answer="1">
+      <div class="qtext">אחדו: <b dir="ltr">2x + 3 + x</b></div>
+      <div class="opts"><button class="opt">6x</button><button class="opt">3x + 3</button><button class="opt">5x</button></div>
+      <div class="feedback"></div>
+    </div>
+    <div class="q" data-answer="1">
+      <div class="qtext">איך כותבים <b dir="ltr">5 × y</b> בקיצור?</div>
+      <div class="opts"><button class="opt" dir="ltr">5 + y</button><button class="opt" dir="ltr">5y</button><button class="opt" dir="ltr">y⁵</button></div>
       <div class="feedback"></div>
     </div>
   </div>
@@ -1514,6 +1880,21 @@
       <div class="opts"><button class="opt">4</button><button class="opt">2</button><button class="opt">3</button></div>
       <div class="feedback"></div>
     </div>
+    <div class="q" data-answer="0">
+      <div class="qtext">פתרו: <span dir="ltr">7x = 2x + 15</span></div>
+      <div class="opts"><button class="opt">x = 3</button><button class="opt">x = 5</button><button class="opt">x = 15</button></div>
+      <div class="feedback"></div>
+    </div>
+    <div class="q" data-answer="1">
+      <div class="qtext">פתרו: <span dir="ltr">4x + 5 = 2x + 13</span></div>
+      <div class="opts"><button class="opt">x = 3</button><button class="opt">x = 4</button><button class="opt">x = 5</button></div>
+      <div class="feedback"></div>
+    </div>
+    <div class="q" data-answer="2">
+      <div class="qtext">כדי לנקות <span dir="ltr" style="display:inline-flex;align-items:center;gap:4px"><span class="frac"><span class="top">x</span><span class="bot">2</span></span> + 3 = 7</span> — כופלים כל איבר ב-2. מה מקבלים?</div>
+      <div class="opts"><button class="opt" dir="ltr">x + 3 = 7</button><button class="opt" dir="ltr">x + 3 = 14</button><button class="opt" dir="ltr">x + 6 = 14</button></div>
+      <div class="feedback"></div>
+    </div>
   </div>
 </section>
 
@@ -1834,6 +2215,21 @@
       <div class="opts"><button class="opt">4</button><button class="opt">1</button><button class="opt">7</button></div>
       <div class="feedback"></div>
     </div>
+    <div class="q" data-answer="0">
+      <div class="qtext">פתרו: <b dir="ltr">x − 3 &gt; 2</b></div>
+      <div class="opts"><button class="opt" dir="ltr">x &gt; 5</button><button class="opt" dir="ltr">x &gt; 1</button><button class="opt" dir="ltr">x &lt; 5</button></div>
+      <div class="feedback"></div>
+    </div>
+    <div class="q" data-answer="2">
+      <div class="qtext">איזה סימן נכון? <b dir="ltr">6 __ 6</b></div>
+      <div class="opts"><button class="opt">&gt;</button><button class="opt">&lt;</button><button class="opt">=</button></div>
+      <div class="feedback"></div>
+    </div>
+    <div class="q" data-answer="0">
+      <div class="qtext">פתרו: <b dir="ltr">3x &gt; 12</b></div>
+      <div class="opts"><button class="opt" dir="ltr">x &gt; 4</button><button class="opt" dir="ltr">x &gt; 36</button><button class="opt" dir="ltr">x &lt; 4</button></div>
+      <div class="feedback"></div>
+    </div>
   </div>
 </section>
 
@@ -1933,6 +2329,35 @@
     <div class="q" data-answer="2">
       <div class="qtext">כמה זה <b dir="ltr">(−2) × (−6)</b>?</div>
       <div class="opts"><button class="opt">−12</button><button class="opt">−8</button><button class="opt">12</button></div>
+      <div class="feedback"></div>
+    </div>
+  </div>
+
+  <div class="quiz">
+    <div class="qhead">⚔️ סבב 5 — מאסטר המספרים (גורמים, יחס, חזקות!) 🌟</div>
+    <div class="q" data-answer="1">
+      <div class="qtext">איזה מספר הוא <b>ראשוני</b>?</div>
+      <div class="opts"><button class="opt">21</button><button class="opt">23</button><button class="opt">25</button></div>
+      <div class="feedback"></div>
+    </div>
+    <div class="q" data-answer="0">
+      <div class="qtext">צמצמו את היחס <b dir="ltr">8:12</b></div>
+      <div class="opts"><button class="opt" dir="ltr">2:3</button><button class="opt" dir="ltr">4:6</button><button class="opt" dir="ltr">8:12</button></div>
+      <div class="feedback"></div>
+    </div>
+    <div class="q" data-answer="0">
+      <div class="qtext">כמה זה <b dir="ltr">√36</b>?</div>
+      <div class="opts"><button class="opt">6</button><button class="opt">18</button><button class="opt">1296</button></div>
+      <div class="feedback"></div>
+    </div>
+    <div class="q" data-answer="1">
+      <div class="qtext">כמה זה <b dir="ltr">2³ + 1</b>?</div>
+      <div class="opts"><button class="opt">7</button><button class="opt">9</button><button class="opt">8</button></div>
+      <div class="feedback"></div>
+    </div>
+    <div class="q" data-answer="1">
+      <div class="qtext">הכפולה המשותפת הקטנה של 2 ו-5?</div>
+      <div class="opts"><button class="opt">7</button><button class="opt">10</button><button class="opt">20</button></div>
       <div class="feedback"></div>
     </div>
   </div>
@@ -2116,6 +2541,36 @@
         <li>כפל/חילוק בשלילי → הופכים סימן!</li>
       </ul>
     </div>
+
+    <div class="cheat b3">
+      <h4>🔢 גורמים, כפולות, ראשוניים</h4>
+      <ul>
+        <li>גורם = מתחלק במספר בדיוק</li>
+        <li>כפולה = לוח הכפל (גדל בלי סוף)</li>
+        <li>ראשוני = בדיוק 2 גורמים (1 ועצמו)</li>
+        <li>מכנה משותף = כפולה משותפת</li>
+      </ul>
+    </div>
+
+    <div class="cheat b1">
+      <h4>⚗️ יחס ופרופורציה</h4>
+      <ul>
+        <li>יחס משווה כמויות: <span class="mono">2:3</span></li>
+        <li>אפשר לכתוב גם כשבר <span class="mono">2/3</span></li>
+        <li>שקול: כופלים/מחלקים שני הצדדים</li>
+        <li>חסר? "פי כמה גדל?" ותעשו לשני</li>
+      </ul>
+    </div>
+
+    <div class="cheat b6">
+      <h4>⚡ חזקות ושורשים</h4>
+      <ul>
+        <li><span class="mono">2³ = 2×2×2 = 8</span> (לא 2×3!)</li>
+        <li>בסיס = מה כופלים · מעריך = כמה פעמים</li>
+        <li>ריבועים: 1,4,9,16,25…</li>
+        <li>שורש = הפעולה ההפוכה: <span class="mono">√9=3</span></li>
+      </ul>
+    </div>
   </div>
 
   <div class="card" style="margin-top:22px;background:linear-gradient(135deg,#ede4ff,#ffe3f0);text-align:center">
@@ -2132,14 +2587,12 @@
 
 </main>
 
-<div class="scorebar">⭐ <span id="score">0</span> כוכבים!</div>
-
 <footer>נוצר עבור מתמטיקאים צעירים וסקרנים 🧮 · תמשיכו לחקור, תמשיכו לגדול!</footer>
 
 <script>
 /* ---------- דודלים מרחפים ---------- */
 const emojis=['➕','➖','✖️','➗','🔢','🍕','📦','⭐','🧮','½','⅓','¾'];
-for(let i=0;i<14;i++){
+for(let i=0;i<8;i++){
   const d=document.createElement('div');
   d.className='doodle';d.textContent=emojis[i%emojis.length];
   d.style.left=Math.random()*95+'vw';
@@ -2149,16 +2602,102 @@ for(let i=0;i<14;i++){
   document.body.appendChild(d);
 }
 
-/* ---------- ניווט טאבים ---------- */
-document.querySelectorAll('.tab').forEach(tab=>{
-  tab.addEventListener('click',()=>{
-    document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
-    document.querySelectorAll('.chapter').forEach(c=>c.classList.remove('show'));
-    tab.classList.add('active');
-    document.getElementById(tab.dataset.target).classList.add('show');
-    window.scrollTo({top:0,behavior:'smooth'});
+/* ---------- ניווט פרקים: מגירה + קדימה/אחורה ---------- */
+const CHAPTERS=[
+  {id:'ch1', emoji:'🍕', title:'שברים 101',                 color:'#ff5da2'},
+  {id:'ch16',emoji:'🔢', title:'גורמים, כפולות וראשוניים',   color:'#00b894'},
+  {id:'ch2', emoji:'➕', title:'חיבור וחיסור שברים',          color:'#4cc9f0'},
+  {id:'ch3', emoji:'✖️', title:'כפל וחילוק שברים',           color:'#3ddc97'},
+  {id:'ch11',emoji:'💯', title:'עשרוניים ואחוזים',           color:'#0984e3'},
+  {id:'ch17',emoji:'⚗️', title:'יחס ופרופורציה',             color:'#e84393'},
+  {id:'ch12',emoji:'❄️', title:'מספרים שליליים',             color:'#6c5ce7'},
+  {id:'ch13',emoji:'🚦', title:'סדר פעולות',                 color:'#d63031'},
+  {id:'ch18',emoji:'⚡', title:'חזקות ושורשים',              color:'#f6b93b'},
+  {id:'ch4', emoji:'🔍', title:'היכרות עם נעלמים',           color:'#ff8c42'},
+  {id:'ch5', emoji:'⚖️', title:'פתרון עבור X',               color:'#7c3aed'},
+  {id:'ch6', emoji:'🧩', title:'לכל האיברים',                color:'#e84393'},
+  {id:'ch7', emoji:'🎁', title:'סוגריים וחלוקה',             color:'#f6b93b'},
+  {id:'ch8', emoji:'📖', title:'חידות מילוליות',             color:'#00b894'},
+  {id:'ch14',emoji:'🐊', title:'אי-שוויונות',                color:'#00cec9'},
+  {id:'ch9', emoji:'🏆', title:'אתגר המפלצת הסופי',          color:'#e17055'},
+];
+const UTILITIES=[
+  {id:'ch15',emoji:'🏅', title:'לוח התוצאות',                color:'#fdcb6e'},
+  {id:'ch10',emoji:'📋', title:'דף עזר',                     color:'#ffd23f'},
+];
+const NAV=[...CHAPTERS,...UTILITIES];
+const LIGHT=['#fdcb6e','#ffd23f','#f6b93b','#3ddc97'];        // צבעים בהירים → טקסט כהה
+
+/* מספור אוטומטי של כותרות הפרקים (מקור אמת אחד — הסדר במערך) */
+CHAPTERS.forEach((c,i)=>{const n=document.querySelector('#'+c.id+' .chapter-num');if(n)n.textContent=i+1;});
+UTILITIES.forEach(c=>{const n=document.querySelector('#'+c.id+' .chapter-num');if(n)n.textContent=c.emoji;});
+
+const drawer=document.getElementById('drawer');
+const backdrop=document.getElementById('drawerBackdrop');
+const drawerBody=document.getElementById('drawerBody');
+const topbarCurrent=document.getElementById('topbarCurrent');
+
+function chLabel(id){
+  const i=CHAPTERS.findIndex(c=>c.id===id);
+  const item=NAV.find(c=>c.id===id);
+  if(!item) return '';
+  return i>=0 ? '<b>פרק '+(i+1)+'</b> · '+item.emoji+' '+item.title
+              : item.emoji+' '+item.title;
+}
+function drawerItem(c,badge){
+  const dark=LIGHT.includes(c.color)?';color:var(--ink)':'';
+  return '<button class="ch-item" data-id="'+c.id+'">'+
+           '<span class="ch-badge" style="background:'+c.color+dark+'">'+badge+'</span>'+
+           '<span class="ch-emoji">'+c.emoji+'</span>'+
+           '<span class="ch-title">'+c.title+'</span></button>';
+}
+function buildDrawer(){
+  let html='<div class="drawer-section-label">📚 פרקי לימוד</div>';
+  CHAPTERS.forEach((c,i)=>{html+=drawerItem(c,i+1);});
+  html+='<div class="drawer-section-label">🛠️ כלים שימושיים</div>';
+  UTILITIES.forEach(c=>{html+=drawerItem(c,c.emoji);});
+  drawerBody.innerHTML=html;
+  drawerBody.querySelectorAll('.ch-item').forEach(el=>el.addEventListener('click',()=>goToChapter(el.dataset.id)));
+}
+function buildChapterNav(){
+  NAV.forEach((c,idx)=>{
+    const sec=document.getElementById(c.id);
+    if(!sec) return;
+    const prev=idx>0?NAV[idx-1]:null;
+    const next=idx<NAV.length-1?NAV[idx+1]:null;
+    const nav=document.createElement('div');
+    nav.className='chapter-nav';
+    nav.innerHTML=
+      (prev?'<button data-go="'+prev.id+'"><span class="cn-dir">➡️ הקודם</span><span class="cn-name">'+prev.emoji+' '+prev.title+'</span></button>'
+          :'<button disabled><span class="cn-dir">➡️ הקודם</span><span class="cn-name">— זו ההתחלה —</span></button>')+
+      (next?'<button data-go="'+next.id+'"><span class="cn-dir">הבא ⬅️</span><span class="cn-name">'+next.emoji+' '+next.title+'</span></button>'
+          :'<button disabled><span class="cn-dir">הבא ⬅️</span><span class="cn-name">— סיימתם הכול! 🎉 —</span></button>');
+    sec.appendChild(nav);
+    nav.querySelectorAll('button[data-go]').forEach(b=>b.addEventListener('click',()=>goToChapter(b.dataset.go)));
   });
-});
+}
+function goToChapter(id){
+  const target=document.getElementById(id);
+  if(!target) return;
+  document.querySelectorAll('.chapter').forEach(c=>c.classList.remove('show'));
+  target.classList.add('show');
+  topbarCurrent.innerHTML=chLabel(id);
+  drawerBody.querySelectorAll('.ch-item').forEach(el=>el.classList.toggle('active',el.dataset.id===id));
+  closeMenu();
+  window.scrollTo({top:0,behavior:'smooth'});
+  if(id==='ch15'){if(typeof updateMyScore==='function')updateMyScore();if(typeof loadLeaderboard==='function')loadLeaderboard();}
+}
+function openMenu(){drawer.classList.add('open');backdrop.classList.add('open');drawer.setAttribute('aria-hidden','false');}
+function closeMenu(){drawer.classList.remove('open');backdrop.classList.remove('open');drawer.setAttribute('aria-hidden','true');}
+
+document.getElementById('menuBtn').addEventListener('click',openMenu);
+document.getElementById('drawerClose').addEventListener('click',closeMenu);
+backdrop.addEventListener('click',closeMenu);
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeMenu();});
+
+buildDrawer();
+buildChapterNav();
+goToChapter('ch1');
 
 /* ---------- ניקוד ---------- */
 let score=0;
@@ -2519,8 +3058,6 @@ async function submitScore(){
   if(saved){const el=document.getElementById('lbName'); if(el) el.value=saved;}
   updateMyScore();
 })();
-const lbTab=document.querySelector('.tab[data-target="ch15"]');
-if(lbTab) lbTab.addEventListener('click',()=>{updateMyScore();loadLeaderboard();});
 </script>
 </body>
 </html>
