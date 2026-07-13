@@ -82,7 +82,12 @@
   .tab[data-c="7"].active{background:#f6b93b;color:var(--ink)}
   .tab[data-c="8"].active{background:#00b894}
   .tab[data-c="9"].active{background:#e17055}
-  .tab[data-c="10"].active{background:var(--sunny);color:var(--ink)}
+  .tab[data-c="10"].active{background:#0984e3}
+  .tab[data-c="11"].active{background:#6c5ce7}
+  .tab[data-c="12"].active{background:#d63031}
+  .tab[data-c="13"].active{background:#00cec9}
+  .tab[data-c="14"].active{background:#e84393}
+  .tab[data-c="15"].active{background:var(--sunny);color:var(--ink)}
 
   main{position:relative;z-index:2;max-width:940px;margin:0 auto;padding:30px 18px 90px}
   .chapter{display:none;animation:pop .4s ease}
@@ -100,6 +105,9 @@
   .c5 .chapter-num{background:var(--grape)} .c6 .chapter-num{background:#e84393}
   .c7 .chapter-num{background:#f6b93b;color:var(--ink)} .c8 .chapter-num{background:#00b894}
   .c9 .chapter-num{background:#e17055} .c10 .chapter-num{background:var(--sunny);color:var(--ink)}
+  .c11 .chapter-num{background:#0984e3} .c12 .chapter-num{background:#6c5ce7}
+  .c13 .chapter-num{background:#d63031} .c14 .chapter-num{background:#00cec9}
+  .c15 .chapter-num{background:#fdcb6e;color:var(--ink)}
   .chapter-head h2{font-family:'Baloo 2';font-weight:800;font-size:clamp(1.5rem,5vw,2.4rem);color:var(--grape-deep)}
 
   .card{
@@ -272,6 +280,19 @@
   .level{display:inline-block;font-family:'Varela Round';font-weight:600;font-size:.82rem;padding:2px 12px;border-radius:999px;border:2px solid var(--ink);margin-inline-start:8px;vertical-align:middle}
   .level.easy{background:#d5f5e3}.level.mid{background:#fdebd0}.level.hard{background:#fadbd8}
 
+  /* ---- לוח תוצאות ---- */
+  .lb-name-row{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin:14px 0}
+  .lb-name-row input{font-family:'Fredoka';font-weight:600;font-size:1.1rem;padding:10px 14px;border:3px solid var(--ink);border-radius:12px;min-width:170px}
+  .lb-table{width:100%;border-collapse:separate;border-spacing:0 8px;margin-top:10px}
+  .lb-table td{background:var(--cream);border:3px solid var(--ink);padding:10px 14px;font-weight:700;font-size:1.08rem}
+  .lb-table tr td:first-child{border-radius:0 14px 14px 0;text-align:center;width:56px;font-family:'Baloo 2';font-size:1.2rem}
+  .lb-table tr td:last-child{border-radius:14px 0 0 14px;text-align:center;width:90px;color:var(--grape-deep);font-family:'Fredoka'}
+  .lb-table tr.me td{background:#fff3d1;border-color:var(--tangerine)}
+  .lb-table tr.rank1 td:first-child{background:#ffe08a}
+  .lb-table tr.rank2 td:first-child{background:#e8ecef}
+  .lb-table tr.rank3 td:first-child{background:#f3d1b0}
+  .lb-status{font-weight:600;margin-top:12px;min-height:1.4em}
+
   @media(max-width:520px){
     .card{padding:18px}
     .chapter-num{min-width:52px;height:52px;font-size:1.5rem}
@@ -294,13 +315,18 @@
   <div class="tab active" data-c="1" data-target="ch1"><span class="tnum">1</span>🍕 שברים 101</div>
   <div class="tab" data-c="2" data-target="ch2"><span class="tnum">2</span>➕ חיבור וחיסור</div>
   <div class="tab" data-c="3" data-target="ch3"><span class="tnum">3</span>✖️ כפל וחילוק</div>
-  <div class="tab" data-c="4" data-target="ch4"><span class="tnum">4</span>🔍 היכרות עם נעלמים</div>
-  <div class="tab" data-c="5" data-target="ch5"><span class="tnum">5</span>⚖️ פתרון עבור X</div>
-  <div class="tab" data-c="6" data-target="ch6"><span class="tnum">6</span>🧩 לכל האיברים!</div>
-  <div class="tab" data-c="7" data-target="ch7"><span class="tnum">7</span>🎁 סוגריים וחלוקה</div>
-  <div class="tab" data-c="8" data-target="ch8"><span class="tnum">8</span>📖 חידות מילוליות</div>
-  <div class="tab" data-c="9" data-target="ch9"><span class="tnum">9</span>🏆 אתגר המפלצת</div>
-  <div class="tab" data-c="10" data-target="ch10">📋 דף עזר</div>
+  <div class="tab" data-c="10" data-target="ch11"><span class="tnum">4</span>💯 עשרוניים ואחוזים</div>
+  <div class="tab" data-c="11" data-target="ch12"><span class="tnum">5</span>❄️ מספרים שליליים</div>
+  <div class="tab" data-c="12" data-target="ch13"><span class="tnum">6</span>🚦 סדר פעולות</div>
+  <div class="tab" data-c="4" data-target="ch4"><span class="tnum">7</span>🔍 היכרות עם נעלמים</div>
+  <div class="tab" data-c="5" data-target="ch5"><span class="tnum">8</span>⚖️ פתרון עבור X</div>
+  <div class="tab" data-c="6" data-target="ch6"><span class="tnum">9</span>🧩 לכל האיברים!</div>
+  <div class="tab" data-c="7" data-target="ch7"><span class="tnum">10</span>🎁 סוגריים וחלוקה</div>
+  <div class="tab" data-c="8" data-target="ch8"><span class="tnum">11</span>📖 חידות מילוליות</div>
+  <div class="tab" data-c="13" data-target="ch14"><span class="tnum">12</span>🐊 אי-שוויונות</div>
+  <div class="tab" data-c="9" data-target="ch9"><span class="tnum">13</span>🏆 אתגר המפלצת</div>
+  <div class="tab" data-c="15" data-target="ch15"><span class="tnum">14</span>🏅 לוח התוצאות</div>
+  <div class="tab" data-c="14" data-target="ch10"><span class="tnum">15</span>📋 דף עזר</div>
 </nav>
 
 <main>
@@ -459,6 +485,21 @@
     <div class="q" data-answer="0">
       <div class="qtext">כמה שלמים יש ב-<span class="frac"><span class="top">10</span><span class="bot">5</span></span>?</div>
       <div class="opts"><button class="opt">2</button><button class="opt">5</button><button class="opt">10</button></div>
+      <div class="feedback"></div>
+    </div>
+    <div class="q" data-answer="1">
+      <div class="qtext">צמצמו: <span class="frac"><span class="top">9</span><span class="bot">12</span></span></div>
+      <div class="opts"><button class="opt">1/2</button><button class="opt">3/4</button><button class="opt">9/12</button></div>
+      <div class="feedback"></div>
+    </div>
+    <div class="q" data-answer="2">
+      <div class="qtext">איזה שבר שקול ל-<span class="frac"><span class="top">2</span><span class="bot">5</span></span>?</div>
+      <div class="opts"><button class="opt">2/10</button><button class="opt">5/2</button><button class="opt">4/10</button></div>
+      <div class="feedback"></div>
+    </div>
+    <div class="q" data-answer="0">
+      <div class="qtext">כתבו כמספר מעורב: <span class="frac"><span class="top">9</span><span class="bot">2</span></span></div>
+      <div class="opts"><button class="opt">4 ו-1/2</button><button class="opt">2 ו-1/9</button><button class="opt">3 ו-1/2</button></div>
       <div class="feedback"></div>
     </div>
   </div>
@@ -677,12 +718,329 @@
       <div class="opts"><button class="opt">1/2</button><button class="opt">6/12</button><button class="opt">5/7</button></div>
       <div class="feedback"></div>
     </div>
+    <div class="q" data-answer="1">
+      <div class="qtext"><span class="frac"><span class="top">3</span><span class="bot">5</span></span>×<span class="frac"><span class="top">1</span><span class="bot">2</span></span>= ?</div>
+      <div class="opts"><button class="opt">4/7</button><button class="opt">3/10</button><button class="opt">3/7</button></div>
+      <div class="feedback"></div>
+    </div>
+    <div class="q" data-answer="2">
+      <div class="qtext">כמה זה <span class="frac"><span class="top">1</span><span class="bot">2</span></span> מתוך 8 עוגיות? 🍪</div>
+      <div class="opts"><button class="opt">2</button><button class="opt">16</button><button class="opt">4</button></div>
+      <div class="feedback"></div>
+    </div>
+    <div class="q" data-answer="0">
+      <div class="qtext"><span class="frac"><span class="top">2</span><span class="bot">3</span></span>÷<span class="frac"><span class="top">2</span><span class="bot">3</span></span>= ?</div>
+      <div class="opts"><button class="opt">1</button><button class="opt">0</button><button class="opt">4/9</button></div>
+      <div class="feedback"></div>
+    </div>
   </div>
 </section>
 
-<!-- ============ פרק 4 ============ -->
+<!-- ============ פרק 4: עשרוניים ואחוזים ============ -->
+<section class="chapter c11" id="ch11">
+  <div class="chapter-head"><div class="chapter-num">4</div><h2>עשרוניים ואחוזים 💯</h2></div>
+
+  <div class="card">
+    <p class="lead">מספר <span class="word">עשרוני</span> הוא עוד דרך לכתוב שבר — עם <b>נקודה</b> במקום קו! <span class="mono">0.5</span> זה בדיוק <span class="mono">1/2</span>. 🍕</p>
+    <div class="eq">
+      <span class="frac" style="color:var(--bubble)"><span class="top">1</span><span class="bot">2</span></span>=
+      <b style="color:var(--sky)">0.5</b>=
+      <b style="color:var(--lime)">50%</b>
+    </div>
+    <div class="tip"><span class="big">🔢</span><div><b>הכול אותו דבר!</b> שבר, עשרוני ואחוז הם שלוש שפות שמספרות את אותו סיפור — "חצי". גוזי אוהב שברים, זיפ אוהב עשרוניים, אבל שניהם מדברים על אותו גודל. 👾👽</div></div>
+  </div>
+
+  <div class="card">
+    <h3>📍 ערך המקום אחרי הנקודה</h3>
+    <p>המספרות אחרי הנקודה הן חלקים קטנים של השלם:</p>
+    <ul class="steps" style="counter-reset:none">
+      <li style="padding:12px"><b>הספרה הראשונה</b> = עשיריות (חלקי 10) → <span class="mono">0.3 = 3/10</span></li>
+      <li style="padding:12px"><b>הספרה השנייה</b> = מאיות (חלקי 100) → <span class="mono">0.07 = 7/100</span></li>
+    </ul>
+    <div class="tip"><span class="big">💰</span><div>חשבו על כסף: שקל שלם = 1, ו-0.50 ₪ = חצי שקל = חמישים אגורות. ה-"אגורות" הן המאיות! 🪙</div></div>
+  </div>
+
+  <div class="card">
+    <h3>🔄 להמיר בין השפות <span class="level mid">בינוני</span></h3>
+    <div class="cheatgrid" style="margin-top:14px">
+      <div class="cheat b3"><h4>שבר → עשרוני</h4><ul>
+        <li>מחלקים מונה במכנה</li>
+        <li><span class="mono">3/4 = 3 ÷ 4 = 0.75</span></li>
+      </ul></div>
+      <div class="cheat b2"><h4>עשרוני → אחוז</h4><ul>
+        <li>כופלים ב-100 (מזיזים נקודה 2 ימינה)</li>
+        <li><span class="mono">0.75 → 75%</span></li>
+      </ul></div>
+      <div class="cheat b4"><h4>אחוז → עשרוני</h4><ul>
+        <li>מחלקים ב-100</li>
+        <li><span class="mono">30% → 0.30</span></li>
+      </ul></div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>⭐ טבלת קסם — שווה לשנן!</h3>
+    <table class="lb-table" style="direction:rtl">
+      <tr><td>שבר</td><td>עשרוני</td><td>אחוז</td></tr>
+      <tr><td>1/2</td><td>0.5</td><td>50%</td></tr>
+      <tr><td>1/4</td><td>0.25</td><td>25%</td></tr>
+      <tr><td>3/4</td><td>0.75</td><td>75%</td></tr>
+      <tr><td>1/10</td><td>0.1</td><td>10%</td></tr>
+      <tr><td>1/5</td><td>0.2</td><td>20%</td></tr>
+    </table>
+  </div>
+
+  <div class="card">
+    <h3>🛍️ אחוז מתוך מספר — כמו הנחות בחנות!</h3>
+    <p>"אחוז" פירושו "מתוך 100". כדי למצוא אחוז ממספר: הופכים לעשרוני וכופלים.</p>
+    <div class="example-box">
+      <span class="tag">דוגמה 🦖</span>
+      <p style="font-weight:700;text-align:center">כמה זה 20% מתוך 50 ₪?</p>
+      <ol class="steps">
+        <li>‏20% = <span class="mono">0.2</span></li>
+        <li><span class="mono">0.2 × 50 = 10</span></li>
+        <li>תשובה: <b style="color:var(--lime)">10 ₪ הנחה!</b> 🛍️</li>
+      </ol>
+    </div>
+    <div class="tip"><span class="big">⚡</span><div><b>טריק מהיר ל-10%:</b> פשוט מזיזים נקודה ספרה אחת שמאלה! 10% מ-80 = 8. וכדי לקבל 20% — פשוט כופלים ב-2.</div></div>
+  </div>
+
+  <div class="quiz">
+    <div class="qhead">🎯 משימת בזק</div>
+    <div class="q" data-answer="1">
+      <div class="qtext">איזה עשרוני שווה ל-<span class="frac"><span class="top">1</span><span class="bot">4</span></span>?</div>
+      <div class="opts"><button class="opt">0.4</button><button class="opt">0.25</button><button class="opt">1.4</button></div>
+      <div class="feedback"></div>
+    </div>
+    <div class="q" data-answer="2">
+      <div class="qtext">כמה זה <b dir="ltr">0.5</b> באחוזים?</div>
+      <div class="opts"><button class="opt">5%</button><button class="opt">0.5%</button><button class="opt">50%</button></div>
+      <div class="feedback"></div>
+    </div>
+    <div class="q" data-answer="0">
+      <div class="qtext">כמה זה <b dir="ltr">0.7</b> כשבר?</div>
+      <div class="opts"><button class="opt">7/10</button><button class="opt">7/100</button><button class="opt">1/7</button></div>
+      <div class="feedback"></div>
+    </div>
+    <div class="q" data-answer="1">
+      <div class="qtext">‏25% זה כמו איזה שבר?</div>
+      <div class="opts"><button class="opt">1/2</button><button class="opt">1/4</button><button class="opt">1/25</button></div>
+      <div class="feedback"></div>
+    </div>
+    <div class="q" data-answer="2">
+      <div class="qtext">כמה זה 10% מתוך 90? 🪙</div>
+      <div class="opts"><button class="opt">1</button><button class="opt">90</button><button class="opt">9</button></div>
+      <div class="feedback"></div>
+    </div>
+    <div class="q" data-answer="0">
+      <div class="qtext">כמה זה 50% מתוך 30?</div>
+      <div class="opts"><button class="opt">15</button><button class="opt">60</button><button class="opt">5</button></div>
+      <div class="feedback"></div>
+    </div>
+    <div class="q" data-answer="1">
+      <div class="qtext">מי גדול יותר: <b dir="ltr">0.6</b> או <span class="frac"><span class="top">1</span><span class="bot">2</span></span>?</div>
+      <div class="opts"><button class="opt">1/2</button><button class="opt">0.6</button><button class="opt">שווים</button></div>
+      <div class="feedback"></div>
+    </div>
+    <div class="q" data-answer="2">
+      <div class="qtext">חולצה עולה 40 ₪ עם 25% הנחה. כמה חוסכים?</div>
+      <div class="opts"><button class="opt">4 ₪</button><button class="opt">25 ₪</button><button class="opt">10 ₪</button></div>
+      <div class="feedback"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ פרק 5: מספרים שליליים ============ -->
+<section class="chapter c12" id="ch12">
+  <div class="chapter-head"><div class="chapter-num">5</div><h2>מספרים שליליים ❄️</h2></div>
+
+  <div class="card">
+    <p class="lead">יש עולם שלם <span class="word">מתחת לאפס</span>! מספרים שליליים הם מה שקורה כשיורדים מתחת ל-0 — כמו טמפרטורה בחורף ❄️ או חוב בכסף 💸.</p>
+    <div class="numline" id="nlNeg"></div>
+    <div class="tip"><span class="big">🌡️</span><div>‏<b>−3</b> אומר "3 מתחת לאפס". ככל שהמספר השלילי גדול יותר במספרה — הוא בעצם <b>קטן</b> יותר! ‏−10 קר יותר מ-−2. 🥶</div></div>
+  </div>
+
+  <div class="card">
+    <h3>💸 מודל הכסף — הכי קל להבין</h3>
+    <p>חשבו על מספר חיובי ככסף <b>שיש לכם</b>, ושלילי ככסף <b>שאתם חייבים</b>:</p>
+    <ul class="steps" style="counter-reset:none">
+      <li style="padding:12px">יש לכם 5 ₪, אתם חייבים 8 ₪ → <span class="mono">5 − 8 = −3</span> (חייבים 3) 😬</li>
+      <li style="padding:12px">חייבים 3 ₪ ומקבלים 10 ₪ → <span class="mono">−3 + 10 = 7</span> (יש לכם 7!) 🤑</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h3>🔀 מינוס של מינוס = פלוס!</h3>
+    <p>כשמורידים חוב — זה כאילו נותנים לכם כסף! שני מינוסים צמודים הופכים לפלוס:</p>
+    <div class="eq" style="font-size:1.4rem" dir="ltr">
+      5 − (−3) = 5 + 3 = <b style="color:var(--lime)">8</b>
+    </div>
+    <div class="tip"><span class="big">🎬</span><div><b>כמו בסרט:</b> "אני <b>לא</b> אוהב <b>לא</b> לאכול גלידה" = אני אוהב לאכול גלידה! שני "לא" מבטלים זה את זה, בדיוק כמו שני מינוסים. 🍦👽</div></div>
+  </div>
+
+  <div class="card">
+    <h3>✖️ חוקי הסימנים בכפל <span class="level mid">בינוני</span></h3>
+    <div class="cheatgrid" style="margin-top:14px">
+      <div class="cheat b3"><h4>😀 תוצאה חיובית</h4><ul>
+        <li>חיובי × חיובי = חיובי &nbsp;<span class="mono">(+)(+)=+</span></li>
+        <li>שלילי × שלילי = חיובי &nbsp;<span class="mono">(−)(−)=+</span></li>
+      </ul></div>
+      <div class="cheat b1"><h4>☹️ תוצאה שלילית</h4><ul>
+        <li>חיובי × שלילי = שלילי &nbsp;<span class="mono">(+)(−)=−</span></li>
+        <li>שלילי × חיובי = שלילי &nbsp;<span class="mono">(−)(+)=−</span></li>
+      </ul></div>
+    </div>
+    <div class="tip"><span class="big">👫</span><div><b>כלל הזהב:</b> סימנים <b>שווים</b> = תוצאה חיובית 😊. סימנים <b>שונים</b> = תוצאה שלילית 😢. כמו חברים: אותו סוג מסתדרים, שונים רבים!</div></div>
+  </div>
+
+  <div class="quiz">
+    <div class="qhead">🎯 משימת בזק</div>
+    <div class="q" data-answer="2">
+      <div class="qtext">כמה זה <b dir="ltr">3 − 7</b>?</div>
+      <div class="opts"><button class="opt">4</button><button class="opt">10</button><button class="opt">−4</button></div>
+      <div class="feedback"></div>
+    </div>
+    <div class="q" data-answer="0">
+      <div class="qtext">כמה זה <b dir="ltr">−5 + 8</b>?</div>
+      <div class="opts"><button class="opt">3</button><button class="opt">−3</button><button class="opt">13</button></div>
+      <div class="feedback"></div>
+    </div>
+    <div class="q" data-answer="1">
+      <div class="qtext">מי <b>קר</b> יותר (קטן יותר)?</div>
+      <div class="opts"><button class="opt">−2</button><button class="opt">−9</button><button class="opt">0</button></div>
+      <div class="feedback"></div>
+    </div>
+    <div class="q" data-answer="2">
+      <div class="qtext">כמה זה <b dir="ltr">4 − (−2)</b>?</div>
+      <div class="opts"><button class="opt">2</button><button class="opt">−6</button><button class="opt">6</button></div>
+      <div class="feedback"></div>
+    </div>
+    <div class="q" data-answer="0">
+      <div class="qtext">כמה זה <b dir="ltr">(−3) × (−4)</b>?</div>
+      <div class="opts"><button class="opt">12</button><button class="opt">−12</button><button class="opt">−7</button></div>
+      <div class="feedback"></div>
+    </div>
+    <div class="q" data-answer="1">
+      <div class="qtext">כמה זה <b dir="ltr">(−5) × 2</b>?</div>
+      <div class="opts"><button class="opt">10</button><button class="opt">−10</button><button class="opt">−3</button></div>
+      <div class="feedback"></div>
+    </div>
+    <div class="q" data-answer="2">
+      <div class="qtext">חייבים 6 ₪ ומקבלים 4 ₪. מה המצב? 💸</div>
+      <div class="opts"><button class="opt">יש 2 ₪</button><button class="opt">יש 10 ₪</button><button class="opt">חייבים 2 ₪</button></div>
+      <div class="feedback"></div>
+    </div>
+    <div class="q" data-answer="0">
+      <div class="qtext">כמה זה <b dir="ltr">−8 + 8</b>?</div>
+      <div class="opts"><button class="opt">0</button><button class="opt">16</button><button class="opt">−16</button></div>
+      <div class="feedback"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ פרק 6: סדר פעולות ============ -->
+<section class="chapter c13" id="ch13">
+  <div class="chapter-head"><div class="chapter-num">6</div><h2>סדר הפעולות 🚦</h2></div>
+
+  <div class="card">
+    <p class="lead">כשיש הרבה פעולות בתרגיל אחד, יש <span class="word">סדר קבוע</span> מי הולך ראשון! זה כמו רמזור — אסור לכולם לזוז ביחד. 🚦</p>
+    <ol class="steps">
+      <li><b>ס</b>וגריים ( ) — קודם כל מה שבפנים! 📦</li>
+      <li><b>ח</b>זקות — <span class="mono">x²</span>, <span class="mono">2³</span> ⚡</li>
+      <li><b>כ</b>פל ו<b>ח</b>ילוק — משמאל לימין ✖️➗</li>
+      <li><b>ח</b>יבור ו<b>ח</b>יסור — משמאל לימין ➕➖</li>
+    </ol>
+    <div class="tip"><span class="big">🧠</span><div><b>טריק זיכרון:</b> "<b>סחכח</b>" — <b>ס</b>וגריים, <b>ח</b>זקות, <b>כ</b>פל/חילוק, <b>ח</b>יבור/חיסור. אמרו את זה בקול כמו לחש קסם של מפלצת! 🐲</div></div>
+  </div>
+
+  <div class="card">
+    <h3>🎬 דוגמה — למה הסדר חשוב <span class="level mid">בינוני</span></h3>
+    <div class="example-box">
+      <span class="tag">חשבו: 2 + 3 × 4 🦕</span>
+      <ol class="steps">
+        <li><b>קודם כפל!</b> <span class="mono">3 × 4 = 12</span></li>
+        <li>אחר כך חיבור: <span class="mono">2 + 12 = 14</span></li>
+        <li>תשובה: <b style="color:var(--lime)">14</b> 🎉</li>
+      </ol>
+    </div>
+    <div class="vs-panel">
+      <div class="vs-wrong">
+        <div class="vs-label">❌ טעות</div>
+        <div style="text-align:center">חישבו משמאל לימין:</div>
+        <div class="eq" style="font-size:1.1rem;color:#d63384" dir="ltr">2 + 3 = 5, ואז ×4 = 20</div>
+        <div style="font-size:.9rem">שכחו שכפל קודם!</div>
+      </div>
+      <div class="vs-right">
+        <div class="vs-label">✅ נכון</div>
+        <div style="text-align:center">כפל קודם:</div>
+        <div class="eq" style="font-size:1.1rem;color:#1a9e6b" dir="ltr">3×4=12, ואז 2+12 = 14</div>
+        <div style="font-size:.9rem">‏"סחכח" מנצח!</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>🚀 דוגמה עם סוגריים <span class="level hard">אתגר</span></h3>
+    <div class="example-box">
+      <span class="tag">חשבו: (2 + 3) × 4² ÷ 8 👽</span>
+      <ol class="steps">
+        <li><b>סוגריים:</b> <span class="mono">(2 + 3) = 5</span></li>
+        <li><b>חזקה:</b> <span class="mono">4² = 16</span> → עכשיו <span class="mono">5 × 16 ÷ 8</span></li>
+        <li><b>כפל/חילוק משמאל לימין:</b> <span class="mono">5 × 16 = 80</span>, ואז <span class="mono">80 ÷ 8 = 10</span></li>
+        <li>תשובה: <b style="color:var(--lime)">10</b> 🎉</li>
+      </ol>
+    </div>
+    <div class="tip"><span class="big">⚡</span><div><b>מה זו חזקה?</b> <span class="mono">4²</span> = "4 בריבוע" = <span class="mono">4 × 4 = 16</span>. המספר הקטן למעלה אומר כמה פעמים לכפול את המספר בעצמו!</div></div>
+  </div>
+
+  <div class="quiz">
+    <div class="qhead">🎯 משימת בזק</div>
+    <div class="q" data-answer="1">
+      <div class="qtext">חשבו: <b dir="ltr">2 + 3 × 4</b></div>
+      <div class="opts"><button class="opt">20</button><button class="opt">14</button><button class="opt">9</button></div>
+      <div class="feedback"></div>
+    </div>
+    <div class="q" data-answer="0">
+      <div class="qtext">חשבו: <b dir="ltr">(2 + 3) × 4</b></div>
+      <div class="opts"><button class="opt">20</button><button class="opt">14</button><button class="opt">24</button></div>
+      <div class="feedback"></div>
+    </div>
+    <div class="q" data-answer="2">
+      <div class="qtext">מה עושים <b>ראשון</b> ב-<b dir="ltr">10 − 2 × 3</b>?</div>
+      <div class="opts"><button class="opt">חיסור</button><button class="opt">משמאל לימין</button><button class="opt">כפל</button></div>
+      <div class="feedback"></div>
+    </div>
+    <div class="q" data-answer="1">
+      <div class="qtext">חשבו: <b dir="ltr">10 − 2 × 3</b></div>
+      <div class="opts"><button class="opt">24</button><button class="opt">4</button><button class="opt">8</button></div>
+      <div class="feedback"></div>
+    </div>
+    <div class="q" data-answer="0">
+      <div class="qtext">כמה זה <b dir="ltr">3²</b>?</div>
+      <div class="opts"><button class="opt">9</button><button class="opt">6</button><button class="opt">5</button></div>
+      <div class="feedback"></div>
+    </div>
+    <div class="q" data-answer="2">
+      <div class="qtext">חשבו: <b dir="ltr">12 ÷ (1 + 2)</b></div>
+      <div class="opts"><button class="opt">13</button><button class="opt">6</button><button class="opt">4</button></div>
+      <div class="feedback"></div>
+    </div>
+    <div class="q" data-answer="1">
+      <div class="qtext">חשבו: <b dir="ltr">2 × 3 + 4 × 2</b></div>
+      <div class="opts"><button class="opt">20</button><button class="opt">14</button><button class="opt">28</button></div>
+      <div class="feedback"></div>
+    </div>
+    <div class="q" data-answer="0">
+      <div class="qtext">חשבו: <b dir="ltr">(6 − 2)² </b></div>
+      <div class="opts"><button class="opt">16</button><button class="opt">8</button><button class="opt">34</button></div>
+      <div class="feedback"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ פרק 7 ============ -->
 <section class="chapter c4" id="ch4">
-  <div class="chapter-head"><div class="chapter-num">4</div><h2>היכרות עם נעלמים 🔍</h2></div>
+  <div class="chapter-head"><div class="chapter-num">7</div><h2>היכרות עם נעלמים 🔍</h2></div>
 
   <div class="card">
     <p class="lead">נעלם הוא <span class="word4">קופסה מסתורית</span> 📦 שמסתירה בתוכה מספר סודי. בדרך כלל קוראים לו <b style="color:var(--tangerine)">x</b>.</p>
@@ -771,7 +1129,7 @@
 
 <!-- ============ פרק 5 ============ -->
 <section class="chapter c5" id="ch5">
-  <div class="chapter-head"><div class="chapter-num">5</div><h2>פתרון עבור X ⚖️</h2></div>
+  <div class="chapter-head"><div class="chapter-num">8</div><h2>פתרון עבור X ⚖️</h2></div>
 
   <div class="card">
     <p class="lead">כלל הזהב: משוואה היא <span class="word">נדנדה מאוזנת</span>. מה שעושים לצד אחד — <b>חייבים</b> לעשות גם לצד השני! ⚖️</p>
@@ -888,12 +1246,27 @@
       <div class="opts"><button class="opt">x = 2</button><button class="opt">x = 5</button><button class="opt">x = 3</button></div>
       <div class="feedback"></div>
     </div>
+    <div class="q" data-answer="0">
+      <div class="qtext">פתרו: <span dir="ltr">x + 9 = 9</span></div>
+      <div class="opts"><button class="opt">x = 0</button><button class="opt">x = 9</button><button class="opt">x = 18</button></div>
+      <div class="feedback"></div>
+    </div>
+    <div class="q" data-answer="1">
+      <div class="qtext">פתרו: <span dir="ltr">6x = 24</span></div>
+      <div class="opts"><button class="opt">x = 6</button><button class="opt">x = 4</button><button class="opt">x = 18</button></div>
+      <div class="feedback"></div>
+    </div>
+    <div class="q" data-answer="2">
+      <div class="qtext">פתרו: <span dir="ltr" style="display:inline-flex;align-items:center;gap:4px"><span class="frac"><span class="top">x</span><span class="bot">5</span></span> = 3</span></div>
+      <div class="opts"><button class="opt">x = 3</button><button class="opt">x = 8</button><button class="opt">x = 15</button></div>
+      <div class="feedback"></div>
+    </div>
   </div>
 </section>
 
 <!-- ============ פרק 6: לכל האיברים! ============ -->
 <section class="chapter c6" id="ch6">
-  <div class="chapter-head"><div class="chapter-num">6</div><h2>לכל האיברים! 🧩</h2></div>
+  <div class="chapter-head"><div class="chapter-num">9</div><h2>לכל האיברים! 🧩</h2></div>
 
   <div class="card">
     <p class="lead">כלל הזהב של פרק 5 אמר: מה שעושים לצד אחד — עושים גם לצד השני. אבל עכשיו מגיע החלק <span class="word">הכי חשוב</span>: צריך לעשות את זה <b>לכל איבר ואיבר בנפרד!</b> 🎯</p>
@@ -1146,7 +1519,7 @@
 
 <!-- ============ פרק 7: סוגריים וחלוקה (חוק הפילוג) ============ -->
 <section class="chapter c7" id="ch7">
-  <div class="chapter-head"><div class="chapter-num">7</div><h2>סוגריים וחלוקה 🎁</h2></div>
+  <div class="chapter-head"><div class="chapter-num">10</div><h2>סוגריים וחלוקה 🎁</h2></div>
 
   <div class="card">
     <p class="lead">כשמפלצת עומדת מחוץ ל<span class="word">סוגריים</span>, היא רוצה ללחוץ יד לכל אחד בפנים! זה נקרא <b>חוק הפילוג</b> (או "חוק החלוקה"). 🤝</p>
@@ -1245,12 +1618,27 @@
       <div class="opts"><button class="opt" dir="ltr">4x + 4y</button><button class="opt" dir="ltr">4x + y</button><button class="opt" dir="ltr">4xy</button></div>
       <div class="feedback"></div>
     </div>
+    <div class="q" data-answer="2">
+      <div class="qtext">פתחו: <b dir="ltr">2(3x + 4)</b></div>
+      <div class="opts"><button class="opt" dir="ltr">6x + 4</button><button class="opt" dir="ltr">5x + 6</button><button class="opt" dir="ltr">6x + 8</button></div>
+      <div class="feedback"></div>
+    </div>
+    <div class="q" data-answer="1">
+      <div class="qtext">פתרו: <b dir="ltr">4(x − 1) = 12</b></div>
+      <div class="opts"><button class="opt">x = 2</button><button class="opt">x = 4</button><button class="opt">x = 3</button></div>
+      <div class="feedback"></div>
+    </div>
+    <div class="q" data-answer="0">
+      <div class="qtext">פתחו: <b dir="ltr">−2(x + 3)</b></div>
+      <div class="opts"><button class="opt" dir="ltr">−2x − 6</button><button class="opt" dir="ltr">−2x + 6</button><button class="opt" dir="ltr">2x − 6</button></div>
+      <div class="feedback"></div>
+    </div>
   </div>
 </section>
 
 <!-- ============ פרק 8: חידות מילוליות ============ -->
 <section class="chapter c8" id="ch8">
-  <div class="chapter-head"><div class="chapter-num">8</div><h2>חידות מילוליות 📖</h2></div>
+  <div class="chapter-head"><div class="chapter-num">11</div><h2>חידות מילוליות 📖</h2></div>
 
   <div class="card">
     <p class="lead">הכוח האמיתי של האלגברה: להפוך <span class="word">סיפור</span> למשוואה! 📖➡️⚖️ כשיודעים לתרגם מילים למספרים, אפשר לפתור בעיות אמיתיות מהחיים.</p>
@@ -1372,9 +1760,86 @@
   </div>
 </section>
 
-<!-- ============ פרק 9: אתגר המפלצת הסופי ============ -->
+<!-- ============ פרק 12: אי-שוויונות ============ -->
+<section class="chapter c14" id="ch14">
+  <div class="chapter-head"><div class="chapter-num">12</div><h2>אי-שוויונות ⚖️</h2></div>
+
+  <div class="card">
+    <p class="lead">לא תמיד דברים <b>שווים</b> בדיוק! לפעמים צד אחד <span class="word">גדול</span> או <span class="word">קטן</span> מהשני. אז משתמשים בסימני אי-שוויון. 🐊</p>
+    <div class="cheatgrid" style="margin-top:14px">
+      <div class="cheat b2"><h4>הסימנים</h4><ul>
+        <li><span class="mono">&gt;</span> גדול מ… &nbsp;<span class="mono">5 &gt; 3</span></li>
+        <li><span class="mono">&lt;</span> קטן מ… &nbsp;<span class="mono">2 &lt; 7</span></li>
+        <li><span class="mono">≥</span> גדול או שווה</li>
+        <li><span class="mono">≤</span> קטן או שווה</li>
+      </ul></div>
+      <div class="cheat b1"><h4>טריק התנין 🐊</h4><ul>
+        <li>הפה הפעור תמיד "אוכל" את המספר הגדול!</li>
+        <li><span class="mono">8 &gt; 3</span> — הפה פונה ל-8</li>
+        <li>הפינה הקטנה מצביעה על הקטן</li>
+      </ul></div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>🔢 x יכול להיות כמה מספרים!</h3>
+    <p>בניגוד למשוואה (שיש לה תשובה אחת), אי-שוויון נותן <b>הרבה תשובות</b>:</p>
+    <div class="eq" style="font-size:1.4rem" dir="ltr"><b style="color:var(--tangerine)">x</b> &gt; 3</div>
+    <p style="text-align:center;font-weight:700">כל מספר גדול מ-3 מתאים! ‏4, 5, 100… כולם עובדים! 🎉</p>
+    <div class="tip"><span class="big">🎯</span><div>חושבים על זה ככה: "אילו מספרים המפלצת יכולה להסתיר כדי שהמשפט יהיה נכון?" ב-<span class="mono">x &gt; 3</span> יש אינסוף אפשרויות! 👾</div></div>
+  </div>
+
+  <div class="card">
+    <h3>🛠️ פותרים אי-שוויון — כמעט כמו משוואה! <span class="level mid">בינוני</span></h3>
+    <p>פותרים בדיוק כמו משוואה — מבודדים את x בעזרת פעולות הפוכות:</p>
+    <div class="example-box">
+      <span class="tag">לפתור: x + 4 &gt; 10 🦖</span>
+      <ol class="steps">
+        <li>מחסרים 4 משני הצדדים</li>
+        <li><b style="color:var(--lime)" dir="ltr">x &gt; 6</b> — כל מספר גדול מ-6! 🎉</li>
+      </ol>
+    </div>
+    <div class="tip"><span class="big">⚠️</span><div><b>כלל סופר-חשוב:</b> אם כופלים או מחלקים ב<b>מספר שלילי</b> — צריך <b>להפוך את הסימן</b>! <span class="mono">&gt;</span> הופך ל-<span class="mono">&lt;</span>. זו המלכודת הכי גדולה! 🔀</div></div>
+  </div>
+
+  <div class="quiz">
+    <div class="qhead">🎯 משימת בזק</div>
+    <div class="q" data-answer="0">
+      <div class="qtext">איזה סימן נכון? <b dir="ltr">7 __ 4</b></div>
+      <div class="opts"><button class="opt">&gt;</button><button class="opt">&lt;</button><button class="opt">=</button></div>
+      <div class="feedback"></div>
+    </div>
+    <div class="q" data-answer="1">
+      <div class="qtext">איזה סימן נכון? <b dir="ltr">2 __ 9</b></div>
+      <div class="opts"><button class="opt">&gt;</button><button class="opt">&lt;</button><button class="opt">=</button></div>
+      <div class="feedback"></div>
+    </div>
+    <div class="q" data-answer="2">
+      <div class="qtext">איזה מספר <b>מתאים</b> ל-<b dir="ltr">x &gt; 5</b>?</div>
+      <div class="opts"><button class="opt">3</button><button class="opt">5</button><button class="opt">8</button></div>
+      <div class="feedback"></div>
+    </div>
+    <div class="q" data-answer="0">
+      <div class="qtext">פתרו: <b dir="ltr">x + 2 &gt; 6</b></div>
+      <div class="opts"><button class="opt" dir="ltr">x &gt; 4</button><button class="opt" dir="ltr">x &gt; 8</button><button class="opt" dir="ltr">x &lt; 4</button></div>
+      <div class="feedback"></div>
+    </div>
+    <div class="q" data-answer="1">
+      <div class="qtext">פתרו: <b dir="ltr">2x &lt; 10</b></div>
+      <div class="opts"><button class="opt" dir="ltr">x &lt; 20</button><button class="opt" dir="ltr">x &lt; 5</button><button class="opt" dir="ltr">x &gt; 5</button></div>
+      <div class="feedback"></div>
+    </div>
+    <div class="q" data-answer="2">
+      <div class="qtext">איזה מספר <b>לא</b> מתאים ל-<b dir="ltr">x ≤ 4</b>?</div>
+      <div class="opts"><button class="opt">4</button><button class="opt">1</button><button class="opt">7</button></div>
+      <div class="feedback"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ פרק 13: אתגר המפלצת הסופי ============ -->
 <section class="chapter c9" id="ch9">
-  <div class="chapter-head"><div class="chapter-num">9</div><h2>אתגר המפלצת הסופי 🏆</h2></div>
+  <div class="chapter-head"><div class="chapter-num">13</div><h2>אתגר המפלצת הסופי 🏆</h2></div>
 
   <div class="card" style="background:linear-gradient(135deg,#ffe3f0,#efe6ff);text-align:center">
     <p class="lead">הגעתם לקרב הבוס! 🐉 כאן מתערבבות כל המפלצות שלמדתם — שברים, נעלמים, סוגריים והכול. הוכיחו שאתם <b>אלופי מתמטיקה</b> אמיתיים!</p>
@@ -1443,6 +1908,35 @@
     </div>
   </div>
 
+  <div class="quiz">
+    <div class="qhead">⚔️ סבב 4 — אלופי-על (כל הנושאים!) 🌟</div>
+    <div class="q" data-answer="1">
+      <div class="qtext">כמה זה 25% מתוך 80?</div>
+      <div class="opts"><button class="opt">25</button><button class="opt">20</button><button class="opt">40</button></div>
+      <div class="feedback"></div>
+    </div>
+    <div class="q" data-answer="2">
+      <div class="qtext">חשבו: <b dir="ltr">5 + 2 × 3²</b></div>
+      <div class="opts"><button class="opt">63</button><button class="opt">21</button><button class="opt">23</button></div>
+      <div class="feedback"></div>
+    </div>
+    <div class="q" data-answer="0">
+      <div class="qtext">כמה זה <b dir="ltr">−4 − 3</b>?</div>
+      <div class="opts"><button class="opt">−7</button><button class="opt">−1</button><button class="opt">7</button></div>
+      <div class="feedback"></div>
+    </div>
+    <div class="q" data-answer="1">
+      <div class="qtext">פתרו: <b dir="ltr">x + 3 &gt; 8</b></div>
+      <div class="opts"><button class="opt" dir="ltr">x &gt; 11</button><button class="opt" dir="ltr">x &gt; 5</button><button class="opt" dir="ltr">x &lt; 5</button></div>
+      <div class="feedback"></div>
+    </div>
+    <div class="q" data-answer="2">
+      <div class="qtext">כמה זה <b dir="ltr">(−2) × (−6)</b>?</div>
+      <div class="opts"><button class="opt">−12</button><button class="opt">−8</button><button class="opt">12</button></div>
+      <div class="feedback"></div>
+    </div>
+  </div>
+
   <div class="card" style="text-align:center;background:linear-gradient(135deg,#fff3d1,#e2fff2)">
     <h3 style="justify-content:center">🎖️ סיימתם את האתגר?</h3>
     <p style="font-weight:800;font-size:1.2rem;color:var(--grape)">אם צברתם הרבה כוכבים — אתם רשמית מפלצות-על של מתמטיקה! 👾🏆</p>
@@ -1450,9 +1944,34 @@
   </div>
 </section>
 
-<!-- ============ פרק 10: דף עזר ============ -->
+<!-- ============ פרק 14: לוח התוצאות ============ -->
+<section class="chapter c15" id="ch15">
+  <div class="chapter-head"><div class="chapter-num">14</div><h2>לוח התוצאות 🏅</h2></div>
+
+  <div class="card" style="background:linear-gradient(135deg,#fff3d1,#ffe3f0)">
+    <p class="lead">אספתם כוכבים ⭐ בכל החידונים? הגיע הזמן להיכנס ל<span class="word">היכל התהילה</span> של מפלצות המתמטיקה! 🏅</p>
+    <p>כתבו את השם שלכם ולחצו על הכפתור כדי לשלוח את הניקוד. הלוח <b>משותף לכולם</b> — נסו להגיע למקום הראשון! 👑</p>
+    <div class="lb-name-row">
+      <span style="font-weight:700">שם המפלצת שלי:</span>
+      <input type="text" id="lbName" maxlength="20" placeholder="לדוגמה: גוזי הגדול 👾">
+      <button class="try-btn" onclick="submitScore()">🚀 שלחו את הניקוד שלי (<span id="lbMyScore">0</span> ⭐)</button>
+      <button class="try-btn" style="background:var(--sky)" onclick="loadLeaderboard()">🔄 רענון</button>
+    </div>
+    <div class="lb-status" id="lbStatus"></div>
+  </div>
+
+  <div class="card">
+    <h3 style="justify-content:center">👑 עשרת המובילים</h3>
+    <table class="lb-table"><tbody id="lbBody">
+      <tr><td colspan="3" style="text-align:center;border-radius:14px">טוען…</td></tr>
+    </tbody></table>
+    <div class="tip"><span class="big">💡</span><div><b>איך צוברים עוד כוכבים?</b> חזרו לפרקים הקודמים ופתרו עוד חידונים! כל תשובה נכונה = כוכב אחד ⭐. הניקוד שלכם נשמר כל עוד לא רעננתם את הדף.</div></div>
+  </div>
+</section>
+
+<!-- ============ פרק 15: דף עזר ============ -->
 <section class="chapter c10" id="ch10">
-  <div class="chapter-head"><div class="chapter-num">10</div><h2>דף עזר על-על 📋</h2></div>
+  <div class="chapter-head"><div class="chapter-num">15</div><h2>דף עזר על-על 📋</h2></div>
   <div class="card"><p class="lead" style="text-align:center">🖨️ כל מה שלמדתם, במקום אחד. צלמו מסך או הדפיסו להצלה מהירה בזמן שיעורי בית!</p></div>
 
   <div class="cheatgrid">
@@ -1558,6 +2077,45 @@
         <li>בדקו שהתשובה הגיונית בסיפור!</li>
       </ul>
     </div>
+
+    <div class="cheat b2">
+      <h4>💯 עשרוניים ואחוזים</h4>
+      <ul>
+        <li>שבר → עשרוני: מחלקים מונה במכנה</li>
+        <li>עשרוני → אחוז: כופלים ב-100</li>
+        <li>‏1/2=0.5=50% · 1/4=0.25=25%</li>
+        <li>10% ממספר: מזיזים נקודה שמאלה</li>
+      </ul>
+    </div>
+
+    <div class="cheat b5">
+      <h4>❄️ מספרים שליליים</h4>
+      <ul>
+        <li>מתחת ל-0: חוב, קור 🌡️</li>
+        <li>מינוס של מינוס = פלוס</li>
+        <li>סימנים שווים בכפל → חיובי</li>
+        <li>סימנים שונים בכפל → שלילי</li>
+      </ul>
+    </div>
+
+    <div class="cheat b6">
+      <h4>🚦 סדר פעולות "סחכח"</h4>
+      <ul>
+        <li><b>ס</b>וגריים → <b>ח</b>זקות</li>
+        <li><b>כ</b>פל/חילוק (משמאל לימין)</li>
+        <li><b>ח</b>יבור/חיסור (משמאל לימין)</li>
+      </ul>
+    </div>
+
+    <div class="cheat b2">
+      <h4>⚖️ אי-שוויונות 🐊</h4>
+      <ul>
+        <li><span class="mono">&gt;</span> גדול · <span class="mono">&lt;</span> קטן · הפה אוכל את הגדול</li>
+        <li>פותרים כמו משוואה</li>
+        <li>יש הרבה תשובות, לא אחת</li>
+        <li>כפל/חילוק בשלילי → הופכים סימן!</li>
+      </ul>
+    </div>
   </div>
 
   <div class="card" style="margin-top:22px;background:linear-gradient(135deg,#ede4ff,#ffe3f0);text-align:center">
@@ -1607,6 +2165,7 @@ let score=0;
 const scoreEl=document.getElementById('score');
 function addStar(){score++;scoreEl.textContent=score;
   scoreEl.parentElement.animate([{transform:'scale(1)'},{transform:'scale(1.3)'},{transform:'scale(1)'}],{duration:400});
+  const my=document.getElementById('lbMyScore');if(my)my.textContent=score;
 }
 
 /* ---------- לוגיקת חידונים ---------- */
@@ -1885,6 +2444,83 @@ function checkWord(){
   fb.classList.add('show');
 }
 newWord();
+
+/* ---------- קו מספרים שלילי (פרק 5) ---------- */
+function drawIntLine(id,min,max,mark){
+  const nl=document.getElementById(id); if(!nl) return;
+  nl.innerHTML='<div class="track"></div>';
+  const span=max-min;
+  for(let v=min;v<=max;v++){
+    const pct=((v-min)/span)*100;
+    const tick=document.createElement('div');
+    tick.className='tick'+(v===0?' big':'');
+    tick.style.left=pct+'%'; nl.appendChild(tick);
+    const lbl=document.createElement('div');
+    lbl.className='lbl'; lbl.style.left=pct+'%'; lbl.textContent=v; nl.appendChild(lbl);
+  }
+  const dot=document.createElement('div');
+  dot.className='dot'; dot.style.left=((mark-min)/span)*100+'%'; dot.textContent='❄️';
+  nl.appendChild(dot);
+}
+drawIntLine('nlNeg',-5,5,-3);
+
+/* ---------- לוח התוצאות (פרק 14) ---------- */
+const LB_API='/api/leaderboard';
+function medal(i){return i===0?'🥇':i===1?'🥈':i===2?'🥉':(i+1);}
+function escapeHtml(s){return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));}
+function updateMyScore(){const el=document.getElementById('lbMyScore');if(el)el.textContent=score;}
+function renderLeaders(list){
+  const body=document.getElementById('lbBody'); if(!body) return;
+  const myName=(localStorage.getItem('mm_name')||'').trim();
+  if(!list||!list.length){
+    body.innerHTML='<tr><td colspan="3" style="text-align:center;border-radius:14px">עדיין אין תוצאות — היו הראשונים! 🚀</td></tr>';
+    return;
+  }
+  body.innerHTML=list.map((r,i)=>{
+    const rankCls=i<3?('rank'+(i+1)):'';
+    const meCls=(myName&&r.name===myName)?'me':'';
+    const cls=[rankCls,meCls].filter(Boolean).join(' ');
+    return '<tr class="'+cls+'"><td>'+medal(i)+'</td><td>'+escapeHtml(r.name)+'</td><td>'+r.score+' ⭐</td></tr>';
+  }).join('');
+}
+async function loadLeaderboard(){
+  const status=document.getElementById('lbStatus');
+  try{
+    const res=await fetch(LB_API,{cache:'no-store'});
+    if(!res.ok) throw new Error('server');
+    const data=await res.json();
+    renderLeaders(data.leaders||[]);
+    if(status) status.textContent='';
+  }catch(e){
+    const body=document.getElementById('lbBody');
+    if(body) body.innerHTML='<tr><td colspan="3" style="text-align:center;border-radius:14px">אי אפשר לטעון כרגע 🛰️</td></tr>';
+    if(status){status.textContent='ℹ️ הלוח פעיל כשהאתר רץ ב-Vercel עם Upstash Redis מחובר.';status.style.color='#d63384';}
+  }
+}
+async function submitScore(){
+  const status=document.getElementById('lbStatus');
+  const nameInput=document.getElementById('lbName');
+  const name=(nameInput.value||'').trim();
+  if(!name){status.textContent='✏️ כתבו שם קודם!';status.style.color='#d63384';return;}
+  localStorage.setItem('mm_name',name);
+  status.textContent='שולח… 🚀';status.style.color='var(--grape-deep)';
+  try{
+    const res=await fetch(LB_API,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({name,score})});
+    if(!res.ok) throw new Error('server');
+    const data=await res.json();
+    renderLeaders(data.leaders||[]);
+    status.textContent='🎉 הניקוד נשלח! בהצלחה בהיכל התהילה!';status.style.color='#1a9e6b';
+  }catch(e){
+    status.textContent='ℹ️ השליחה פעילה כשהאתר רץ ב-Vercel עם Upstash Redis מחובר.';status.style.color='#d63384';
+  }
+}
+(function(){
+  const saved=localStorage.getItem('mm_name');
+  if(saved){const el=document.getElementById('lbName'); if(el) el.value=saved;}
+  updateMyScore();
+})();
+const lbTab=document.querySelector('.tab[data-target="ch15"]');
+if(lbTab) lbTab.addEventListener('click',()=>{updateMyScore();loadLeaderboard();});
 </script>
 </body>
 </html>
