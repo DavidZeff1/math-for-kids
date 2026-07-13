@@ -66,6 +66,12 @@
     box-shadow:3px 3px 0 var(--ink);user-select:none;
   }
   .tab:hover{transform:translateY(-3px);box-shadow:5px 6px 0 var(--ink)}
+  .tnum{
+    display:inline-grid;place-items:center;width:22px;height:22px;border-radius:50%;
+    background:var(--ink);color:#fff;font-family:'Baloo 2';font-weight:800;font-size:.82rem;
+    margin-inline-end:7px;vertical-align:middle;line-height:1;
+  }
+  .tab.active .tnum{background:rgba(255,255,255,.85);color:var(--ink)}
   .tab.active{color:#fff;box-shadow:3px 3px 0 var(--ink)}
   .tab[data-c="1"].active{background:var(--bubble)}
   .tab[data-c="2"].active{background:var(--sky)}
@@ -285,15 +291,15 @@
 </header>
 
 <nav id="nav">
-  <div class="tab active" data-c="1" data-target="ch1">🍕 שברים 101</div>
-  <div class="tab" data-c="2" data-target="ch2">➕ חיבור וחיסור</div>
-  <div class="tab" data-c="3" data-target="ch3">✖️ כפל וחילוק</div>
-  <div class="tab" data-c="4" data-target="ch4">🔍 היכרות עם נעלמים</div>
-  <div class="tab" data-c="5" data-target="ch5">⚖️ פתרון עבור X</div>
-  <div class="tab" data-c="6" data-target="ch6">🧩 לכל האיברים!</div>
-  <div class="tab" data-c="7" data-target="ch7">🎁 סוגריים וחלוקה</div>
-  <div class="tab" data-c="8" data-target="ch8">📖 חידות מילוליות</div>
-  <div class="tab" data-c="9" data-target="ch9">🏆 אתגר המפלצת</div>
+  <div class="tab active" data-c="1" data-target="ch1"><span class="tnum">1</span>🍕 שברים 101</div>
+  <div class="tab" data-c="2" data-target="ch2"><span class="tnum">2</span>➕ חיבור וחיסור</div>
+  <div class="tab" data-c="3" data-target="ch3"><span class="tnum">3</span>✖️ כפל וחילוק</div>
+  <div class="tab" data-c="4" data-target="ch4"><span class="tnum">4</span>🔍 היכרות עם נעלמים</div>
+  <div class="tab" data-c="5" data-target="ch5"><span class="tnum">5</span>⚖️ פתרון עבור X</div>
+  <div class="tab" data-c="6" data-target="ch6"><span class="tnum">6</span>🧩 לכל האיברים!</div>
+  <div class="tab" data-c="7" data-target="ch7"><span class="tnum">7</span>🎁 סוגריים וחלוקה</div>
+  <div class="tab" data-c="8" data-target="ch8"><span class="tnum">8</span>📖 חידות מילוליות</div>
+  <div class="tab" data-c="9" data-target="ch9"><span class="tnum">9</span>🏆 אתגר המפלצת</div>
   <div class="tab" data-c="10" data-target="ch10">📋 דף עזר</div>
 </nav>
 
