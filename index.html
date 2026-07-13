@@ -270,6 +270,13 @@
   .svg-viz svg{max-width:100%;height:auto;background:#fff;border:3px solid var(--ink);border-radius:16px;padding:6px}
 
   .interactive-fun{background:linear-gradient(135deg,#fff,#f6f0ff);border:4px solid var(--grape);border-radius:22px;padding:22px;margin:20px 0;box-shadow:6px 6px 0 var(--shadow)}
+  .interactive-fun h3{font-family:'Varela Round';color:var(--grape);font-size:1.3rem;margin-bottom:8px}
+  .iact-out{font-family:'Fredoka';font-weight:800;font-size:1.4rem;text-align:center;color:var(--grape-deep);margin:12px 0 2px;direction:ltr;display:flex;flex-wrap:wrap;gap:6px;align-items:center;justify-content:center;line-height:1.5}
+  .iact-out sup{font-size:.7em}
+  .fillbar{height:34px;border:3px solid var(--ink);border-radius:10px;background:#fff;overflow:hidden;direction:ltr;margin:8px 0}
+  .fillbar>span{display:block;height:100%;background:linear-gradient(90deg,var(--lime),var(--sky));transition:width .1s}
+  .opt-row{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin:12px 0}
+  .iact-in{width:92px;font-size:1.2rem;padding:10px;border:3px solid var(--ink);border-radius:12px;font-family:'Fredoka';font-weight:700;text-align:center}
   .slider-wrap{display:flex;flex-direction:column;gap:6px;margin:14px 0}
   .slider-wrap label{font-family:'Varela Round';font-weight:600;font-size:1.08rem}
   input[type=range]{-webkit-appearance:none;height:14px;border-radius:999px;background:#e6dcf5;border:3px solid var(--ink);outline:none;direction:ltr}
@@ -568,6 +575,17 @@
 <section class="chapter c16" id="ch16">
   <div class="chapter-head"><div class="chapter-num">2</div><h2>גורמים, כפולות וראשוניים 🔢</h2></div>
 
+  <div class="interactive-fun">
+    <h3>💎 בלש הראשוניים — ראשוני או פריק?</h3>
+    <p style="font-weight:700;font-size:1.5rem;text-align:center" id="primeNum"></p>
+    <div class="opt-row">
+      <button class="try-btn" onclick="guessPrime(true)">ראשוני 💎</button>
+      <button class="try-btn" style="background:var(--tangerine)" onclick="guessPrime(false)">פריק (מתחלק) 🔨</button>
+      <button class="try-btn" style="background:var(--sky)" onclick="newPrime()">🔄 מספר חדש</button>
+    </div>
+    <div class="answer-reveal" id="primeFb"></div>
+  </div>
+
   <div class="card">
     <p class="lead">לפני שצוללים לשברים גדולים — צריך להכיר את <span class="word">אבני הבניין</span> של המספרים: גורמים וכפולות! הם הסוד מאחורי מכנה משותף וצמצום. 🧱</p>
     <div class="tip"><span class="big">🧠</span><div><b>למה זה חשוב?</b> "מכנה משותף" זו בעצם <b>כפולה משותפת</b>, ו"צמצום" זו חלוקה ב<b>גורם משותף</b>. מי ששולט כאן — שולט בשברים! 👾</div></div>
@@ -669,6 +687,16 @@
 <!-- ============ פרק 2 ============ -->
 <section class="chapter c2" id="ch2">
   <div class="chapter-head"><div class="chapter-num">2</div><h2>חיבור וחיסור ➕➖</h2></div>
+
+  <div class="interactive-fun">
+    <h3>➗ מחולל השברים — פתרון שלב-שלב</h3>
+    <p style="font-weight:700;font-size:1.5rem;text-align:center" id="faText"></p>
+    <div class="opt-row">
+      <button class="try-btn" onclick="revealFA()">✨ פתרון שלב-שלב</button>
+      <button class="try-btn" style="background:var(--sky)" onclick="newFA()">🔄 תרגיל חדש</button>
+    </div>
+    <div class="answer-reveal" id="faAns"></div>
+  </div>
 
   <div class="card">
     <h3>😎 מצב קל: אותו מכנה</h3>
@@ -916,6 +944,15 @@
 <section class="chapter c11" id="ch11">
   <div class="chapter-head"><div class="chapter-num">4</div><h2>עשרוניים ואחוזים 💯</h2></div>
 
+  <div class="interactive-fun">
+    <h3>🎛️ ממיר הקסם — שבר · עשרוני · אחוז</h3>
+    <div class="slider-wrap"><label>גררו את האחוז: <b id="pctLbl">50</b>%</label>
+      <input type="range" id="pctSlide" min="0" max="100" value="50"></div>
+    <div class="fillbar"><span id="pctFill" style="width:50%"></span></div>
+    <div class="iact-out" id="pctOut"></div>
+    <p style="text-align:center;font-weight:600;font-size:.95rem;opacity:.75">שלוש שפות — אותו גודל בדיוק! 👀</p>
+  </div>
+
   <div class="card">
     <p class="lead">מספר <span class="word">עשרוני</span> הוא עוד דרך לכתוב שבר — עם <b>נקודה</b> במקום קו! <span class="mono">0.5</span> זה בדיוק <span class="mono">1/2</span>. 🍕</p>
     <div class="eq">
@@ -1030,6 +1067,15 @@
 <section class="chapter c17" id="ch17">
   <div class="chapter-head"><div class="chapter-num">6</div><h2>יחס ופרופורציה ⚗️</h2></div>
 
+  <div class="interactive-fun">
+    <h3>🍋 מגדיל המתכון — הזיזו את המכפיל!</h3>
+    <p style="font-weight:700;text-align:center">היחס הבסיסי: <b dir="ltr">2 : 3</b> &nbsp;(סוכר : מים)</p>
+    <div class="slider-wrap"><label>מכפיל: ×<b id="ratioK">2</b></label>
+      <input type="range" id="ratioSlide" min="1" max="6" value="2"></div>
+    <div class="iact-out" id="ratioOut"></div>
+    <p style="text-align:center;font-weight:600;font-size:.95rem;opacity:.75">אותו טעם, כמות אחרת — זה יחס שקול! 🍋</p>
+  </div>
+
   <div class="card">
     <p class="lead"><span class="word">יחס</span> הוא דרך להשוות כמויות — כמה יש מדבר אחד מול דבר אחר. אם במסיבה יש 2 מפלצות סגולות מול 3 כתומות, היחס הוא <b dir="ltr">2:3</b>! 👾🟠</p>
     <div class="tip"><span class="big">🔗</span><div>יחס קשור קשר הדוק לשברים! <span class="mono">2:3</span> אפשר לכתוב גם כ-<span class="mono">2/3</span>. כל מה שלמדתם על שברים עוזר גם כאן!</div></div>
@@ -1119,6 +1165,14 @@
 <!-- ============ פרק 5: מספרים שליליים ============ -->
 <section class="chapter c12" id="ch12">
   <div class="chapter-head"><div class="chapter-num">5</div><h2>מספרים שליליים ❄️</h2></div>
+
+  <div class="interactive-fun">
+    <h3>🌡️ מד המפלצת — מעל ומתחת ל-0</h3>
+    <div class="slider-wrap"><label>המספר: <b id="negLbl">-3</b></label>
+      <input type="range" id="negSlide" min="-10" max="10" value="-3"></div>
+    <div class="numline" id="nlLive"></div>
+    <div class="iact-out" id="negOut"></div>
+  </div>
 
   <div class="card">
     <p class="lead">יש עולם שלם <span class="word">מתחת לאפס</span>! מספרים שליליים הם מה שקורה כשיורדים מתחת ל-0 — כמו טמפרטורה בחורף ❄️ או חוב בכסף 💸.</p>
@@ -1223,6 +1277,18 @@
 <section class="chapter c13" id="ch13">
   <div class="chapter-head"><div class="chapter-num">6</div><h2>סדר הפעולות 🚦</h2></div>
 
+  <div class="interactive-fun">
+    <h3>🚦 אתגר הסדר — חשבו נכון!</h3>
+    <p style="font-weight:700;font-size:1.5rem;text-align:center" id="ordText"></p>
+    <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap;justify-content:center;margin-top:8px">
+      <span style="font-weight:700">התשובה:</span>
+      <input type="number" id="ordInput" class="iact-in" placeholder="?">
+      <button class="try-btn" onclick="checkOrd()">בדיקה! ✅</button>
+      <button class="try-btn" style="background:var(--sky)" onclick="newOrd()">🔄 חדש</button>
+    </div>
+    <div class="answer-reveal" id="ordFb"></div>
+  </div>
+
   <div class="card">
     <p class="lead">כשיש הרבה פעולות בתרגיל אחד, יש <span class="word">סדר קבוע</span> מי הולך ראשון! זה כמו רמזור — אסור לכולם לזוז ביחד. 🚦</p>
     <ol class="steps">
@@ -1323,6 +1389,15 @@
 <section class="chapter c18" id="ch18">
   <div class="chapter-head"><div class="chapter-num">9</div><h2>חזקות ושורשים ⚡</h2></div>
 
+  <div class="interactive-fun">
+    <h3>⚡ מחשבון החזקות — ראו את הכפל!</h3>
+    <div class="slider-wrap"><label>בסיס: <b id="baseLbl">2</b></label>
+      <input type="range" id="baseSlide" min="1" max="6" value="2"></div>
+    <div class="slider-wrap"><label>מעריך (החזקה): <b id="expLbl">3</b></label>
+      <input type="range" id="expSlide" min="1" max="5" value="3"></div>
+    <div class="iact-out" id="powOut"></div>
+  </div>
+
   <div class="card">
     <p class="lead"><span class="word">חזקה</span> היא קיצור לכפל חוזר! במקום לכתוב <span class="mono">2×2×2</span>, כותבים <span class="mono">2³</span>. המספר הקטן למעלה סופר כמה פעמים לכפול. ⚡</p>
     <div class="eq" style="font-size:1.5rem" dir="ltr">2³ = 2×2×2 = <b style="color:var(--lime)">8</b></div>
@@ -1402,6 +1477,16 @@
 <!-- ============ פרק 7 ============ -->
 <section class="chapter c4" id="ch4">
   <div class="chapter-head"><div class="chapter-num">10</div><h2>היכרות עם נעלמים 🔍</h2></div>
+
+  <div class="interactive-fun">
+    <h3>🧩 מאחד האיברים — כמה זה יוצא?</h3>
+    <p style="font-weight:700;font-size:1.5rem;text-align:center" id="combText"></p>
+    <div class="opt-row">
+      <button class="try-btn" onclick="revealComb()">✨ הראו את האיחוד</button>
+      <button class="try-btn" style="background:var(--sky)" onclick="newComb()">🔄 חדש</button>
+    </div>
+    <div class="answer-reveal" id="combFb"></div>
+  </div>
 
   <div class="card">
     <p class="lead">נעלם הוא <span class="word4">קופסה מסתורית</span> 📦 שמסתירה בתוכה מספר סודי. בדרך כלל קוראים לו <b style="color:var(--tangerine)">x</b>.</p>
@@ -2031,6 +2116,16 @@
 <section class="chapter c19" id="ch19">
   <div class="chapter-head"><div class="chapter-num">14</div><h2>פירוק לגורמים 🪓</h2></div>
 
+  <div class="interactive-fun">
+    <h3>🪓 מחולל הפירוק — מצאו את הגורם!</h3>
+    <p style="font-weight:700;font-size:1.5rem;text-align:center" id="facText"></p>
+    <div class="opt-row">
+      <button class="try-btn" onclick="revealFactor()">✨ פרקו לגורמים</button>
+      <button class="try-btn" style="background:var(--sky)" onclick="newFactor()">🔄 חדש</button>
+    </div>
+    <div class="answer-reveal" id="facFb"></div>
+  </div>
+
   <div class="card">
     <p class="lead">פירוק לגורמים זה בדיוק <span class="word">ההפך מפתיחת סוגריים</span>! במקום לפזר החוצה, אנחנו <b>אוספים בחזרה</b> — מוציאים את המספר המשותף אל מחוץ לסוגריים. 🎁↩️</p>
     <div class="distrib">
@@ -2256,6 +2351,16 @@
 <section class="chapter c14" id="ch14">
   <div class="chapter-head"><div class="chapter-num">12</div><h2>אי-שוויונות ⚖️</h2></div>
 
+  <div class="interactive-fun">
+    <h3>🐊 מחולל האי-שוויונות — פתרו!</h3>
+    <p style="font-weight:700;font-size:1.5rem;text-align:center" id="ineqText"></p>
+    <div class="opt-row">
+      <button class="try-btn" onclick="revealIneq()">✨ הראו את הפתרון</button>
+      <button class="try-btn" style="background:var(--sky)" onclick="newIneq()">🔄 חדש</button>
+    </div>
+    <div class="answer-reveal" id="ineqFb"></div>
+  </div>
+
   <div class="card">
     <p class="lead">לא תמיד דברים <b>שווים</b> בדיוק! לפעמים צד אחד <span class="word">גדול</span> או <span class="word">קטן</span> מהשני. אז משתמשים בסימני אי-שוויון. 🐊</p>
     <div class="cheatgrid" style="margin-top:14px">
@@ -2348,6 +2453,16 @@
 <section class="chapter c20" id="ch20">
   <div class="chapter-head"><div class="chapter-num">17</div><h2>מערכת צירים וגרפים 📍</h2></div>
 
+  <div class="interactive-fun">
+    <h3>🕹️ שלטו במפלצת — הזיזו על הצירים!</h3>
+    <div class="slider-wrap"><label>‏x (ימינה / שמאלה): <b id="cxLbl">3</b></label>
+      <input type="range" id="cxSlide" min="-5" max="5" value="3"></div>
+    <div class="slider-wrap"><label>‏y (למעלה / למטה): <b id="cyLbl">2</b></label>
+      <input type="range" id="cySlide" min="-5" max="5" value="2"></div>
+    <div class="svg-viz"><svg id="cpLive" viewBox="0 0 220 220" width="250" height="250"></svg></div>
+    <div class="iact-out" id="coordOut"></div>
+  </div>
+
   <div class="card">
     <p class="lead">איך אומרים לחבר <b>איפה בדיוק</b> נמצא האוצר? עם <span class="word">מערכת צירים</span>! שני קווי מספרים שנפגשים — אחד <b>שוכב</b> (ציר x) ואחד <b>עומד</b> (ציר y). 🗺️</p>
     <div class="svg-viz"><svg id="cp1" viewBox="0 0 220 220" width="250" height="250"></svg></div>
@@ -2416,6 +2531,16 @@
 <!-- ============ פרק: היקף ושטח ============ -->
 <section class="chapter c21" id="ch21">
   <div class="chapter-head"><div class="chapter-num">18</div><h2>היקף ושטח 📐</h2></div>
+
+  <div class="interactive-fun">
+    <h3>📐 מעצב המלבנים — שנו אורך ורוחב!</h3>
+    <div class="slider-wrap"><label>אורך: <b id="alLbl">4</b></label>
+      <input type="range" id="alSlide" min="1" max="6" value="4"></div>
+    <div class="slider-wrap"><label>רוחב: <b id="awLbl">3</b></label>
+      <input type="range" id="awSlide" min="1" max="5" value="3"></div>
+    <div class="svg-viz"><svg id="arLive" viewBox="0 0 260 220" width="290" height="245"></svg></div>
+    <div class="iact-out" id="areaOut"></div>
+  </div>
 
   <div class="card">
     <p class="lead">לשתי שאלות שונות על צורה יש שתי תשובות: <span class="word">היקף</span> = כמה גדר צריך <b>מסביב</b>, ו-<span class="word2">שטח</span> = כמה דשא צריך <b>בפנים</b>. 🏡</p>
@@ -2507,6 +2632,18 @@
 <!-- ============ פרק: ממוצע ונתונים ============ -->
 <section class="chapter c22" id="ch22">
   <div class="chapter-head"><div class="chapter-num">19</div><h2>ממוצע ונתונים 📊</h2></div>
+
+  <div class="interactive-fun">
+    <h3>⚖️ מאזן הממוצע — שנו את הסוכריות!</h3>
+    <div class="slider-wrap"><label>מפלצת 1: <b id="av1Lbl">2</b> 🍬</label>
+      <input type="range" id="av1" min="0" max="10" value="2"></div>
+    <div class="slider-wrap"><label>מפלצת 2: <b id="av2Lbl">4</b> 🍬</label>
+      <input type="range" id="av2" min="0" max="10" value="4"></div>
+    <div class="slider-wrap"><label>מפלצת 3: <b id="av3Lbl">6</b> 🍬</label>
+      <input type="range" id="av3" min="0" max="10" value="6"></div>
+    <div class="iact-out" id="avgOut"></div>
+    <p style="text-align:center;font-weight:600;font-size:.95rem;opacity:.75">הממוצע = החלוקה ההוגנת בין כולם ⚖️</p>
+  </div>
 
   <div class="card">
     <p class="lead"><span class="word">ממוצע</span> הוא ה"חלק ההוגן" — אם היו מחלקים הכול בשווה, כמה כל אחד היה מקבל? מחברים הכול, ומחלקים בכמות. ⚖️</p>
@@ -3558,6 +3695,229 @@ async function submitScore(){
   if(saved){const el=document.getElementById('lbName'); if(el) el.value=saved;}
   updateMyScore();
 })();
+
+/* ==================== אינטראקטיביות בכל הפרקים ==================== */
+
+/* --- עשרוניים ואחוזים (פרק 4): ממיר --- */
+(function(){
+  const sl=document.getElementById('pctSlide'); if(!sl) return;
+  function upd(){
+    const p=+sl.value;
+    document.getElementById('pctLbl').textContent=p;
+    document.getElementById('pctFill').style.width=p+'%';
+    const dec=(p/100).toFixed(2);
+    const g=gcd(p,100)||1, fn=p/g, fd=100/g;
+    const frac = p===0 ? '0' : (fd===1 ? String(fn) :
+      '<span class="frac" style="color:var(--bubble)"><span class="top">'+fn+'</span><span class="bot">'+fd+'</span></span>');
+    document.getElementById('pctOut').innerHTML = frac+' = '+dec+' = <span style="color:var(--lime)">'+p+'%</span>';
+  }
+  sl.addEventListener('input',upd); upd();
+})();
+
+/* --- גורמים (פרק 2): בלש ראשוניים --- */
+function factorsOf(n){const f=[];for(let i=1;i<=n;i++){if(n%i===0)f.push(i);}return f;}
+function isPrimeN(n){return n>1 && factorsOf(n).length===2;}
+let curPrimeN=7;
+function newPrime(){
+  curPrimeN=2+Math.floor(Math.random()*28);
+  const el=document.getElementById('primeNum'); if(!el) return;
+  el.innerHTML='האם <b style="color:var(--grape)">'+curPrimeN+'</b> ראשוני?';
+  document.getElementById('primeFb').classList.remove('show');
+}
+function guessPrime(g){
+  const p=isPrimeN(curPrimeN), fb=document.getElementById('primeFb');
+  const facs=factorsOf(curPrimeN).join(' · ');
+  if(g===p){
+    fb.innerHTML='🎉 נכון! '+curPrimeN+(p?' <b>ראשוני</b> — הגורמים היחידים: '+facs+' 💎':' <b>פריק</b> — הגורמים שלו: '+facs);
+    fb.style.background='#e2fff2';fb.style.borderColor='var(--lime)';
+    if(typeof addStar==='function')addStar();
+  }else{
+    fb.innerHTML='🤔 לא בדיוק! הגורמים של '+curPrimeN+' הם: '+facs+' → לכן זה <b>'+(p?'ראשוני':'פריק')+'</b>.';
+    fb.style.background='#ffe3e8';fb.style.borderColor='#ff7a90';
+  }
+  fb.classList.add('show');
+}
+
+/* --- חיבור/חיסור שברים (פרק 3): מחולל --- */
+let curFA={};
+function newFA(){
+  const dens=[2,3,4,5,6];
+  const b=dens[Math.floor(Math.random()*dens.length)], d=dens[Math.floor(Math.random()*dens.length)];
+  const a=1+Math.floor(Math.random()*(b-1)), c=1+Math.floor(Math.random()*(d-1));
+  curFA={a,b,c,d};
+  const el=document.getElementById('faText'); if(!el) return;
+  el.innerHTML='<span dir="ltr"><span class="frac"><span class="top">'+a+'</span><span class="bot">'+b+'</span></span> + <span class="frac"><span class="top">'+c+'</span><span class="bot">'+d+'</span></span> = ?</span>';
+  document.getElementById('faAns').classList.remove('show');
+}
+function revealFA(){
+  const {a,b,c,d}=curFA;
+  const L=b*d/gcd(b,d), na=a*(L/b), nc=c*(L/d), sum=na+nc;
+  const g=gcd(sum,L)||1, sn=sum/g, sd=L/g;
+  let html='מכנה משותף = <b>'+L+'</b><br><span dir="ltr"><span class="frac"><span class="top">'+na+'</span><span class="bot">'+L+'</span></span> + <span class="frac"><span class="top">'+nc+'</span><span class="bot">'+L+'</span></span> = <span class="frac" style="color:var(--lime)"><span class="top">'+sum+'</span><span class="bot">'+L+'</span></span>';
+  if(sn!==sum||sd!==L) html+=' = <b style="color:var(--lime)">'+sn+'/'+sd+'</b>';
+  html+=' 🎉</span>';
+  const fb=document.getElementById('faAns'); fb.innerHTML=html; fb.classList.add('show');
+}
+
+/* --- יחס (פרק 6): מגדיל מתכון --- */
+(function(){
+  const sl=document.getElementById('ratioSlide'); if(!sl) return;
+  function upd(){
+    const k=+sl.value;
+    document.getElementById('ratioK').textContent=k;
+    document.getElementById('ratioOut').innerHTML='2:3 = <span style="color:var(--lime)">'+(2*k)+' : '+(3*k)+'</span>';
+  }
+  sl.addEventListener('input',upd); upd();
+})();
+
+/* --- מספרים שליליים (פרק 7): מד המפלצת --- */
+(function(){
+  const sl=document.getElementById('negSlide'); if(!sl) return;
+  function upd(){
+    const v=+sl.value;
+    document.getElementById('negLbl').textContent=v;
+    drawIntLine('nlLive',-10,10,v);
+    const out=document.getElementById('negOut');
+    if(v>0) out.textContent='🔥 '+v+' מעל האפס · יש לך '+v+' ₪';
+    else if(v<0) out.textContent='❄️ '+Math.abs(v)+' מתחת לאפס · אתה חייב '+Math.abs(v)+' ₪';
+    else out.textContent='😐 בדיוק אפס!';
+  }
+  sl.addEventListener('input',upd); upd();
+})();
+
+/* --- סדר פעולות (פרק 8): אתגר --- */
+let ordAns=0;
+function newOrd(){
+  const t=Math.floor(Math.random()*4);
+  const a=2+Math.floor(Math.random()*5), b=2+Math.floor(Math.random()*5), c=2+Math.floor(Math.random()*5);
+  let text;
+  if(t===0){text=a+' + '+b+' × '+c; ordAns=a+b*c;}
+  else if(t===1){text=a+' × '+b+' + '+c; ordAns=a*b+c;}
+  else if(t===2){text='('+a+' + '+b+') × '+c; ordAns=(a+b)*c;}
+  else {text=a+' × '+b+' − '+c; ordAns=a*b-c;}
+  const el=document.getElementById('ordText'); if(!el) return;
+  el.innerHTML='חשבו: <b style="color:var(--grape)" dir="ltr">'+text+'</b>';
+  document.getElementById('ordInput').value='';
+  document.getElementById('ordFb').classList.remove('show');
+}
+function checkOrd(){
+  const inp=document.getElementById('ordInput'); if(inp.value==='')return;
+  const fb=document.getElementById('ordFb');
+  if(+inp.value===ordAns){fb.innerHTML='🎉 מדויק! התשובה '+ordAns+'. כפל וחזקות לפני חיבור!';fb.style.background='#e2fff2';fb.style.borderColor='var(--lime)';if(typeof addStar==='function')addStar();}
+  else{fb.innerHTML='🤔 לא בדיוק! התשובה הנכונה: <b>'+ordAns+'</b>. בדקו את הסדר — "סחכח"!';fb.style.background='#ffe3e8';fb.style.borderColor='#ff7a90';}
+  fb.classList.add('show');
+}
+
+/* --- חזקות (פרק 9): מחשבון --- */
+(function(){
+  const bs=document.getElementById('baseSlide'), es=document.getElementById('expSlide'); if(!bs||!es) return;
+  function upd(){
+    const b=+bs.value, e=+es.value;
+    document.getElementById('baseLbl').textContent=b;
+    document.getElementById('expLbl').textContent=e;
+    const parts=Array(e).fill(b).join(' × ');
+    document.getElementById('powOut').innerHTML=b+'<sup>'+e+'</sup> = '+parts+' = <span style="color:var(--lime)">'+Math.pow(b,e)+'</span>';
+  }
+  bs.addEventListener('input',upd); es.addEventListener('input',upd); upd();
+})();
+
+/* --- נעלמים (פרק 10): מאחד איברים --- */
+let curComb={};
+function newComb(){
+  const a=1+Math.floor(Math.random()*5), c=1+Math.floor(Math.random()*5);
+  const b=1+Math.floor(Math.random()*6), d=1+Math.floor(Math.random()*6);
+  curComb={a,b,c,d};
+  const el=document.getElementById('combText'); if(!el) return;
+  el.innerHTML='<b dir="ltr">'+a+'x + '+b+' + '+c+'x + '+d+'</b> = ?';
+  document.getElementById('combFb').classList.remove('show');
+}
+function revealComb(){
+  const {a,b,c,d}=curComb;
+  const fb=document.getElementById('combFb');
+  fb.innerHTML='מאחדים x-ים: '+a+'x + '+c+'x = '+(a+c)+'x · ומספרים: '+b+' + '+d+' = '+(b+d)+'<br><b style="color:var(--lime)" dir="ltr">'+(a+c)+'x + '+(b+d)+'</b> 🎉';
+  fb.classList.add('show');
+}
+
+/* --- פירוק לגורמים (פרק 14): מחולל --- */
+let curFac={};
+function newFactor(){
+  const g=2+Math.floor(Math.random()*4);
+  let p,q; do{p=1+Math.floor(Math.random()*4);q=1+Math.floor(Math.random()*5);}while(gcd(p,q)!==1);
+  curFac={g,p,q};
+  const el=document.getElementById('facText'); if(!el) return;
+  el.innerHTML='פרקו: <b style="color:var(--grape)" dir="ltr">'+(g*p)+'x + '+(g*q)+'</b>';
+  document.getElementById('facFb').classList.remove('show');
+}
+function revealFactor(){
+  const {g,p,q}=curFac, inner=(p===1?'x':p+'x');
+  const fb=document.getElementById('facFb');
+  fb.innerHTML='הגורם המשותף הגדול ביותר הוא <b>'+g+'</b>.<br>מחלקים כל איבר ב-'+g+':<br><b style="color:var(--lime)" dir="ltr">'+g+'('+inner+' + '+q+')</b> 🎉';
+  fb.classList.add('show');
+}
+
+/* --- אי-שוויונות (פרק 16): מחולל --- */
+let curIneq={};
+function newIneq(){
+  const t=Math.floor(Math.random()*3);
+  let text, sign, sol;
+  if(t===0){const b=1+Math.floor(Math.random()*6), s=1+Math.floor(Math.random()*6); text='x + '+b+' > '+(b+s); sign='>'; sol=s;}
+  else if(t===1){const b=1+Math.floor(Math.random()*5), c=1+Math.floor(Math.random()*6); text='x − '+b+' < '+c; sign='<'; sol=c+b;}
+  else {const a=2+Math.floor(Math.random()*4), r=1+Math.floor(Math.random()*6); text=a+'x > '+(a*r); sign='>'; sol=r;}
+  curIneq={sign,sol};
+  const el=document.getElementById('ineqText'); if(!el) return;
+  el.innerHTML='פתרו: <b style="color:var(--grape)" dir="ltr">'+text+'</b>';
+  document.getElementById('ineqFb').classList.remove('show');
+}
+function revealIneq(){
+  const {sign,sol}=curIneq;
+  const ex = sign==='>' ? (sol+1)+', '+(sol+2)+', '+(sol+3) : Math.max(0,sol-1)+', '+Math.max(0,sol-2)+', '+Math.max(0,sol-3);
+  const fb=document.getElementById('ineqFb');
+  fb.innerHTML='<b style="color:var(--lime)" dir="ltr">x '+sign+' '+sol+'</b><br>הרבה מספרים מתאימים! למשל: '+ex+' …';
+  fb.classList.add('show');
+}
+
+/* --- מערכת צירים (פרק 17): שליטה חיה --- */
+(function(){
+  const xs=document.getElementById('cxSlide'), ys=document.getElementById('cySlide'); if(!xs||!ys) return;
+  function upd(){
+    const x=+xs.value, y=+ys.value;
+    document.getElementById('cxLbl').textContent=x;
+    document.getElementById('cyLbl').textContent=y;
+    drawCoordPlane('cpLive',x,y);
+    document.getElementById('coordOut').textContent='המפלצת בנקודה ('+x+', '+y+') 👾';
+  }
+  xs.addEventListener('input',upd); ys.addEventListener('input',upd); upd();
+})();
+
+/* --- היקף ושטח (פרק 18): מעצב מלבנים --- */
+(function(){
+  const ls=document.getElementById('alSlide'), ws=document.getElementById('awSlide'); if(!ls||!ws) return;
+  function upd(){
+    const w=+ls.value, h=+ws.value;
+    document.getElementById('alLbl').textContent=w;
+    document.getElementById('awLbl').textContent=h;
+    drawAreaGrid('arLive',w,h);
+    document.getElementById('areaOut').innerHTML='היקף = <b>'+(2*(w+h))+'</b> · שטח = <span style="color:var(--lime)">'+(w*h)+'</span> משבצות';
+  }
+  ls.addEventListener('input',upd); ws.addEventListener('input',upd); upd();
+})();
+
+/* --- ממוצע (פרק 19): מאזן --- */
+(function(){
+  const a=document.getElementById('av1'), b=document.getElementById('av2'), c=document.getElementById('av3'); if(!a||!b||!c) return;
+  function upd(){
+    const x=+a.value, y=+b.value, z=+c.value;
+    document.getElementById('av1Lbl').textContent=x;
+    document.getElementById('av2Lbl').textContent=y;
+    document.getElementById('av3Lbl').textContent=z;
+    const avg=(x+y+z)/3, txt=Number.isInteger(avg)?avg:avg.toFixed(1);
+    document.getElementById('avgOut').innerHTML='('+x+' + '+y+' + '+z+') ÷ 3 = <span style="color:var(--lime)">'+txt+'</span>';
+  }
+  a.addEventListener('input',upd); b.addEventListener('input',upd); c.addEventListener('input',upd); upd();
+})();
+
+/* אתחול המחוללים */
+newPrime(); newFA(); newOrd(); newComb(); newFactor(); newIneq();
 </script>
 </body>
 </html>
