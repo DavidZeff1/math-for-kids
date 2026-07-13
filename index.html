@@ -258,6 +258,12 @@
   .cheat li{padding:7px 0;font-weight:600;font-size:1.02rem;border-bottom:2px dotted rgba(45,27,78,.2);display:flex;flex-wrap:wrap;align-items:center;gap:5px}
   .cheat li:last-child{border-bottom:none}
   .pill{background:var(--ink);color:#fff;font-family:'Varela Round';font-weight:600;padding:2px 12px;border-radius:999px;font-size:.88rem}
+  .cheat-ex{margin-top:9px;background:rgba(255,255,255,.72);border:2px dashed var(--ink);border-radius:12px;padding:8px 11px}
+  .cheat-ex + .cheat-ex{margin-top:7px}
+  .cheat-ex .exlbl{font-family:'Varela Round';font-weight:700;font-size:.76rem;opacity:.7;display:block;margin-bottom:3px}
+  .cheat-ex .exbody{font-family:'Fredoka';font-weight:700;font-size:1.02rem;direction:ltr;display:flex;flex-wrap:wrap;align-items:center;gap:5px;justify-content:center;line-height:1.5}
+  .cheat-ex .exbody .frac{font-size:.92em}
+  .cheat-ex .ok{color:#1a9e6b}.cheat-ex .no{color:#d63384}
 
   .interactive-fun{background:linear-gradient(135deg,#fff,#f6f0ff);border:4px solid var(--grape);border-radius:22px;padding:22px;margin:20px 0;box-shadow:6px 6px 0 var(--shadow)}
   .slider-wrap{display:flex;flex-direction:column;gap:6px;margin:14px 0}
@@ -2407,6 +2413,8 @@
         <li>תחתון = <span class="pill">מכנה</span> (סך כל החתיכות)</li>
         <li>מונה = מכנה → שלם אחד</li>
       </ul>
+      <div class="cheat-ex"><span class="exlbl">דוגמה: "3 חתיכות מתוך 8"</span>
+        <div class="exbody"><span class="frac"><span class="top">3</span><span class="bot">8</span></span> ← <span class="frac"><span class="top">4</span><span class="bot">4</span></span> = שלם</div></div>
     </div>
 
     <div class="cheat b2">
@@ -2415,61 +2423,69 @@
         <li>אותו מכנה? מחברים/מחסרים מונים, משאירים מכנה</li>
         <li>מכנה שונה? קודם עושים אותם זהים</li>
         <li><b>אף פעם</b> לא מחברים מכנים!</li>
-        <li>טריק: כופלים את שני המכנים למכנה משותף</li>
       </ul>
+      <div class="cheat-ex"><span class="exlbl">אותו מכנה</span>
+        <div class="exbody"><span class="frac"><span class="top">2</span><span class="bot">7</span></span> + <span class="frac"><span class="top">3</span><span class="bot">7</span></span> = <span class="frac ok"><span class="top">5</span><span class="bot">7</span></span></div></div>
+      <div class="cheat-ex"><span class="exlbl">מכנה שונה → מכנה משותף 6</span>
+        <div class="exbody"><span class="frac"><span class="top">1</span><span class="bot">2</span></span> + <span class="frac"><span class="top">1</span><span class="bot">3</span></span> = <span class="frac"><span class="top">3</span><span class="bot">6</span></span> + <span class="frac"><span class="top">2</span><span class="bot">6</span></span> = <span class="frac ok"><span class="top">5</span><span class="bot">6</span></span></div></div>
     </div>
 
     <div class="cheat b3">
       <h4>✖️ כפל</h4>
       <ul>
-        <li>כופלים "ישר"</li>
-        <li>מונה × מונה, מכנה × מכנה</li>
+        <li>כופלים "ישר": מונה × מונה, מכנה × מכנה</li>
         <li>"מתוך" אומר כפל</li>
         <li>לא צריך מכנה משותף!</li>
       </ul>
+      <div class="cheat-ex"><span class="exlbl">כופלים ישר</span>
+        <div class="exbody"><span class="frac"><span class="top">2</span><span class="bot">3</span></span> × <span class="frac"><span class="top">4</span><span class="bot">5</span></span> = <span class="frac ok"><span class="top">8</span><span class="bot">15</span></span></div></div>
+      <div class="cheat-ex"><span class="exlbl">"חצי מתוך 6"</span>
+        <div class="exbody"><span class="frac"><span class="top">1</span><span class="bot">2</span></span> × 6 = <span class="ok">3</span></div></div>
     </div>
 
     <div class="cheat b4">
       <h4>➗ חילוק</h4>
       <ul>
         <li><b>שומרים · משנים · הופכים</b></li>
-        <li>שומרים את השבר הראשון</li>
-        <li>משנים ÷ ל-×</li>
-        <li>הופכים את השבר השני</li>
+        <li>שומרים 1, משנים ÷ ל-×, הופכים את השני</li>
       </ul>
+      <div class="cheat-ex"><span class="exlbl">הופכים את השבר השני</span>
+        <div class="exbody"><span class="frac"><span class="top">1</span><span class="bot">2</span></span> ÷ <span class="frac"><span class="top">3</span><span class="bot">4</span></span> = <span class="frac"><span class="top">1</span><span class="bot">2</span></span> × <span class="frac"><span class="top">4</span><span class="bot">3</span></span> = <span class="frac ok"><span class="top">2</span><span class="bot">3</span></span></div></div>
     </div>
 
     <div class="cheat b5">
       <h4>🔍 נעלמים</h4>
       <ul>
         <li>‏x = מספר מסתורי 📦</li>
-        <li>‏3x פירושו 3 × x</li>
-        <li>‏x² פירושו x × x</li>
-        <li>מאחדים דומים: 2x + 3x = 5x</li>
-        <li>לא מערבבים: 2x + 3 נשאר בנפרד</li>
+        <li>‏3x = 3 × x &nbsp;·&nbsp; x² = x × x</li>
+        <li>מאחדים דומים, לא מערבבים שונים</li>
       </ul>
+      <div class="cheat-ex"><span class="exlbl">דומים מתאחדים</span>
+        <div class="exbody">2x + 3x = <span class="ok">5x</span></div></div>
+      <div class="cheat-ex"><span class="exlbl">שונים נשארים בנפרד</span>
+        <div class="exbody">2x + 3 <span class="no">≠ 5x</span></div></div>
     </div>
 
     <div class="cheat b6">
       <h4>⚖️ פתרון עבור X</h4>
       <ul>
-        <li>שומרים על הנדנדה מאוזנת</li>
-        <li>עושים אותו דבר לשני הצדדים</li>
+        <li>מה שעושים לצד אחד — לשני!</li>
         <li>מבטלים + ב־ − , ו־ × ב־ ÷</li>
-        <li>משאירים את x לבד בצד אחד</li>
-        <li>תמיד בודקים את התשובה! ✓</li>
+        <li>תמיד בודקים בסוף ✓</li>
       </ul>
+      <div class="cheat-ex"><span class="exlbl">מבטלים 4, ואז מחלקים ב-2</span>
+        <div class="exbody">2x + 4 = 10 → 2x = 6 → <span class="ok">x = 3</span></div></div>
     </div>
 
     <div class="cheat b7">
       <h4>🧩 לכל האיברים!</h4>
       <ul>
         <li>כופלים/מחלקים? <span class="pill">לכל איבר!</span></li>
-        <li>איבר = כל חלק שמופרד ב-+ או −</li>
-        <li>גם מספרים רגילים חייבים לקבל את הפעולה</li>
+        <li>גם מספרים רגילים מקבלים את הפעולה</li>
         <li>x בשני צדדים? אוספים לצד אחד</li>
-        <li><b>תמיד</b> בודקים בסוף!</li>
       </ul>
+      <div class="cheat-ex"><span class="exlbl">כופלים כל איבר ב-3</span>
+        <div class="exbody"><span class="frac"><span class="top">x</span><span class="bot">3</span></span> + 2 = 5 → x + 6 = 15 → <span class="ok">x = 9</span></div></div>
     </div>
 
     <div class="cheat b1">
@@ -2477,30 +2493,35 @@
       <ul>
         <li>כופלים מונה+מכנה באותו מספר → אותו ערך</li>
         <li>צמצום = מחלקים שניהם באותו מספר</li>
-        <li>עוצרים כשאין מספר משותף (חוץ מ-1)</li>
         <li>מונה &gt; מכנה = שבר מדומה (יותר משלם)</li>
       </ul>
+      <div class="cheat-ex"><span class="exlbl">שקולים (×2 למעלה ולמטה)</span>
+        <div class="exbody"><span class="frac"><span class="top">1</span><span class="bot">2</span></span> = <span class="frac"><span class="top">2</span><span class="bot">4</span></span> = <span class="frac"><span class="top">4</span><span class="bot">8</span></span></div></div>
+      <div class="cheat-ex"><span class="exlbl">צמצום (÷2)</span>
+        <div class="exbody"><span class="frac"><span class="top">6</span><span class="bot">8</span></span> = <span class="frac ok"><span class="top">3</span><span class="bot">4</span></span></div></div>
     </div>
 
     <div class="cheat b3">
       <h4>🎁 סוגריים (חוק הפילוג)</h4>
       <ul>
         <li>המספר שבחוץ מכפיל <b>כל</b> איבר בפנים</li>
-        <li>‏a(b + c) = ab + ac</li>
         <li>מינוס לפני סוגריים הופך כל סימן</li>
-        <li>אפשר גם קודם לחלק בשני הצדדים</li>
       </ul>
+      <div class="cheat-ex"><span class="exlbl">מפלגים לכל איבר</span>
+        <div class="exbody">3(x + 4) = <span class="ok">3x + 12</span></div></div>
+      <div class="cheat-ex"><span class="exlbl">מינוס הופך סימנים</span>
+        <div class="exbody">−(x − 3) = <span class="ok">−x + 3</span></div></div>
     </div>
 
     <div class="cheat b4">
       <h4>📖 חידות מילוליות</h4>
       <ul>
         <li>הדבר הלא-ידוע = <span class="pill">x</span></li>
-        <li>"פי" / "כפול" = ×</li>
-        <li>"ביחד" = + · "נשארו/פחות" = −</li>
+        <li>"פי/כפול" = × · "ביחד" = + · "נשארו" = −</li>
         <li>"הוא / שווה" = =</li>
-        <li>בדקו שהתשובה הגיונית בסיפור!</li>
       </ul>
+      <div class="cheat-ex"><span class="exlbl">"למספר הוסיפו 5 וקיבלו 12"</span>
+        <div class="exbody">x + 5 = 12 → <span class="ok">x = 7</span></div></div>
     </div>
 
     <div class="cheat b2">
@@ -2508,9 +2529,11 @@
       <ul>
         <li>שבר → עשרוני: מחלקים מונה במכנה</li>
         <li>עשרוני → אחוז: כופלים ב-100</li>
-        <li>‏1/2=0.5=50% · 1/4=0.25=25%</li>
-        <li>10% ממספר: מזיזים נקודה שמאלה</li>
       </ul>
+      <div class="cheat-ex"><span class="exlbl">אותו ערך, 3 שפות</span>
+        <div class="exbody"><span class="frac"><span class="top">3</span><span class="bot">4</span></span> = 0.75 = <span class="ok">75%</span></div></div>
+      <div class="cheat-ex"><span class="exlbl">20% מתוך 50</span>
+        <div class="exbody">0.2 × 50 = <span class="ok">10</span></div></div>
     </div>
 
     <div class="cheat b5">
@@ -2518,28 +2541,34 @@
       <ul>
         <li>מתחת ל-0: חוב, קור 🌡️</li>
         <li>מינוס של מינוס = פלוס</li>
-        <li>סימנים שווים בכפל → חיובי</li>
-        <li>סימנים שונים בכפל → שלילי</li>
+        <li>סימנים שווים→חיובי · שונים→שלילי</li>
       </ul>
+      <div class="cheat-ex"><span class="exlbl">יורדים מתחת ל-0</span>
+        <div class="exbody">3 − 7 = <span class="no">−4</span></div></div>
+      <div class="cheat-ex"><span class="exlbl">מינוס של מינוס · סימנים שווים</span>
+        <div class="exbody">5 − (−3) = <span class="ok">8</span> &nbsp;·&nbsp; (−3)×(−4) = <span class="ok">12</span></div></div>
     </div>
 
     <div class="cheat b6">
       <h4>🚦 סדר פעולות "סחכח"</h4>
       <ul>
         <li><b>ס</b>וגריים → <b>ח</b>זקות</li>
-        <li><b>כ</b>פל/חילוק (משמאל לימין)</li>
-        <li><b>ח</b>יבור/חיסור (משמאל לימין)</li>
+        <li><b>כ</b>פל/חילוק → <b>ח</b>יבור/חיסור</li>
+        <li>(תמיד משמאל לימין)</li>
       </ul>
+      <div class="cheat-ex"><span class="exlbl">כפל לפני חיבור!</span>
+        <div class="exbody">2 + 3 × 4 = 2 + 12 = <span class="ok">14</span></div></div>
     </div>
 
     <div class="cheat b2">
       <h4>⚖️ אי-שוויונות 🐊</h4>
       <ul>
         <li><span class="mono">&gt;</span> גדול · <span class="mono">&lt;</span> קטן · הפה אוכל את הגדול</li>
-        <li>פותרים כמו משוואה</li>
-        <li>יש הרבה תשובות, לא אחת</li>
+        <li>פותרים כמו משוואה (הרבה תשובות!)</li>
         <li>כפל/חילוק בשלילי → הופכים סימן!</li>
       </ul>
+      <div class="cheat-ex"><span class="exlbl">הרבה תשובות (5, 6, 7 …)</span>
+        <div class="exbody">x + 2 &gt; 6 → <span class="ok">x &gt; 4</span></div></div>
     </div>
 
     <div class="cheat b3">
@@ -2548,28 +2577,37 @@
         <li>גורם = מתחלק במספר בדיוק</li>
         <li>כפולה = לוח הכפל (גדל בלי סוף)</li>
         <li>ראשוני = בדיוק 2 גורמים (1 ועצמו)</li>
-        <li>מכנה משותף = כפולה משותפת</li>
       </ul>
+      <div class="cheat-ex"><span class="exlbl">גורמים של 12 · כפולות של 4</span>
+        <div class="exbody">1·2·3·4·6·12 &nbsp;|&nbsp; 4·8·12·16…</div></div>
+      <div class="cheat-ex"><span class="exlbl">ראשוני</span>
+        <div class="exbody">7 = 1 × 7 <span class="ok">בלבד</span></div></div>
     </div>
 
     <div class="cheat b1">
       <h4>⚗️ יחס ופרופורציה</h4>
       <ul>
-        <li>יחס משווה כמויות: <span class="mono">2:3</span></li>
-        <li>אפשר לכתוב גם כשבר <span class="mono">2/3</span></li>
+        <li>יחס משווה כמויות: <span class="mono">2:3</span> = <span class="mono">2/3</span></li>
         <li>שקול: כופלים/מחלקים שני הצדדים</li>
         <li>חסר? "פי כמה גדל?" ותעשו לשני</li>
       </ul>
+      <div class="cheat-ex"><span class="exlbl">יחס שקול (×2)</span>
+        <div class="exbody">2:3 = <span class="ok">4:6</span></div></div>
+      <div class="cheat-ex"><span class="exlbl">חסר? 2→8 זה ×4, אז 3→</span>
+        <div class="exbody">2:3 = 8:<span class="ok">12</span></div></div>
     </div>
 
     <div class="cheat b6">
       <h4>⚡ חזקות ושורשים</h4>
       <ul>
-        <li><span class="mono">2³ = 2×2×2 = 8</span> (לא 2×3!)</li>
         <li>בסיס = מה כופלים · מעריך = כמה פעמים</li>
         <li>ריבועים: 1,4,9,16,25…</li>
-        <li>שורש = הפעולה ההפוכה: <span class="mono">√9=3</span></li>
+        <li>שורש = הפעולה ההפוכה</li>
       </ul>
+      <div class="cheat-ex"><span class="exlbl">חזקה = כפל חוזר (לא 2×3!)</span>
+        <div class="exbody">2³ = 2×2×2 = <span class="ok">8</span></div></div>
+      <div class="cheat-ex"><span class="exlbl">שורש = הפוך (כי 3²=9)</span>
+        <div class="exbody">√9 = <span class="ok">3</span></div></div>
     </div>
   </div>
 
