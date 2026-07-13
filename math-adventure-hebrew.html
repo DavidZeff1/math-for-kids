@@ -1,0 +1,782 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>מפלצות המתמטיקה: הרפתקת שברים ואלגברה!</title>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Baloo+2:wght@400;500;600;700;800&family=Varela+Round&family=Heebo:wght@400;500;700;800;900&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --grape:#7c3aed;
+    --grape-deep:#5b21b6;
+    --bubble:#ff5da2;
+    --sunny:#ffd23f;
+    --lime:#3ddc97;
+    --sky:#4cc9f0;
+    --tangerine:#ff8c42;
+    --cream:#fff8ef;
+    --ink:#2d1b4e;
+    --paper:#fffdfa;
+    --shadow:rgba(91,33,182,.22);
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{
+    font-family:'Heebo',sans-serif;
+    background:
+      radial-gradient(circle at 12% 18%, #ffe0ef 0 12%, transparent 12.5%),
+      radial-gradient(circle at 88% 12%, #dff6ff 0 10%, transparent 10.5%),
+      radial-gradient(circle at 78% 82%, #fff3d1 0 14%, transparent 14.5%),
+      linear-gradient(160deg,#fef6ff 0%,#eefaff 55%,#fff8ef 100%);
+    background-attachment:fixed;
+    color:var(--ink);
+    min-height:100vh;
+    overflow-x:hidden;
+  }
+
+  .doodle{position:fixed;font-size:2.4rem;opacity:.16;pointer-events:none;z-index:0;animation:drift 9s ease-in-out infinite}
+  @keyframes drift{0%,100%{transform:translateY(0) rotate(-6deg)}50%{transform:translateY(-22px) rotate(8deg)}}
+
+  header{position:relative;z-index:2;text-align:center;padding:48px 20px 30px}
+  .badge{
+    display:inline-block;background:var(--sunny);color:var(--grape-deep);
+    font-family:'Varela Round';font-weight:600;font-size:1rem;letter-spacing:.03em;
+    padding:7px 20px;border-radius:999px;border:3px solid var(--ink);
+    box-shadow:4px 4px 0 var(--ink);transform:rotate(-2deg);margin-bottom:18px;
+  }
+  h1{
+    font-family:'Baloo 2';font-weight:800;line-height:1.05;
+    font-size:clamp(2.6rem,8vw,5rem);
+    color:var(--grape);
+    text-shadow:4px 4px 0 var(--sunny),8px 8px 0 var(--ink);
+  }
+  .subtitle{font-family:'Varela Round';font-size:clamp(1.05rem,3vw,1.45rem);color:var(--grape-deep);margin-top:20px;font-weight:500}
+  .monster-row{font-size:clamp(2.2rem,7vw,3.4rem);margin-top:10px;letter-spacing:.15em}
+
+  nav{
+    position:sticky;top:0;z-index:20;
+    display:flex;flex-wrap:wrap;gap:10px;justify-content:center;
+    padding:16px;margin:10px auto 0;max-width:1050px;
+    background:rgba(255,253,250,.82);backdrop-filter:blur(8px);
+    border-radius:0 0 24px 24px;
+  }
+  .tab{
+    font-family:'Varela Round';font-weight:600;font-size:1.02rem;cursor:pointer;
+    padding:11px 20px;border-radius:999px;border:3px solid var(--ink);
+    background:var(--paper);color:var(--ink);transition:transform .12s,box-shadow .12s;
+    box-shadow:3px 3px 0 var(--ink);user-select:none;
+  }
+  .tab:hover{transform:translateY(-3px);box-shadow:5px 6px 0 var(--ink)}
+  .tab.active{color:#fff;box-shadow:3px 3px 0 var(--ink)}
+  .tab[data-c="1"].active{background:var(--bubble)}
+  .tab[data-c="2"].active{background:var(--sky)}
+  .tab[data-c="3"].active{background:var(--lime)}
+  .tab[data-c="4"].active{background:var(--tangerine)}
+  .tab[data-c="5"].active{background:var(--grape)}
+  .tab[data-c="6"].active{background:var(--sunny);color:var(--ink)}
+
+  main{position:relative;z-index:2;max-width:940px;margin:0 auto;padding:30px 18px 90px}
+  .chapter{display:none;animation:pop .4s ease}
+  .chapter.show{display:block}
+  @keyframes pop{from{opacity:0;transform:translateY(24px) scale(.98)}to{opacity:1;transform:none}}
+
+  .chapter-head{display:flex;align-items:center;gap:16px;margin-bottom:8px}
+  .chapter-num{
+    font-family:'Baloo 2';font-weight:800;font-size:2rem;color:#fff;
+    min-width:64px;height:64px;display:grid;place-items:center;border-radius:20px;
+    border:4px solid var(--ink);box-shadow:4px 4px 0 var(--ink);flex-shrink:0;
+  }
+  .c1 .chapter-num{background:var(--bubble)} .c2 .chapter-num{background:var(--sky)}
+  .c3 .chapter-num{background:var(--lime)} .c4 .chapter-num{background:var(--tangerine)}
+  .c5 .chapter-num{background:var(--grape)} .c6 .chapter-num{background:var(--sunny);color:var(--ink)}
+  .chapter-head h2{font-family:'Baloo 2';font-weight:800;font-size:clamp(1.5rem,5vw,2.4rem);color:var(--grape-deep)}
+
+  .card{
+    background:var(--paper);border:4px solid var(--ink);border-radius:24px;
+    padding:24px 26px;margin:22px 0;box-shadow:7px 7px 0 var(--shadow);
+  }
+  .card p{font-size:1.12rem;line-height:1.7;margin:10px 0}
+  .card h3{font-family:'Varela Round';font-weight:600;font-size:1.4rem;color:var(--grape);margin:6px 0 4px;display:flex;align-items:center;gap:10px}
+  .lead{font-size:1.22rem;font-weight:700}
+
+  .word{color:var(--bubble);font-weight:800}
+  .word2{color:var(--sky);font-weight:800}
+  .word3{color:var(--lime);font-weight:800}
+  .word4{color:var(--tangerine);font-weight:800}
+
+  .frac{display:inline-flex;flex-direction:column;text-align:center;vertical-align:middle;margin:0 5px;font-weight:800;font-family:'Fredoka'}
+  .frac .top{border-bottom:3px solid currentColor;padding:0 6px}
+  .frac .bot{padding:2px 6px 0}
+  .eq{font-family:'Fredoka';font-size:1.6rem;font-weight:700;display:flex;flex-wrap:wrap;align-items:center;gap:6px;justify-content:center;margin:16px 0;color:var(--ink);direction:ltr}
+  .eq-he{direction:rtl;font-family:'Varela Round'}
+
+  .barviz{display:flex;gap:5px;margin:14px 0;flex-wrap:wrap;direction:ltr}
+  .seg{width:34px;height:34px;border:3px solid var(--ink);border-radius:8px;background:#fff}
+  .seg.on{background:var(--bubble)}
+  .seg.on2{background:var(--sky)}
+  .seg.on3{background:var(--lime)}
+
+  .steps{list-style:none;counter-reset:s;margin:14px 0}
+  .steps li{
+    counter-increment:s;position:relative;padding:12px 56px 12px 12px;margin:10px 0;
+    background:var(--cream);border:3px solid var(--ink);border-radius:16px;font-size:1.08rem;font-weight:500;
+  }
+  .steps li::before{
+    content:counter(s);position:absolute;right:10px;top:50%;transform:translateY(-50%);
+    width:34px;height:34px;background:var(--grape);color:#fff;border-radius:50%;
+    display:grid;place-items:center;font-family:'Baloo 2';font-weight:800;border:3px solid var(--ink);
+  }
+
+  .tip{
+    background:linear-gradient(135deg,#fff3d1,#ffe8c2);border:3px dashed var(--tangerine);
+    border-radius:18px;padding:16px 20px;margin:18px 0;font-weight:500;font-size:1.08rem;
+    display:flex;gap:12px;align-items:flex-start;
+  }
+  .tip b{font-weight:800}
+  .tip .big{font-size:1.8rem;flex-shrink:0}
+
+  .example-box{background:linear-gradient(135deg,#ede4ff,#f6f0ff);border:3px solid var(--grape);border-radius:18px;padding:18px 22px;margin:16px 0}
+  .example-box .tag{display:inline-block;background:var(--grape);color:#fff;font-family:'Varela Round';font-weight:600;padding:4px 16px;border-radius:999px;font-size:.92rem;margin-bottom:10px}
+
+  .quiz{background:var(--paper);border:4px solid var(--ink);border-radius:22px;padding:20px 22px;margin:18px 0;box-shadow:6px 6px 0 var(--shadow)}
+  .qhead{font-family:'Varela Round';font-weight:600;font-size:1.2rem;margin-bottom:14px;display:flex;align-items:center;gap:10px;color:var(--grape-deep)}
+  .q{margin:16px 0;padding-bottom:16px;border-bottom:2px dashed #e6dcf5}
+  .q:last-child{border-bottom:none}
+  .qtext{font-size:1.18rem;font-weight:700;margin-bottom:12px;display:flex;flex-wrap:wrap;align-items:center;gap:6px}
+  .opts{display:flex;flex-wrap:wrap;gap:10px}
+  .opt{
+    font-family:'Fredoka';font-weight:600;cursor:pointer;padding:10px 20px;border-radius:14px;
+    border:3px solid var(--ink);background:#fff;font-size:1.08rem;transition:transform .1s;box-shadow:3px 3px 0 var(--ink)
+  }
+  .opt:hover{transform:translateY(-2px)}
+  .opt.correct{background:var(--lime);color:var(--ink);animation:bounce .5s}
+  .opt.wrong{background:#ff7a90;color:#fff;animation:shake .4s}
+  .opt:disabled{cursor:default}
+  @keyframes bounce{0%,100%{transform:none}30%{transform:translateY(-10px) scale(1.08)}}
+  @keyframes shake{0%,100%{transform:translateX(0)}25%{transform:translateX(-7px)}75%{transform:translateX(7px)}}
+  .feedback{margin-top:12px;font-weight:800;font-size:1.08rem;display:none}
+  .feedback.show{display:block;animation:pop .3s}
+
+  .scorebar{
+    position:fixed;bottom:16px;left:16px;z-index:30;
+    background:var(--grape);color:#fff;font-family:'Baloo 2';font-weight:800;
+    padding:12px 20px;border-radius:999px;border:4px solid var(--ink);
+    box-shadow:4px 4px 0 var(--ink);font-size:1.1rem;display:flex;align-items:center;gap:8px;
+  }
+
+  .cheatgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:18px;margin-top:20px}
+  .cheat{border:4px solid var(--ink);border-radius:20px;padding:18px 20px;box-shadow:5px 5px 0 var(--ink)}
+  .cheat h4{font-family:'Baloo 2';font-weight:800;font-size:1.3rem;margin-bottom:10px;display:flex;align-items:center;gap:8px}
+  .cheat.b1{background:#ffe3f0}.cheat.b2{background:#e0f6ff}.cheat.b3{background:#e2fff2}
+  .cheat.b4{background:#fff0e0}.cheat.b5{background:#efe6ff}.cheat.b6{background:#fffbe0}
+  .cheat ul{list-style:none}
+  .cheat li{padding:7px 0;font-weight:600;font-size:1.02rem;border-bottom:2px dotted rgba(45,27,78,.2);display:flex;flex-wrap:wrap;align-items:center;gap:5px}
+  .cheat li:last-child{border-bottom:none}
+  .pill{background:var(--ink);color:#fff;font-family:'Varela Round';font-weight:600;padding:2px 12px;border-radius:999px;font-size:.88rem}
+
+  .interactive-fun{background:linear-gradient(135deg,#fff,#f6f0ff);border:4px solid var(--grape);border-radius:22px;padding:22px;margin:20px 0;box-shadow:6px 6px 0 var(--shadow)}
+  .slider-wrap{display:flex;flex-direction:column;gap:6px;margin:14px 0}
+  .slider-wrap label{font-family:'Varela Round';font-weight:600;font-size:1.08rem}
+  input[type=range]{-webkit-appearance:none;height:14px;border-radius:999px;background:#e6dcf5;border:3px solid var(--ink);outline:none;direction:ltr}
+  input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:30px;height:30px;border-radius:50%;background:var(--bubble);border:3px solid var(--ink);cursor:pointer;box-shadow:2px 2px 0 var(--ink)}
+  input[type=range]::-moz-range-thumb{width:30px;height:30px;border-radius:50%;background:var(--bubble);border:3px solid var(--ink);cursor:pointer}
+  .pizza-display{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin:20px 0}
+  .pie{width:120px;height:120px}
+
+  .balance-game{text-align:center}
+  .scale{display:flex;justify-content:center;align-items:flex-end;gap:0;margin:20px auto;max-width:420px}
+  .pan{border:4px solid var(--ink);border-radius:0 0 60px 60px;padding:16px 10px 22px;min-width:150px;background:var(--sunny);min-height:80px;display:flex;flex-wrap:wrap;gap:6px;justify-content:center;align-items:center;transition:transform .3s}
+  .pan .item{font-size:1.8rem}
+  .beam{width:8px;background:var(--ink);align-self:stretch}
+
+  footer{text-align:center;padding:30px 20px 40px;position:relative;z-index:2;font-family:'Varela Round';font-weight:500;color:var(--grape-deep)}
+
+  .try-btn{font-family:'Varela Round';font-weight:600;font-size:1.08rem;cursor:pointer;padding:12px 26px;border-radius:16px;border:3px solid var(--ink);background:var(--lime);color:var(--ink);box-shadow:4px 4px 0 var(--ink);transition:transform .1s;margin-top:8px}
+  .try-btn:hover{transform:translateY(-3px)}
+  .try-btn:active{transform:translateY(0);box-shadow:2px 2px 0 var(--ink)}
+
+  .answer-reveal{margin-top:14px;padding:14px 18px;background:#e2fff2;border:3px solid var(--lime);border-radius:14px;font-weight:700;display:none}
+  .answer-reveal.show{display:block;animation:pop .3s}
+
+  @media(max-width:520px){
+    .card{padding:18px}
+    .chapter-num{min-width:52px;height:52px;font-size:1.5rem}
+    nav{gap:7px;padding:12px}
+    .tab{padding:9px 14px;font-size:.9rem}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="badge">★ מסע המתמטיקה הגדול ★</div>
+  <h1>מפלצות המתמטיקה</h1>
+  <div class="subtitle">ללמוד שברים ואלגברה עם חברים מפלצתיים ומצחיקים!</div>
+  <div class="monster-row">👾 🐲 🦖 👽 🐙 🦕</div>
+</header>
+
+<nav id="nav">
+  <div class="tab active" data-c="1" data-target="ch1">🍕 שברים 101</div>
+  <div class="tab" data-c="2" data-target="ch2">➕ חיבור וחיסור</div>
+  <div class="tab" data-c="3" data-target="ch3">✖️ כפל וחילוק</div>
+  <div class="tab" data-c="4" data-target="ch4">🔍 היכרות עם נעלמים</div>
+  <div class="tab" data-c="5" data-target="ch5">⚖️ פתרון עבור X</div>
+  <div class="tab" data-c="6" data-target="ch6">📋 דף עזר</div>
+</nav>
+
+<main>
+
+<!-- ============ פרק 1 ============ -->
+<section class="chapter c1 show" id="ch1">
+  <div class="chapter-head"><div class="chapter-num">1</div><h2>שברים 101 🍕</h2></div>
+
+  <div class="card">
+    <p class="lead">שבר הוא פשוט דרך להגיד <span class="word">"חלק מתוך שלם"</span>. דמיינו פיצה חתוכה למשולשים!</p>
+    <div class="eq">
+      <span class="frac" style="color:var(--bubble)"><span class="top">3</span><span class="bot">8</span></span>
+    </div>
+    <p style="text-align:center;font-weight:700">אומר: לקחתם <b style="color:var(--bubble)">3</b> משולשים מתוך <b>8</b> בסך הכול 🍕</p>
+    <div class="barviz">
+      <div class="seg on"></div><div class="seg on"></div><div class="seg on"></div>
+      <div class="seg"></div><div class="seg"></div><div class="seg"></div><div class="seg"></div><div class="seg"></div>
+    </div>
+    <h3>🔝 שני החלקים של השבר</h3>
+    <p><span class="word">המונה</span> (המספר העליון) = כמה חתיכות <b>יש לכם</b>.<br>
+    <span class="word2">המכנה</span> (המספר התחתון) = כמה חתיכות מרכיבות <b>שלם אחד</b>.</p>
+    <div class="tip"><span class="big">🧠</span><div><b>טריק זיכרון מפלצתי:</b> המכנה נמצא <b>מתחת</b> לקו — הוא "מכנה משותף" לכולם, כמו הצלחת שעליה יושבת כל הפיצה. התחתון הוא תמיד השלם!</div></div>
+  </div>
+
+  <div class="interactive-fun">
+    <h3 style="font-family:'Varela Round';color:var(--grape);font-size:1.3rem;margin-bottom:6px">🎛️ מכונת השברים — הזיזו וראו!</h3>
+    <div class="slider-wrap">
+      <label>חתיכות שיש לכם (מונה): <b id="numLbl">3</b></label>
+      <input type="range" id="numSlide" min="0" max="12" value="3">
+    </div>
+    <div class="slider-wrap">
+      <label>סך כל החתיכות (מכנה): <b id="denLbl">8</b></label>
+      <input type="range" id="denSlide" min="1" max="12" value="8">
+    </div>
+    <div class="pizza-display">
+      <svg class="pie" id="pieSvg" viewBox="0 0 100 100"></svg>
+    </div>
+    <div class="eq eq-he" id="fracLive"></div>
+  </div>
+
+  <div class="quiz">
+    <div class="qhead">🎯 משימת בזק — הקישו על התשובה הנכונה!</div>
+    <div class="q" data-answer="0">
+      <div class="qtext">לוח שוקולד מחולק ל-6 ריבועים. אכלתם 5. איזה שבר אכלתם? 🍫</div>
+      <div class="opts">
+        <button class="opt">5/6</button><button class="opt">6/5</button><button class="opt">1/6</button>
+      </div>
+      <div class="feedback"></div>
+    </div>
+    <div class="q" data-answer="2">
+      <div class="qtext">בשבר <span class="frac"><span class="top">2</span><span class="bot">9</span></span> — איזה מספר הוא המכנה?</div>
+      <div class="opts">
+        <button class="opt">2</button><button class="opt">שניהם</button><button class="opt">9</button>
+      </div>
+      <div class="feedback"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ פרק 2 ============ -->
+<section class="chapter c2" id="ch2">
+  <div class="chapter-head"><div class="chapter-num">2</div><h2>חיבור וחיסור ➕➖</h2></div>
+
+  <div class="card">
+    <h3>😎 מצב קל: אותו מכנה</h3>
+    <p>כשהמכנים <b>זהים</b>, פשוט מחברים או מחסרים את המונים, ומשאירים את המכנה כמו שהוא!</p>
+    <div class="eq">
+      <span class="frac"><span class="top">2</span><span class="bot">7</span></span>+
+      <span class="frac"><span class="top">3</span><span class="bot">7</span></span>=
+      <span class="frac" style="color:var(--lime)"><span class="top">5</span><span class="bot">7</span></span>
+    </div>
+    <div class="barviz">
+      <div class="seg on"></div><div class="seg on"></div>
+      <div class="seg on3"></div><div class="seg on3"></div><div class="seg on3"></div>
+      <div class="seg"></div><div class="seg"></div>
+    </div>
+    <div class="tip"><span class="big">🚫</span><div><b>אף פעם לא מחברים את המכנים!</b> ‏2/7 + 3/7 זה לא 5/14. המכנה רק מספר לנו את גודל החתיכה — הוא נשאר במקומו.</div></div>
+  </div>
+
+  <div class="card">
+    <h3>🤯 מצב אלוף: מכנים שונים</h3>
+    <p>אם המכנים שונים, קודם צריך להפוך אותם <span class="word3">לזהים</span>. מוצאים מכנה משותף!</p>
+    <div class="example-box">
+      <span class="tag">דוגמה 🐲</span>
+      <p style="font-weight:700;direction:ltr;text-align:center">
+        <span class="frac"><span class="top">1</span><span class="bot">2</span></span>+
+        <span class="frac"><span class="top">1</span><span class="bot">3</span></span>= ?
+      </p>
+      <ol class="steps">
+        <li>מוצאים מספר ש-2 ו-3 שניהם נכנסים בו → <b>6</b> הוא המספר הקסום שלנו!</li>
+        <li>‏1/2 הופך ל-3/6 (כופלים מונה ומכנה ב-3)</li>
+        <li>‏1/3 הופך ל-2/6 (כופלים מונה ומכנה ב-2)</li>
+        <li>עכשיו מחברים את המונים: 3/6 + 2/6 = <b style="color:var(--lime)">5/6</b> 🎉</li>
+      </ol>
+    </div>
+    <div class="tip"><span class="big">⚡</span><div><b>טריק מהיר:</b> אם נתקעתם, פשוט תכפילו את שני המכנים זה בזה כדי לקבל מכנה משותף. זה תמיד עובד (אפשר לצמצם אחר כך)!</div></div>
+  </div>
+
+  <div class="quiz">
+    <div class="qhead">🎯 משימת בזק</div>
+    <div class="q" data-answer="1">
+      <div class="qtext"><span class="frac"><span class="top">4</span><span class="bot">9</span></span>+<span class="frac"><span class="top">2</span><span class="bot">9</span></span>= ?</div>
+      <div class="opts"><button class="opt">6/18</button><button class="opt">6/9</button><button class="opt">8/9</button></div>
+      <div class="feedback"></div>
+    </div>
+    <div class="q" data-answer="2">
+      <div class="qtext"><span class="frac"><span class="top">5</span><span class="bot">6</span></span>−<span class="frac"><span class="top">1</span><span class="bot">6</span></span>= ?</div>
+      <div class="opts"><button class="opt">4/12</button><button class="opt">6/6</button><button class="opt">4/6</button></div>
+      <div class="feedback"></div>
+    </div>
+    <div class="q" data-answer="0">
+      <div class="qtext">כדי לחבר <span class="frac"><span class="top">1</span><span class="bot">4</span></span>+<span class="frac"><span class="top">1</span><span class="bot">2</span></span> — המכנה המשותף הוא…</div>
+      <div class="opts"><button class="opt">4</button><button class="opt">6</button><button class="opt">2</button></div>
+      <div class="feedback"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ פרק 3 ============ -->
+<section class="chapter c3" id="ch3">
+  <div class="chapter-head"><div class="chapter-num">3</div><h2>כפל וחילוק ✖️➗</h2></div>
+
+  <div class="card">
+    <h3>🎈 כפל זה הכי קל!</h3>
+    <p>לא צריך מכנה משותף! פשוט כופלים "ישר" — מונה × מונה, ומכנה × מכנה.</p>
+    <div class="eq">
+      <span class="frac"><span class="top">2</span><span class="bot">3</span></span>×
+      <span class="frac"><span class="top">4</span><span class="bot">5</span></span>=
+      <span class="frac" style="color:var(--lime)"><span class="top">2×4</span><span class="bot">3×5</span></span>=
+      <span class="frac" style="color:var(--lime)"><span class="top">8</span><span class="bot">15</span></span>
+    </div>
+    <div class="tip"><span class="big">💡</span><div>המילה "מתוך" אומרת כפל! חצי <b>מתוך</b> פיצה = 1/2 × פיצה שלמה. חצי <b>מתוך</b> חצי = 1/2 × 1/2 = 1/4 🍕</div></div>
+  </div>
+
+  <div class="card">
+    <h3>🙃 חילוק: להפוך ולכפול!</h3>
+    <p>כדי לחלק שברים, עושים את ריקוד <span class="word4">"שומרים–משנים–הופכים"</span>:</p>
+    <ol class="steps">
+      <li><b>שומרים</b> את השבר הראשון בדיוק כמו שהוא</li>
+      <li><b>משנים</b> את סימן ה-÷ לסימן ×</li>
+      <li><b>הופכים</b> את השבר השני על הראש</li>
+    </ol>
+    <div class="example-box">
+      <span class="tag">דוגמה 🦖</span>
+      <div class="eq" style="margin:8px 0">
+        <span class="frac"><span class="top">1</span><span class="bot">2</span></span>÷
+        <span class="frac"><span class="top">3</span><span class="bot">4</span></span>
+        <span>→</span>
+        <span class="frac"><span class="top">1</span><span class="bot">2</span></span>×
+        <span class="frac" style="color:var(--tangerine)"><span class="top">4</span><span class="bot">3</span></span>=
+        <span class="frac" style="color:var(--lime)"><span class="top">4</span><span class="bot">6</span></span>=
+        <span class="frac" style="color:var(--lime)"><span class="top">2</span><span class="bot">3</span></span>
+      </div>
+    </div>
+    <div class="tip"><span class="big">🎵</span><div>שירו את זה! <i>"שומרים, משנים, הופכים מהר — לחלק שברים זה כיף בלי גבול!"</i></div></div>
+  </div>
+
+  <div class="interactive-fun">
+    <h3 style="font-family:'Varela Round';color:var(--grape);font-size:1.3rem;margin-bottom:10px">🎲 אתגר "גלה את התשובה"</h3>
+    <p style="font-weight:700;font-size:1.15rem" id="challengeText"></p>
+    <button class="try-btn" onclick="revealChallenge()">✨ הראו לי את התשובה!</button>
+    <button class="try-btn" style="background:var(--sky)" onclick="newChallenge()">🔄 תרגיל חדש</button>
+    <div class="answer-reveal" id="challengeAns"></div>
+  </div>
+
+  <div class="quiz">
+    <div class="qhead">🎯 משימת בזק</div>
+    <div class="q" data-answer="1">
+      <div class="qtext"><span class="frac"><span class="top">1</span><span class="bot">2</span></span>×<span class="frac"><span class="top">1</span><span class="bot">3</span></span>= ?</div>
+      <div class="opts"><button class="opt">2/5</button><button class="opt">1/6</button><button class="opt">1/5</button></div>
+      <div class="feedback"></div>
+    </div>
+    <div class="q" data-answer="2">
+      <div class="qtext">כדי לחלק ב-<span class="frac"><span class="top">2</span><span class="bot">5</span></span> — כופלים ב…</div>
+      <div class="opts"><button class="opt">2/5</button><button class="opt">5/2 פחות</button><button class="opt">5/2</button></div>
+      <div class="feedback"></div>
+    </div>
+    <div class="q" data-answer="0">
+      <div class="qtext"><span class="frac"><span class="top">3</span><span class="bot">4</span></span>÷<span class="frac"><span class="top">1</span><span class="bot">2</span></span>= ?</div>
+      <div class="opts"><button class="opt">6/4</button><button class="opt">3/8</button><button class="opt">4/6</button></div>
+      <div class="feedback"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ פרק 4 ============ -->
+<section class="chapter c4" id="ch4">
+  <div class="chapter-head"><div class="chapter-num">4</div><h2>היכרות עם נעלמים 🔍</h2></div>
+
+  <div class="card">
+    <p class="lead">נעלם הוא <span class="word4">קופסה מסתורית</span> 📦 שמסתירה בתוכה מספר סודי. בדרך כלל קוראים לו <b style="color:var(--tangerine)">x</b>.</p>
+    <div class="eq">📦 + 3 = 7</div>
+    <p style="text-align:center;font-weight:700">זה בדיוק כמו &nbsp; <b style="color:var(--tangerine)" dir="ltr">x + 3 = 7</b></p>
+    <p>התפקיד שלנו כבלשי מתמטיקה הוא לגלות: <span class="word4">איזה מספר מתחבא בקופסה?</span> 🕵️</p>
+    <div class="tip"><span class="big">🎯</span><div>ב-<b dir="ltr">x + 3 = 7</b>, המספר המסתורי הוא <b>4</b>, כי 4 + 3 = 7. בטח כבר פותרים כאלה בראש!</div></div>
+  </div>
+
+  <div class="card">
+    <h3>🧩 השפה הסודית של האלגברה</h3>
+    <p>אותיות ומספרים שצמודים זה לזה מקבלים משמעות מיוחדת:</p>
+    <div class="eq" style="flex-direction:column;gap:14px;align-items:center;font-size:1.15rem">
+      <div><b style="color:var(--bubble)">3x</b> &nbsp;=&nbsp; 3 כפול x &nbsp;(מספר צמוד לאות = כפל)</div>
+      <div><b style="color:var(--sky)">x²</b> &nbsp;=&nbsp; x כפול x</div>
+      <div><b style="color:var(--lime)">x/2</b> &nbsp;=&nbsp; x חלקי 2</div>
+    </div>
+    <div class="tip"><span class="big">⚠️</span><div>יש סימן ✖️ <b>בלתי נראה</b> בין מספר לאות. <b>5y</b> באמת אומר <b dir="ltr">5 × y</b>. ערמומי, נכון?</div></div>
+  </div>
+
+  <div class="card">
+    <h3>🎪 איחוד "איברים דומים"</h3>
+    <p>אפשר לחבר דברים מאותו <b>סוג</b> — כמו לספור זרועות של מפלצת 🦑</p>
+    <div class="eq"><b style="color:var(--bubble)">2x</b> + <b style="color:var(--bubble)">3x</b> = <b style="color:var(--lime)">5x</b></div>
+    <p style="text-align:center;font-weight:700">(‏2 קופסאות + 3 קופסאות = 5 קופסאות! 📦📦 + 📦📦📦)</p>
+    <div class="tip"><span class="big">🍎</span><div><b>תפוחים עם תפוחים!</b> אפשר לחבר 2x + 3x, אבל <b>אי אפשר</b> לאחד 2x + 3 — כי x הוא קופסה מסתורית, ו-3 הוא מספר רגיל. דברים שונים!</div></div>
+  </div>
+
+  <div class="quiz">
+    <div class="qhead">🎯 משימת בזק</div>
+    <div class="q" data-answer="2">
+      <div class="qtext">מה המשמעות של <b style="color:var(--bubble)">4x</b>?</div>
+      <div class="opts"><button class="opt">4 ועוד x</button><button class="opt">40 + x</button><button class="opt">4 כפול x</button></div>
+      <div class="feedback"></div>
+    </div>
+    <div class="q" data-answer="0">
+      <div class="qtext">אחדו: <b style="color:var(--sky)" dir="ltr">6y + 2y</b> = ?</div>
+      <div class="opts"><button class="opt">8y</button><button class="opt">8</button><button class="opt">12y</button></div>
+      <div class="feedback"></div>
+    </div>
+    <div class="q" data-answer="1">
+      <div class="qtext">איזה ביטוי <b>אי אפשר</b> לאחד לאיבר אחד?</div>
+      <div class="opts"><button class="opt">5x + 2x</button><button class="opt">5x + 2</button><button class="opt">x + x</button></div>
+      <div class="feedback"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ פרק 5 ============ -->
+<section class="chapter c5" id="ch5">
+  <div class="chapter-head"><div class="chapter-num">5</div><h2>פתרון עבור X ⚖️</h2></div>
+
+  <div class="card">
+    <p class="lead">כלל הזהב: משוואה היא <span class="word">נדנדה מאוזנת</span>. מה שעושים לצד אחד — <b>חייבים</b> לעשות גם לצד השני! ⚖️</p>
+    <div class="balance-game">
+      <div class="scale">
+        <div class="pan" id="panL"><span class="item">📦</span><span class="item">➕3️⃣</span></div>
+        <div class="beam" style="height:70px"></div>
+        <div class="pan" id="panR"><span class="item">7️⃣</span></div>
+      </div>
+      <p style="font-weight:700"><span dir="ltr">x + 3 = 7</span> → מורידים 3 משני הצדדים → <b style="color:var(--lime)">x = 4</b></p>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>🔓 כוח העל של ה"ביטול"</h3>
+    <p>כדי לשחרר את x, מבטלים את מה שצמוד אליו בעזרת הפעולה <span class="word2">ההפוכה</span>:</p>
+    <div class="cheatgrid" style="margin-top:14px">
+      <div class="cheat b1"><h4>צמוד ל…</h4><ul>
+        <li>➕ חיבור <span class="pill">מבטלים ב־ −</span></li>
+        <li>➖ חיסור <span class="pill">מבטלים ב־ +</span></li>
+        <li>✖️ כפל <span class="pill">מבטלים ב־ ÷</span></li>
+        <li>➗ חילוק <span class="pill">מבטלים ב־ ×</span></li>
+      </ul></div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>🎬 בואו נראה את זה בפעולה</h3>
+    <div class="example-box">
+      <span class="tag">לפתור: 2x + 4 = 10 👽</span>
+      <ol class="steps">
+        <li>מבטלים את ה-4+ → מחסרים 4 משני הצדדים: <b dir="ltr">2x = 6</b></li>
+        <li>מבטלים את ה-2× → מחלקים את שני הצדדים ב-2: <b style="color:var(--lime)">x = 3</b></li>
+        <li>בודקים! ‏2(3) + 4 = 6 + 4 = 10 ✓ עובד! 🎉</li>
+      </ol>
+    </div>
+    <div class="example-box">
+      <span class="tag">לפתור עם שבר: x/3 = 5 🐙</span>
+      <ol class="steps">
+        <li>‏x מחולק ב-3, אז מבטלים את זה → כופלים את שני הצדדים ב-3</li>
+        <li><b style="color:var(--lime)">x = 15</b> &nbsp;(בדיקה: 15 ÷ 3 = 5 ✓)</li>
+      </ol>
+    </div>
+    <div class="tip"><span class="big">🏆</span><div><b>תמיד בודקים את התשובה!</b> מציבים את המספר שקיבלתם בחזרה במשוואה המקורית. אם שני הצדדים שווים — אתם אלופים! 🥇</div></div>
+  </div>
+
+  <div class="interactive-fun">
+    <h3 style="font-family:'Varela Round';color:var(--grape);font-size:1.3rem;margin-bottom:10px">🕵️ מחולל התעלומות — פתרו את X</h3>
+    <p style="font-weight:700;font-size:1.3rem" id="mysteryEq"></p>
+    <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-top:10px">
+      <span style="font-weight:700">x =</span>
+      <input type="number" id="mysteryInput" placeholder="?" style="width:90px;font-size:1.2rem;padding:10px;border:3px solid var(--ink);border-radius:12px;font-family:'Fredoka';font-weight:700">
+      <button class="try-btn" onclick="checkMystery()">בדיקה! ✅</button>
+      <button class="try-btn" style="background:var(--sky)" onclick="newMystery()">תעלומה חדשה 🔄</button>
+    </div>
+    <div class="answer-reveal" id="mysteryFeedback"></div>
+  </div>
+
+  <div class="quiz">
+    <div class="qhead">🎯 משימת בזק</div>
+    <div class="q" data-answer="1">
+      <div class="qtext">פתרו: <span dir="ltr">x + 5 = 12</span></div>
+      <div class="opts"><button class="opt">x = 17</button><button class="opt">x = 7</button><button class="opt">x = 60</button></div>
+      <div class="feedback"></div>
+    </div>
+    <div class="q" data-answer="0">
+      <div class="qtext">פתרו: <span dir="ltr">3x = 15</span></div>
+      <div class="opts"><button class="opt">x = 5</button><button class="opt">x = 45</button><button class="opt">x = 12</button></div>
+      <div class="feedback"></div>
+    </div>
+    <div class="q" data-answer="2">
+      <div class="qtext">פתרו: <span dir="ltr">x/4 = 2</span></div>
+      <div class="opts"><button class="opt">x = 2</button><button class="opt">x = 6</button><button class="opt">x = 8</button></div>
+      <div class="feedback"></div>
+    </div>
+    <div class="q" data-answer="1">
+      <div class="qtext">פתרו: <span dir="ltr">2x − 1 = 9</span></div>
+      <div class="opts"><button class="opt">x = 4</button><button class="opt">x = 5</button><button class="opt">x = 10</button></div>
+      <div class="feedback"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ פרק 6: דף עזר ============ -->
+<section class="chapter c6" id="ch6">
+  <div class="chapter-head"><div class="chapter-num">6</div><h2>דף עזר על-על 📋</h2></div>
+  <div class="card"><p class="lead" style="text-align:center">🖨️ כל מה שלמדתם, במקום אחד. צלמו מסך או הדפיסו להצלה מהירה בזמן שיעורי בית!</p></div>
+
+  <div class="cheatgrid">
+    <div class="cheat b1">
+      <h4>🍕 יסודות השבר</h4>
+      <ul>
+        <li>עליון = <span class="pill">מונה</span> (החתיכות שיש לכם)</li>
+        <li>תחתון = <span class="pill">מכנה</span> (סך כל החתיכות)</li>
+        <li>מונה = מכנה → שלם אחד</li>
+      </ul>
+    </div>
+
+    <div class="cheat b2">
+      <h4>➕ חיבור / חיסור ➖</h4>
+      <ul>
+        <li>אותו מכנה? מחברים/מחסרים מונים, משאירים מכנה</li>
+        <li>מכנה שונה? קודם עושים אותם זהים</li>
+        <li><b>אף פעם</b> לא מחברים מכנים!</li>
+        <li>טריק: כופלים את שני המכנים למכנה משותף</li>
+      </ul>
+    </div>
+
+    <div class="cheat b3">
+      <h4>✖️ כפל</h4>
+      <ul>
+        <li>כופלים "ישר"</li>
+        <li>מונה × מונה, מכנה × מכנה</li>
+        <li>"מתוך" אומר כפל</li>
+        <li>לא צריך מכנה משותף!</li>
+      </ul>
+    </div>
+
+    <div class="cheat b4">
+      <h4>➗ חילוק</h4>
+      <ul>
+        <li><b>שומרים · משנים · הופכים</b></li>
+        <li>שומרים את השבר הראשון</li>
+        <li>משנים ÷ ל-×</li>
+        <li>הופכים את השבר השני</li>
+      </ul>
+    </div>
+
+    <div class="cheat b5">
+      <h4>🔍 נעלמים</h4>
+      <ul>
+        <li>‏x = מספר מסתורי 📦</li>
+        <li>‏3x פירושו 3 × x</li>
+        <li>‏x² פירושו x × x</li>
+        <li>מאחדים דומים: 2x + 3x = 5x</li>
+        <li>לא מערבבים: 2x + 3 נשאר בנפרד</li>
+      </ul>
+    </div>
+
+    <div class="cheat b6">
+      <h4>⚖️ פתרון עבור X</h4>
+      <ul>
+        <li>שומרים על הנדנדה מאוזנת</li>
+        <li>עושים אותו דבר לשני הצדדים</li>
+        <li>מבטלים + ב־ − , ו־ × ב־ ÷</li>
+        <li>משאירים את x לבד בצד אחד</li>
+        <li>תמיד בודקים את התשובה! ✓</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="card" style="margin-top:22px;background:linear-gradient(135deg,#ede4ff,#ffe3f0);text-align:center">
+    <h3 style="justify-content:center">🎓 מתכון הפתרון ב-4 שלבים</h3>
+    <ol class="steps" style="text-align:right;max-width:560px;margin:16px auto">
+      <li>מרכזים את כל הקופסאות המסתוריות (ה-x) בצד אחד</li>
+      <li>מעבירים את המספרים הרגילים לצד השני (בעזרת פעולות הפוכות)</li>
+      <li>מחלקים כדי שיישאר רק x אחד</li>
+      <li>בודקים על ידי הצבת התשובה בחזרה!</li>
+    </ol>
+    <p style="font-weight:800;font-size:1.2rem;color:var(--grape)">אתם רשמית מפלצות מתמטיקה! 👾🏆</p>
+  </div>
+</section>
+
+</main>
+
+<div class="scorebar">⭐ <span id="score">0</span> כוכבים!</div>
+
+<footer>נוצר עבור מתמטיקאים צעירים וסקרנים 🧮 · תמשיכו לחקור, תמשיכו לגדול!</footer>
+
+<script>
+/* ---------- דודלים מרחפים ---------- */
+const emojis=['➕','➖','✖️','➗','🔢','🍕','📦','⭐','🧮','½','⅓','¾'];
+for(let i=0;i<14;i++){
+  const d=document.createElement('div');
+  d.className='doodle';d.textContent=emojis[i%emojis.length];
+  d.style.left=Math.random()*95+'vw';
+  d.style.top=Math.random()*95+'vh';
+  d.style.animationDelay=(Math.random()*6)+'s';
+  d.style.fontSize=(1.6+Math.random()*2)+'rem';
+  document.body.appendChild(d);
+}
+
+/* ---------- ניווט טאבים ---------- */
+document.querySelectorAll('.tab').forEach(tab=>{
+  tab.addEventListener('click',()=>{
+    document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
+    document.querySelectorAll('.chapter').forEach(c=>c.classList.remove('show'));
+    tab.classList.add('active');
+    document.getElementById(tab.dataset.target).classList.add('show');
+    window.scrollTo({top:0,behavior:'smooth'});
+  });
+});
+
+/* ---------- ניקוד ---------- */
+let score=0;
+const scoreEl=document.getElementById('score');
+function addStar(){score++;scoreEl.textContent=score;
+  scoreEl.parentElement.animate([{transform:'scale(1)'},{transform:'scale(1.3)'},{transform:'scale(1)'}],{duration:400});
+}
+
+/* ---------- לוגיקת חידונים ---------- */
+document.querySelectorAll('.q').forEach(q=>{
+  const answer=+q.dataset.answer;
+  const opts=q.querySelectorAll('.opt');
+  const fb=q.querySelector('.feedback');
+  opts.forEach((opt,i)=>{
+    opt.addEventListener('click',()=>{
+      if(q.dataset.done)return;
+      opts.forEach(o=>o.disabled=true);
+      if(i===answer){
+        opt.classList.add('correct');
+        fb.textContent='🎉 כן! פגעתם בול!';
+        fb.style.color='#1a9e6b';
+        addStar();
+      }else{
+        opt.classList.add('wrong');
+        opts[answer].classList.add('correct');
+        fb.textContent='אופס! הירוק הוא הנכון — נסו להבין למה! 💪';
+        fb.style.color='#d63384';
+      }
+      fb.classList.add('show');
+      q.dataset.done='1';
+    });
+  });
+});
+
+/* ---------- מכונת השברים (פרק 1) ---------- */
+const numSlide=document.getElementById('numSlide');
+const denSlide=document.getElementById('denSlide');
+function drawPie(){
+  let num=+numSlide.value, den=+denSlide.value;
+  if(num>den){num=den;numSlide.value=den;}
+  numSlide.max=den;
+  document.getElementById('numLbl').textContent=num;
+  document.getElementById('denLbl').textContent=den;
+  const svg=document.getElementById('pieSvg');
+  svg.innerHTML='';
+  const cx=50,cy=50,r=46;
+  const colors=['#ff5da2','#4cc9f0','#3ddc97','#ff8c42','#7c3aed','#ffd23f'];
+  for(let i=0;i<den;i++){
+    const a0=(i/den)*2*Math.PI - Math.PI/2;
+    const a1=((i+1)/den)*2*Math.PI - Math.PI/2;
+    const x0=cx+r*Math.cos(a0), y0=cy+r*Math.sin(a0);
+    const x1=cx+r*Math.cos(a1), y1=cy+r*Math.sin(a1);
+    const large=(a1-a0)>Math.PI?1:0;
+    const path=document.createElementNS('http://www.w3.org/2000/svg','path');
+    path.setAttribute('d',`M${cx},${cy} L${x0},${y0} A${r},${r} 0 ${large} 1 ${x1},${y1} Z`);
+    path.setAttribute('fill', i<num?colors[i%colors.length]:'#fff');
+    path.setAttribute('stroke','#2d1b4e');
+    path.setAttribute('stroke-width','2');
+    svg.appendChild(path);
+  }
+  document.getElementById('fracLive').innerHTML=
+    `<span class="frac" style="color:var(--grape)"><span class="top">${num}</span><span class="bot">${den}</span></span> מהפיצה צבועים! 🍕`;
+}
+numSlide.addEventListener('input',drawPie);
+denSlide.addEventListener('input',drawPie);
+drawPie();
+
+/* ---------- אתגר גילוי (פרק 3) ---------- */
+function gcd(a,b){return b?gcd(b,a%b):a;}
+function simplify(n,d){const g=gcd(n,d);return [n/g,d/g];}
+let curChallenge={};
+function newChallenge(){
+  const ops=['×','÷'];
+  const op=ops[Math.floor(Math.random()*2)];
+  const a=1+Math.floor(Math.random()*4), b=2+Math.floor(Math.random()*5);
+  const c=1+Math.floor(Math.random()*4), d=2+Math.floor(Math.random()*5);
+  let n,de;
+  if(op==='×'){n=a*c;de=b*d;}else{n=a*d;de=b*c;}
+  const [sn,sd]=simplify(n,de);
+  curChallenge={a,b,c,d,op,sn,sd,n,de};
+  document.getElementById('challengeText').innerHTML=
+    `פתרו: <b style="color:var(--bubble)">${a}/${b}</b> ${op} <b style="color:var(--sky)">${c}/${d}</b>`;
+  document.getElementById('challengeAns').classList.remove('show');
+}
+function revealChallenge(){
+  const c=curChallenge;
+  let work = c.op==='×'
+    ? `כופלים ישר: (${c.a}×${c.c})/(${c.b}×${c.d}) = ${c.n}/${c.de}`
+    : `שומרים-משנים-הופכים: ${c.a}/${c.b} × ${c.d}/${c.c} = ${c.n}/${c.de}`;
+  let simp = (c.n!==c.sn) ? ` = <b style="color:var(--lime)">${c.sn}/${c.sd}</b> ✨` : ` <b style="color:var(--lime)">✓ כבר מצומצם!</b>`;
+  document.getElementById('challengeAns').innerHTML = work + simp;
+  document.getElementById('challengeAns').classList.add('show');
+}
+newChallenge();
+
+/* ---------- מחולל תעלומות (פרק 5) ---------- */
+let mystery={};
+function newMystery(){
+  const type=Math.floor(Math.random()*4);
+  let x=1+Math.floor(Math.random()*10);
+  let text,ans=x;
+  if(type===0){const b=1+Math.floor(Math.random()*9);text=`x + ${b} = ${x+b}`;}
+  else if(type===1){const b=1+Math.floor(Math.random()*5);ans=x;text=`${b}x = ${b*x}`;}
+  else if(type===2){const b=1+Math.floor(Math.random()*5);text=`x − ${b} = ${x-b}`;}
+  else{const b=2+Math.floor(Math.random()*4);text=`2x + ${b} = ${2*x+b}`;}
+  mystery={ans};
+  document.getElementById('mysteryEq').innerHTML='🔍 מצאו את x: &nbsp;<b style="color:var(--grape)" dir="ltr">'+text+'</b>';
+  document.getElementById('mysteryInput').value='';
+  document.getElementById('mysteryFeedback').classList.remove('show');
+}
+function checkMystery(){
+  const val=+document.getElementById('mysteryInput').value;
+  const fb=document.getElementById('mysteryFeedback');
+  if(document.getElementById('mysteryInput').value===''){return;}
+  if(val===mystery.ans){
+    fb.innerHTML='🎉 נכון! x = '+mystery.ans+'. פיצחתם את התעלומה, בלשים! 🕵️';
+    fb.style.background='#e2fff2';fb.style.borderColor='var(--lime)';
+    addStar();
+  }else{
+    fb.innerHTML='🤔 לא בדיוק! התשובה היא x = '+mystery.ans+'. זכרו: מבטלים בעזרת הפעולה ההפוכה!';
+    fb.style.background='#ffe3e8';fb.style.borderColor='#ff7a90';
+  }
+  fb.classList.add('show');
+}
+newMystery();
+</script>
+</body>
+</html>
