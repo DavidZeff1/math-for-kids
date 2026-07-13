@@ -73,7 +73,10 @@
   .tab[data-c="4"].active{background:var(--tangerine)}
   .tab[data-c="5"].active{background:var(--grape)}
   .tab[data-c="6"].active{background:#e84393}
-  .tab[data-c="7"].active{background:var(--sunny);color:var(--ink)}
+  .tab[data-c="7"].active{background:#f6b93b;color:var(--ink)}
+  .tab[data-c="8"].active{background:#00b894}
+  .tab[data-c="9"].active{background:#e17055}
+  .tab[data-c="10"].active{background:var(--sunny);color:var(--ink)}
 
   main{position:relative;z-index:2;max-width:940px;margin:0 auto;padding:30px 18px 90px}
   .chapter{display:none;animation:pop .4s ease}
@@ -89,7 +92,8 @@
   .c1 .chapter-num{background:var(--bubble)} .c2 .chapter-num{background:var(--sky)}
   .c3 .chapter-num{background:var(--lime)} .c4 .chapter-num{background:var(--tangerine)}
   .c5 .chapter-num{background:var(--grape)} .c6 .chapter-num{background:#e84393}
-  .c7 .chapter-num{background:var(--sunny);color:var(--ink)}
+  .c7 .chapter-num{background:#f6b93b;color:var(--ink)} .c8 .chapter-num{background:#00b894}
+  .c9 .chapter-num{background:#e17055} .c10 .chapter-num{background:var(--sunny);color:var(--ink)}
   .chapter-head h2{font-family:'Baloo 2';font-weight:800;font-size:clamp(1.5rem,5vw,2.4rem);color:var(--grape-deep)}
 
   .card{
@@ -216,11 +220,58 @@
   .answer-reveal{margin-top:14px;padding:14px 18px;background:#e2fff2;border:3px solid var(--lime);border-radius:14px;font-weight:700;display:none}
   .answer-reveal.show{display:block;animation:pop .3s}
 
+  /* ---- מפגש המפלצות ---- */
+  .monster-cast{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:16px;margin:20px 0}
+  .mcard{border:4px solid var(--ink);border-radius:20px;padding:16px 14px;text-align:center;box-shadow:5px 5px 0 var(--ink);transition:transform .15s}
+  .mcard:hover{transform:translateY(-5px) rotate(-2deg)}
+  .mcard .face{font-size:3rem;display:block;line-height:1}
+  .mcard .mname{font-family:'Baloo 2';font-weight:800;font-size:1.15rem;margin:6px 0 2px}
+  .mcard .mrole{font-family:'Varela Round';font-size:.95rem;font-weight:600;opacity:.85}
+  .mcard.m1{background:#ffe3f0}.mcard.m2{background:#e0f6ff}.mcard.m3{background:#e2fff2}
+  .mcard.m4{background:#fff0e0}.mcard.m5{background:#efe6ff}.mcard.m6{background:#fffbe0}
+
+  /* ---- קו המספרים ---- */
+  .numline{position:relative;height:70px;margin:26px 6px 34px;direction:ltr}
+  .numline .track{position:absolute;top:34px;left:0;right:0;height:6px;background:var(--ink);border-radius:3px}
+  .numline .tick{position:absolute;top:24px;width:4px;height:26px;background:var(--ink);border-radius:2px;transform:translateX(-50%)}
+  .numline .tick.big{height:34px;top:20px;width:5px}
+  .numline .lbl{position:absolute;top:56px;transform:translateX(-50%);font-family:'Fredoka';font-weight:700;font-size:.9rem;white-space:nowrap}
+  .numline .dot{position:absolute;top:22px;width:22px;height:22px;border-radius:50%;background:var(--bubble);border:3px solid var(--ink);transform:translateX(-50%);box-shadow:2px 2px 0 var(--ink);display:grid;place-items:center;font-size:.9rem}
+
+  /* ---- שברים שקולים ---- */
+  .equiv-row{display:flex;flex-wrap:wrap;gap:18px;justify-content:center;align-items:center;margin:16px 0}
+  .equiv-bar{display:flex;border:3px solid var(--ink);border-radius:10px;overflow:hidden;direction:ltr}
+  .equiv-bar .cell{width:26px;height:40px;border-right:2px solid var(--ink)}
+  .equiv-bar .cell:last-child{border-right:none}
+  .equiv-bar .cell.fill{background:var(--lime)}
+  .equiv-bar .cell.fill2{background:var(--sky)}
+
+  /* ---- חלוקה של סוגריים ---- */
+  .distrib{position:relative;font-family:'Fredoka';font-weight:800;font-size:1.7rem;text-align:center;margin:26px 0 10px;direction:ltr}
+  .distrib .arc{color:var(--bubble);font-size:1.1rem;font-weight:700;display:block;margin-bottom:2px}
+  .distrib .term{display:inline-block;padding:2px 6px}
+  .distrib-note{text-align:center;font-weight:600;color:var(--grape-deep);margin-top:4px}
+
+  /* ---- קלף מפלצת-נעלם ---- */
+  .mono{direction:ltr;display:inline-block;font-family:'Fredoka';font-weight:800}
+  .mvar{font-size:1.15em;filter:drop-shadow(1px 1px 0 rgba(45,27,78,.25))}
+
+  /* ---- תיבת "נסה בעצמך" צעד-אחר-צעד ---- */
+  .stepper{background:linear-gradient(135deg,#eafff5,#e0f6ff);border:3px solid var(--lime);border-radius:18px;padding:18px 20px;margin:18px 0}
+  .stepper .srow{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin:8px 0;font-weight:700;font-size:1.1rem;direction:ltr;justify-content:center}
+  .reveal-step{opacity:.25;transition:opacity .3s}
+  .reveal-step.show{opacity:1}
+
+  /* ---- תג רמת קושי ---- */
+  .level{display:inline-block;font-family:'Varela Round';font-weight:600;font-size:.82rem;padding:2px 12px;border-radius:999px;border:2px solid var(--ink);margin-inline-start:8px;vertical-align:middle}
+  .level.easy{background:#d5f5e3}.level.mid{background:#fdebd0}.level.hard{background:#fadbd8}
+
   @media(max-width:520px){
     .card{padding:18px}
     .chapter-num{min-width:52px;height:52px;font-size:1.5rem}
     nav{gap:7px;padding:12px}
     .tab{padding:9px 14px;font-size:.9rem}
+    .numline .lbl{font-size:.78rem}
   }
 </style>
 </head>
@@ -240,7 +291,10 @@
   <div class="tab" data-c="4" data-target="ch4">🔍 היכרות עם נעלמים</div>
   <div class="tab" data-c="5" data-target="ch5">⚖️ פתרון עבור X</div>
   <div class="tab" data-c="6" data-target="ch6">🧩 לכל האיברים!</div>
-  <div class="tab" data-c="7" data-target="ch7">📋 דף עזר</div>
+  <div class="tab" data-c="7" data-target="ch7">🎁 סוגריים וחלוקה</div>
+  <div class="tab" data-c="8" data-target="ch8">📖 חידות מילוליות</div>
+  <div class="tab" data-c="9" data-target="ch9">🏆 אתגר המפלצת</div>
+  <div class="tab" data-c="10" data-target="ch10">📋 דף עזר</div>
 </nav>
 
 <main>
@@ -248,6 +302,20 @@
 <!-- ============ פרק 1 ============ -->
 <section class="chapter c1 show" id="ch1">
   <div class="chapter-head"><div class="chapter-num">1</div><h2>שברים 101 🍕</h2></div>
+
+  <div class="card" style="background:linear-gradient(135deg,#fff,#f6f0ff)">
+    <h3>👋 הכירו את חבורת המפלצות!</h3>
+    <p>המפלצות האלה ילוו אתכם לאורך כל המסע. לכל אחת יש תפקיד — ובהמשך הן אפילו יתחבאו בתוך משוואות בתור <b>נעלמים</b>! 🕵️</p>
+    <div class="monster-cast">
+      <div class="mcard m1"><span class="face">👾</span><span class="mname">גוזי</span><span class="mrole">אלוף השברים</span></div>
+      <div class="mcard m2"><span class="face">🐲</span><span class="mname">דרייק</span><span class="mrole">קוסם החיבור</span></div>
+      <div class="mcard m3"><span class="face">🦖</span><span class="mname">רקסי</span><span class="mrole">מלך הכפל</span></div>
+      <div class="mcard m4"><span class="face">👽</span><span class="mname">זיפ</span><span class="mrole">בלש הנעלמים</span></div>
+      <div class="mcard m5"><span class="face">🐙</span><span class="mname">אוקטי</span><span class="mrole">שומר האיזון</span></div>
+      <div class="mcard m6"><span class="face">🦕</span><span class="mname">לוני</span><span class="mrole">פותר החידות</span></div>
+    </div>
+    <div class="tip"><span class="big">🎯</span><div><b>סוד קטן:</b> באלגברה כל אות (כמו <span class="mono">x</span>) היא בעצם מפלצת שמתחבאת! לפעמים נכתוב <span class="mono">🐲 + 3 = 7</span> ולפעמים <span class="mono">x + 3 = 7</span> — זה בדיוק אותו דבר.</div></div>
+  </div>
 
   <div class="card">
     <p class="lead">שבר הוא פשוט דרך להגיד <span class="word">"חלק מתוך שלם"</span>. דמיינו פיצה חתוכה למשולשים!</p>
@@ -281,6 +349,66 @@
     <div class="eq eq-he" id="fracLive"></div>
   </div>
 
+  <div class="card">
+    <h3>🟰 שברים שקולים — אותו גודל, שם אחר <span class="level easy">קל</span></h3>
+    <p>אותו חלק מהפיצה יכול להיקרא בכמה שמות! אם כופלים (או מחלקים) גם את המונה <b>וגם</b> את המכנה באותו מספר — הערך לא משתנה.</p>
+    <div class="eq">
+      <span class="frac" style="color:var(--lime)"><span class="top">1</span><span class="bot">2</span></span>=
+      <span class="frac" style="color:var(--sky)"><span class="top">2</span><span class="bot">4</span></span>=
+      <span class="frac" style="color:var(--bubble)"><span class="top">4</span><span class="bot">8</span></span>
+    </div>
+    <div class="equiv-row">
+      <div class="equiv-bar"><div class="cell fill"></div><div class="cell"></div></div>
+      <span style="font-weight:800">=</span>
+      <div class="equiv-bar"><div class="cell fill2"></div><div class="cell fill2"></div><div class="cell"></div><div class="cell"></div></div>
+    </div>
+    <div class="tip"><span class="big">🧠</span><div><b>למה זה עובד?</b> כפלנו ב-<span class="mono">2/2</span>, וזה בסך הכול "1" בתחפושת! כפל ב-1 אף פעם לא משנה את הגודל. 🐲</div></div>
+  </div>
+
+  <div class="card">
+    <h3>✂️ צמצום שברים — לכתוב הכי פשוט <span class="level mid">בינוני</span></h3>
+    <p>לצמצם = לחלק את המונה והמכנה באותו מספר, כדי לקבל את השם <b>הכי קטן</b> של השבר. מחפשים מספר שמתחלק בשניהם.</p>
+    <div class="example-box">
+      <span class="tag">דוגמה 👾</span>
+      <ol class="steps">
+        <li>לוקחים <span class="mono">6/8</span>. גם 6 וגם 8 מתחלקים ב-<b>2</b>.</li>
+        <li>מחלקים: <span class="mono">6÷2 = 3</span> ו-<span class="mono">8÷2 = 4</span></li>
+        <li>מקבלים <b style="color:var(--lime)">3/4</b> — אותו גודל, שם פשוט יותר! ✨</li>
+      </ol>
+    </div>
+    <div class="tip"><span class="big">🏁</span><div><b>מתי לעצור?</b> כשאין יותר מספר (חוץ מ-1) שמתחלק בשניהם. אז השבר "מצומצם עד הסוף".</div></div>
+  </div>
+
+  <div class="card">
+    <h3>📏 שברים על קו המספרים</h3>
+    <p>שבר הוא גם <b>מיקום</b>! בין 0 ל-1 יש אינסוף שברים. הנה איך <span class="mono">3/4</span> יושב על הקו:</p>
+    <div class="numline" id="nl1"></div>
+    <div class="tip"><span class="big">🎯</span><div>ככל שהמונה גדל (והמכנה קבוע) — מתקדמים ימינה על הקו, קרוב יותר ל-1. כשהמונה = המכנה, הגענו בדיוק ל-<b>1</b> שלם!</div></div>
+  </div>
+
+  <div class="card">
+    <h3>⚖️ מי גדול יותר? השוואת שברים <span class="level mid">בינוני</span></h3>
+    <p><b>אותו מכנה?</b> המונה הגדול יותר מנצח — <span class="mono">5/8 &gt; 3/8</span> (יותר חתיכות מאותו גודל).</p>
+    <p><b>אותו מונה?</b> דווקא המכנה <b>הקטן</b> מנצח! <span class="mono">1/3 &gt; 1/5</span> — כי אם חותכים פיצה לפחות חתיכות, כל חתיכה גדולה יותר. 🍕</p>
+    <div class="tip"><span class="big">🐙</span><div><b>טריק אלוף למכנים שונים:</b> "כפל בהצלבה". כדי להשוות <span class="mono">2/3</span> ל-<span class="mono">3/5</span>: כופלים <span class="mono">2×5=10</span> מול <span class="mono">3×3=9</span>. 10 &gt; 9, אז <b>2/3 גדול יותר!</b></div></div>
+  </div>
+
+  <div class="card">
+    <h3>🔢 שברים מדומים ומספרים מעורבים <span class="level hard">אתגר</span></h3>
+    <p>מה קורה כשהמונה <b>גדול</b> מהמכנה? זה שבר <span class="word">מדומה</span> — יש בו יותר משלם אחד!</p>
+    <div class="eq">
+      <span class="frac" style="color:var(--bubble)"><span class="top">7</span><span class="bot">4</span></span>
+      <span>=</span>
+      <span style="font-family:'Fredoka';font-weight:800;color:var(--lime)">1<span class="frac" style="font-size:.75em;margin-inline-start:2px"><span class="top">3</span><span class="bot">4</span></span></span>
+    </div>
+    <ol class="steps">
+      <li>שואלים: כמה פעמים 4 נכנס ב-7? → <b>פעם אחת</b> (זה השלם).</li>
+      <li>מה נשאר? <span class="mono">7 − 4 = 3</span> → זה המונה החדש.</li>
+      <li>המכנה נשאר 4. מקבלים <b style="color:var(--lime)">1 ו-3/4</b> 🎉</li>
+    </ol>
+    <div class="tip"><span class="big">🍕</span><div>כמו 7 משולשי פיצה כשכל פיצה שלמה = 4 משולשים: יש לכם <b>פיצה שלמה אחת ועוד 3 משולשים</b>!</div></div>
+  </div>
+
   <div class="quiz">
     <div class="qhead">🎯 משימת בזק — הקישו על התשובה הנכונה!</div>
     <div class="q" data-answer="0">
@@ -295,6 +423,36 @@
       <div class="opts">
         <button class="opt">2</button><button class="opt">שניהם</button><button class="opt">9</button>
       </div>
+      <div class="feedback"></div>
+    </div>
+    <div class="q" data-answer="1">
+      <div class="qtext">איזה שבר <b>שקול</b> ל-<span class="frac"><span class="top">1</span><span class="bot">3</span></span>?</div>
+      <div class="opts"><button class="opt">1/6</button><button class="opt">2/6</button><button class="opt">3/1</button></div>
+      <div class="feedback"></div>
+    </div>
+    <div class="q" data-answer="2">
+      <div class="qtext">צמצמו עד הסוף: <span class="frac"><span class="top">4</span><span class="bot">8</span></span></div>
+      <div class="opts"><button class="opt">4/8</button><button class="opt">2/8</button><button class="opt">1/2</button></div>
+      <div class="feedback"></div>
+    </div>
+    <div class="q" data-answer="0">
+      <div class="qtext">מי גדול יותר?</div>
+      <div class="opts"><button class="opt">3/4</button><button class="opt">1/4</button><button class="opt">שווים</button></div>
+      <div class="feedback"></div>
+    </div>
+    <div class="q" data-answer="1">
+      <div class="qtext">מי גדול יותר: <span class="frac"><span class="top">1</span><span class="bot">2</span></span> או <span class="frac"><span class="top">1</span><span class="bot">8</span></span>?</div>
+      <div class="opts"><button class="opt">1/8</button><button class="opt">1/2</button><button class="opt">שווים</button></div>
+      <div class="feedback"></div>
+    </div>
+    <div class="q" data-answer="2">
+      <div class="qtext">איזה שבר הוא <b>מדומה</b> (גדול מ-1 שלם)?</div>
+      <div class="opts"><button class="opt">2/3</button><button class="opt">4/4</button><button class="opt">9/5</button></div>
+      <div class="feedback"></div>
+    </div>
+    <div class="q" data-answer="0">
+      <div class="qtext">כמה שלמים יש ב-<span class="frac"><span class="top">10</span><span class="bot">5</span></span>?</div>
+      <div class="opts"><button class="opt">2</button><button class="opt">5</button><button class="opt">10</button></div>
       <div class="feedback"></div>
     </div>
   </div>
@@ -339,6 +497,35 @@
     <div class="tip"><span class="big">⚡</span><div><b>טריק מהיר:</b> אם נתקעתם, פשוט תכפילו את שני המכנים זה בזה כדי לקבל מכנה משותף. זה תמיד עובד (אפשר לצמצם אחר כך)!</div></div>
   </div>
 
+  <div class="card">
+    <h3>🧹 אל תשכחו לצמצם בסוף!</h3>
+    <p>אחרי שחיברתם, תמיד תבדקו אם אפשר לכתוב את התשובה בשם פשוט יותר.</p>
+    <div class="eq">
+      <span class="frac"><span class="top">1</span><span class="bot">6</span></span>+
+      <span class="frac"><span class="top">1</span><span class="bot">6</span></span>=
+      <span class="frac"><span class="top">2</span><span class="bot">6</span></span>=
+      <span class="frac" style="color:var(--lime)"><span class="top">1</span><span class="bot">3</span></span>
+    </div>
+    <div class="tip"><span class="big">👽</span><div>‏2/6 נכון — אבל 1/3 יפה יותר! חילקנו מונה ומכנה ב-2. תמיד שואלים: "יש מספר שמתחלק בשניהם?"</div></div>
+  </div>
+
+  <div class="card">
+    <h3>🎂 חיבור מספרים מעורבים <span class="level hard">אתגר</span></h3>
+    <p>כשיש שלמים ושברים ביחד — מחברים כל חלק בנפרד: שלמים עם שלמים, שברים עם שברים!</p>
+    <div class="example-box">
+      <span class="tag">דוגמה 🦕</span>
+      <div class="eq" style="font-size:1.3rem">
+        <span style="font-weight:800">2<span class="frac" style="font-size:.7em"><span class="top">1</span><span class="bot">4</span></span></span>+
+        <span style="font-weight:800">1<span class="frac" style="font-size:.7em"><span class="top">1</span><span class="bot">4</span></span></span>=?
+      </div>
+      <ol class="steps">
+        <li>מחברים שלמים: <span class="mono">2 + 1 = 3</span></li>
+        <li>מחברים שברים: <span class="mono">1/4 + 1/4 = 2/4 = 1/2</span></li>
+        <li>מחברים הכול: <b style="color:var(--lime)">3 ו-1/2</b> 🎉</li>
+      </ol>
+    </div>
+  </div>
+
   <div class="quiz">
     <div class="qhead">🎯 משימת בזק</div>
     <div class="q" data-answer="1">
@@ -354,6 +541,26 @@
     <div class="q" data-answer="0">
       <div class="qtext">כדי לחבר <span class="frac"><span class="top">1</span><span class="bot">4</span></span>+<span class="frac"><span class="top">1</span><span class="bot">2</span></span> — המכנה המשותף הוא…</div>
       <div class="opts"><button class="opt">4</button><button class="opt">6</button><button class="opt">2</button></div>
+      <div class="feedback"></div>
+    </div>
+    <div class="q" data-answer="1">
+      <div class="qtext"><span class="frac"><span class="top">1</span><span class="bot">4</span></span>+<span class="frac"><span class="top">1</span><span class="bot">2</span></span>= ?</div>
+      <div class="opts"><button class="opt">2/6</button><button class="opt">3/4</button><button class="opt">2/4</button></div>
+      <div class="feedback"></div>
+    </div>
+    <div class="q" data-answer="2">
+      <div class="qtext">צמצמו את התשובה: <span class="frac"><span class="top">2</span><span class="bot">8</span></span>+<span class="frac"><span class="top">2</span><span class="bot">8</span></span>= ?</div>
+      <div class="opts"><button class="opt">4/16</button><button class="opt">4/8</button><button class="opt">1/2</button></div>
+      <div class="feedback"></div>
+    </div>
+    <div class="q" data-answer="0">
+      <div class="qtext"><span class="frac"><span class="top">2</span><span class="bot">3</span></span>−<span class="frac"><span class="top">1</span><span class="bot">6</span></span>= ? &nbsp;(מכנה משותף 6)</div>
+      <div class="opts"><button class="opt">1/2</button><button class="opt">1/6</button><button class="opt">3/6</button></div>
+      <div class="feedback"></div>
+    </div>
+    <div class="q" data-answer="1">
+      <div class="qtext"><span style="font-weight:800">1<span class="frac" style="font-size:.7em"><span class="top">1</span><span class="bot">3</span></span></span>+<span style="font-weight:800">2<span class="frac" style="font-size:.7em"><span class="top">1</span><span class="bot">3</span></span></span>= ?</div>
+      <div class="opts"><button class="opt">3 ו-2/6</button><button class="opt">3 ו-2/3</button><button class="opt">2 ו-2/3</button></div>
       <div class="feedback"></div>
     </div>
   </div>
@@ -398,6 +605,27 @@
     <div class="tip"><span class="big">🎵</span><div>שירו את זה! <i>"שומרים, משנים, הופכים מהר — לחלק שברים זה כיף בלי גבול!"</i></div></div>
   </div>
 
+  <div class="card">
+    <h3>🔄 מה זה "הופכי"? (מספר הפוך)</h3>
+    <p>ההופכי של שבר = השבר על הראש. של <span class="mono">3/4</span> ההופכי הוא <span class="mono">4/3</span>. של המספר <span class="mono">5</span> (שהוא 5/1) ההופכי הוא <span class="mono">1/5</span>.</p>
+    <div class="tip"><span class="big">🪄</span><div><b>הקסם:</b> מספר כפול ההופכי שלו = תמיד <b>1</b>! ‏3/4 × 4/3 = 12/12 = 1. בגלל זה חילוק = כפל בהופכי. 🦖</div></div>
+  </div>
+
+  <div class="card">
+    <h3>🍰 "שבר מתוך מספר" — פעולה סופר-שימושית! <span class="level mid">בינוני</span></h3>
+    <p>"שליש מתוך 12" פירושו <span class="mono">1/3 × 12</span>. הטריק: <b>מחלקים במכנה, כופלים במונה.</b></p>
+    <div class="example-box">
+      <span class="tag">דוגמה 🦖</span>
+      <p style="font-weight:700;text-align:center">כמה זה <span class="mono">2/3</span> מתוך 15 סוכריות? 🍬</p>
+      <ol class="steps">
+        <li>מחלקים במכנה: <span class="mono">15 ÷ 3 = 5</span></li>
+        <li>כופלים במונה: <span class="mono">5 × 2 = 10</span></li>
+        <li>תשובה: <b style="color:var(--lime)">10 סוכריות!</b> 🍬</li>
+      </ol>
+    </div>
+    <div class="tip"><span class="big">💡</span><div>ככה מחשבים גם הנחות וטיפים בחיים האמיתיים! "רבע הנחה מ-20 ₪" = 20 ÷ 4 = 5 ₪.</div></div>
+  </div>
+
   <div class="interactive-fun">
     <h3 style="font-family:'Varela Round';color:var(--grape);font-size:1.3rem;margin-bottom:10px">🎲 אתגר "גלה את התשובה"</h3>
     <p style="font-weight:700;font-size:1.15rem" id="challengeText"></p>
@@ -421,6 +649,26 @@
     <div class="q" data-answer="0">
       <div class="qtext"><span class="frac"><span class="top">3</span><span class="bot">4</span></span>÷<span class="frac"><span class="top">1</span><span class="bot">2</span></span>= ?</div>
       <div class="opts"><button class="opt">6/4</button><button class="opt">3/8</button><button class="opt">4/6</button></div>
+      <div class="feedback"></div>
+    </div>
+    <div class="q" data-answer="2">
+      <div class="qtext">מה ההופכי של <span class="frac"><span class="top">2</span><span class="bot">7</span></span>?</div>
+      <div class="opts"><button class="opt">2/7</button><button class="opt">7/1</button><button class="opt">7/2</button></div>
+      <div class="feedback"></div>
+    </div>
+    <div class="q" data-answer="1">
+      <div class="qtext">כמה זה <span class="frac"><span class="top">1</span><span class="bot">4</span></span> מתוך 20? 🍬</div>
+      <div class="opts"><button class="opt">4</button><button class="opt">5</button><button class="opt">80</button></div>
+      <div class="feedback"></div>
+    </div>
+    <div class="q" data-answer="2">
+      <div class="qtext">כמה זה <span class="frac"><span class="top">2</span><span class="bot">3</span></span> מתוך 9?</div>
+      <div class="opts"><button class="opt">3</button><button class="opt">18</button><button class="opt">6</button></div>
+      <div class="feedback"></div>
+    </div>
+    <div class="q" data-answer="0">
+      <div class="qtext"><span class="frac"><span class="top">2</span><span class="bot">3</span></span>×<span class="frac"><span class="top">3</span><span class="bot">4</span></span>= ? &nbsp;(וצמצמו!)</div>
+      <div class="opts"><button class="opt">1/2</button><button class="opt">6/12</button><button class="opt">5/7</button></div>
       <div class="feedback"></div>
     </div>
   </div>
@@ -457,6 +705,24 @@
     <div class="tip"><span class="big">🍎</span><div><b>תפוחים עם תפוחים!</b> אפשר לחבר 2x + 3x, אבל <b>אי אפשר</b> לאחד 2x + 3 — כי x הוא קופסה מסתורית, ו-3 הוא מספר רגיל. דברים שונים!</div></div>
   </div>
 
+  <div class="card">
+    <h3>👾 המפלצות הן הנעלמים!</h3>
+    <p>אפשר לקרוא לנעלם בכל שם — <span class="mono">x</span>, <span class="mono">y</span>, או אפילו מפלצת! כל אלה אומרים בדיוק אותו דבר:</p>
+    <div class="eq" style="flex-direction:column;gap:10px">
+      <div class="mono mvar">🐲 + 2 = 6</div>
+      <div class="mono">x + 2 = 6</div>
+      <div style="font-weight:700">שניהם → הנעלם = <b style="color:var(--lime)">4</b></div>
+    </div>
+    <div class="tip"><span class="big">🎭</span><div><b>סוד מקצועני:</b> מתמטיקאים אוהבים אותיות כי קל לכתוב אותן — אבל בראש שלכם תמיד אפשר לדמיין מפלצת מסתורית שמחזיקה מספר! 📦</div></div>
+  </div>
+
+  <div class="card">
+    <h3>🕐 כשאין מספר לפני האות</h3>
+    <p>אם כתוב סתם <span class="mono">x</span> בלי מספר — זה בעצם <span class="mono">1x</span>! ה-1 פשוט מתחבא כי הוא ביישן. 😊</p>
+    <div class="eq"><b style="color:var(--sky)">x</b> = <b style="color:var(--bubble)">1x</b> &nbsp;·&nbsp; <b style="color:var(--sky)">x + x</b> = <b style="color:var(--lime)">2x</b></div>
+    <div class="tip"><span class="big">🔎</span><div>אז <span class="mono">x + 4x = 5x</span> (כי x זה 1x, ו-1+4=5). אל תשכחו את ה-1 הנסתר!</div></div>
+  </div>
+
   <div class="quiz">
     <div class="qhead">🎯 משימת בזק</div>
     <div class="q" data-answer="2">
@@ -472,6 +738,26 @@
     <div class="q" data-answer="1">
       <div class="qtext">איזה ביטוי <b>אי אפשר</b> לאחד לאיבר אחד?</div>
       <div class="opts"><button class="opt">5x + 2x</button><button class="opt">5x + 2</button><button class="opt">x + x</button></div>
+      <div class="feedback"></div>
+    </div>
+    <div class="q" data-answer="2">
+      <div class="qtext">כמה זה <b dir="ltr">x + 4x</b>? (זכרו את ה-1 הנסתר!)</div>
+      <div class="opts"><button class="opt">4x</button><button class="opt">4x²</button><button class="opt">5x</button></div>
+      <div class="feedback"></div>
+    </div>
+    <div class="q" data-answer="0">
+      <div class="qtext">אם <b dir="ltr">🐲 + 5 = 9</b>, כמה שווה המפלצת 🐲?</div>
+      <div class="opts"><button class="opt">4</button><button class="opt">14</button><button class="opt">5</button></div>
+      <div class="feedback"></div>
+    </div>
+    <div class="q" data-answer="1">
+      <div class="qtext">אחדו איברים דומים: <b dir="ltr">3x + 4 + 2x</b></div>
+      <div class="opts"><button class="opt">9x</button><button class="opt">5x + 4</button><button class="opt">7x</button></div>
+      <div class="feedback"></div>
+    </div>
+    <div class="q" data-answer="2">
+      <div class="qtext">מה המשמעות של <b dir="ltr">x²</b>?</div>
+      <div class="opts"><button class="opt">x + 2</button><button class="opt">2x</button><button class="opt">x כפול x</button></div>
       <div class="feedback"></div>
     </div>
   </div>
@@ -526,6 +812,17 @@
     <div class="tip"><span class="big">🏆</span><div><b>תמיד בודקים את התשובה!</b> מציבים את המספר שקיבלתם בחזרה במשוואה המקורית. אם שני הצדדים שווים — אתם אלופים! 🥇</div></div>
   </div>
 
+  <div class="card" style="background:linear-gradient(135deg,#ede4ff,#f6f0ff)">
+    <h3>🗺️ באיזה סדר לפתור? — המפה הסודית</h3>
+    <p>כשיש שני שלבים (כמו <span class="mono">2x + 4 = 10</span>), הסדר חשוב! עובדים <b>הפוך</b> מסדר הפעולות הרגיל:</p>
+    <ol class="steps">
+      <li>קודם מבטלים את ה-<b>+</b> או ה-<b>−</b> (המספר שרחוק מ-x)</li>
+      <li>אחר כך מבטלים את ה-<b>×</b> או ה-<b>÷</b> (המספר שצמוד ל-x)</li>
+      <li>נשאר <span class="mono">x</span> לבד — פתרתם! 🎉</li>
+    </ol>
+    <div class="tip"><span class="big">🧅</span><div><b>כמו לקלף בצל:</b> מורידים קודם את השכבה החיצונית (המספר הרחוק), ואז מגיעים לליבה (ה-x). 🐙</div></div>
+  </div>
+
   <div class="interactive-fun">
     <h3 style="font-family:'Varela Round';color:var(--grape);font-size:1.3rem;margin-bottom:10px">🕵️ מחולל התעלומות — פתרו את X</h3>
     <p style="font-weight:700;font-size:1.3rem" id="mysteryEq"></p>
@@ -558,6 +855,31 @@
     <div class="q" data-answer="1">
       <div class="qtext">פתרו: <span dir="ltr">2x − 1 = 9</span></div>
       <div class="opts"><button class="opt">x = 4</button><button class="opt">x = 5</button><button class="opt">x = 10</button></div>
+      <div class="feedback"></div>
+    </div>
+    <div class="q" data-answer="0">
+      <div class="qtext">בפתרון <span dir="ltr">3x + 6 = 12</span> — מה עושים <b>ראשון</b>?</div>
+      <div class="opts"><button class="opt">מחסרים 6</button><button class="opt">מחלקים ב-3</button><button class="opt">מוסיפים 6</button></div>
+      <div class="feedback"></div>
+    </div>
+    <div class="q" data-answer="2">
+      <div class="qtext">פתרו: <span dir="ltr">4x + 2 = 14</span></div>
+      <div class="opts"><button class="opt">x = 4</button><button class="opt">x = 2</button><button class="opt">x = 3</button></div>
+      <div class="feedback"></div>
+    </div>
+    <div class="q" data-answer="0">
+      <div class="qtext">פתרו: <span dir="ltr">x − 4 = 6</span></div>
+      <div class="opts"><button class="opt">x = 10</button><button class="opt">x = 2</button><button class="opt">x = 24</button></div>
+      <div class="feedback"></div>
+    </div>
+    <div class="q" data-answer="1">
+      <div class="qtext">פתרו: <span dir="ltr">🐙 × 2 = 10</span> &nbsp;(כמה שווה 🐙?)</div>
+      <div class="opts"><button class="opt">x = 20</button><button class="opt">x = 5</button><button class="opt">x = 8</button></div>
+      <div class="feedback"></div>
+    </div>
+    <div class="q" data-answer="2">
+      <div class="qtext">פתרו: <span dir="ltr">5x − 3 = 12</span></div>
+      <div class="opts"><button class="opt">x = 2</button><button class="opt">x = 5</button><button class="opt">x = 3</button></div>
       <div class="feedback"></div>
     </div>
   </div>
@@ -795,12 +1117,336 @@
       <div class="opts"><button class="opt">x = 10</button><button class="opt">x = 15</button><button class="opt">x = 6</button></div>
       <div class="feedback"></div>
     </div>
+
+    <div class="q" data-answer="2">
+      <div class="qtext">בכפל <span dir="ltr">2x − 4 = 8</span> ב… רגע, מחלקים ב-2. מה מקבלים?</div>
+      <div class="opts"><button class="opt" dir="ltr">2x − 2 = 4</button><button class="opt" dir="ltr">x − 4 = 4</button><button class="opt" dir="ltr">x − 2 = 4</button></div>
+      <div class="feedback"></div>
+    </div>
+
+    <div class="q" data-answer="1">
+      <div class="qtext">פתרו: <span dir="ltr">6x − 4 = 3x + 8</span></div>
+      <div class="opts"><button class="opt">x = 3</button><button class="opt">x = 4</button><button class="opt">x = 2</button></div>
+      <div class="feedback"></div>
+    </div>
+
+    <div class="q" data-answer="0">
+      <div class="qtext">כמה איברים ב-<b dir="ltr">7x − 2x + 5 − 1</b>?</div>
+      <div class="opts"><button class="opt">4</button><button class="opt">2</button><button class="opt">3</button></div>
+      <div class="feedback"></div>
+    </div>
   </div>
 </section>
 
-<!-- ============ פרק 7: דף עזר ============ -->
+<!-- ============ פרק 7: סוגריים וחלוקה (חוק הפילוג) ============ -->
 <section class="chapter c7" id="ch7">
-  <div class="chapter-head"><div class="chapter-num">7</div><h2>דף עזר על-על 📋</h2></div>
+  <div class="chapter-head"><div class="chapter-num">7</div><h2>סוגריים וחלוקה 🎁</h2></div>
+
+  <div class="card">
+    <p class="lead">כשמפלצת עומדת מחוץ ל<span class="word">סוגריים</span>, היא רוצה ללחוץ יד לכל אחד בפנים! זה נקרא <b>חוק הפילוג</b> (או "חוק החלוקה"). 🤝</p>
+    <div class="distrib">
+      <span class="arc">↙&nbsp;&nbsp;&nbsp;↘</span>
+      <span class="term" style="color:var(--bubble)">3</span>(<span class="term" style="color:var(--sky)">x</span> + <span class="term" style="color:var(--lime)">4</span>)
+      &nbsp;=&nbsp;
+      <span class="term" style="color:var(--bubble)">3</span>·<span class="term" style="color:var(--sky)">x</span> + <span class="term" style="color:var(--bubble)">3</span>·<span class="term" style="color:var(--lime)">4</span>
+      &nbsp;=&nbsp;
+      <span style="color:var(--grape)">3x + 12</span>
+    </div>
+    <p class="distrib-note">המספר שבחוץ (3) מכפיל <b>כל איבר</b> שבתוך הסוגריים — גם את ה-x וגם את ה-4!</p>
+    <div class="tip"><span class="big">🎁</span><div><b>זוכרים את מסיבת הכיתה?</b> המספר שבחוץ הוא המורה שמחלקת מתנות. אסור לשכוח אף ילד בתוך הסוגריים! 🐲</div></div>
+  </div>
+
+  <div class="card">
+    <h3>🚫 הטעות הכי נפוצה בעולם</h3>
+    <div class="vs-panel">
+      <div class="vs-wrong">
+        <div class="vs-label">❌ טעות</div>
+        <div class="eq" style="font-size:1.15rem;margin:4px 0" dir="ltr">2(x + 5)</div>
+        <div style="text-align:center">מכפילים רק את ה-x:</div>
+        <div class="eq" style="font-size:1.15rem;margin:4px 0;color:#d63384" dir="ltr">2x + 5 ← לא!</div>
+        <div style="font-size:.9rem">שכחו להכפיל את ה-5 ב-2!</div>
+      </div>
+      <div class="vs-right">
+        <div class="vs-label">✅ נכון</div>
+        <div class="eq" style="font-size:1.15rem;margin:4px 0" dir="ltr">2(x + 5)</div>
+        <div style="text-align:center">מכפילים את <b>שניהם</b>:</div>
+        <div class="eq" style="font-size:1.15rem;margin:4px 0;color:#1a9e6b" dir="ltr">2x + 10 ✓</div>
+        <div style="font-size:.9rem">גם ה-x וגם ה-5 קיבלו ×2!</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>➖ זהירות עם מינוס לפני הסוגריים!</h3>
+    <p>אם יש מינוס לפני הסוגריים, הוא <b>הופך את הסימן</b> של כל איבר בפנים:</p>
+    <div class="eq" style="font-size:1.35rem" dir="ltr">
+      −(x − 3) = <span style="color:var(--grape)">−x + 3</span>
+    </div>
+    <div class="tip"><span class="big">🔀</span><div>מינוס לפני סוגריים = "כפתור היפוך"! פלוס הופך למינוס, ומינוס הופך לפלוס. חשבו על זה כמו על מפלצת שהופכת הכול הפוך. 👽</div></div>
+  </div>
+
+  <div class="card">
+    <h3>🎬 לפתור משוואה עם סוגריים <span class="level hard">אתגר</span></h3>
+    <div class="example-box">
+      <span class="tag">לפתור: 2(x + 3) = 14 🦕</span>
+      <ol class="steps">
+        <li><b>מפלגים:</b> המספר 2 מכפיל כל איבר → <b dir="ltr">2x + 6 = 14</b></li>
+        <li>מחסרים 6 משני הצדדים → <b dir="ltr">2x = 8</b></li>
+        <li>מחלקים ב-2 → <b style="color:var(--lime)" dir="ltr">x = 4</b></li>
+        <li>בדיקה! <span dir="ltr">2(4 + 3) = 2 × 7 = 14</span> ✓ 🎉</li>
+      </ol>
+    </div>
+    <div class="tip"><span class="big">💡</span><div><b>טריק מקצר:</b> לפעמים אפשר קודם לחלק את שני הצדדים במספר שבחוץ! ‏2(x+3)=14 → מחלקים ב-2 → x+3=7 → x=4. אותה תשובה!</div></div>
+  </div>
+
+  <div class="interactive-fun">
+    <h3 style="font-family:'Varela Round';color:var(--grape);font-size:1.3rem;margin-bottom:10px">🎁 מכונת הפילוג — פתחו את הסוגריים!</h3>
+    <p style="font-weight:700;font-size:1.25rem" id="distribText"></p>
+    <button class="try-btn" onclick="revealDistrib()">✨ פתחו את הסוגריים!</button>
+    <button class="try-btn" style="background:var(--sky)" onclick="newDistrib()">🔄 תרגיל חדש</button>
+    <div class="answer-reveal" id="distribAns"></div>
+  </div>
+
+  <div class="quiz">
+    <div class="qhead">🎯 משימת בזק</div>
+    <div class="q" data-answer="1">
+      <div class="qtext">פתחו סוגריים: <b dir="ltr">3(x + 2)</b></div>
+      <div class="opts"><button class="opt" dir="ltr">3x + 2</button><button class="opt" dir="ltr">3x + 6</button><button class="opt" dir="ltr">x + 6</button></div>
+      <div class="feedback"></div>
+    </div>
+    <div class="q" data-answer="2">
+      <div class="qtext">פתחו סוגריים: <b dir="ltr">5(2x − 1)</b></div>
+      <div class="opts"><button class="opt" dir="ltr">10x − 1</button><button class="opt" dir="ltr">7x − 5</button><button class="opt" dir="ltr">10x − 5</button></div>
+      <div class="feedback"></div>
+    </div>
+    <div class="q" data-answer="0">
+      <div class="qtext">פתחו: <b dir="ltr">−(x − 4)</b></div>
+      <div class="opts"><button class="opt" dir="ltr">−x + 4</button><button class="opt" dir="ltr">−x − 4</button><button class="opt" dir="ltr">x − 4</button></div>
+      <div class="feedback"></div>
+    </div>
+    <div class="q" data-answer="1">
+      <div class="qtext">פתרו: <b dir="ltr">2(x + 1) = 10</b></div>
+      <div class="opts"><button class="opt">x = 5</button><button class="opt">x = 4</button><button class="opt">x = 9</button></div>
+      <div class="feedback"></div>
+    </div>
+    <div class="q" data-answer="2">
+      <div class="qtext">פתרו: <b dir="ltr">3(x − 2) = 9</b></div>
+      <div class="opts"><button class="opt">x = 3</button><button class="opt">x = 1</button><button class="opt">x = 5</button></div>
+      <div class="feedback"></div>
+    </div>
+    <div class="q" data-answer="0">
+      <div class="qtext">פתחו: <b dir="ltr">4(x + y)</b></div>
+      <div class="opts"><button class="opt" dir="ltr">4x + 4y</button><button class="opt" dir="ltr">4x + y</button><button class="opt" dir="ltr">4xy</button></div>
+      <div class="feedback"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ פרק 8: חידות מילוליות ============ -->
+<section class="chapter c8" id="ch8">
+  <div class="chapter-head"><div class="chapter-num">8</div><h2>חידות מילוליות 📖</h2></div>
+
+  <div class="card">
+    <p class="lead">הכוח האמיתי של האלגברה: להפוך <span class="word">סיפור</span> למשוואה! 📖➡️⚖️ כשיודעים לתרגם מילים למספרים, אפשר לפתור בעיות אמיתיות מהחיים.</p>
+    <div class="tip"><span class="big">🗝️</span><div><b>הכלל הראשון:</b> הדבר שלא יודעים — הוא ה-x! "כמה סוכריות היו לדני?" → תנו לזה שם: <span class="mono">x = מספר הסוכריות</span>. 🦖</div></div>
+  </div>
+
+  <div class="card">
+    <h3>🔤 מילון "עברית → מתמטיקה"</h3>
+    <p>כל מילה בסיפור מתחבאת מאחורי פעולה. הנה המפתח:</p>
+    <div class="cheatgrid" style="margin-top:14px">
+      <div class="cheat b3"><h4>➕ חיבור</h4><ul>
+        <li>"ביחד" · "בסך הכול"</li>
+        <li>"יותר מ…" · "הוסיפו"</li>
+        <li>"סכום" · "גדל ב…"</li>
+      </ul></div>
+      <div class="cheat b1"><h4>➖ חיסור</h4><ul>
+        <li>"פחות" · "נשארו"</li>
+        <li>"הפרש" · "קטן ב…"</li>
+        <li>"כמה יותר" · "איבד"</li>
+      </ul></div>
+      <div class="cheat b2"><h4>✖️ כפל</h4><ul>
+        <li>"פי…" (פי 3)</li>
+        <li>"כפול" · "מכפלה"</li>
+        <li>"של" / "מתוך" (שבר)</li>
+      </ul></div>
+      <div class="cheat b4"><h4>🟰 שווה</h4><ul>
+        <li>"הוא" · "שווה ל…"</li>
+        <li>"נותן" · "מגיע ל…"</li>
+        <li>"בסך הכול…" (בסוף)</li>
+      </ul></div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>🎬 בואו נפתור חידה יחד!</h3>
+    <div class="example-box">
+      <span class="tag">החידה 👾</span>
+      <p style="font-weight:700;font-size:1.12rem">"לגוזי המפלצת יש כמה כדורים. חבר נתן לה עוד 5 כדורים, ועכשיו יש לה 12. כמה כדורים היו לגוזי בהתחלה?" ⚽</p>
+      <ol class="steps">
+        <li><b>מה לא יודעים?</b> כמה כדורים היו בהתחלה → זה ה-<span class="mono">x</span></li>
+        <li><b>מתרגמים:</b> "עוד 5" = <span class="mono">+5</span>, "עכשיו יש 12" = <span class="mono">= 12</span></li>
+        <li><b>המשוואה:</b> <b dir="ltr" style="color:var(--grape)">x + 5 = 12</b></li>
+        <li><b>פותרים:</b> מחסרים 5 → <b style="color:var(--lime)">x = 7 כדורים!</b> ⚽🎉</li>
+      </ol>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>🍕 חידה עם כפל</h3>
+    <div class="example-box">
+      <span class="tag">החידה 🦕</span>
+      <p style="font-weight:700;font-size:1.12rem">"3 מפלצות חילקו ביניהן פיצות שווה בשווה. כל אחת קיבלה מספר זהה של משולשים, ובסך הכול היו 18 משולשים. כמה קיבלה כל מפלצת?"</p>
+      <ol class="steps">
+        <li><b>הנעלם:</b> כמה כל מפלצת קיבלה → <span class="mono">x</span></li>
+        <li><b>מתרגמים:</b> 3 מפלצות × x כל אחת = 18 בסך הכול → <b dir="ltr" style="color:var(--grape)">3x = 18</b></li>
+        <li><b>פותרים:</b> מחלקים ב-3 → <b style="color:var(--lime)">x = 6 משולשים לכל אחת!</b> 🍕</li>
+      </ol>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>🧩 חידה בשני שלבים <span class="level hard">אתגר</span></h3>
+    <div class="example-box">
+      <span class="tag">החידה 🐙</span>
+      <p style="font-weight:700;font-size:1.12rem">"אוקטי קנתה כמה עטים במחיר 2 ₪ כל אחד, ושילמה גם 3 ₪ דמי משלוח. בסך הכול שילמה 13 ₪. כמה עטים קנתה?"</p>
+      <ol class="steps">
+        <li><b>הנעלם:</b> מספר העטים → <span class="mono">x</span></li>
+        <li><b>מתרגמים:</b> עטים × 2 ₪ = <span class="mono">2x</span>, ועוד 3 ₪ משלוח, = 13 → <b dir="ltr" style="color:var(--grape)">2x + 3 = 13</b></li>
+        <li>מחסרים 3 → <span class="mono">2x = 10</span> → מחלקים ב-2 → <b style="color:var(--lime)">x = 5 עטים!</b> ✒️🎉</li>
+      </ol>
+    </div>
+    <div class="tip"><span class="big">🎯</span><div><b>השלבים תמיד אותו דבר:</b> (1) תנו שם לנעלם, (2) תרגמו מילים לפעולות, (3) בנו משוואה, (4) פתרו, (5) בדקו שהתשובה הגיונית בסיפור!</div></div>
+  </div>
+
+  <div class="interactive-fun">
+    <h3 style="font-family:'Varela Round';color:var(--grape);font-size:1.3rem;margin-bottom:10px">📖 מחולל החידות — תרגמו ופתרו!</h3>
+    <p style="font-weight:700;font-size:1.12rem" id="wordText"></p>
+    <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-top:10px">
+      <span style="font-weight:700">התשובה:</span>
+      <input type="number" id="wordInput" placeholder="?" style="width:90px;font-size:1.2rem;padding:10px;border:3px solid var(--ink);border-radius:12px;font-family:'Fredoka';font-weight:700">
+      <button class="try-btn" onclick="checkWord()">בדיקה! ✅</button>
+      <button class="try-btn" style="background:var(--sky)" onclick="newWord()">חידה חדשה 🔄</button>
+    </div>
+    <div class="answer-reveal" id="wordFeedback"></div>
+  </div>
+
+  <div class="quiz">
+    <div class="qhead">🎯 משימת בזק — מסיפור למשוואה</div>
+    <div class="q" data-answer="1">
+      <div class="qtext">"למספר הוסיפו 4 וקיבלו 10." איזו משוואה מתאימה?</div>
+      <div class="opts"><button class="opt" dir="ltr">4x = 10</button><button class="opt" dir="ltr">x + 4 = 10</button><button class="opt" dir="ltr">x − 4 = 10</button></div>
+      <div class="feedback"></div>
+    </div>
+    <div class="q" data-answer="0">
+      <div class="qtext">"פי 3 ממספר שווה 21." מהו המספר?</div>
+      <div class="opts"><button class="opt">7</button><button class="opt">18</button><button class="opt">63</button></div>
+      <div class="feedback"></div>
+    </div>
+    <div class="q" data-answer="2">
+      <div class="qtext">לרקסי 15 עוגיות. אכל כמה, ונשארו 9. כמה אכל? 🍪</div>
+      <div class="opts"><button class="opt">9</button><button class="opt">24</button><button class="opt">6</button></div>
+      <div class="feedback"></div>
+    </div>
+    <div class="q" data-answer="1">
+      <div class="qtext">2 כרטיסים עולים סכום שווה, ועוד 4 ₪ עמלה = 14 ₪. מחיר כרטיס אחד?</div>
+      <div class="opts"><button class="opt">7 ₪</button><button class="opt">5 ₪</button><button class="opt">4 ₪</button></div>
+      <div class="feedback"></div>
+    </div>
+    <div class="q" data-answer="0">
+      <div class="qtext">גוזי חשב על מספר, הכפיל ב-4 וקיבל 20. על איזה מספר חשב?</div>
+      <div class="opts"><button class="opt">5</button><button class="opt">16</button><button class="opt">80</button></div>
+      <div class="feedback"></div>
+    </div>
+    <div class="q" data-answer="2">
+      <div class="qtext">"חצי מהכיתה" = 12 תלמידים. כמה תלמידים בכיתה?</div>
+      <div class="opts"><button class="opt">6</button><button class="opt">12</button><button class="opt">24</button></div>
+      <div class="feedback"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ פרק 9: אתגר המפלצת הסופי ============ -->
+<section class="chapter c9" id="ch9">
+  <div class="chapter-head"><div class="chapter-num">9</div><h2>אתגר המפלצת הסופי 🏆</h2></div>
+
+  <div class="card" style="background:linear-gradient(135deg,#ffe3f0,#efe6ff);text-align:center">
+    <p class="lead">הגעתם לקרב הבוס! 🐉 כאן מתערבבות כל המפלצות שלמדתם — שברים, נעלמים, סוגריים והכול. הוכיחו שאתם <b>אלופי מתמטיקה</b> אמיתיים!</p>
+    <p style="font-weight:700">אספו כמה שיותר כוכבים ⭐ — כל תשובה נכונה מקרבת אתכם לתואר!</p>
+  </div>
+
+  <div class="quiz">
+    <div class="qhead">⚔️ סבב 1 — חימום מעורב</div>
+    <div class="q" data-answer="1">
+      <div class="qtext">צמצמו: <span class="frac"><span class="top">6</span><span class="bot">9</span></span></div>
+      <div class="opts"><button class="opt">1/3</button><button class="opt">2/3</button><button class="opt">3/6</button></div>
+      <div class="feedback"></div>
+    </div>
+    <div class="q" data-answer="2">
+      <div class="qtext"><span class="frac"><span class="top">2</span><span class="bot">5</span></span>×<span class="frac"><span class="top">3</span><span class="bot">4</span></span>= ?</div>
+      <div class="opts"><button class="opt">5/9</button><button class="opt">6/9</button><button class="opt">6/20</button></div>
+      <div class="feedback"></div>
+    </div>
+    <div class="q" data-answer="0">
+      <div class="qtext">כמה זה <span class="frac"><span class="top">3</span><span class="bot">4</span></span> מתוך 16?</div>
+      <div class="opts"><button class="opt">12</button><button class="opt">4</button><button class="opt">64</button></div>
+      <div class="feedback"></div>
+    </div>
+  </div>
+
+  <div class="quiz">
+    <div class="qhead">⚔️ סבב 2 — נעלמים ומשוואות</div>
+    <div class="q" data-answer="1">
+      <div class="qtext">פתרו: <span dir="ltr">4x − 5 = 11</span></div>
+      <div class="opts"><button class="opt">x = 3</button><button class="opt">x = 4</button><button class="opt">x = 16</button></div>
+      <div class="feedback"></div>
+    </div>
+    <div class="q" data-answer="2">
+      <div class="qtext">פתרו: <span dir="ltr">2(x + 4) = 18</span></div>
+      <div class="opts"><button class="opt">x = 9</button><button class="opt">x = 7</button><button class="opt">x = 5</button></div>
+      <div class="feedback"></div>
+    </div>
+    <div class="q" data-answer="0">
+      <div class="qtext">פתרו: <span dir="ltr">5x + 2 = 3x + 10</span></div>
+      <div class="opts"><button class="opt">x = 4</button><button class="opt">x = 3</button><button class="opt">x = 6</button></div>
+      <div class="feedback"></div>
+    </div>
+    <div class="q" data-answer="1">
+      <div class="qtext">פתרו: <span dir="ltr" style="display:inline-flex;align-items:center;gap:4px"><span class="frac"><span class="top">x</span><span class="bot">3</span></span> + 2 = 6</span></div>
+      <div class="opts"><button class="opt">x = 8</button><button class="opt">x = 12</button><button class="opt">x = 4</button></div>
+      <div class="feedback"></div>
+    </div>
+  </div>
+
+  <div class="quiz">
+    <div class="qhead">⚔️ סבב 3 — קרב הבוס (חידות מילוליות!) 🐉</div>
+    <div class="q" data-answer="2">
+      <div class="qtext">לזיפ יש קלפים. הוא הכפיל אותם ב-3, הוסיף 2, וקיבל 20. כמה קלפים היו לו? 🃏</div>
+      <div class="opts"><button class="opt">7</button><button class="opt">5</button><button class="opt">6</button></div>
+      <div class="feedback"></div>
+    </div>
+    <div class="q" data-answer="0">
+      <div class="qtext">4 מפלצות חילקו 3/4 מעוגה שווה בשווה. איזה חלק קיבלה כל אחת?</div>
+      <div class="opts"><button class="opt">3/16</button><button class="opt">3/4</button><button class="opt">1/4</button></div>
+      <div class="feedback"></div>
+    </div>
+    <div class="q" data-answer="1">
+      <div class="qtext">פתרו: <span dir="ltr">3(x − 1) = 2x + 4</span></div>
+      <div class="opts"><button class="opt">x = 5</button><button class="opt">x = 7</button><button class="opt">x = 3</button></div>
+      <div class="feedback"></div>
+    </div>
+  </div>
+
+  <div class="card" style="text-align:center;background:linear-gradient(135deg,#fff3d1,#e2fff2)">
+    <h3 style="justify-content:center">🎖️ סיימתם את האתגר?</h3>
+    <p style="font-weight:800;font-size:1.2rem;color:var(--grape)">אם צברתם הרבה כוכבים — אתם רשמית מפלצות-על של מתמטיקה! 👾🏆</p>
+    <p>לא בטוחים בתשובה? חזרו לפרק המתאים, קראו שוב, ונסו שוב. כל אלוף התחיל ממקום אחד — <b>לא לוותר!</b> 💪</p>
+  </div>
+</section>
+
+<!-- ============ פרק 10: דף עזר ============ -->
+<section class="chapter c10" id="ch10">
+  <div class="chapter-head"><div class="chapter-num">10</div><h2>דף עזר על-על 📋</h2></div>
   <div class="card"><p class="lead" style="text-align:center">🖨️ כל מה שלמדתם, במקום אחד. צלמו מסך או הדפיסו להצלה מהירה בזמן שיעורי בית!</p></div>
 
   <div class="cheatgrid">
@@ -873,6 +1519,37 @@
         <li>גם מספרים רגילים חייבים לקבל את הפעולה</li>
         <li>x בשני צדדים? אוספים לצד אחד</li>
         <li><b>תמיד</b> בודקים בסוף!</li>
+      </ul>
+    </div>
+
+    <div class="cheat b1">
+      <h4>🟰 שברים שקולים וצמצום</h4>
+      <ul>
+        <li>כופלים מונה+מכנה באותו מספר → אותו ערך</li>
+        <li>צמצום = מחלקים שניהם באותו מספר</li>
+        <li>עוצרים כשאין מספר משותף (חוץ מ-1)</li>
+        <li>מונה &gt; מכנה = שבר מדומה (יותר משלם)</li>
+      </ul>
+    </div>
+
+    <div class="cheat b3">
+      <h4>🎁 סוגריים (חוק הפילוג)</h4>
+      <ul>
+        <li>המספר שבחוץ מכפיל <b>כל</b> איבר בפנים</li>
+        <li>‏a(b + c) = ab + ac</li>
+        <li>מינוס לפני סוגריים הופך כל סימן</li>
+        <li>אפשר גם קודם לחלק בשני הצדדים</li>
+      </ul>
+    </div>
+
+    <div class="cheat b4">
+      <h4>📖 חידות מילוליות</h4>
+      <ul>
+        <li>הדבר הלא-ידוע = <span class="pill">x</span></li>
+        <li>"פי" / "כפול" = ×</li>
+        <li>"ביחד" = + · "נשארו/פחות" = −</li>
+        <li>"הוא / שווה" = =</li>
+        <li>בדקו שהתשובה הגיונית בסיפור!</li>
       </ul>
     </div>
   </div>
@@ -1104,6 +1781,104 @@ function checkTerms(){
   }
 }
 newTermGame();
+
+/* ---------- קו המספרים (פרק 1) ---------- */
+function drawNumberLine(id, den, mark){
+  const nl=document.getElementById(id);
+  if(!nl) return;
+  nl.innerHTML='<div class="track"></div>';
+  for(let i=0;i<=den;i++){
+    const pct=(i/den)*100;
+    const tick=document.createElement('div');
+    tick.className='tick'+((i===0||i===den)?' big':'');
+    tick.style.left=pct+'%';
+    nl.appendChild(tick);
+    const lbl=document.createElement('div');
+    lbl.className='lbl';
+    lbl.style.left=pct+'%';
+    lbl.textContent=(i===0)?'0':(i===den)?'1':(i+'/'+den);
+    nl.appendChild(lbl);
+  }
+  const dot=document.createElement('div');
+  dot.className='dot';
+  dot.style.left=(mark/den)*100+'%';
+  dot.textContent='👾';
+  nl.appendChild(dot);
+}
+drawNumberLine('nl1',4,3);
+
+/* ---------- מכונת הפילוג (פרק 7) ---------- */
+let curDistrib={};
+function newDistrib(){
+  const a=2+Math.floor(Math.random()*4);          // 2..5
+  const inner=1+Math.floor(Math.random()*4);      // מקדם x בפנים 1..4
+  const b=1+Math.floor(Math.random()*8);          // 1..8
+  const sign=Math.random()<0.5?'+':'−';
+  curDistrib={a,inner,b,sign};
+  const innerX = inner===1?'x':inner+'x';
+  document.getElementById('distribText').innerHTML=
+    `פתחו סוגריים: <b style="color:var(--grape)" dir="ltr">${a}(${innerX} ${sign} ${b})</b>`;
+  document.getElementById('distribAns').classList.remove('show');
+}
+function revealDistrib(){
+  const c=curDistrib;
+  const term1=(c.a*c.inner)+'x';
+  const term2=(c.a*c.b);
+  const innerX = c.inner===1?'x':c.inner+'x';
+  document.getElementById('distribAns').innerHTML=
+    `מכפילים כל איבר ב-${c.a}: <br>`+
+    `<b dir="ltr">${c.a}·${innerX} ${c.sign} ${c.a}·${c.b}</b> = `+
+    `<b style="color:var(--lime)" dir="ltr">${term1} ${c.sign} ${term2}</b> ✨`;
+  document.getElementById('distribAns').classList.add('show');
+}
+newDistrib();
+
+/* ---------- מחולל חידות מילוליות (פרק 8) ---------- */
+const monsters=[['גוזי','👾'],['דרייק','🐲'],['רקסי','🦖'],['זיפ','👽'],['אוקטי','🐙'],['לוני','🦕']];
+let wordAns=0;
+function newWord(){
+  const m=monsters[Math.floor(Math.random()*monsters.length)];
+  const type=Math.floor(Math.random()*4);
+  const x=2+Math.floor(Math.random()*8); // 2..9
+  let text;
+  if(type===0){                 // x + b = total
+    const b=1+Math.floor(Math.random()*9);
+    text=`ל${m[0]} ${m[1]} היו כמה פריטים. קיבל/ה עוד ${b}, ועכשיו יש ${x+b}. כמה היו בהתחלה?`;
+    wordAns=x;
+  } else if(type===1){          // b*x = total
+    const b=2+Math.floor(Math.random()*4);
+    text=`${b} מפלצות חילקו פריטים שווה בשווה, בסך הכול ${b*x}. כמה קיבלה כל אחת?`;
+    wordAns=x;
+  } else if(type===2){          // total - x = left
+    const b=1+Math.floor(Math.random()*x); // כמה נלקח (קטן מ-x כדי להישאר חיובי)
+    text=`ל${m[0]} ${m[1]} היו ${x} פריטים. איבד/ה כמה, ונשארו ${x-b}. כמה איבד/ה?`;
+    wordAns=b;
+  } else {                      // b*x + c = total
+    const b=2+Math.floor(Math.random()*3);
+    const c=1+Math.floor(Math.random()*5);
+    text=`${m[0]} ${m[1]} קנה/תה כמה פריטים במחיר ${b} ₪ כל אחד, ועוד ${c} ₪ משלוח. שילם/ה ${b*x+c} ₪. כמה פריטים?`;
+    wordAns=x;
+  }
+  document.getElementById('wordText').innerHTML='📖 '+text;
+  document.getElementById('wordInput').value='';
+  document.getElementById('wordFeedback').classList.remove('show');
+}
+function checkWord(){
+  const inp=document.getElementById('wordInput');
+  if(inp.value===''){return;}
+  const val=+inp.value;
+  const fb=document.getElementById('wordFeedback');
+  if(val===wordAns){
+    fb.innerHTML='🎉 מדויק! התשובה היא '+wordAns+'. תרגמתם סיפור למתמטיקה — כמו אלופים! 🏆';
+    fb.style.background='#e2fff2';fb.style.borderColor='var(--lime)';
+    addStar();
+  }else{
+    fb.innerHTML='🤔 לא בדיוק! התשובה היא '+wordAns+'. נסו לבנות את המשוואה צעד-צעד: מה הנעלם? מה הפעולה?';
+    fb.style.background='#ffe3e8';fb.style.borderColor='#ff7a90';
+  }
+  fb.classList.add('show');
+}
+newWord();
 </script>
 </body>
 </html>
