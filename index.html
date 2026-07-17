@@ -362,6 +362,144 @@
   .lb-table tr.rank3 td:first-child{background:#f3d1b0}
   .lb-status{font-weight:600;margin-top:12px;min-height:1.4em}
 
+  /* ===== בונה הנוסחאות: ממספרים לאותיות ===== */
+  .formula-lab{
+    background:linear-gradient(135deg,#f2ecff,#e8f7ff);
+    border:4px solid var(--grape);border-radius:22px;
+    padding:22px;margin:22px 0;box-shadow:6px 6px 0 var(--shadow);
+  }
+  .formula-lab h3{font-family:'Varela Round';font-weight:600;font-size:1.35rem;color:var(--grape-deep);margin-bottom:4px}
+  .formula-lab .fl-sub{font-weight:500;font-size:1.05rem;margin-bottom:6px}
+  .fl-track{display:flex;flex-direction:column;gap:10px;margin:14px 0}
+  .fl-step{
+    background:#fff;border:3px solid var(--ink);border-radius:16px;padding:13px 16px;
+    display:none;animation:pop .3s;
+  }
+  .fl-step.show{display:block}
+  .fl-step.is-general{background:linear-gradient(135deg,#fff3d1,#ffe8c2);border-color:var(--tangerine);border-width:4px}
+  .fl-step .fl-say{font-weight:600;font-size:1.05rem;line-height:1.6}
+  .fl-step .fl-math{
+    font-family:'Fredoka';font-weight:800;font-size:1.5rem;direction:ltr;
+    text-align:center;margin:8px 0 2px;color:var(--grape-deep);
+  }
+  .fl-step.is-general .fl-math{font-size:1.75rem;color:var(--grape)}
+  .fl-pill{
+    display:inline-block;background:var(--grape);color:#fff;font-family:'Varela Round';
+    font-weight:600;font-size:.85rem;padding:3px 13px;border-radius:999px;margin-bottom:7px;
+  }
+  .fl-step.is-general .fl-pill{background:var(--tangerine);color:var(--ink)}
+  .fl-legend{display:flex;flex-wrap:wrap;gap:9px;margin-top:12px}
+  .fl-legend .lg{
+    background:#fff;border:3px solid var(--grape);border-radius:14px;
+    padding:7px 13px;font-weight:600;font-size:.98rem;display:flex;align-items:center;gap:7px;
+  }
+  .fl-legend .lg .sym{
+    font-family:'Fredoka';font-weight:800;font-size:1.2rem;color:var(--bubble);direction:ltr;
+  }
+  .fl-controls{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-top:6px}
+  .fl-progress{font-family:'Varela Round';font-weight:600;color:var(--grape-deep);opacity:.75}
+
+  /* ===== מאמן הדף והעיפרון ===== */
+  .paper-lab{
+    background:linear-gradient(135deg,#fffdf5,#fff6e8);
+    border:4px dashed var(--grape-deep);border-radius:22px;
+    padding:22px;margin:22px 0;box-shadow:6px 6px 0 var(--shadow);
+  }
+  .paper-lab h3{font-family:'Varela Round';font-weight:600;font-size:1.35rem;color:var(--grape-deep);margin-bottom:6px}
+  .pl-gate{text-align:center}
+  .pl-kit{display:flex;flex-wrap:wrap;gap:11px;justify-content:center;margin:16px 0}
+  .pl-kit .kit{
+    cursor:pointer;background:#fff;border:3px solid var(--ink);border-radius:16px;
+    padding:13px 18px;font-family:'Varela Round';font-weight:600;font-size:1.05rem;
+    display:flex;align-items:center;gap:9px;box-shadow:3px 3px 0 rgba(45,27,78,.15);
+    transition:transform .1s,background .15s;user-select:none;
+  }
+  .pl-kit .kit:hover{transform:translateY(-3px)}
+  .pl-kit .kit .kit-emoji{font-size:1.6rem}
+  .pl-kit .kit .kit-box{
+    width:26px;height:26px;border:3px solid var(--ink);border-radius:7px;background:#fff;
+    display:grid;place-items:center;font-weight:800;color:transparent;flex-shrink:0;
+  }
+  .pl-kit .kit.on{background:#e2fff2;border-color:var(--lime)}
+  .pl-kit .kit.on .kit-box{background:var(--lime);color:var(--ink)}
+  .pl-body{display:none}
+  .pl-body.show{display:block;animation:pop .3s}
+  .pl-rules{background:#fff;border:3px solid var(--ink);border-radius:16px;padding:14px 18px;margin:14px 0}
+  .pl-rules li{font-size:1.05rem;font-weight:500;margin:7px 0;list-style:none;padding-inline-start:30px;position:relative}
+  .pl-rules li::before{content:'✏️';position:absolute;inset-inline-start:0}
+  .pl-prob{
+    background:var(--grape);color:#fff;border:4px solid var(--ink);border-radius:18px;
+    padding:16px 20px;margin:14px 0;text-align:center;
+  }
+  .pl-prob .pl-prob-lbl{font-family:'Varela Round';font-weight:600;font-size:.95rem;opacity:.9}
+  .pl-prob .pl-prob-txt{font-family:'Fredoka';font-weight:800;font-size:1.5rem;margin-top:5px;direction:ltr}
+  .pl-prob .pl-prob-txt.he{direction:rtl;font-family:'Varela Round';font-size:1.2rem;line-height:1.6}
+  /* דף המחברת */
+  .notebook{
+    background:
+      repeating-linear-gradient(to bottom,transparent 0 37px,#cfe3f5 37px 39px),
+      linear-gradient(#fff,#fff);
+    border:3px solid var(--ink);border-radius:14px;padding:16px 18px;margin:14px 0;
+    min-height:130px;position:relative;box-shadow:inset 0 0 0 1px #fff;
+  }
+  .notebook::before{
+    content:'';position:absolute;top:0;bottom:0;inset-inline-end:34px;width:2px;background:#ffb3c6;
+  }
+  .nb-line{
+    font-family:'Fredoka';font-weight:700;font-size:1.22rem;direction:ltr;text-align:left;
+    padding:5px 0 5px 8px;min-height:39px;line-height:29px;color:var(--ink);
+    display:none;animation:pop .25s;white-space:pre;
+  }
+  .nb-line.show{display:block}
+  .nb-line.nb-indent{padding-inline-start:38px}
+  .nb-line.nb-final{color:var(--grape);font-size:1.35rem;border-bottom:3px double var(--grape);display:none}
+  .nb-line.nb-final.show{display:inline-block}
+  .pl-say{
+    background:#fff;border:3px solid var(--sky);border-radius:14px;padding:13px 16px;margin:12px 0;
+    font-weight:600;font-size:1.06rem;line-height:1.6;display:flex;gap:10px;align-items:flex-start;
+  }
+  .pl-say .big{font-size:1.7rem;flex-shrink:0}
+  .pl-check{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-top:12px}
+  .pl-step-count{font-family:'Varela Round';font-weight:600;color:var(--grape-deep);opacity:.75}
+  .pl-done{
+    background:#e2fff2;border:3px solid var(--lime);border-radius:16px;padding:16px 18px;
+    margin-top:14px;font-weight:700;font-size:1.08rem;display:none;
+  }
+  .pl-done.show{display:block;animation:pop .3s}
+
+  /* ===== התקדמות ושמירה ===== */
+  .welcome-back{
+    max-width:1000px;margin:16px auto 0;padding:0 18px;display:none;
+  }
+  .welcome-back.show{display:block;animation:pop .35s}
+  .wb-inner{
+    background:linear-gradient(135deg,#fff3d1,#ffe3f0);border:4px solid var(--ink);
+    border-radius:22px;padding:18px 22px;box-shadow:6px 6px 0 var(--shadow);
+    display:flex;flex-wrap:wrap;gap:14px;align-items:center;justify-content:space-between;
+  }
+  .wb-text{font-family:'Varela Round';font-weight:600;font-size:1.1rem}
+  .wb-text b{color:var(--grape);font-family:'Baloo 2';font-weight:800}
+  .wb-actions{display:flex;flex-wrap:wrap;gap:9px}
+  .wb-actions .try-btn{margin-top:0}
+  .topbar-score.saved{animation:pop .35s}
+  .ch-item .ch-done{margin-inline-start:auto;font-size:1.15rem;flex-shrink:0}
+  .ch-item.done{background:#e2fff2}
+  .ch-item.done.active{background:var(--sunny)}
+  .chapter-progress{
+    display:flex;flex-wrap:wrap;gap:10px;align-items:center;justify-content:center;
+    background:var(--paper);border:3px solid var(--ink);border-radius:18px;
+    padding:12px 18px;margin:16px 0;font-family:'Varela Round';font-weight:600;
+    box-shadow:4px 4px 0 rgba(45,27,78,.15);
+  }
+  .chapter-progress .cp-bar{
+    flex:1;min-width:140px;height:16px;background:#fff;border:3px solid var(--ink);
+    border-radius:999px;overflow:hidden;
+  }
+  .chapter-progress .cp-fill{
+    display:block;height:100%;width:0;background:linear-gradient(90deg,var(--lime),var(--sky));
+    transition:width .4s cubic-bezier(.2,.8,.2,1);
+  }
+
   @media(max-width:520px){
     .card{padding:18px}
     .chapter-num{min-width:52px;height:52px;font-size:1.5rem}
@@ -371,6 +509,12 @@
     .topbar-score{font-size:.95rem;padding:4px 11px}
     .chapter-nav{flex-direction:column}
     .numline .lbl{font-size:.78rem}
+    .formula-lab,.paper-lab{padding:16px}
+    .fl-step .fl-math{font-size:1.25rem}
+    .fl-step.is-general .fl-math{font-size:1.45rem}
+    .pl-prob .pl-prob-txt{font-size:1.25rem}
+    .nb-line{font-size:1.05rem}
+    .wb-inner{flex-direction:column;align-items:stretch;text-align:center}
   }
 </style>
 </head>
@@ -387,6 +531,13 @@
   <button class="menu-btn" id="menuBtn" aria-label="פתיחת תפריט הפרקים">📚 <span>פרקים</span></button>
   <div class="topbar-current" id="topbarCurrent"></div>
   <div class="topbar-score">⭐ <span id="score">0</span></div>
+</div>
+
+<div class="welcome-back" id="welcomeBack">
+  <div class="wb-inner">
+    <div class="wb-text" id="wbText"></div>
+    <div class="wb-actions" id="wbActions"></div>
+  </div>
 </div>
 
 <div class="drawer-backdrop" id="drawerBackdrop"></div>
