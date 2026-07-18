@@ -872,7 +872,80 @@
     </div>
   </div>
 
-  <div class="quiz">
+
+  <div class="formula-lab" data-fl="fac-general">
+    <h3>🧪 מהמספרים אל הנוסחה הכללית</h3>
+    <p class="fl-sub">לכל מספר יש "גורמים" — מספרים שמתחלקים בו בדיוק, בלי שארית. בואו נגלה את הכלל.</p>
+    <div class="fl-track">
+      <div class="fl-step">
+        <span class="fl-pill">צעד 1 · דוגמה</span>
+        <div class="fl-say">‏6 מתחלק ב-1, 2, 3, 6. הגורמים באים בזוגות שמכפילים ל-6:</div>
+        <div class="fl-math">1×6 = 6 · 2×3 = 6</div>
+        </div>
+      <div class="fl-step">
+        <span class="fl-pill">צעד 2 · עוד דוגמה</span>
+        <div class="fl-say">ל-12 יש יותר זוגות שמכפילים אליו:</div>
+        <div class="fl-math">1×12 · 2×6 · 3×4</div>
+        </div>
+      <div class="fl-step is-general">
+        <span class="fl-pill">🎉 הכלל הכללי</span>
+        <div class="fl-say">אם שני מספרים <b>a</b> ו-<b>b</b> מקיימים a×b=n, שניהם גורמים של n. מספר <b>ראשוני</b> = יש לו רק זוג אחד: 1 והוא עצמו.</div>
+        <div class="fl-math">a × b = n</div>
+        </div>
+    </div>
+    <div class="fl-legend">
+      <span class="lg"><span class="sym">a</span> = גורם ראשון</span>
+      <span class="lg"><span class="sym">b</span> = גורם שני</span>
+      <span class="lg"><span class="sym">n</span> = המספר</span>
+    </div>
+    <div class="fl-controls">
+      <button class="try-btn fl-next"></button>
+      <span class="fl-progress"></span>
+    </div>
+  </div>
+
+  <div class="paper-lab" data-paper="fac-24" data-answer="8">
+    <h3>✍️ מאמן הדף — כל הגורמים של 24</h3>
+    <p style="font-weight:600;font-size:1.05rem">מוצאים גורמים בשיטה מסודרת: בודקים 1, 2, 3... וכותבים כל זוג. קודם מוציאים ציוד:</p>
+    <div class="pl-gate">
+      <div class="pl-kit">
+        <div class="kit"><span class="kit-box">✓</span><span class="kit-emoji">📄</span> דף</div>
+        <div class="kit"><span class="kit-box">✓</span><span class="kit-emoji">✏️</span> עיפרון</div>
+        <div class="kit"><span class="kit-box">✓</span><span class="kit-emoji">🧮</span> מחשבון</div>
+      </div>
+      <div class="pl-gate-start"><button class="try-btn" disabled>סמנו שהוצאתם הכול ☝️</button></div>
+    </div>
+    <div class="pl-body">
+      <div class="pl-prob">
+        <div class="pl-prob-lbl">✏️ העתיקו את המשימה לדף שלכם</div>
+        <div class="pl-prob-txt he">מצאו את כל הגורמים של 24</div>
+      </div>
+      <div class="pl-say"><span class="big">✍️</span><div>כתבו את הזוגות בטור, כל זוג בשורה. ככה לא שוכחים אף גורם ולא סופרים פעמיים!</div></div>
+      <ul class="pl-rules">
+        <li>בודקים לפי הסדר: 1, 2, 3, 4...</li>
+        <li>כל זוג גורמים בשורה נפרדת.</li>
+        <li>עוצרים כשהמספרים "נפגשים" באמצע.</li>
+      </ul>
+      <p style="font-weight:600">לחצו שורה-שורה וכתבו כל שורה על הדף שלכם 👇</p>
+      <div class="notebook">
+        <div class="nb-line">1 × 24</div>
+        <div class="nb-line">2 × 12</div>
+        <div class="nb-line">3 × 8</div>
+        <div class="nb-line">4 × 6</div>
+        <div class="nb-line nb-final">8 גורמים: 1,2,3,4,6,8,12,24</div>
+      </div>
+      <div class="pl-check">
+        <button class="try-btn pl-reveal"></button>
+        <span class="pl-step-count"></span>
+      </div>
+      <div class="pl-say"><span class="big">🔢</span><div>כמה גורמים בסך הכול יש ל-24? (מספר):<br>
+        <input class="pl-answer iact-in" style="width:110px;margin-top:8px" placeholder="?">
+        <button class="try-btn pl-check-btn" style="margin-top:8px">בדקו ✅</button></div></div>
+      <div class="pl-done"></div>
+    </div>
+  </div>
+
+    <div class="quiz">
     <div class="qhead">🎯 משימת בזק</div>
     <div class="q" data-answer="2">
       <div class="qtext">איזה מספר הוא <b>גורם</b> של 12?</div>
@@ -995,7 +1068,85 @@
     </div>
   </div>
 
-  <div class="quiz">
+
+  <div class="formula-lab" data-fl="fracadd-general">
+    <h3>🧪 מהמספרים אל הנוסחה הכללית</h3>
+    <p class="fl-sub">לחבר שברים = לספור חתיכות מאותו גודל. הסוד הוא מכנה משותף.</p>
+    <div class="fl-track">
+      <div class="fl-step">
+        <span class="fl-pill">צעד 1 · אותו מכנה</span>
+        <div class="fl-say">אם המכנה שווה, פשוט מחברים את המונים:</div>
+        <div class="fl-math">1/5 + 2/5 = 3/5</div>
+        </div>
+      <div class="fl-step">
+        <span class="fl-pill">צעד 2 · מכנים שונים</span>
+        <div class="fl-say">משווים מכנה קודם. ל-1/2 ול-1/3 המכנה המשותף הוא 6:</div>
+        <div class="fl-math">1/2 = 3/6 · 1/3 = 2/6</div>
+        </div>
+      <div class="fl-step">
+        <span class="fl-pill">צעד 3 · ואז מחברים</span>
+        <div class="fl-say">עכשיו כשהמכנה שווה, מחברים מונים:</div>
+        <div class="fl-math">3/6 + 2/6 = 5/6</div>
+        </div>
+      <div class="fl-step is-general">
+        <span class="fl-pill">🎉 הנוסחה הכללית</span>
+        <div class="fl-say">לכל שני שברים, מרחיבים למכנה משותף ומחברים:</div>
+        <div class="fl-math">a/b + c/d = (a·d + c·b) / (b·d)</div>
+        </div>
+    </div>
+    <div class="fl-legend">
+      <span class="lg"><span class="sym">a</span> = מונה ראשון</span>
+      <span class="lg"><span class="sym">b</span> = מכנה ראשון</span>
+      <span class="lg"><span class="sym">c</span> = מונה שני</span>
+      <span class="lg"><span class="sym">d</span> = מכנה שני</span>
+    </div>
+    <div class="fl-controls">
+      <button class="try-btn fl-next"></button>
+      <span class="fl-progress"></span>
+    </div>
+  </div>
+
+  <div class="paper-lab" data-paper="fracadd-half-third" data-answer="5/6">
+    <h3>✍️ מאמן הדף — לחבר שברים בכתב מסודר</h3>
+    <p style="font-weight:600;font-size:1.05rem">מחברים שברים בשלושה שלבים כתובים: מכנה משותף, מרחיבים, מחברים. מוציאים ציוד:</p>
+    <div class="pl-gate">
+      <div class="pl-kit">
+        <div class="kit"><span class="kit-box">✓</span><span class="kit-emoji">📄</span> דף</div>
+        <div class="kit"><span class="kit-box">✓</span><span class="kit-emoji">✏️</span> עיפרון</div>
+        <div class="kit"><span class="kit-box">✓</span><span class="kit-emoji">🧮</span> מחשבון</div>
+      </div>
+      <div class="pl-gate-start"><button class="try-btn" disabled>סמנו שהוצאתם הכול ☝️</button></div>
+    </div>
+    <div class="pl-body">
+      <div class="pl-prob">
+        <div class="pl-prob-lbl">✏️ העתיקו את המשימה לדף שלכם</div>
+        <div class="pl-prob-txt">1/2 + 1/3 = ?</div>
+      </div>
+      <div class="pl-say"><span class="big">✍️</span><div>כתבו כל שורה מתחת לקודמת, ישר ומסודר. סימן ה-<b>=</b> אחד מתחת לשני — ככה קל לבדוק את עצמכם ולא להתבלבל.</div></div>
+      <ul class="pl-rules">
+        <li>שורה חדשה לכל צעד — לא דוחסים הכול יחד.</li>
+        <li>מיישרים את סימן ה-<b>=</b> אחד מתחת לשני.</li>
+        <li>ספרות גדולות וברורות שגם אתם תוכלו לקרוא.</li>
+      </ul>
+      <p style="font-weight:600">לחצו שורה-שורה וכתבו כל שורה על הדף שלכם 👇</p>
+      <div class="notebook">
+        <div class="nb-line">1/2 + 1/3</div>
+        <div class="nb-line nb-indent">מכנה משותף = 6</div>
+        <div class="nb-line">3/6 + 2/6</div>
+        <div class="nb-line nb-final">= 5/6</div>
+      </div>
+      <div class="pl-check">
+        <button class="try-btn pl-reveal"></button>
+        <span class="pl-step-count"></span>
+      </div>
+      <div class="pl-say"><span class="big">🔢</span><div>מה קיבלתם? (בצורה מונה/מכנה):<br>
+        <input class="pl-answer iact-in" style="width:120px;margin-top:8px" placeholder="?/?">
+        <button class="try-btn pl-check-btn" style="margin-top:8px">בדקו ✅</button></div></div>
+      <div class="pl-done"></div>
+    </div>
+  </div>
+
+    <div class="quiz">
     <div class="qhead">🎯 משימת בזק</div>
     <div class="q" data-answer="1">
       <div class="qtext"><span class="frac"><span class="top">4</span><span class="bot">9</span></span>+<span class="frac"><span class="top">2</span><span class="bot">9</span></span>= ?</div>
@@ -1118,7 +1269,85 @@
     <div class="answer-reveal" id="challengeAns"></div>
   </div>
 
-  <div class="quiz">
+
+  <div class="formula-lab" data-fl="fracmul-general">
+    <h3>🧪 מהמספרים אל הנוסחה הכללית</h3>
+    <p class="fl-sub">כפל שברים הוא הכי קל — כופלים ישר. חילוק? הופכים את השני ומכפילים.</p>
+    <div class="fl-track">
+      <div class="fl-step">
+        <span class="fl-pill">צעד 1 · כפל</span>
+        <div class="fl-say">כופלים מונה במונה, מכנה במכנה:</div>
+        <div class="fl-math">2/3 × 3/4 = 6/12</div>
+        </div>
+      <div class="fl-step">
+        <span class="fl-pill">צעד 2 · מצמצמים</span>
+        <div class="fl-say">‏6/12 מצטמצם לשם פשוט יותר:</div>
+        <div class="fl-math">6/12 = 1/2</div>
+        </div>
+      <div class="fl-step">
+        <span class="fl-pill">צעד 3 · חילוק</span>
+        <div class="fl-say">לחלק = להפוך את השבר השני ולכפול:</div>
+        <div class="fl-math">1/2 ÷ 3/4 = 1/2 × 4/3</div>
+        </div>
+      <div class="fl-step is-general">
+        <span class="fl-pill">🎉 הנוסחה הכללית</span>
+        <div class="fl-say">כפל שברים באותיות:</div>
+        <div class="fl-math">a/b × c/d = (a·c) / (b·d)</div>
+        </div>
+    </div>
+    <div class="fl-legend">
+      <span class="lg"><span class="sym">a</span> = מונה ראשון</span>
+      <span class="lg"><span class="sym">b</span> = מכנה ראשון</span>
+      <span class="lg"><span class="sym">c</span> = מונה שני</span>
+      <span class="lg"><span class="sym">d</span> = מכנה שני</span>
+    </div>
+    <div class="fl-controls">
+      <button class="try-btn fl-next"></button>
+      <span class="fl-progress"></span>
+    </div>
+  </div>
+
+  <div class="paper-lab" data-paper="fracmul-23-34" data-answer="1/2">
+    <h3>✍️ מאמן הדף — לכפול שברים בכתב מסודר</h3>
+    <p style="font-weight:600;font-size:1.05rem">כופלים ישר, ואז מצמצמים. כל שלב בשורה. מוציאים ציוד:</p>
+    <div class="pl-gate">
+      <div class="pl-kit">
+        <div class="kit"><span class="kit-box">✓</span><span class="kit-emoji">📄</span> דף</div>
+        <div class="kit"><span class="kit-box">✓</span><span class="kit-emoji">✏️</span> עיפרון</div>
+        <div class="kit"><span class="kit-box">✓</span><span class="kit-emoji">🧮</span> מחשבון</div>
+      </div>
+      <div class="pl-gate-start"><button class="try-btn" disabled>סמנו שהוצאתם הכול ☝️</button></div>
+    </div>
+    <div class="pl-body">
+      <div class="pl-prob">
+        <div class="pl-prob-lbl">✏️ העתיקו את המשימה לדף שלכם</div>
+        <div class="pl-prob-txt">2/3 × 3/4 = ?</div>
+      </div>
+      <div class="pl-say"><span class="big">✍️</span><div>כתבו כל שורה מתחת לקודמת, ישר ומסודר. סימן ה-<b>=</b> אחד מתחת לשני — ככה קל לבדוק את עצמכם ולא להתבלבל.</div></div>
+      <ul class="pl-rules">
+        <li>שורה חדשה לכל צעד — לא דוחסים הכול יחד.</li>
+        <li>מיישרים את סימן ה-<b>=</b> אחד מתחת לשני.</li>
+        <li>ספרות גדולות וברורות שגם אתם תוכלו לקרוא.</li>
+      </ul>
+      <p style="font-weight:600">לחצו שורה-שורה וכתבו כל שורה על הדף שלכם 👇</p>
+      <div class="notebook">
+        <div class="nb-line">2/3 × 3/4</div>
+        <div class="nb-line nb-indent">= (2×3)/(3×4)</div>
+        <div class="nb-line">= 6/12</div>
+        <div class="nb-line nb-final">= 1/2</div>
+      </div>
+      <div class="pl-check">
+        <button class="try-btn pl-reveal"></button>
+        <span class="pl-step-count"></span>
+      </div>
+      <div class="pl-say"><span class="big">🔢</span><div>התוצאה המצומצמת? (מונה/מכנה):<br>
+        <input class="pl-answer iact-in" style="width:120px;margin-top:8px" placeholder="?/?">
+        <button class="try-btn pl-check-btn" style="margin-top:8px">בדקו ✅</button></div></div>
+      <div class="pl-done"></div>
+    </div>
+  </div>
+
+    <div class="quiz">
     <div class="qhead">🎯 משימת בזק</div>
     <div class="q" data-answer="1">
       <div class="qtext"><span class="frac"><span class="top">1</span><span class="bot">2</span></span>×<span class="frac"><span class="top">1</span><span class="bot">3</span></span>= ?</div>
@@ -1251,7 +1480,78 @@
     <div class="tip"><span class="big">⚡</span><div><b>טריק מהיר ל-10%:</b> פשוט מזיזים נקודה ספרה אחת שמאלה! 10% מ-80 = 8. וכדי לקבל 20% — פשוט כופלים ב-2.</div></div>
   </div>
 
-  <div class="quiz">
+
+  <div class="formula-lab" data-fl="pct-general">
+    <h3>🧪 מהמספרים אל הנוסחה הכללית</h3>
+    <p class="fl-sub">אחוז = "מתוך מאה". כל אחוז הוא בעצם שבר עם מכנה 100.</p>
+    <div class="fl-track">
+      <div class="fl-step">
+        <span class="fl-pill">צעד 1 · דוגמה</span>
+        <div class="fl-say">‏25% זה 25 מתוך 100:</div>
+        <div class="fl-math">25% = 25/100 = 0.25</div>
+        </div>
+      <div class="fl-step">
+        <span class="fl-pill">צעד 2 · אחוז ממספר</span>
+        <div class="fl-say">‏25% מתוך 80 = כופלים במספר:</div>
+        <div class="fl-math">80 × 25/100 = 20</div>
+        </div>
+      <div class="fl-step is-general">
+        <span class="fl-pill">🎉 הנוסחה הכללית</span>
+        <div class="fl-say">כדי למצוא <b>p</b> אחוז מתוך מספר <b>n</b>:</div>
+        <div class="fl-math">חלק = n × p / 100</div>
+        </div>
+    </div>
+    <div class="fl-legend">
+      <span class="lg"><span class="sym">n</span> = המספר השלם</span>
+      <span class="lg"><span class="sym">p</span> = האחוז</span>
+    </div>
+    <div class="fl-controls">
+      <button class="try-btn fl-next"></button>
+      <span class="fl-progress"></span>
+    </div>
+  </div>
+
+  <div class="paper-lab" data-paper="pct-25-80" data-answer="20">
+    <h3>✍️ מאמן הדף — לחשב אחוז ממספר</h3>
+    <p style="font-weight:600;font-size:1.05rem">ממירים אחוז לשבר, מכפילים, ומחשבים. שורה-שורה. מוציאים ציוד:</p>
+    <div class="pl-gate">
+      <div class="pl-kit">
+        <div class="kit"><span class="kit-box">✓</span><span class="kit-emoji">📄</span> דף</div>
+        <div class="kit"><span class="kit-box">✓</span><span class="kit-emoji">✏️</span> עיפרון</div>
+        <div class="kit"><span class="kit-box">✓</span><span class="kit-emoji">🧮</span> מחשבון</div>
+      </div>
+      <div class="pl-gate-start"><button class="try-btn" disabled>סמנו שהוצאתם הכול ☝️</button></div>
+    </div>
+    <div class="pl-body">
+      <div class="pl-prob">
+        <div class="pl-prob-lbl">✏️ העתיקו את המשימה לדף שלכם</div>
+        <div class="pl-prob-txt he">כמה זה 25% מתוך 80?</div>
+      </div>
+      <div class="pl-say"><span class="big">✍️</span><div>כתבו כל שורה מתחת לקודמת, ישר ומסודר. סימן ה-<b>=</b> אחד מתחת לשני — ככה קל לבדוק את עצמכם ולא להתבלבל.</div></div>
+      <ul class="pl-rules">
+        <li>שורה חדשה לכל צעד — לא דוחסים הכול יחד.</li>
+        <li>מיישרים את סימן ה-<b>=</b> אחד מתחת לשני.</li>
+        <li>ספרות גדולות וברורות שגם אתם תוכלו לקרוא.</li>
+      </ul>
+      <p style="font-weight:600">לחצו שורה-שורה וכתבו כל שורה על הדף שלכם 👇</p>
+      <div class="notebook">
+        <div class="nb-line">25% = 25/100</div>
+        <div class="nb-line">80 × 25/100</div>
+        <div class="nb-line nb-indent">= 2000/100</div>
+        <div class="nb-line nb-final">= 20</div>
+      </div>
+      <div class="pl-check">
+        <button class="try-btn pl-reveal"></button>
+        <span class="pl-step-count"></span>
+      </div>
+      <div class="pl-say"><span class="big">🔢</span><div>מה התוצאה? (מספר):<br>
+        <input class="pl-answer iact-in" style="width:110px;margin-top:8px" placeholder="?">
+        <button class="try-btn pl-check-btn" style="margin-top:8px">בדקו ✅</button></div></div>
+      <div class="pl-done"></div>
+    </div>
+  </div>
+
+    <div class="quiz">
     <div class="qhead">🎯 משימת בזק</div>
     <div class="q" data-answer="1">
       <div class="qtext">איזה עשרוני שווה ל-<span class="frac"><span class="top">1</span><span class="bot">4</span></span>?</div>
@@ -1346,7 +1646,77 @@
     </div>
   </div>
 
-  <div class="quiz">
+
+  <div class="formula-lab" data-fl="round-general">
+    <h3>🧪 מהמספרים אל הנוסחה הכללית</h3>
+    <p class="fl-sub">לעגל = לקרב למספר "עגול". הכול תלוי בספרה אחת — זו שאחרי מקום העיגול.</p>
+    <div class="fl-track">
+      <div class="fl-step">
+        <span class="fl-pill">צעד 1 · דוגמה</span>
+        <div class="fl-say">לעגל 47 לעשרת הקרובה. ספרת האחדות היא 7 — גדולה מ-5, אז מעלים:</div>
+        <div class="fl-math">47 → 50</div>
+        </div>
+      <div class="fl-step">
+        <span class="fl-pill">צעד 2 · דוגמה נגדית</span>
+        <div class="fl-say">ו-43? האחדות 3 — קטנה מ-5, אז נשארים למטה:</div>
+        <div class="fl-math">43 → 40</div>
+        </div>
+      <div class="fl-step is-general">
+        <span class="fl-pill">🎉 הכלל הכללי</span>
+        <div class="fl-say">מסתכלים על הספרה הבאה <b>d</b>: אם d≥5 מעגלים למעלה, אם d<5 למטה.</div>
+        <div class="fl-math">d ≥ 5  ⟶  למעלה</div>
+        </div>
+    </div>
+    <div class="fl-legend">
+      <span class="lg"><span class="sym">d</span> = הספרה שאחרי מקום העיגול</span>
+    </div>
+    <div class="fl-controls">
+      <button class="try-btn fl-next"></button>
+      <span class="fl-progress"></span>
+    </div>
+  </div>
+
+  <div class="paper-lab" data-paper="round-47" data-answer="50">
+    <h3>✍️ מאמן הדף — לעגל מספר צעד-צעד</h3>
+    <p style="font-weight:600;font-size:1.05rem">מסמנים את הספרה שקובעת, משווים ל-5, ומחליטים. מוציאים ציוד:</p>
+    <div class="pl-gate">
+      <div class="pl-kit">
+        <div class="kit"><span class="kit-box">✓</span><span class="kit-emoji">📄</span> דף</div>
+        <div class="kit"><span class="kit-box">✓</span><span class="kit-emoji">✏️</span> עיפרון</div>
+        <div class="kit"><span class="kit-box">✓</span><span class="kit-emoji">🧮</span> מחשבון</div>
+      </div>
+      <div class="pl-gate-start"><button class="try-btn" disabled>סמנו שהוצאתם הכול ☝️</button></div>
+    </div>
+    <div class="pl-body">
+      <div class="pl-prob">
+        <div class="pl-prob-lbl">✏️ העתיקו את המשימה לדף שלכם</div>
+        <div class="pl-prob-txt he">עגלו את 47 לעשרת הקרובה</div>
+      </div>
+      <div class="pl-say"><span class="big">✍️</span><div>כתבו כל שורה מתחת לקודמת, ישר ומסודר. סימן ה-<b>=</b> אחד מתחת לשני — ככה קל לבדוק את עצמכם ולא להתבלבל.</div></div>
+      <ul class="pl-rules">
+        <li>שורה חדשה לכל צעד — לא דוחסים הכול יחד.</li>
+        <li>מיישרים את סימן ה-<b>=</b> אחד מתחת לשני.</li>
+        <li>ספרות גדולות וברורות שגם אתם תוכלו לקרוא.</li>
+      </ul>
+      <p style="font-weight:600">לחצו שורה-שורה וכתבו כל שורה על הדף שלכם 👇</p>
+      <div class="notebook">
+        <div class="nb-line">47 → ?</div>
+        <div class="nb-line nb-indent">האחדות = 7</div>
+        <div class="nb-line nb-indent">7 ≥ 5 ⟶ למעלה</div>
+        <div class="nb-line nb-final">47 → 50</div>
+      </div>
+      <div class="pl-check">
+        <button class="try-btn pl-reveal"></button>
+        <span class="pl-step-count"></span>
+      </div>
+      <div class="pl-say"><span class="big">🔢</span><div>לאיזה מספר עיגלתם?<br>
+        <input class="pl-answer iact-in" style="width:110px;margin-top:8px" placeholder="?">
+        <button class="try-btn pl-check-btn" style="margin-top:8px">בדקו ✅</button></div></div>
+      <div class="pl-done"></div>
+    </div>
+  </div>
+
+    <div class="quiz">
     <div class="qhead">🎯 משימת בזק</div>
     <div class="q" data-answer="1">
       <div class="qtext">עגלו את <b dir="ltr">47</b> לעשרת הקרובה</div>
@@ -1445,7 +1815,85 @@
     <div class="tip"><span class="big">🗺️</span><div>ככה עובדות מפות! "1 ס״מ במפה = 100 מטר במציאות". פרופורציות נמצאות בבישול, במפות ובהגדלת תמונות!</div></div>
   </div>
 
-  <div class="quiz">
+
+  <div class="formula-lab" data-fl="ratio-general">
+    <h3>🧪 מהמספרים אל הנוסחה הכללית</h3>
+    <p class="fl-sub">יחס שומר על עצמו כשמגדילים. אם כופלים צד אחד — כופלים גם את השני.</p>
+    <div class="fl-track">
+      <div class="fl-step">
+        <span class="fl-pill">צעד 1 · דוגמה</span>
+        <div class="fl-say">היחס 2:3. נכפיל את שני הצדדים ב-4:</div>
+        <div class="fl-math">2:3 = 8:12</div>
+        </div>
+      <div class="fl-step">
+        <span class="fl-pill">צעד 2 · פרופורציה</span>
+        <div class="fl-say">אם 2/3 שווה ל-?/12, פותרים ב"כפל בהצלבה":</div>
+        <div class="fl-math">2 × 12 = 3 × ?</div>
+        </div>
+      <div class="fl-step">
+        <span class="fl-pill">צעד 3 · פותרים</span>
+        <div class="fl-say">‏3 כפול הנעלם שווה 24, אז מחלקים ב-3:</div>
+        <div class="fl-math">? = 24 ÷ 3 = 8</div>
+        </div>
+      <div class="fl-step is-general">
+        <span class="fl-pill">🎉 הכלל הכללי</span>
+        <div class="fl-say">בכל פרופורציה a/b = c/d מתקיים כפל בהצלבה:</div>
+        <div class="fl-math">a × d = b × c</div>
+        </div>
+    </div>
+    <div class="fl-legend">
+      <span class="lg"><span class="sym">a</span> = מונה של היחס הראשון</span>
+      <span class="lg"><span class="sym">b</span> = מכנה של הראשון</span>
+      <span class="lg"><span class="sym">c</span> = מונה של השני</span>
+      <span class="lg"><span class="sym">d</span> = מכנה של השני</span>
+    </div>
+    <div class="fl-controls">
+      <button class="try-btn fl-next"></button>
+      <span class="fl-progress"></span>
+    </div>
+  </div>
+
+  <div class="paper-lab" data-paper="ratio-23-12" data-answer="8">
+    <h3>✍️ מאמן הדף — להשלים פרופורציה</h3>
+    <p style="font-weight:600;font-size:1.05rem">כותבים כשבר, כופלים בהצלבה, ומחלקים. מוציאים ציוד:</p>
+    <div class="pl-gate">
+      <div class="pl-kit">
+        <div class="kit"><span class="kit-box">✓</span><span class="kit-emoji">📄</span> דף</div>
+        <div class="kit"><span class="kit-box">✓</span><span class="kit-emoji">✏️</span> עיפרון</div>
+        <div class="kit"><span class="kit-box">✓</span><span class="kit-emoji">🧮</span> מחשבון</div>
+      </div>
+      <div class="pl-gate-start"><button class="try-btn" disabled>סמנו שהוצאתם הכול ☝️</button></div>
+    </div>
+    <div class="pl-body">
+      <div class="pl-prob">
+        <div class="pl-prob-lbl">✏️ העתיקו את המשימה לדף שלכם</div>
+        <div class="pl-prob-txt">2 : 3 = ? : 12</div>
+      </div>
+      <div class="pl-say"><span class="big">✍️</span><div>כתבו כל שורה מתחת לקודמת, ישר ומסודר. סימן ה-<b>=</b> אחד מתחת לשני — ככה קל לבדוק את עצמכם ולא להתבלבל.</div></div>
+      <ul class="pl-rules">
+        <li>שורה חדשה לכל צעד — לא דוחסים הכול יחד.</li>
+        <li>מיישרים את סימן ה-<b>=</b> אחד מתחת לשני.</li>
+        <li>ספרות גדולות וברורות שגם אתם תוכלו לקרוא.</li>
+      </ul>
+      <p style="font-weight:600">לחצו שורה-שורה וכתבו כל שורה על הדף שלכם 👇</p>
+      <div class="notebook">
+        <div class="nb-line">2/3 = ?/12</div>
+        <div class="nb-line nb-indent">בהצלבה: 3×? = 2×12</div>
+        <div class="nb-line">3×? = 24</div>
+        <div class="nb-line nb-final">? = 8</div>
+      </div>
+      <div class="pl-check">
+        <button class="try-btn pl-reveal"></button>
+        <span class="pl-step-count"></span>
+      </div>
+      <div class="pl-say"><span class="big">🔢</span><div>מה המספר החסר?<br>
+        <input class="pl-answer iact-in" style="width:110px;margin-top:8px" placeholder="?">
+        <button class="try-btn pl-check-btn" style="margin-top:8px">בדקו ✅</button></div></div>
+      <div class="pl-done"></div>
+    </div>
+  </div>
+
+    <div class="quiz">
     <div class="qhead">🎯 משימת בזק</div>
     <div class="q" data-answer="1">
       <div class="qtext">היחס בין 3 תפוחים ל-5 בננות הוא… 🍎🍌</div>
@@ -1541,7 +1989,78 @@
     <div class="tip"><span class="big">👫</span><div><b>כלל הזהב:</b> סימנים <b>שווים</b> = תוצאה חיובית 😊. סימנים <b>שונים</b> = תוצאה שלילית 😢. כמו חברים: אותו סוג מסתדרים, שונים רבים!</div></div>
   </div>
 
-  <div class="quiz">
+
+  <div class="formula-lab" data-fl="neg-general">
+    <h3>🧪 מהמספרים אל הנוסחה הכללית</h3>
+    <p class="fl-sub">מספר שלילי הוא מתחת לאפס. חיסור זה בעצם הוספה של ההפך.</p>
+    <div class="fl-track">
+      <div class="fl-step">
+        <span class="fl-pill">צעד 1 · דוגמה</span>
+        <div class="fl-say">מתחילים ב-(−6) ומתקדמים 10 ימינה על קו המספרים:</div>
+        <div class="fl-math">−6 + 10 = 4</div>
+        </div>
+      <div class="fl-step">
+        <span class="fl-pill">צעד 2 · כפל סימנים</span>
+        <div class="fl-say">מינוס כפול מינוס נותן פלוס:</div>
+        <div class="fl-math">(−4) × (−2) = 8</div>
+        </div>
+      <div class="fl-step is-general">
+        <span class="fl-pill">🎉 הכלל הכללי</span>
+        <div class="fl-say">חיסור = הוספת הנגדי. ובכפל: סימנים <b>שווים</b> ⟶ +, <b>שונים</b> ⟶ −.</div>
+        <div class="fl-math">a − b = a + (−b)</div>
+        </div>
+    </div>
+    <div class="fl-legend">
+      <span class="lg"><span class="sym">a</span> = המספר הראשון</span>
+      <span class="lg"><span class="sym">b</span> = המספר השני</span>
+    </div>
+    <div class="fl-controls">
+      <button class="try-btn fl-next"></button>
+      <span class="fl-progress"></span>
+    </div>
+  </div>
+
+  <div class="paper-lab" data-paper="neg-add" data-answer="4">
+    <h3>✍️ מאמן הדף — לחבר מספרים שליליים</h3>
+    <p style="font-weight:600;font-size:1.05rem">מציירים קו מספרים קטן על הדף, ומתקדמים עליו. מוציאים ציוד:</p>
+    <div class="pl-gate">
+      <div class="pl-kit">
+        <div class="kit"><span class="kit-box">✓</span><span class="kit-emoji">📄</span> דף</div>
+        <div class="kit"><span class="kit-box">✓</span><span class="kit-emoji">✏️</span> עיפרון</div>
+        <div class="kit"><span class="kit-box">✓</span><span class="kit-emoji">🧮</span> מחשבון</div>
+      </div>
+      <div class="pl-gate-start"><button class="try-btn" disabled>סמנו שהוצאתם הכול ☝️</button></div>
+    </div>
+    <div class="pl-body">
+      <div class="pl-prob">
+        <div class="pl-prob-lbl">✏️ העתיקו את המשימה לדף שלכם</div>
+        <div class="pl-prob-txt">(−6) + 10 = ?</div>
+      </div>
+      <div class="pl-say"><span class="big">✍️</span><div>כתבו כל שורה מתחת לקודמת, ישר ומסודר. סימן ה-<b>=</b> אחד מתחת לשני — ככה קל לבדוק את עצמכם ולא להתבלבל.</div></div>
+      <ul class="pl-rules">
+        <li>שורה חדשה לכל צעד — לא דוחסים הכול יחד.</li>
+        <li>מיישרים את סימן ה-<b>=</b> אחד מתחת לשני.</li>
+        <li>ספרות גדולות וברורות שגם אתם תוכלו לקרוא.</li>
+      </ul>
+      <p style="font-weight:600">לחצו שורה-שורה וכתבו כל שורה על הדף שלכם 👇</p>
+      <div class="notebook">
+        <div class="nb-line">(−6) + 10</div>
+        <div class="nb-line nb-indent">מתחילים ב-−6</div>
+        <div class="nb-line nb-indent">מתקדמים 10 ימינה</div>
+        <div class="nb-line nb-final">= 4</div>
+      </div>
+      <div class="pl-check">
+        <button class="try-btn pl-reveal"></button>
+        <span class="pl-step-count"></span>
+      </div>
+      <div class="pl-say"><span class="big">🔢</span><div>מה התוצאה? (מספר):<br>
+        <input class="pl-answer iact-in" style="width:110px;margin-top:8px" placeholder="?">
+        <button class="try-btn pl-check-btn" style="margin-top:8px">בדקו ✅</button></div></div>
+      <div class="pl-done"></div>
+    </div>
+  </div>
+
+    <div class="quiz">
     <div class="qhead">🎯 משימת בזק</div>
     <div class="q" data-answer="2">
       <div class="qtext">כמה זה <b dir="ltr">3 − 7</b>?</div>
@@ -1668,7 +2187,80 @@
     <div class="tip"><span class="big">⚡</span><div><b>מה זו חזקה?</b> <span class="mono">4²</span> = "4 בריבוע" = <span class="mono">4 × 4 = 16</span>. המספר הקטן למעלה אומר כמה פעמים לכפול את המספר בעצמו!</div></div>
   </div>
 
-  <div class="quiz">
+
+  <div class="formula-lab" data-fl="order-general">
+    <h3>🧪 מהמספרים אל הנוסחה הכללית</h3>
+    <p class="fl-sub">יש "תור" לפעולות: קודם סוגריים, אז חזקות, אז כפל/חילוק, ולבסוף חיבור/חיסור.</p>
+    <div class="fl-track">
+      <div class="fl-step">
+        <span class="fl-pill">צעד 1 · דוגמה</span>
+        <div class="fl-say">ב-2 + 3 × 4 עושים <b>כפל קודם</b>, לא לפי הסדר משמאל:</div>
+        <div class="fl-math">3 × 4 = 12</div>
+        </div>
+      <div class="fl-step">
+        <span class="fl-pill">צעד 2 · ואז חיבור</span>
+        <div class="fl-say">רק עכשיו מחברים:</div>
+        <div class="fl-math">2 + 12 = 14</div>
+        </div>
+      <div class="fl-step is-general">
+        <span class="fl-pill">🎉 הכלל הכללי</span>
+        <div class="fl-say">הסדר תמיד: סוגריים ⟶ חזקות ⟶ כפל/חילוק ⟶ חיבור/חיסור.</div>
+        <div class="fl-math">( ) ⟶ x² ⟶ ×÷ ⟶ +−</div>
+        </div>
+    </div>
+    <div class="fl-legend">
+      <span class="lg"><span class="sym">( )</span> = סוגריים — ראשונים</span>
+      <span class="lg"><span class="sym">x²</span> = חזקות ושורשים</span>
+      <span class="lg"><span class="sym">×÷</span> = כפל וחילוק</span>
+      <span class="lg"><span class="sym">+−</span> = חיבור וחיסור — אחרונים</span>
+    </div>
+    <div class="fl-controls">
+      <button class="try-btn fl-next"></button>
+      <span class="fl-progress"></span>
+    </div>
+  </div>
+
+  <div class="paper-lab" data-paper="order-2-3-4" data-answer="14">
+    <h3>✍️ מאמן הדף — לפתור לפי סדר הפעולות</h3>
+    <p style="font-weight:600;font-size:1.05rem">מסמנים קודם את הפעולה שקופצת בתור, פותרים אותה, וממשיכים. מוציאים ציוד:</p>
+    <div class="pl-gate">
+      <div class="pl-kit">
+        <div class="kit"><span class="kit-box">✓</span><span class="kit-emoji">📄</span> דף</div>
+        <div class="kit"><span class="kit-box">✓</span><span class="kit-emoji">✏️</span> עיפרון</div>
+        <div class="kit"><span class="kit-box">✓</span><span class="kit-emoji">🧮</span> מחשבון</div>
+      </div>
+      <div class="pl-gate-start"><button class="try-btn" disabled>סמנו שהוצאתם הכול ☝️</button></div>
+    </div>
+    <div class="pl-body">
+      <div class="pl-prob">
+        <div class="pl-prob-lbl">✏️ העתיקו את המשימה לדף שלכם</div>
+        <div class="pl-prob-txt">2 + 3 × 4 = ?</div>
+      </div>
+      <div class="pl-say"><span class="big">✍️</span><div>כתבו כל שורה מתחת לקודמת, ישר ומסודר. סימן ה-<b>=</b> אחד מתחת לשני — ככה קל לבדוק את עצמכם ולא להתבלבל.</div></div>
+      <ul class="pl-rules">
+        <li>שורה חדשה לכל צעד — לא דוחסים הכול יחד.</li>
+        <li>מיישרים את סימן ה-<b>=</b> אחד מתחת לשני.</li>
+        <li>ספרות גדולות וברורות שגם אתם תוכלו לקרוא.</li>
+      </ul>
+      <p style="font-weight:600">לחצו שורה-שורה וכתבו כל שורה על הדף שלכם 👇</p>
+      <div class="notebook">
+        <div class="nb-line">2 + 3 × 4</div>
+        <div class="nb-line nb-indent">קודם כפל: 3×4 = 12</div>
+        <div class="nb-line">2 + 12</div>
+        <div class="nb-line nb-final">= 14</div>
+      </div>
+      <div class="pl-check">
+        <button class="try-btn pl-reveal"></button>
+        <span class="pl-step-count"></span>
+      </div>
+      <div class="pl-say"><span class="big">🔢</span><div>מה התוצאה?<br>
+        <input class="pl-answer iact-in" style="width:110px;margin-top:8px" placeholder="?">
+        <button class="try-btn pl-check-btn" style="margin-top:8px">בדקו ✅</button></div></div>
+      <div class="pl-done"></div>
+    </div>
+  </div>
+
+    <div class="quiz">
     <div class="qhead">🎯 משימת בזק</div>
     <div class="q" data-answer="1">
       <div class="qtext">חשבו: <b dir="ltr">2 + 3 × 4</b></div>
@@ -1757,7 +2349,78 @@
     <div class="tip"><span class="big">🚦</span><div>זוכרים את "סחכח" מפרק 8? חזקות באות <b>אחרי</b> סוגריים אבל <b>לפני</b> כפל — הן חשובות בסדר הפעולות!</div></div>
   </div>
 
-  <div class="quiz">
+
+  <div class="formula-lab" data-fl="pow-general">
+    <h3>🧪 מהמספרים אל הנוסחה הכללית</h3>
+    <p class="fl-sub">חזקה = כפל חוזר של אותו מספר. השורש הוא הפעולה ההפוכה.</p>
+    <div class="fl-track">
+      <div class="fl-step">
+        <span class="fl-pill">צעד 1 · דוגמה</span>
+        <div class="fl-say">‏2 בחזקת 4 = לכפול את 2 בעצמו 4 פעמים:</div>
+        <div class="fl-math">2⁴ = 2×2×2×2 = 16</div>
+        </div>
+      <div class="fl-step">
+        <span class="fl-pill">צעד 2 · שורש</span>
+        <div class="fl-say">השורש שואל: איזה מספר בריבוע נותן 9?</div>
+        <div class="fl-math">√9 = 3   (כי 3² = 9)</div>
+        </div>
+      <div class="fl-step is-general">
+        <span class="fl-pill">🎉 הכלל הכללי</span>
+        <div class="fl-say">‏a בחזקת n = כופלים את a בעצמו n פעמים:</div>
+        <div class="fl-math">aⁿ = a × a × … (n פעמים)</div>
+        </div>
+    </div>
+    <div class="fl-legend">
+      <span class="lg"><span class="sym">a</span> = הבסיס</span>
+      <span class="lg"><span class="sym">n</span> = המעריך (החזקה)</span>
+    </div>
+    <div class="fl-controls">
+      <button class="try-btn fl-next"></button>
+      <span class="fl-progress"></span>
+    </div>
+  </div>
+
+  <div class="paper-lab" data-paper="pow-2-4" data-answer="16">
+    <h3>✍️ מאמן הדף — לחשב חזקה בכתב מסודר</h3>
+    <p style="font-weight:600;font-size:1.05rem">כותבים את החזקה כמכפלה מלאה, ומכפילים זוג-זוג. מוציאים ציוד:</p>
+    <div class="pl-gate">
+      <div class="pl-kit">
+        <div class="kit"><span class="kit-box">✓</span><span class="kit-emoji">📄</span> דף</div>
+        <div class="kit"><span class="kit-box">✓</span><span class="kit-emoji">✏️</span> עיפרון</div>
+        <div class="kit"><span class="kit-box">✓</span><span class="kit-emoji">🧮</span> מחשבון</div>
+      </div>
+      <div class="pl-gate-start"><button class="try-btn" disabled>סמנו שהוצאתם הכול ☝️</button></div>
+    </div>
+    <div class="pl-body">
+      <div class="pl-prob">
+        <div class="pl-prob-lbl">✏️ העתיקו את המשימה לדף שלכם</div>
+        <div class="pl-prob-txt he">כמה זה 2 בחזקת 4?</div>
+      </div>
+      <div class="pl-say"><span class="big">✍️</span><div>כתבו כל שורה מתחת לקודמת, ישר ומסודר. סימן ה-<b>=</b> אחד מתחת לשני — ככה קל לבדוק את עצמכם ולא להתבלבל.</div></div>
+      <ul class="pl-rules">
+        <li>שורה חדשה לכל צעד — לא דוחסים הכול יחד.</li>
+        <li>מיישרים את סימן ה-<b>=</b> אחד מתחת לשני.</li>
+        <li>ספרות גדולות וברורות שגם אתם תוכלו לקרוא.</li>
+      </ul>
+      <p style="font-weight:600">לחצו שורה-שורה וכתבו כל שורה על הדף שלכם 👇</p>
+      <div class="notebook">
+        <div class="nb-line">2⁴</div>
+        <div class="nb-line nb-indent">= 2×2×2×2</div>
+        <div class="nb-line nb-indent">= 4×4</div>
+        <div class="nb-line nb-final">= 16</div>
+      </div>
+      <div class="pl-check">
+        <button class="try-btn pl-reveal"></button>
+        <span class="pl-step-count"></span>
+      </div>
+      <div class="pl-say"><span class="big">🔢</span><div>מה התוצאה?<br>
+        <input class="pl-answer iact-in" style="width:110px;margin-top:8px" placeholder="?">
+        <button class="try-btn pl-check-btn" style="margin-top:8px">בדקו ✅</button></div></div>
+      <div class="pl-done"></div>
+    </div>
+  </div>
+
+    <div class="quiz">
     <div class="qhead">🎯 משימת בזק</div>
     <div class="q" data-answer="1">
       <div class="qtext">כמה זה <b dir="ltr">2³</b>?</div>
@@ -1846,7 +2509,79 @@
     </ul>
   </div>
 
-  <div class="quiz">
+
+  <div class="formula-lab" data-fl="seq-general">
+    <h3>🧪 מהמספרים אל הנוסחה הכללית</h3>
+    <p class="fl-sub">בסדרה חשבונית מוסיפים כל פעם אותו מספר. אפשר לחשב כל איבר בלי לספור אחד-אחד!</p>
+    <div class="fl-track">
+      <div class="fl-step">
+        <span class="fl-pill">צעד 1 · דוגמה</span>
+        <div class="fl-say">‏3, 6, 9, 12... מוסיפים 3 בכל צעד. ההפרש d=3, האיבר הראשון a₁=3.</div>
+        <div class="fl-math">3, 6, 9, 12, …</div>
+        </div>
+      <div class="fl-step">
+        <span class="fl-pill">צעד 2 · האיבר החמישי</span>
+        <div class="fl-say">במקום לספור: מתחילים מ-3 ומוסיפים 3 עוד 4 פעמים:</div>
+        <div class="fl-math">3 + 4×3 = 15</div>
+        </div>
+      <div class="fl-step is-general">
+        <span class="fl-pill">🎉 הנוסחה הכללית</span>
+        <div class="fl-say">האיבר ה-n בסדרה חשבונית:</div>
+        <div class="fl-math">aₙ = a₁ + (n−1)·d</div>
+        </div>
+    </div>
+    <div class="fl-legend">
+      <span class="lg"><span class="sym">a₁</span> = האיבר הראשון</span>
+      <span class="lg"><span class="sym">d</span> = ההפרש הקבוע</span>
+      <span class="lg"><span class="sym">n</span> = מיקום האיבר שרוצים</span>
+    </div>
+    <div class="fl-controls">
+      <button class="try-btn fl-next"></button>
+      <span class="fl-progress"></span>
+    </div>
+  </div>
+
+  <div class="paper-lab" data-paper="seq-5th" data-answer="15">
+    <h3>✍️ מאמן הדף — למצוא איבר בסדרה</h3>
+    <p style="font-weight:600;font-size:1.05rem">כותבים את הנוסחה, מציבים בה מספרים, ומחשבים. מוציאים ציוד:</p>
+    <div class="pl-gate">
+      <div class="pl-kit">
+        <div class="kit"><span class="kit-box">✓</span><span class="kit-emoji">📄</span> דף</div>
+        <div class="kit"><span class="kit-box">✓</span><span class="kit-emoji">✏️</span> עיפרון</div>
+        <div class="kit"><span class="kit-box">✓</span><span class="kit-emoji">🧮</span> מחשבון</div>
+      </div>
+      <div class="pl-gate-start"><button class="try-btn" disabled>סמנו שהוצאתם הכול ☝️</button></div>
+    </div>
+    <div class="pl-body">
+      <div class="pl-prob">
+        <div class="pl-prob-lbl">✏️ העתיקו את המשימה לדף שלכם</div>
+        <div class="pl-prob-txt he">בסדרה 3, 6, 9, ... מהו האיבר החמישי?</div>
+      </div>
+      <div class="pl-say"><span class="big">✍️</span><div>כתבו כל שורה מתחת לקודמת, ישר ומסודר. סימן ה-<b>=</b> אחד מתחת לשני — ככה קל לבדוק את עצמכם ולא להתבלבל.</div></div>
+      <ul class="pl-rules">
+        <li>שורה חדשה לכל צעד — לא דוחסים הכול יחד.</li>
+        <li>מיישרים את סימן ה-<b>=</b> אחד מתחת לשני.</li>
+        <li>ספרות גדולות וברורות שגם אתם תוכלו לקרוא.</li>
+      </ul>
+      <p style="font-weight:600">לחצו שורה-שורה וכתבו כל שורה על הדף שלכם 👇</p>
+      <div class="notebook">
+        <div class="nb-line">aₙ = a₁ + (n−1)d</div>
+        <div class="nb-line">a₅ = 3 + (5−1)×3</div>
+        <div class="nb-line nb-indent">= 3 + 12</div>
+        <div class="nb-line nb-final">= 15</div>
+      </div>
+      <div class="pl-check">
+        <button class="try-btn pl-reveal"></button>
+        <span class="pl-step-count"></span>
+      </div>
+      <div class="pl-say"><span class="big">🔢</span><div>מה האיבר החמישי?<br>
+        <input class="pl-answer iact-in" style="width:110px;margin-top:8px" placeholder="?">
+        <button class="try-btn pl-check-btn" style="margin-top:8px">בדקו ✅</button></div></div>
+      <div class="pl-done"></div>
+    </div>
+  </div>
+
+    <div class="quiz">
     <div class="qhead">🎯 משימת בזק</div>
     <div class="q" data-answer="1">
       <div class="qtext">מה בא אחרי <b dir="ltr">2, 4, 6, 8</b>?</div>
@@ -1950,7 +2685,78 @@
     <div class="tip"><span class="big">🔎</span><div>אז <span class="mono">x + 4x = 5x</span> (כי x זה 1x, ו-1+4=5). אל תשכחו את ה-1 הנסתר!</div></div>
   </div>
 
-  <div class="quiz">
+
+  <div class="formula-lab" data-fl="unk-general">
+    <h3>🧪 מהמספרים אל הנוסחה הכללית</h3>
+    <p class="fl-sub">נעלם הוא מספר שמתחבא מאחורי אות. פותרים אותו עם הפעולה ההפוכה.</p>
+    <div class="fl-track">
+      <div class="fl-step">
+        <span class="fl-pill">צעד 1 · דוגמה</span>
+        <div class="fl-say">ב-x + 4 = 10, מה מתחבא? מורידים 4 משני הצדדים:</div>
+        <div class="fl-math">x = 10 − 4 = 6</div>
+        </div>
+      <div class="fl-step">
+        <span class="fl-pill">צעד 2 · בדיקה</span>
+        <div class="fl-say">מציבים בחזרה כדי לוודא:</div>
+        <div class="fl-math">6 + 4 = 10 ✓</div>
+        </div>
+      <div class="fl-step is-general">
+        <span class="fl-pill">🎉 הכלל הכללי</span>
+        <div class="fl-say">כשמחברים מספר לנעלם, מבטלים אותו בחיסור:</div>
+        <div class="fl-math">x + a = b  ⟶  x = b − a</div>
+        </div>
+    </div>
+    <div class="fl-legend">
+      <span class="lg"><span class="sym">x</span> = הנעלם שמחפשים</span>
+      <span class="lg"><span class="sym">a</span> = מה שמוסיפים</span>
+      <span class="lg"><span class="sym">b</span> = התוצאה</span>
+    </div>
+    <div class="fl-controls">
+      <button class="try-btn fl-next"></button>
+      <span class="fl-progress"></span>
+    </div>
+  </div>
+
+  <div class="paper-lab" data-paper="unk-x4" data-answer="6">
+    <h3>✍️ מאמן הדף — למצוא נעלם פשוט</h3>
+    <p style="font-weight:600;font-size:1.05rem">כותבים את המשוואה, ומבטלים את המספר בשני הצדדים יחד. מוציאים ציוד:</p>
+    <div class="pl-gate">
+      <div class="pl-kit">
+        <div class="kit"><span class="kit-box">✓</span><span class="kit-emoji">📄</span> דף</div>
+        <div class="kit"><span class="kit-box">✓</span><span class="kit-emoji">✏️</span> עיפרון</div>
+        <div class="kit"><span class="kit-box">✓</span><span class="kit-emoji">🧮</span> מחשבון</div>
+      </div>
+      <div class="pl-gate-start"><button class="try-btn" disabled>סמנו שהוצאתם הכול ☝️</button></div>
+    </div>
+    <div class="pl-body">
+      <div class="pl-prob">
+        <div class="pl-prob-lbl">✏️ העתיקו את המשימה לדף שלכם</div>
+        <div class="pl-prob-txt">x + 4 = 10</div>
+      </div>
+      <div class="pl-say"><span class="big">✍️</span><div>כתבו כל שורה מתחת לקודמת, ישר ומסודר. סימן ה-<b>=</b> אחד מתחת לשני — ככה קל לבדוק את עצמכם ולא להתבלבל.</div></div>
+      <ul class="pl-rules">
+        <li>שורה חדשה לכל צעד — לא דוחסים הכול יחד.</li>
+        <li>מיישרים את סימן ה-<b>=</b> אחד מתחת לשני.</li>
+        <li>ספרות גדולות וברורות שגם אתם תוכלו לקרוא.</li>
+      </ul>
+      <p style="font-weight:600">לחצו שורה-שורה וכתבו כל שורה על הדף שלכם 👇</p>
+      <div class="notebook">
+        <div class="nb-line">x + 4 = 10</div>
+        <div class="nb-line nb-indent">−4    −4</div>
+        <div class="nb-line nb-final">x = 6</div>
+      </div>
+      <div class="pl-check">
+        <button class="try-btn pl-reveal"></button>
+        <span class="pl-step-count"></span>
+      </div>
+      <div class="pl-say"><span class="big">🔢</span><div>מה הערך של x?<br>
+        <input class="pl-answer iact-in" style="width:110px;margin-top:8px" placeholder="x = ?">
+        <button class="try-btn pl-check-btn" style="margin-top:8px">בדקו ✅</button></div></div>
+      <div class="pl-done"></div>
+    </div>
+  </div>
+
+    <div class="quiz">
     <div class="qhead">🎯 משימת בזק</div>
     <div class="q" data-answer="2">
       <div class="qtext">מה המשמעות של <b style="color:var(--bubble)">4x</b>?</div>
@@ -2402,7 +3208,78 @@
     </div>
   </div>
 
-  <div class="quiz">
+
+  <div class="formula-lab" data-fl="terms-general">
+    <h3>🧪 מהמספרים אל הנוסחה הכללית</h3>
+    <p class="fl-sub">אפשר לחבר רק איברים "דומים" — כאלה עם אותו נעלם. סופרים כמה x יש.</p>
+    <div class="fl-track">
+      <div class="fl-step">
+        <span class="fl-pill">צעד 1 · דוגמה</span>
+        <div class="fl-say">‏2x ועוד 3x זה כמו 2 תפוחים ועוד 3 תפוחים:</div>
+        <div class="fl-math">2x + 3x = 5x</div>
+        </div>
+      <div class="fl-step">
+        <span class="fl-pill">צעד 2 · לא מערבבים</span>
+        <div class="fl-say">‏5x + 4 נשאר כמו שהוא — x ומספר רגיל אינם דומים:</div>
+        <div class="fl-math">5x + 4  (לא מתאחדים)</div>
+        </div>
+      <div class="fl-step is-general">
+        <span class="fl-pill">🎉 הכלל הכללי</span>
+        <div class="fl-say">מחברים את המקדמים (המספרים שלפני x):</div>
+        <div class="fl-math">a·x + b·x = (a+b)·x</div>
+        </div>
+    </div>
+    <div class="fl-legend">
+      <span class="lg"><span class="sym">a</span> = מקדם ראשון</span>
+      <span class="lg"><span class="sym">b</span> = מקדם שני</span>
+      <span class="lg"><span class="sym">x</span> = הנעלם המשותף</span>
+    </div>
+    <div class="fl-controls">
+      <button class="try-btn fl-next"></button>
+      <span class="fl-progress"></span>
+    </div>
+  </div>
+
+  <div class="paper-lab" data-paper="terms-2x3x" data-answer="5">
+    <h3>✍️ מאמן הדף — לכנס איברים דומים</h3>
+    <p style="font-weight:600;font-size:1.05rem">מסמנים את האיברים הדומים, ומחברים רק את המספרים שלפניהם. מוציאים ציוד:</p>
+    <div class="pl-gate">
+      <div class="pl-kit">
+        <div class="kit"><span class="kit-box">✓</span><span class="kit-emoji">📄</span> דף</div>
+        <div class="kit"><span class="kit-box">✓</span><span class="kit-emoji">✏️</span> עיפרון</div>
+        <div class="kit"><span class="kit-box">✓</span><span class="kit-emoji">🧮</span> מחשבון</div>
+      </div>
+      <div class="pl-gate-start"><button class="try-btn" disabled>סמנו שהוצאתם הכול ☝️</button></div>
+    </div>
+    <div class="pl-body">
+      <div class="pl-prob">
+        <div class="pl-prob-lbl">✏️ העתיקו את המשימה לדף שלכם</div>
+        <div class="pl-prob-txt he">כמה x יש ב-2x + 3x?</div>
+      </div>
+      <div class="pl-say"><span class="big">✍️</span><div>כתבו כל שורה מתחת לקודמת, ישר ומסודר. סימן ה-<b>=</b> אחד מתחת לשני — ככה קל לבדוק את עצמכם ולא להתבלבל.</div></div>
+      <ul class="pl-rules">
+        <li>שורה חדשה לכל צעד — לא דוחסים הכול יחד.</li>
+        <li>מיישרים את סימן ה-<b>=</b> אחד מתחת לשני.</li>
+        <li>ספרות גדולות וברורות שגם אתם תוכלו לקרוא.</li>
+      </ul>
+      <p style="font-weight:600">לחצו שורה-שורה וכתבו כל שורה על הדף שלכם 👇</p>
+      <div class="notebook">
+        <div class="nb-line">2x + 3x</div>
+        <div class="nb-line nb-indent">2 + 3 = 5</div>
+        <div class="nb-line nb-final">= 5x</div>
+      </div>
+      <div class="pl-check">
+        <button class="try-btn pl-reveal"></button>
+        <span class="pl-step-count"></span>
+      </div>
+      <div class="pl-say"><span class="big">🔢</span><div>מה המקדם של x בתוצאה? (מספר):<br>
+        <input class="pl-answer iact-in" style="width:110px;margin-top:8px" placeholder="?">
+        <button class="try-btn pl-check-btn" style="margin-top:8px">בדקו ✅</button></div></div>
+      <div class="pl-done"></div>
+    </div>
+  </div>
+
+    <div class="quiz">
     <div class="qhead">🎯 משימת בזק — הרבה תרגול!</div>
 
     <div class="q" data-answer="1">
@@ -2557,7 +3434,79 @@
     <div class="answer-reveal" id="distribAns"></div>
   </div>
 
-  <div class="quiz">
+
+  <div class="formula-lab" data-fl="dist-general">
+    <h3>🧪 מהמספרים אל הנוסחה הכללית</h3>
+    <p class="fl-sub">כשמכפילים סוגריים, מחלקים את הגורם שבחוץ לכל אבר שבפנים.</p>
+    <div class="fl-track">
+      <div class="fl-step">
+        <span class="fl-pill">צעד 1 · דוגמה מספרית</span>
+        <div class="fl-say">ב-5×(2+3) אפשר לפזר את ה-5 לכל אבר:</div>
+        <div class="fl-math">5×2 + 5×3 = 10 + 15 = 25</div>
+        </div>
+      <div class="fl-step">
+        <span class="fl-pill">צעד 2 · עם נעלם</span>
+        <div class="fl-say">בדיוק אותו רעיון עם x:</div>
+        <div class="fl-math">3×(x+2) = 3x + 6</div>
+        </div>
+      <div class="fl-step is-general">
+        <span class="fl-pill">🎉 חוק הפילוג</span>
+        <div class="fl-say">כל אבר בסוגריים מוכפל בגורם שבחוץ:</div>
+        <div class="fl-math">a·(b + c) = a·b + a·c</div>
+        </div>
+    </div>
+    <div class="fl-legend">
+      <span class="lg"><span class="sym">a</span> = הגורם שבחוץ</span>
+      <span class="lg"><span class="sym">b</span> = אבר ראשון בסוגריים</span>
+      <span class="lg"><span class="sym">c</span> = אבר שני בסוגריים</span>
+    </div>
+    <div class="fl-controls">
+      <button class="try-btn fl-next"></button>
+      <span class="fl-progress"></span>
+    </div>
+  </div>
+
+  <div class="paper-lab" data-paper="dist-5-23" data-answer="25">
+    <h3>✍️ מאמן הדף — לפתוח סוגריים (חוק הפילוג)</h3>
+    <p style="font-weight:600;font-size:1.05rem">מפזרים את הגורם לכל אבר, ואז מחשבים. שורה לכל צעד. מוציאים ציוד:</p>
+    <div class="pl-gate">
+      <div class="pl-kit">
+        <div class="kit"><span class="kit-box">✓</span><span class="kit-emoji">📄</span> דף</div>
+        <div class="kit"><span class="kit-box">✓</span><span class="kit-emoji">✏️</span> עיפרון</div>
+        <div class="kit"><span class="kit-box">✓</span><span class="kit-emoji">🧮</span> מחשבון</div>
+      </div>
+      <div class="pl-gate-start"><button class="try-btn" disabled>סמנו שהוצאתם הכול ☝️</button></div>
+    </div>
+    <div class="pl-body">
+      <div class="pl-prob">
+        <div class="pl-prob-lbl">✏️ העתיקו את המשימה לדף שלכם</div>
+        <div class="pl-prob-txt">5 × (2 + 3) = ?</div>
+      </div>
+      <div class="pl-say"><span class="big">✍️</span><div>כתבו כל שורה מתחת לקודמת, ישר ומסודר. סימן ה-<b>=</b> אחד מתחת לשני — ככה קל לבדוק את עצמכם ולא להתבלבל.</div></div>
+      <ul class="pl-rules">
+        <li>שורה חדשה לכל צעד — לא דוחסים הכול יחד.</li>
+        <li>מיישרים את סימן ה-<b>=</b> אחד מתחת לשני.</li>
+        <li>ספרות גדולות וברורות שגם אתם תוכלו לקרוא.</li>
+      </ul>
+      <p style="font-weight:600">לחצו שורה-שורה וכתבו כל שורה על הדף שלכם 👇</p>
+      <div class="notebook">
+        <div class="nb-line">5 × (2 + 3)</div>
+        <div class="nb-line nb-indent">= 5×2 + 5×3</div>
+        <div class="nb-line">= 10 + 15</div>
+        <div class="nb-line nb-final">= 25</div>
+      </div>
+      <div class="pl-check">
+        <button class="try-btn pl-reveal"></button>
+        <span class="pl-step-count"></span>
+      </div>
+      <div class="pl-say"><span class="big">🔢</span><div>מה התוצאה?<br>
+        <input class="pl-answer iact-in" style="width:110px;margin-top:8px" placeholder="?">
+        <button class="try-btn pl-check-btn" style="margin-top:8px">בדקו ✅</button></div></div>
+      <div class="pl-done"></div>
+    </div>
+  </div>
+
+    <div class="quiz">
     <div class="qhead">🎯 משימת בזק</div>
     <div class="q" data-answer="1">
       <div class="qtext">פתחו סוגריים: <b dir="ltr">3(x + 2)</b></div>
@@ -2673,7 +3622,79 @@
     <div class="tip"><span class="big">🧠</span><div>‏<span class="mono">x²</span> זה <span class="mono">x·x</span>, ו-<span class="mono">3x</span> זה <span class="mono">3·x</span> — לשניהם יש <span class="mono">x</span>! אז מוציאים <span class="mono">x</span> החוצה. 👽</div></div>
   </div>
 
-  <div class="quiz">
+
+  <div class="formula-lab" data-fl="factor-general">
+    <h3>🧪 מהמספרים אל הנוסחה הכללית</h3>
+    <p class="fl-sub">פירוק לגורמים = חוק הפילוג הפוך. מוציאים החוצה את מה שמשותף.</p>
+    <div class="fl-track">
+      <div class="fl-step">
+        <span class="fl-pill">צעד 1 · דוגמה</span>
+        <div class="fl-say">ב-6x + 9, מה משותף ל-6 ול-9? שניהם מתחלקים ב-3:</div>
+        <div class="fl-math">6x + 9</div>
+        </div>
+      <div class="fl-step">
+        <span class="fl-pill">צעד 2 · מוציאים 3</span>
+        <div class="fl-say">מחלקים כל אבר ב-3 ושמים 3 מחוץ לסוגריים:</div>
+        <div class="fl-math">= 3×(2x + 3)</div>
+        </div>
+      <div class="fl-step is-general">
+        <span class="fl-pill">🎉 הכלל הכללי</span>
+        <div class="fl-say">מוציאים החוצה את הגורם המשותף a:</div>
+        <div class="fl-math">a·b + a·c = a·(b + c)</div>
+        </div>
+    </div>
+    <div class="fl-legend">
+      <span class="lg"><span class="sym">a</span> = הגורם המשותף</span>
+      <span class="lg"><span class="sym">b</span> = מה שנשאר מהאבר הראשון</span>
+      <span class="lg"><span class="sym">c</span> = מה שנשאר מהשני</span>
+    </div>
+    <div class="fl-controls">
+      <button class="try-btn fl-next"></button>
+      <span class="fl-progress"></span>
+    </div>
+  </div>
+
+  <div class="paper-lab" data-paper="factor-6x9" data-answer="3">
+    <h3>✍️ מאמן הדף — לפרק לגורמים</h3>
+    <p style="font-weight:600;font-size:1.05rem">מוצאים את המספר שמתחלק בשני האיברים, ומוציאים אותו החוצה. מוציאים ציוד:</p>
+    <div class="pl-gate">
+      <div class="pl-kit">
+        <div class="kit"><span class="kit-box">✓</span><span class="kit-emoji">📄</span> דף</div>
+        <div class="kit"><span class="kit-box">✓</span><span class="kit-emoji">✏️</span> עיפרון</div>
+        <div class="kit"><span class="kit-box">✓</span><span class="kit-emoji">🧮</span> מחשבון</div>
+      </div>
+      <div class="pl-gate-start"><button class="try-btn" disabled>סמנו שהוצאתם הכול ☝️</button></div>
+    </div>
+    <div class="pl-body">
+      <div class="pl-prob">
+        <div class="pl-prob-lbl">✏️ העתיקו את המשימה לדף שלכם</div>
+        <div class="pl-prob-txt he">פרקו לגורמים: 6x + 9</div>
+      </div>
+      <div class="pl-say"><span class="big">✍️</span><div>כתבו כל שורה מתחת לקודמת, ישר ומסודר. סימן ה-<b>=</b> אחד מתחת לשני — ככה קל לבדוק את עצמכם ולא להתבלבל.</div></div>
+      <ul class="pl-rules">
+        <li>שורה חדשה לכל צעד — לא דוחסים הכול יחד.</li>
+        <li>מיישרים את סימן ה-<b>=</b> אחד מתחת לשני.</li>
+        <li>ספרות גדולות וברורות שגם אתם תוכלו לקרוא.</li>
+      </ul>
+      <p style="font-weight:600">לחצו שורה-שורה וכתבו כל שורה על הדף שלכם 👇</p>
+      <div class="notebook">
+        <div class="nb-line">6x + 9</div>
+        <div class="nb-line nb-indent">6 = 3×2 · 9 = 3×3</div>
+        <div class="nb-line nb-indent">מוציאים 3:</div>
+        <div class="nb-line nb-final">= 3(2x + 3)</div>
+      </div>
+      <div class="pl-check">
+        <button class="try-btn pl-reveal"></button>
+        <span class="pl-step-count"></span>
+      </div>
+      <div class="pl-say"><span class="big">🔢</span><div>איזה מספר הוצאתם החוצה (הגורם המשותף)?<br>
+        <input class="pl-answer iact-in" style="width:110px;margin-top:8px" placeholder="?">
+        <button class="try-btn pl-check-btn" style="margin-top:8px">בדקו ✅</button></div></div>
+      <div class="pl-done"></div>
+    </div>
+  </div>
+
+    <div class="quiz">
     <div class="qhead">🎯 משימת בזק</div>
     <div class="q" data-answer="1">
       <div class="qtext">פירוק לגורמים הוא ההפך מ…</div>
@@ -2807,7 +3828,78 @@
     <div class="answer-reveal" id="wordFeedback"></div>
   </div>
 
-  <div class="quiz">
+
+  <div class="formula-lab" data-fl="word-general">
+    <h3>🧪 מהמספרים אל הנוסחה הכללית</h3>
+    <p class="fl-sub">חידה מילולית = לתרגם מילים למשוואה. "ביחד" זה +, "נשאר" זה −.</p>
+    <div class="fl-track">
+      <div class="fl-step">
+        <span class="fl-pill">צעד 1 · הסיפור</span>
+        <div class="fl-say">"לדני מדבקות. קיבל עוד 3 ועכשיו יש 8." נסמן את מה שלא יודעים ב-x:</div>
+        <div class="fl-math">x + 3 = 8</div>
+        </div>
+      <div class="fl-step">
+        <span class="fl-pill">צעד 2 · פותרים</span>
+        <div class="fl-say">מורידים 3 משני הצדדים:</div>
+        <div class="fl-math">x = 8 − 3 = 5</div>
+        </div>
+      <div class="fl-step is-general">
+        <span class="fl-pill">🎉 הכלל הכללי</span>
+        <div class="fl-say">מזהים את הנעלם, כותבים משוואה, ופותרים אותה:</div>
+        <div class="fl-math">מילים ⟶ x + a = b ⟶ x = b − a</div>
+        </div>
+    </div>
+    <div class="fl-legend">
+      <span class="lg"><span class="sym">x</span> = מה שמחפשים בסיפור</span>
+      <span class="lg"><span class="sym">a</span> = מה שנוסף</span>
+      <span class="lg"><span class="sym">b</span> = הסך הכול בסוף</span>
+    </div>
+    <div class="fl-controls">
+      <button class="try-btn fl-next"></button>
+      <span class="fl-progress"></span>
+    </div>
+  </div>
+
+  <div class="paper-lab" data-paper="word-stickers" data-answer="5">
+    <h3>✍️ מאמן הדף — לפתור חידה מילולית</h3>
+    <p style="font-weight:600;font-size:1.05rem">קודם מתרגמים את הסיפור למשוואה, ואז פותרים אותה בכתב. מוציאים ציוד:</p>
+    <div class="pl-gate">
+      <div class="pl-kit">
+        <div class="kit"><span class="kit-box">✓</span><span class="kit-emoji">📄</span> דף</div>
+        <div class="kit"><span class="kit-box">✓</span><span class="kit-emoji">✏️</span> עיפרון</div>
+        <div class="kit"><span class="kit-box">✓</span><span class="kit-emoji">🧮</span> מחשבון</div>
+      </div>
+      <div class="pl-gate-start"><button class="try-btn" disabled>סמנו שהוצאתם הכול ☝️</button></div>
+    </div>
+    <div class="pl-body">
+      <div class="pl-prob">
+        <div class="pl-prob-lbl">✏️ העתיקו את המשימה לדף שלכם</div>
+        <div class="pl-prob-txt he">לדני יש מדבקות. קיבל עוד 3 ועכשיו יש 8. כמה היו לו בהתחלה?</div>
+      </div>
+      <div class="pl-say"><span class="big">✍️</span><div>כתבו כל שורה מתחת לקודמת, ישר ומסודר. סימן ה-<b>=</b> אחד מתחת לשני — ככה קל לבדוק את עצמכם ולא להתבלבל.</div></div>
+      <ul class="pl-rules">
+        <li>שורה חדשה לכל צעד — לא דוחסים הכול יחד.</li>
+        <li>מיישרים את סימן ה-<b>=</b> אחד מתחת לשני.</li>
+        <li>ספרות גדולות וברורות שגם אתם תוכלו לקרוא.</li>
+      </ul>
+      <p style="font-weight:600">לחצו שורה-שורה וכתבו כל שורה על הדף שלכם 👇</p>
+      <div class="notebook">
+        <div class="nb-line">x + 3 = 8</div>
+        <div class="nb-line nb-indent">−3    −3</div>
+        <div class="nb-line nb-final">x = 5</div>
+      </div>
+      <div class="pl-check">
+        <button class="try-btn pl-reveal"></button>
+        <span class="pl-step-count"></span>
+      </div>
+      <div class="pl-say"><span class="big">🔢</span><div>כמה מדבקות היו לדני בהתחלה?<br>
+        <input class="pl-answer iact-in" style="width:110px;margin-top:8px" placeholder="?">
+        <button class="try-btn pl-check-btn" style="margin-top:8px">בדקו ✅</button></div></div>
+      <div class="pl-done"></div>
+    </div>
+  </div>
+
+    <div class="quiz">
     <div class="qhead">🎯 משימת בזק — מסיפור למשוואה</div>
     <div class="q" data-answer="1">
       <div class="qtext">"למספר הוסיפו 4 וקיבלו 10." איזו משוואה מתאימה?</div>
@@ -2894,7 +3986,78 @@
     <div class="tip"><span class="big">⚠️</span><div><b>כלל סופר-חשוב:</b> אם כופלים או מחלקים ב<b>מספר שלילי</b> — צריך <b>להפוך את הסימן</b>! <span class="mono">&gt;</span> הופך ל-<span class="mono">&lt;</span>. זו המלכודת הכי גדולה! 🔀</div></div>
   </div>
 
-  <div class="quiz">
+
+  <div class="formula-lab" data-fl="ineq-general">
+    <h3>🧪 מהמספרים אל הנוסחה הכללית</h3>
+    <p class="fl-sub">אי-שוויון נפתר כמו משוואה — רק שיש "גדול מ" או "קטן מ" במקום שווה.</p>
+    <div class="fl-track">
+      <div class="fl-step">
+        <span class="fl-pill">צעד 1 · דוגמה</span>
+        <div class="fl-say">ב-x + 2 > 5 מורידים 2 משני הצדדים:</div>
+        <div class="fl-math">x > 5 − 2</div>
+        </div>
+      <div class="fl-step">
+        <span class="fl-pill">צעד 2 · התשובה</span>
+        <div class="fl-say">כל מספר שגדול מ-3 מתאים:</div>
+        <div class="fl-math">x > 3</div>
+        </div>
+      <div class="fl-step is-general">
+        <span class="fl-pill">🎉 הכלל הכללי</span>
+        <div class="fl-say">פותרים כרגיל. <b>אזהרה:</b> אם כופלים או מחלקים במספר שלילי — הופכים את כיוון הסימן!</div>
+        <div class="fl-math">x + a > b  ⟶  x > b − a</div>
+        </div>
+    </div>
+    <div class="fl-legend">
+      <span class="lg"><span class="sym">x</span> = הנעלם</span>
+      <span class="lg"><span class="sym">a</span> = מה שמוסיפים</span>
+      <span class="lg"><span class="sym">b</span> = הצד השני</span>
+    </div>
+    <div class="fl-controls">
+      <button class="try-btn fl-next"></button>
+      <span class="fl-progress"></span>
+    </div>
+  </div>
+
+  <div class="paper-lab" data-paper="ineq-x2" data-answer="3">
+    <h3>✍️ מאמן הדף — לפתור אי-שוויון</h3>
+    <p style="font-weight:600;font-size:1.05rem">פותרים בדיוק כמו משוואה, ושומרים על כיוון הסימן. מוציאים ציוד:</p>
+    <div class="pl-gate">
+      <div class="pl-kit">
+        <div class="kit"><span class="kit-box">✓</span><span class="kit-emoji">📄</span> דף</div>
+        <div class="kit"><span class="kit-box">✓</span><span class="kit-emoji">✏️</span> עיפרון</div>
+        <div class="kit"><span class="kit-box">✓</span><span class="kit-emoji">🧮</span> מחשבון</div>
+      </div>
+      <div class="pl-gate-start"><button class="try-btn" disabled>סמנו שהוצאתם הכול ☝️</button></div>
+    </div>
+    <div class="pl-body">
+      <div class="pl-prob">
+        <div class="pl-prob-lbl">✏️ העתיקו את המשימה לדף שלכם</div>
+        <div class="pl-prob-txt">x + 2 > 5</div>
+      </div>
+      <div class="pl-say"><span class="big">✍️</span><div>כתבו כל שורה מתחת לקודמת, ישר ומסודר. סימן ה-<b>=</b> אחד מתחת לשני — ככה קל לבדוק את עצמכם ולא להתבלבל.</div></div>
+      <ul class="pl-rules">
+        <li>שורה חדשה לכל צעד — לא דוחסים הכול יחד.</li>
+        <li>מיישרים את סימן ה-<b>=</b> אחד מתחת לשני.</li>
+        <li>ספרות גדולות וברורות שגם אתם תוכלו לקרוא.</li>
+      </ul>
+      <p style="font-weight:600">לחצו שורה-שורה וכתבו כל שורה על הדף שלכם 👇</p>
+      <div class="notebook">
+        <div class="nb-line">x + 2 > 5</div>
+        <div class="nb-line nb-indent">−2    −2</div>
+        <div class="nb-line nb-final">x > 3</div>
+      </div>
+      <div class="pl-check">
+        <button class="try-btn pl-reveal"></button>
+        <span class="pl-step-count"></span>
+      </div>
+      <div class="pl-say"><span class="big">🔢</span><div>מהו מספר הגבול? (x גדול מ-?):<br>
+        <input class="pl-answer iact-in" style="width:110px;margin-top:8px" placeholder="?">
+        <button class="try-btn pl-check-btn" style="margin-top:8px">בדקו ✅</button></div></div>
+      <div class="pl-done"></div>
+    </div>
+  </div>
+
+    <div class="quiz">
     <div class="qhead">🎯 משימת בזק</div>
     <div class="q" data-answer="0">
       <div class="qtext">איזה סימן נכון? <b dir="ltr">7 __ 4</b></div>
@@ -2988,7 +4151,79 @@
     <div class="tip"><span class="big">🎮</span><div>ככה עובד המשחק "ים-יבשה", וככה קוראים מפות וגרפים בכל העולם!</div></div>
   </div>
 
-  <div class="quiz">
+
+  <div class="formula-lab" data-fl="coord-general">
+    <h3>🧪 מהמספרים אל הנוסחה הכללית</h3>
+    <p class="fl-sub">כל נקודה במישור היא זוג מספרים: קודם ימינה (x), אחר כך למעלה (y).</p>
+    <div class="fl-track">
+      <div class="fl-step">
+        <span class="fl-pill">צעד 1 · נקודה</span>
+        <div class="fl-say">הנקודה (3, 2): 3 ימינה ואז 2 למעלה.</div>
+        <div class="fl-math">(x, y) = (3, 2)</div>
+        </div>
+      <div class="fl-step">
+        <span class="fl-pill">צעד 2 · קו ישר</span>
+        <div class="fl-say">בקו y = 2x + 1 כל x נותן y. נציב x=3:</div>
+        <div class="fl-math">y = 2×3 + 1 = 7</div>
+        </div>
+      <div class="fl-step is-general">
+        <span class="fl-pill">🎉 הנוסחה הכללית</span>
+        <div class="fl-say">משוואת קו ישר:</div>
+        <div class="fl-math">y = a·x + b</div>
+        </div>
+    </div>
+    <div class="fl-legend">
+      <span class="lg"><span class="sym">a</span> = השיפוע — כמה עולים בכל צעד</span>
+      <span class="lg"><span class="sym">b</span> = איפה הקו חוצה את ציר y</span>
+      <span class="lg"><span class="sym">x</span> = הקלט</span>
+    </div>
+    <div class="fl-controls">
+      <button class="try-btn fl-next"></button>
+      <span class="fl-progress"></span>
+    </div>
+  </div>
+
+  <div class="paper-lab" data-paper="coord-line" data-answer="7">
+    <h3>✍️ מאמן הדף — לחשב נקודה על קו</h3>
+    <p style="font-weight:600;font-size:1.05rem">כותבים את משוואת הקו, מציבים את x, ומחשבים את y. מוציאים ציוד:</p>
+    <div class="pl-gate">
+      <div class="pl-kit">
+        <div class="kit"><span class="kit-box">✓</span><span class="kit-emoji">📄</span> דף</div>
+        <div class="kit"><span class="kit-box">✓</span><span class="kit-emoji">✏️</span> עיפרון</div>
+        <div class="kit"><span class="kit-box">✓</span><span class="kit-emoji">🧮</span> מחשבון</div>
+      </div>
+      <div class="pl-gate-start"><button class="try-btn" disabled>סמנו שהוצאתם הכול ☝️</button></div>
+    </div>
+    <div class="pl-body">
+      <div class="pl-prob">
+        <div class="pl-prob-lbl">✏️ העתיקו את המשימה לדף שלכם</div>
+        <div class="pl-prob-txt he">בקו y = 2x + 1, מה y כאשר x = 3?</div>
+      </div>
+      <div class="pl-say"><span class="big">✍️</span><div>כתבו כל שורה מתחת לקודמת, ישר ומסודר. סימן ה-<b>=</b> אחד מתחת לשני — ככה קל לבדוק את עצמכם ולא להתבלבל.</div></div>
+      <ul class="pl-rules">
+        <li>שורה חדשה לכל צעד — לא דוחסים הכול יחד.</li>
+        <li>מיישרים את סימן ה-<b>=</b> אחד מתחת לשני.</li>
+        <li>ספרות גדולות וברורות שגם אתם תוכלו לקרוא.</li>
+      </ul>
+      <p style="font-weight:600">לחצו שורה-שורה וכתבו כל שורה על הדף שלכם 👇</p>
+      <div class="notebook">
+        <div class="nb-line">y = 2x + 1</div>
+        <div class="nb-line">y = 2×3 + 1</div>
+        <div class="nb-line nb-indent">= 6 + 1</div>
+        <div class="nb-line nb-final">y = 7</div>
+      </div>
+      <div class="pl-check">
+        <button class="try-btn pl-reveal"></button>
+        <span class="pl-step-count"></span>
+      </div>
+      <div class="pl-say"><span class="big">🔢</span><div>מה הערך של y?<br>
+        <input class="pl-answer iact-in" style="width:110px;margin-top:8px" placeholder="?">
+        <button class="try-btn pl-check-btn" style="margin-top:8px">בדקו ✅</button></div></div>
+      <div class="pl-done"></div>
+    </div>
+  </div>
+
+    <div class="quiz">
     <div class="qhead">🎯 משימת בזק</div>
     <div class="q" data-answer="1">
       <div class="qtext">בנקודה <b dir="ltr">(x, y)</b> — מי בא ראשון?</div>
@@ -3062,7 +4297,79 @@
     <div class="tip"><span class="big">🧠</span><div>אם יודעים 2 זוויות — תמיד אפשר למצוא את השלישית: <span class="mono">180 − שתיים = השלישית</span>!</div></div>
   </div>
 
-  <div class="quiz">
+
+  <div class="formula-lab" data-fl="angle-general">
+    <h3>🧪 מהמספרים אל הנוסחה הכללית</h3>
+    <p class="fl-sub">בכל משולש, שלוש הזוויות מסתכמות תמיד ל-180 מעלות. תמיד!</p>
+    <div class="fl-track">
+      <div class="fl-step">
+        <span class="fl-pill">צעד 1 · דוגמה</span>
+        <div class="fl-say">משולש עם 60° ו-70°. קודם מחברים את השתיים הידועות:</div>
+        <div class="fl-math">60 + 70 = 130</div>
+        </div>
+      <div class="fl-step">
+        <span class="fl-pill">צעד 2 · משלימים ל-180</span>
+        <div class="fl-say">מחסרים מ-180 כדי למצוא את השלישית:</div>
+        <div class="fl-math">180 − 130 = 50</div>
+        </div>
+      <div class="fl-step is-general">
+        <span class="fl-pill">🎉 הכלל הכללי</span>
+        <div class="fl-say">סכום הזוויות בכל משולש:</div>
+        <div class="fl-math">a + b + c = 180°</div>
+        </div>
+    </div>
+    <div class="fl-legend">
+      <span class="lg"><span class="sym">a</span> = זווית ראשונה</span>
+      <span class="lg"><span class="sym">b</span> = זווית שנייה</span>
+      <span class="lg"><span class="sym">c</span> = זווית שלישית</span>
+    </div>
+    <div class="fl-controls">
+      <button class="try-btn fl-next"></button>
+      <span class="fl-progress"></span>
+    </div>
+  </div>
+
+  <div class="paper-lab" data-paper="angle-triangle" data-answer="50">
+    <h3>✍️ מאמן הדף — למצוא זווית חסרה</h3>
+    <p style="font-weight:600;font-size:1.05rem">כותבים שהסכום 180, מציבים את הידוע, ומבודדים את הזווית החסרה. מוציאים ציוד:</p>
+    <div class="pl-gate">
+      <div class="pl-kit">
+        <div class="kit"><span class="kit-box">✓</span><span class="kit-emoji">📄</span> דף</div>
+        <div class="kit"><span class="kit-box">✓</span><span class="kit-emoji">✏️</span> עיפרון</div>
+        <div class="kit"><span class="kit-box">✓</span><span class="kit-emoji">🧮</span> מחשבון</div>
+      </div>
+      <div class="pl-gate-start"><button class="try-btn" disabled>סמנו שהוצאתם הכול ☝️</button></div>
+    </div>
+    <div class="pl-body">
+      <div class="pl-prob">
+        <div class="pl-prob-lbl">✏️ העתיקו את המשימה לדף שלכם</div>
+        <div class="pl-prob-txt he">במשולש שתי זוויות הן 60° ו-70°. מה השלישית?</div>
+      </div>
+      <div class="pl-say"><span class="big">✍️</span><div>כתבו כל שורה מתחת לקודמת, ישר ומסודר. סימן ה-<b>=</b> אחד מתחת לשני — ככה קל לבדוק את עצמכם ולא להתבלבל.</div></div>
+      <ul class="pl-rules">
+        <li>שורה חדשה לכל צעד — לא דוחסים הכול יחד.</li>
+        <li>מיישרים את סימן ה-<b>=</b> אחד מתחת לשני.</li>
+        <li>ספרות גדולות וברורות שגם אתם תוכלו לקרוא.</li>
+      </ul>
+      <p style="font-weight:600">לחצו שורה-שורה וכתבו כל שורה על הדף שלכם 👇</p>
+      <div class="notebook">
+        <div class="nb-line">a + b + c = 180</div>
+        <div class="nb-line">60 + 70 + c = 180</div>
+        <div class="nb-line nb-indent">130 + c = 180</div>
+        <div class="nb-line nb-final">c = 50</div>
+      </div>
+      <div class="pl-check">
+        <button class="try-btn pl-reveal"></button>
+        <span class="pl-step-count"></span>
+      </div>
+      <div class="pl-say"><span class="big">🔢</span><div>מה הזווית השלישית? (מעלות):<br>
+        <input class="pl-answer iact-in" style="width:110px;margin-top:8px" placeholder="?">
+        <button class="try-btn pl-check-btn" style="margin-top:8px">בדקו ✅</button></div></div>
+      <div class="pl-done"></div>
+    </div>
+  </div>
+
+    <div class="quiz">
     <div class="qhead">🎯 משימת בזק</div>
     <div class="q" data-answer="0">
       <div class="qtext">זווית של <b>פחות</b> מ-90° נקראת…</div>
@@ -3326,7 +4633,80 @@
     <div class="tip"><span class="big">⚡</span><div>ריבוע = צלע² (שטח, 2 ממדים) · קובייה = צלע³ (נפח, 3 ממדים). החזקה = מספר הממדים! 📐📦</div></div>
   </div>
 
-  <div class="quiz">
+
+  <div class="formula-lab" data-fl="vol-general">
+    <h3>🧪 מהמספרים אל הנוסחה הכללית</h3>
+    <p class="fl-sub">נפח = כמה "קוביות" נכנסות בגוף. בתיבה: אורך כפול רוחב כפול גובה.</p>
+    <div class="fl-track">
+      <div class="fl-step">
+        <span class="fl-pill">צעד 1 · דוגמה</span>
+        <div class="fl-say">בתיבה 2×3×4 מחשבים קודם את שטח הבסיס:</div>
+        <div class="fl-math">2 × 3 = 6</div>
+        </div>
+      <div class="fl-step">
+        <span class="fl-pill">צעד 2 · כפול הגובה</span>
+        <div class="fl-say">מכפילים בגובה 4:</div>
+        <div class="fl-math">6 × 4 = 24</div>
+        </div>
+      <div class="fl-step is-general">
+        <span class="fl-pill">🎉 הנוסחה הכללית</span>
+        <div class="fl-say">נפח של תיבה:</div>
+        <div class="fl-math">V = a · b · c</div>
+        </div>
+    </div>
+    <div class="fl-legend">
+      <span class="lg"><span class="sym">a</span> = אורך</span>
+      <span class="lg"><span class="sym">b</span> = רוחב</span>
+      <span class="lg"><span class="sym">c</span> = גובה</span>
+      <span class="lg"><span class="sym">V</span> = נפח</span>
+    </div>
+    <div class="fl-controls">
+      <button class="try-btn fl-next"></button>
+      <span class="fl-progress"></span>
+    </div>
+  </div>
+
+  <div class="paper-lab" data-paper="vol-box" data-answer="24">
+    <h3>✍️ מאמן הדף — לחשב נפח תיבה</h3>
+    <p style="font-weight:600;font-size:1.05rem">כותבים את הנוסחה, מציבים את שלושת המספרים, ומכפילים. מוציאים ציוד:</p>
+    <div class="pl-gate">
+      <div class="pl-kit">
+        <div class="kit"><span class="kit-box">✓</span><span class="kit-emoji">📄</span> דף</div>
+        <div class="kit"><span class="kit-box">✓</span><span class="kit-emoji">✏️</span> עיפרון</div>
+        <div class="kit"><span class="kit-box">✓</span><span class="kit-emoji">🧮</span> מחשבון</div>
+      </div>
+      <div class="pl-gate-start"><button class="try-btn" disabled>סמנו שהוצאתם הכול ☝️</button></div>
+    </div>
+    <div class="pl-body">
+      <div class="pl-prob">
+        <div class="pl-prob-lbl">✏️ העתיקו את המשימה לדף שלכם</div>
+        <div class="pl-prob-txt he">מצאו את הנפח של תיבה 2 × 3 × 4</div>
+      </div>
+      <div class="pl-say"><span class="big">✍️</span><div>כתבו כל שורה מתחת לקודמת, ישר ומסודר. סימן ה-<b>=</b> אחד מתחת לשני — ככה קל לבדוק את עצמכם ולא להתבלבל.</div></div>
+      <ul class="pl-rules">
+        <li>שורה חדשה לכל צעד — לא דוחסים הכול יחד.</li>
+        <li>מיישרים את סימן ה-<b>=</b> אחד מתחת לשני.</li>
+        <li>ספרות גדולות וברורות שגם אתם תוכלו לקרוא.</li>
+      </ul>
+      <p style="font-weight:600">לחצו שורה-שורה וכתבו כל שורה על הדף שלכם 👇</p>
+      <div class="notebook">
+        <div class="nb-line">V = a×b×c</div>
+        <div class="nb-line">V = 2×3×4</div>
+        <div class="nb-line nb-indent">= 6×4</div>
+        <div class="nb-line nb-final">V = 24</div>
+      </div>
+      <div class="pl-check">
+        <button class="try-btn pl-reveal"></button>
+        <span class="pl-step-count"></span>
+      </div>
+      <div class="pl-say"><span class="big">🔢</span><div>מה הנפח?<br>
+        <input class="pl-answer iact-in" style="width:110px;margin-top:8px" placeholder="?">
+        <button class="try-btn pl-check-btn" style="margin-top:8px">בדקו ✅</button></div></div>
+      <div class="pl-done"></div>
+    </div>
+  </div>
+
+    <div class="quiz">
     <div class="qhead">🎯 משימת בזק</div>
     <div class="q" data-answer="1">
       <div class="qtext"><b>נפח</b> הוא המקום…</div>
@@ -3415,7 +4795,77 @@
     <div class="tip"><span class="big">🔎</span><div>הממוצע אומר "איפה המרכז", והטווח אומר "כמה רחב הפיזור". יחד הם מספרים סיפור שלם על הנתונים!</div></div>
   </div>
 
-  <div class="quiz">
+
+  <div class="formula-lab" data-fl="avg-general">
+    <h3>🧪 מהמספרים אל הנוסחה הכללית</h3>
+    <p class="fl-sub">ממוצע = "לחלק בשווה". מחברים הכול ומחלקים בכמות המספרים.</p>
+    <div class="fl-track">
+      <div class="fl-step">
+        <span class="fl-pill">צעד 1 · מחברים</span>
+        <div class="fl-say">המספרים 4, 6, 8. קודם הסכום:</div>
+        <div class="fl-math">4 + 6 + 8 = 18</div>
+        </div>
+      <div class="fl-step">
+        <span class="fl-pill">צעד 2 · מחלקים בכמות</span>
+        <div class="fl-say">יש שלושה מספרים, אז מחלקים ב-3:</div>
+        <div class="fl-math">18 ÷ 3 = 6</div>
+        </div>
+      <div class="fl-step is-general">
+        <span class="fl-pill">🎉 הנוסחה הכללית</span>
+        <div class="fl-say">ממוצע של n מספרים:</div>
+        <div class="fl-math">ממוצע = (הסכום) ÷ n</div>
+        </div>
+    </div>
+    <div class="fl-legend">
+      <span class="lg"><span class="sym">Σ</span> = הסכום של כל המספרים</span>
+      <span class="lg"><span class="sym">n</span> = כמה מספרים יש</span>
+    </div>
+    <div class="fl-controls">
+      <button class="try-btn fl-next"></button>
+      <span class="fl-progress"></span>
+    </div>
+  </div>
+
+  <div class="paper-lab" data-paper="avg-468" data-answer="6">
+    <h3>✍️ מאמן הדף — לחשב ממוצע</h3>
+    <p style="font-weight:600;font-size:1.05rem">מחברים את כל המספרים, סופרים כמה יש, ומחלקים. מוציאים ציוד:</p>
+    <div class="pl-gate">
+      <div class="pl-kit">
+        <div class="kit"><span class="kit-box">✓</span><span class="kit-emoji">📄</span> דף</div>
+        <div class="kit"><span class="kit-box">✓</span><span class="kit-emoji">✏️</span> עיפרון</div>
+        <div class="kit"><span class="kit-box">✓</span><span class="kit-emoji">🧮</span> מחשבון</div>
+      </div>
+      <div class="pl-gate-start"><button class="try-btn" disabled>סמנו שהוצאתם הכול ☝️</button></div>
+    </div>
+    <div class="pl-body">
+      <div class="pl-prob">
+        <div class="pl-prob-lbl">✏️ העתיקו את המשימה לדף שלכם</div>
+        <div class="pl-prob-txt he">מצאו את הממוצע של 4, 6, 8</div>
+      </div>
+      <div class="pl-say"><span class="big">✍️</span><div>כתבו כל שורה מתחת לקודמת, ישר ומסודר. סימן ה-<b>=</b> אחד מתחת לשני — ככה קל לבדוק את עצמכם ולא להתבלבל.</div></div>
+      <ul class="pl-rules">
+        <li>שורה חדשה לכל צעד — לא דוחסים הכול יחד.</li>
+        <li>מיישרים את סימן ה-<b>=</b> אחד מתחת לשני.</li>
+        <li>ספרות גדולות וברורות שגם אתם תוכלו לקרוא.</li>
+      </ul>
+      <p style="font-weight:600">לחצו שורה-שורה וכתבו כל שורה על הדף שלכם 👇</p>
+      <div class="notebook">
+        <div class="nb-line">(4 + 6 + 8) ÷ 3</div>
+        <div class="nb-line nb-indent">= 18 ÷ 3</div>
+        <div class="nb-line nb-final">= 6</div>
+      </div>
+      <div class="pl-check">
+        <button class="try-btn pl-reveal"></button>
+        <span class="pl-step-count"></span>
+      </div>
+      <div class="pl-say"><span class="big">🔢</span><div>מה הממוצע?<br>
+        <input class="pl-answer iact-in" style="width:110px;margin-top:8px" placeholder="?">
+        <button class="try-btn pl-check-btn" style="margin-top:8px">בדקו ✅</button></div></div>
+      <div class="pl-done"></div>
+    </div>
+  </div>
+
+    <div class="quiz">
     <div class="qhead">🎯 משימת בזק</div>
     <div class="q" data-answer="0">
       <div class="qtext">מה הממוצע של <b dir="ltr">4</b> ו-<b dir="ltr">6</b>?</div>
@@ -3503,7 +4953,77 @@
     <div class="tip"><span class="big">🔗</span><div>שמים לב? הסתברות זה בדיוק <b>שבר</b> — כל מה שלמדתם על שברים עוזר גם כאן! 🍕</div></div>
   </div>
 
-  <div class="quiz">
+
+  <div class="formula-lab" data-fl="prob-general">
+    <h3>🧪 מהמספרים אל הנוסחה הכללית</h3>
+    <p class="fl-sub">הסתברות = סיכוי. סופרים כמה תוצאות "מוצלחות" מתוך כל האפשרויות.</p>
+    <div class="fl-track">
+      <div class="fl-step">
+        <span class="fl-pill">צעד 1 · דוגמה</span>
+        <div class="fl-say">בשקית 2 כדורים אדומים ו-3 כחולים, סה״כ 5. הסיכוי לאדום:</div>
+        <div class="fl-math">2 מתוך 5</div>
+        </div>
+      <div class="fl-step">
+        <span class="fl-pill">צעד 2 · כשבר</span>
+        <div class="fl-say">כותבים את הסיכוי כשבר:</div>
+        <div class="fl-math">P = 2/5</div>
+        </div>
+      <div class="fl-step is-general">
+        <span class="fl-pill">🎉 הנוסחה הכללית</span>
+        <div class="fl-say">הסתברות של מאורע:</div>
+        <div class="fl-math">P = (מוצלחים) / (סך הכול)</div>
+        </div>
+    </div>
+    <div class="fl-legend">
+      <span class="lg"><span class="sym">✓</span> = מספר התוצאות המוצלחות</span>
+      <span class="lg"><span class="sym">N</span> = מספר כל התוצאות</span>
+    </div>
+    <div class="fl-controls">
+      <button class="try-btn fl-next"></button>
+      <span class="fl-progress"></span>
+    </div>
+  </div>
+
+  <div class="paper-lab" data-paper="prob-bag" data-answer="2/5">
+    <h3>✍️ מאמן הדף — לחשב הסתברות</h3>
+    <p style="font-weight:600;font-size:1.05rem">סופרים כמה מוצלחים, כמה בסך הכול, וכותבים כשבר. מוציאים ציוד:</p>
+    <div class="pl-gate">
+      <div class="pl-kit">
+        <div class="kit"><span class="kit-box">✓</span><span class="kit-emoji">📄</span> דף</div>
+        <div class="kit"><span class="kit-box">✓</span><span class="kit-emoji">✏️</span> עיפרון</div>
+        <div class="kit"><span class="kit-box">✓</span><span class="kit-emoji">🧮</span> מחשבון</div>
+      </div>
+      <div class="pl-gate-start"><button class="try-btn" disabled>סמנו שהוצאתם הכול ☝️</button></div>
+    </div>
+    <div class="pl-body">
+      <div class="pl-prob">
+        <div class="pl-prob-lbl">✏️ העתיקו את המשימה לדף שלכם</div>
+        <div class="pl-prob-txt he">בשקית 2 אדומים ו-3 כחולים. מה הסיכוי להוציא אדום?</div>
+      </div>
+      <div class="pl-say"><span class="big">✍️</span><div>כתבו כל שורה מתחת לקודמת, ישר ומסודר. סימן ה-<b>=</b> אחד מתחת לשני — ככה קל לבדוק את עצמכם ולא להתבלבל.</div></div>
+      <ul class="pl-rules">
+        <li>שורה חדשה לכל צעד — לא דוחסים הכול יחד.</li>
+        <li>מיישרים את סימן ה-<b>=</b> אחד מתחת לשני.</li>
+        <li>ספרות גדולות וברורות שגם אתם תוכלו לקרוא.</li>
+      </ul>
+      <p style="font-weight:600">לחצו שורה-שורה וכתבו כל שורה על הדף שלכם 👇</p>
+      <div class="notebook">
+        <div class="nb-line">מוצלחים = 2</div>
+        <div class="nb-line">סך הכול = 2+3 = 5</div>
+        <div class="nb-line nb-final">P = 2/5</div>
+      </div>
+      <div class="pl-check">
+        <button class="try-btn pl-reveal"></button>
+        <span class="pl-step-count"></span>
+      </div>
+      <div class="pl-say"><span class="big">🔢</span><div>מה ההסתברות? (מונה/מכנה):<br>
+        <input class="pl-answer iact-in" style="width:120px;margin-top:8px" placeholder="?/?">
+        <button class="try-btn pl-check-btn" style="margin-top:8px">בדקו ✅</button></div></div>
+      <div class="pl-done"></div>
+    </div>
+  </div>
+
+    <div class="quiz">
     <div class="qhead">🎯 משימת בזק</div>
     <div class="q" data-answer="2">
       <div class="qtext">מה ההסתברות של דבר <b>בטוח</b>?</div>
@@ -3557,7 +5077,87 @@
     <p style="font-weight:700">אספו כמה שיותר כוכבים ⭐ — כל תשובה נכונה מקרבת אתכם לתואר!</p>
   </div>
 
-  <div class="quiz">
+
+  <div class="formula-lab" data-fl="final-general">
+    <h3>🧪 מהמספרים אל הנוסחה הכללית</h3>
+    <p class="fl-sub">עכשיו הכול מתחבר! הנה משוואה שדורשת כמה כלים ביחד: פילוג, בידוד, וחילוק.</p>
+    <div class="fl-track">
+      <div class="fl-step">
+        <span class="fl-pill">צעד 1 · פותחים סוגריים</span>
+        <div class="fl-say">ב-3(x + 2) = 15 קודם מפזרים את ה-3:</div>
+        <div class="fl-math">3x + 6 = 15</div>
+        </div>
+      <div class="fl-step">
+        <span class="fl-pill">צעד 2 · מבודדים את x</span>
+        <div class="fl-say">מורידים 6 משני הצדדים:</div>
+        <div class="fl-math">3x = 9</div>
+        </div>
+      <div class="fl-step">
+        <span class="fl-pill">צעד 3 · מחלקים</span>
+        <div class="fl-say">מחלקים במקדם של x:</div>
+        <div class="fl-math">x = 3</div>
+        </div>
+      <div class="fl-step is-general">
+        <span class="fl-pill">🎉 הרעיון הכללי</span>
+        <div class="fl-say">בכל משוואה: פותחים סוגריים, מבודדים את x, ומחלקים במקדם.</div>
+        <div class="fl-math">a(x + b) = c  ⟶  x = c/a − b</div>
+        </div>
+    </div>
+    <div class="fl-legend">
+      <span class="lg"><span class="sym">a</span> = הגורם שלפני הסוגריים</span>
+      <span class="lg"><span class="sym">b</span> = המספר בתוך הסוגריים</span>
+      <span class="lg"><span class="sym">c</span> = הצד השני</span>
+      <span class="lg"><span class="sym">x</span> = הנעלם</span>
+    </div>
+    <div class="fl-controls">
+      <button class="try-btn fl-next"></button>
+      <span class="fl-progress"></span>
+    </div>
+  </div>
+
+  <div class="paper-lab" data-paper="final-boss" data-answer="3">
+    <h3>✍️ מאמן הדף — אתגר הסיום — משוואה מרובת שלבים</h3>
+    <p style="font-weight:600;font-size:1.05rem">זה מבחן האלופים: כמה שלבים בשורות מסודרות. אל תדלגו! מוציאים ציוד:</p>
+    <div class="pl-gate">
+      <div class="pl-kit">
+        <div class="kit"><span class="kit-box">✓</span><span class="kit-emoji">📄</span> דף</div>
+        <div class="kit"><span class="kit-box">✓</span><span class="kit-emoji">✏️</span> עיפרון</div>
+        <div class="kit"><span class="kit-box">✓</span><span class="kit-emoji">🧮</span> מחשבון</div>
+      </div>
+      <div class="pl-gate-start"><button class="try-btn" disabled>סמנו שהוצאתם הכול ☝️</button></div>
+    </div>
+    <div class="pl-body">
+      <div class="pl-prob">
+        <div class="pl-prob-lbl">✏️ העתיקו את המשימה לדף שלכם</div>
+        <div class="pl-prob-txt">3(x + 2) = 15</div>
+      </div>
+      <div class="pl-say"><span class="big">✍️</span><div>כתבו כל שורה מתחת לקודמת, ישר ומסודר. סימן ה-<b>=</b> אחד מתחת לשני — ככה קל לבדוק את עצמכם ולא להתבלבל.</div></div>
+      <ul class="pl-rules">
+        <li>שורה חדשה לכל צעד — לא דוחסים הכול יחד.</li>
+        <li>מיישרים את סימן ה-<b>=</b> אחד מתחת לשני.</li>
+        <li>ספרות גדולות וברורות שגם אתם תוכלו לקרוא.</li>
+      </ul>
+      <p style="font-weight:600">לחצו שורה-שורה וכתבו כל שורה על הדף שלכם 👇</p>
+      <div class="notebook">
+        <div class="nb-line">3(x + 2) = 15</div>
+        <div class="nb-line nb-indent">3x + 6 = 15</div>
+        <div class="nb-line nb-indent">−6    −6</div>
+        <div class="nb-line">3x = 9</div>
+        <div class="nb-line nb-indent">÷3   ÷3</div>
+        <div class="nb-line nb-final">x = 3</div>
+      </div>
+      <div class="pl-check">
+        <button class="try-btn pl-reveal"></button>
+        <span class="pl-step-count"></span>
+      </div>
+      <div class="pl-say"><span class="big">🔢</span><div>מה x?<br>
+        <input class="pl-answer iact-in" style="width:110px;margin-top:8px" placeholder="x = ?">
+        <button class="try-btn pl-check-btn" style="margin-top:8px">בדקו ✅</button></div></div>
+      <div class="pl-done"></div>
+    </div>
+  </div>
+
+    <div class="quiz">
     <div class="qhead">⚔️ סבב 1 — חימום מעורב</div>
     <div class="q" data-answer="1">
       <div class="qtext">צמצמו: <span class="frac"><span class="top">6</span><span class="bot">9</span></span></div>
